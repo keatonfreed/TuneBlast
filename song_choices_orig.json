@@ -1,0 +1,2170 @@
+[
+  {
+    "name": "Never Gonna Give You Up",
+    "artist": "Rick Astley"
+  },
+  {
+    "name": "Y.M.C.A.",
+    "artist": "Village People"
+  },
+  {
+    "name": "Take on Me",
+    "artist": "a-ha"
+  },
+  {
+    "name": "Fireflies",
+    "artist": "Owl City"
+  },
+  {
+    "name": "Forget You",
+    "artist": "CeeLo Green"
+  },
+  {
+    "name": "Hey, Soul Sister",
+    "artist": "Train"
+  },
+  {
+    "name": "Girls Just Want to Have Fun",
+    "artist": "Cyndi Lauper"
+  },
+  {
+    "name": "Don't Stop Believin'",
+    "artist": "Journey"
+  },
+  {
+    "name": "I Want It That Way",
+    "artist": "Backstreet Boys"
+  },
+  {
+    "name": "Radioactive",
+    "artist": "Imagine Dragons"
+  },
+  {
+    "name": "Pompeii",
+    "artist": "Bastille"
+  },
+  {
+    "name": "TiK ToK",
+    "artist": "Kesha"
+  },
+  {
+    "name": "Chicken Fried",
+    "artist": "Zac Brown Band"
+  },
+  {
+    "name": "All Star",
+    "artist": "Smash Mouth"
+  },
+  {
+    "name": "Viva La Vida",
+    "artist": "Coldplay"
+  },
+  {
+    "name": "Africa",
+    "artist": "TOTO"
+  },
+  {
+    "name": "Eye of the Tiger",
+    "artist": "Survivor"
+  },
+  {
+    "name": "Every Rose Has Its Thorn - 2003 Remaster",
+    "artist": "Poison"
+  },
+  {
+    "name": "See You Again (feat. Charlie Puth)",
+    "artist": "Wiz Khalifa, Charlie Puth"
+  },
+  {
+    "name": "My House",
+    "artist": "Flo Rida"
+  },
+  {
+    "name": "Celebration",
+    "artist": "Kool & The Gang"
+  },
+  {
+    "name": "Who Let The Dogs Out",
+    "artist": "Baha Men"
+  },
+  {
+    "name": "Rude",
+    "artist": "MAGIC!"
+  },
+  {
+    "name": "Bad Day",
+    "artist": "Daniel Powter"
+  },
+  {
+    "name": "Hey Ya!",
+    "artist": "Outkast"
+  },
+  {
+    "name": "Drive By",
+    "artist": "Train"
+  },
+  {
+    "name": "A Thousand Miles",
+    "artist": "Vanessa Carlton"
+  },
+  {
+    "name": "Knee Deep (feat. Jimmy Buffett)",
+    "artist": "Zac Brown Band, Jimmy Buffett"
+  },
+  {
+    "name": "People Are Crazy",
+    "artist": "Billy Currington"
+  },
+  {
+    "name": "Highway 20 Ride",
+    "artist": "Zac Brown Band"
+  },
+  {
+    "name": "Life is a Highway",
+    "artist": "Rascal Flatts"
+  },
+  {
+    "name": "All Summer Long",
+    "artist": "Kid Rock"
+  },
+  {
+    "name": "Sweet Home Alabama",
+    "artist": "Lynyrd Skynyrd"
+  },
+  {
+    "name": "You Shook Me All Night Long",
+    "artist": "AC/DC"
+  },
+  {
+    "name": "Highway to Hell",
+    "artist": "AC/DC"
+  },
+  {
+    "name": "Back In Black",
+    "artist": "AC/DC"
+  },
+  {
+    "name": "T.N.T.",
+    "artist": "AC/DC"
+  },
+  {
+    "name": "Thunderstruck",
+    "artist": "AC/DC"
+  },
+  {
+    "name": "How to Save a Life",
+    "artist": "The Fray"
+  },
+  {
+    "name": "Hey There Delilah",
+    "artist": "Plain White T's"
+  },
+  {
+    "name": "Californication",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "name": "Seven Nation Army",
+    "artist": "The White Stripes"
+  },
+  {
+    "name": "Nothin' But A Good Time - Remastered 2006",
+    "artist": "Poison"
+  },
+  {
+    "name": "Springsteen",
+    "artist": "Eric Church"
+  },
+  {
+    "name": "Don't Worry Be Happy",
+    "artist": "Bobby McFerrin"
+  },
+  {
+    "name": "Ice Ice Baby",
+    "artist": "Vanilla Ice"
+  },
+  {
+    "name": "Thriller",
+    "artist": "Michael Jackson"
+  },
+  {
+    "name": "Last Friday Night (T.G.I.F.)",
+    "artist": "Katy Perry"
+  },
+  {
+    "name": "Hooked On A Feeling",
+    "artist": "Blue Swede, Björn Skifs"
+  },
+  {
+    "name": "Mr. Blue Sky",
+    "artist": "Electric Light Orchestra"
+  },
+  {
+    "name": "Spirit In The Sky - Deluxe Edition",
+    "artist": "Norman Greenbaum"
+  },
+  {
+    "name": "Werewolves of London",
+    "artist": "Warren Zevon"
+  },
+  {
+    "name": "Stereo Hearts (feat. Adam Levine)",
+    "artist": "Gym Class Heroes, Adam Levine"
+  },
+  {
+    "name": "Classic",
+    "artist": "MKTO"
+  },
+  {
+    "name": "Wagon Wheel",
+    "artist": "Darius Rucker"
+  },
+  {
+    "name": "We Didn't Start the Fire",
+    "artist": "Billy Joel"
+  },
+  {
+    "name": "Escape (The Pina Colada Song)",
+    "artist": "Rupert Holmes"
+  },
+  {
+    "name": "Old Time Rock & Roll",
+    "artist": "Bob Seger"
+  },
+  {
+    "name": "More Than a Feeling",
+    "artist": "Boston"
+  },
+  {
+    "name": "Drops of Jupiter (Tell Me)",
+    "artist": "Train"
+  },
+  {
+    "name": "We Built This City",
+    "artist": "Starship"
+  },
+  {
+    "name": "Drift Away",
+    "artist": "Uncle Kracker"
+  },
+  {
+    "name": "Toes",
+    "artist": "Zac Brown Band"
+  },
+  {
+    "name": "You Might Think",
+    "artist": "The Cars"
+  },
+  {
+    "name": "I Won't Back Down",
+    "artist": "Tom Petty"
+  },
+  {
+    "name": "Here I Go Again - Radio Mix",
+    "artist": "Whitesnake"
+  },
+  {
+    "name": "Wannabe",
+    "artist": "Spice Girls"
+  },
+  {
+    "name": "Baby Got Back",
+    "artist": "Sir Mix-A-Lot"
+  },
+  {
+    "name": "Upside Down",
+    "artist": "Jack Johnson"
+  },
+  {
+    "name": "Mirrors",
+    "artist": "Justin Timberlake"
+  },
+  {
+    "name": "Gravity",
+    "artist": "John Mayer"
+  },
+  {
+    "name": "I Can Only Imagine",
+    "artist": "MercyMe"
+  },
+  {
+    "name": "The Sound of Silence",
+    "artist": "Disturbed"
+  },
+  {
+    "name": "Let Her Go",
+    "artist": "Passenger"
+  },
+  {
+    "name": "Wish You Were Here",
+    "artist": "Pink Floyd"
+  },
+  {
+    "name": "I Won't Back Down",
+    "artist": "Johnny Cash"
+  },
+  {
+    "name": "Waiting On the World to Change",
+    "artist": "John Mayer"
+  },
+  {
+    "name": "Smile",
+    "artist": "Uncle Kracker"
+  },
+  {
+    "name": "Sweet Caroline",
+    "artist": "Neil Diamond"
+  },
+  {
+    "name": "Something Just Like This",
+    "artist": "The Chainsmokers, Coldplay"
+  },
+  {
+    "name": "Just Give Me a Reason (feat. Nate Ruess)",
+    "artist": "P!nk, Nate Ruess"
+  },
+  {
+    "name": "Wrecking Ball",
+    "artist": "Miley Cyrus"
+  },
+  {
+    "name": "Cruise",
+    "artist": "Florida Georgia Line"
+  },
+  {
+    "name": "What Hurts The Most",
+    "artist": "Rascal Flatts"
+  },
+  {
+    "name": "Uptown Girl",
+    "artist": "Billy Joel"
+  },
+  {
+    "name": "Walking On Sunshine",
+    "artist": "Katrina & The Waves"
+  },
+  {
+    "name": "Cotton Eye Joe",
+    "artist": "Rednex"
+  },
+  {
+    "name": "Moves Like Jagger - Studio Recording From \"The Voice\" Performance",
+    "artist": "Maroon 5, Christina Aguilera"
+  },
+  {
+    "name": "We Will Rock You",
+    "artist": "Queen"
+  },
+  {
+    "name": "Billie Jean",
+    "artist": "Michael Jackson"
+  },
+  {
+    "name": "Dynamite",
+    "artist": "Taio Cruz"
+  },
+  {
+    "name": "The Monster",
+    "artist": "Eminem, Rihanna"
+  },
+  {
+    "name": "Don't Go Breaking My Heart",
+    "artist": "Elton John, Kiki Dee"
+  },
+  {
+    "name": "Piano Man",
+    "artist": "Billy Joel"
+  },
+  {
+    "name": "Hit Me With Your Best Shot",
+    "artist": "Pat Benatar"
+  },
+  {
+    "name": "U Can't Touch This",
+    "artist": "MC Hammer"
+  },
+  {
+    "name": "Stayin Alive",
+    "artist": "Bee Gees"
+  },
+  {
+    "name": "The Final Countdown",
+    "artist": "Europe"
+  },
+  {
+    "name": "I'm Still Standing",
+    "artist": "Elton John"
+  },
+  {
+    "name": "Beat It",
+    "artist": "Michael Jackson"
+  },
+  {
+    "name": "Uptown Funk (feat. Bruno Mars)",
+    "artist": "Mark Ronson, Bruno Mars"
+  },
+  {
+    "name": "Bohemian Rhapsody",
+    "artist": "Queen"
+  },
+  {
+    "name": "You Give Love A Bad Name",
+    "artist": "Bon Jovi"
+  },
+  {
+    "name": "Livin' On A Prayer",
+    "artist": "Bon Jovi"
+  },
+  {
+    "name": "Jump - 2015 Remaster",
+    "artist": "Van Halen"
+  },
+  {
+    "name": "Hotel California - Live at The Forum, Los Angeles, CA, 10/20-22/1976",
+    "artist": "Eagles"
+  },
+  {
+    "name": "Wake Me Up Before You Go-Go",
+    "artist": "Wham!"
+  },
+  {
+    "name": "Happy - From \"Despicable Me 2\"",
+    "artist": "Pharrell Williams"
+  },
+  {
+    "name": "Can't Feel My Face",
+    "artist": "The Weeknd"
+  },
+  {
+    "name": "Closer",
+    "artist": "The Chainsmokers, Halsey"
+  },
+  {
+    "name": "Rapper's Delight - Single Version",
+    "artist": "The Sugarhill Gang"
+  },
+  {
+    "name": "Heroes - 1999 Remaster",
+    "artist": "David Bowie"
+  },
+  {
+    "name": "Wonderwall",
+    "artist": "Oasis"
+  },
+  {
+    "name": "Someone Like You",
+    "artist": "Adele"
+  },
+  {
+    "name": "Lose Yourself",
+    "artist": "Eminem"
+  },
+  {
+    "name": "Brown Eyed Girl",
+    "artist": "Van Morrison"
+  },
+  {
+    "name": "Every Breath You Take - Remastered 2003",
+    "artist": "The Police"
+  },
+  {
+    "name": "Sultans Of Swing",
+    "artist": "Dire Straits"
+  },
+  {
+    "name": "Poker Face",
+    "artist": "Lady Gaga"
+  },
+  {
+    "name": "Celebration - Single Version",
+    "artist": "Kool & The Gang"
+  },
+  {
+    "name": "Gangnam Style (강남스타일)",
+    "artist": "PSY"
+  },
+  {
+    "name": "Money For Nothing",
+    "artist": "Dire Straits"
+  },
+  {
+    "name": "Iris",
+    "artist": "The Goo Goo Dolls"
+  },
+  {
+    "name": "Somebody That I Used To Know",
+    "artist": "Gotye, Kimbra"
+  },
+  {
+    "name": "Fortunate Son",
+    "artist": "Creedence Clearwater Revival"
+  },
+  {
+    "name": "You're The One That I Want - From \"Grease\" Original Motion Picture Soundtrack",
+    "artist": "John Travolta, Olivia Newton-John"
+  },
+  {
+    "name": "Pumped Up Kicks",
+    "artist": "Foster The People"
+  },
+  {
+    "name": "Ms. Jackson",
+    "artist": "Outkast"
+  },
+  {
+    "name": "I Wanna Dance with Somebody (Who Loves Me)",
+    "artist": "Whitney Houston"
+  },
+  {
+    "name": "I Get Around (Mono)",
+    "artist": "The Beach Boys"
+  },
+  {
+    "name": "Take Me Home, Country Roads - Original Version",
+    "artist": "John Denver"
+  },
+  {
+    "name": "I Want You to Want Me",
+    "artist": "Cheap Trick"
+  },
+  {
+    "name": "Mr. Jones",
+    "artist": "Counting Crows"
+  },
+  {
+    "name": "Good Vibrations - Remastered 2001",
+    "artist": "The Beach Boys"
+  },
+  {
+    "name": "Radio Ga Ga",
+    "artist": "Queen"
+  },
+  {
+    "name": "I Was Made For Lovin' You",
+    "artist": "KISS"
+  },
+  {
+    "name": "Bad To The Bone",
+    "artist": "George Thorogood & The Destroyers"
+  },
+  {
+    "name": "Wake Me Up",
+    "artist": "Avicii"
+  },
+  {
+    "name": "A Sky Full of Stars",
+    "artist": "Coldplay"
+  },
+  {
+    "name": "Roar",
+    "artist": "Katy Perry"
+  },
+  {
+    "name": "Best Day Of My Life",
+    "artist": "American Authors"
+  },
+  {
+    "name": "Red Dirt Road",
+    "artist": "Brooks & Dunn"
+  },
+  {
+    "name": "Ain't Nothing 'Bout You",
+    "artist": "Brooks & Dunn"
+  },
+  {
+    "name": "Photograph",
+    "artist": "Nickelback"
+  },
+  {
+    "name": "California Gurls",
+    "artist": "Katy Perry, Snoop Dogg"
+  },
+  {
+    "name": "Kung Fu Fighting",
+    "artist": "Carl Douglas"
+  },
+  {
+    "name": "Dancing Queen",
+    "artist": "ABBA"
+  },
+  {
+    "name": "Breakeven",
+    "artist": "The Script"
+  },
+  {
+    "name": "The Lazy Song",
+    "artist": "Bruno Mars"
+  },
+  {
+    "name": "Mr. Brightside",
+    "artist": "The Killers"
+  },
+  {
+    "name": "What I Like About You",
+    "artist": "The Romantics"
+  },
+  {
+    "name": "American Pie",
+    "artist": "Don McLean"
+  },
+  {
+    "name": "In The Air Tonight - 2015 Remastered",
+    "artist": "Phil Collins"
+  },
+  {
+    "name": "Love Shack",
+    "artist": "The B-52's"
+  },
+  {
+    "name": "I'll Be There for You - Theme From \"Friends\"",
+    "artist": "The Rembrandts"
+  },
+  {
+    "name": "Born in the U.S.A.",
+    "artist": "Bruce Springsteen"
+  },
+  {
+    "name": "Carry on Wayward Son",
+    "artist": "Kansas"
+  },
+  {
+    "name": "Dark Horse",
+    "artist": "Katy Perry, Juicy J"
+  },
+  {
+    "name": "Red Solo Cup",
+    "artist": "Toby Keith"
+  },
+  {
+    "name": "Jessie's Girl",
+    "artist": "Rick Springfield"
+  },
+  {
+    "name": "Margaritaville",
+    "artist": "Jimmy Buffett"
+  },
+  {
+    "name": "Second Chance",
+    "artist": "Shinedown"
+  },
+  {
+    "name": "Any Way You Want It",
+    "artist": "Journey"
+  },
+  {
+    "name": "Don't Stop Me Now",
+    "artist": "Queen"
+  },
+  {
+    "name": "Your Love",
+    "artist": "The Outfield"
+  },
+  {
+    "name": "Still The Same",
+    "artist": "Bob Seger"
+  },
+  {
+    "name": "Time for Me to Fly",
+    "artist": "REO Speedwagon"
+  },
+  {
+    "name": "Something In The Way",
+    "artist": "Nirvana"
+  },
+  {
+    "name": "Smells Like Teen Spirit",
+    "artist": "Nirvana"
+  },
+  {
+    "name": "Can I Kick It?",
+    "artist": "A Tribe Called Quest"
+  },
+  {
+    "name": "Easy",
+    "artist": "Commodores"
+  },
+  {
+    "name": "Islands In the Stream",
+    "artist": "Dolly Parton, Kenny Rogers"
+  },
+  {
+    "name": "Free Fallin'",
+    "artist": "Tom Petty"
+  },
+  {
+    "name": "Jack & Diane",
+    "artist": "John Mellencamp"
+  },
+  {
+    "name": "Walk This Way",
+    "artist": "Aerosmith"
+  },
+  {
+    "name": "Against The Wind",
+    "artist": "Bob Seger"
+  },
+  {
+    "name": "Down Under",
+    "artist": "Men At Work"
+  },
+  {
+    "name": "Bad Moon Rising",
+    "artist": "Creedence Clearwater Revival"
+  },
+  {
+    "name": "Low Rider",
+    "artist": "War"
+  },
+  {
+    "name": "Slipping Through My Fingers",
+    "artist": "ABBA"
+  },
+  {
+    "name": "What A Wonderful World",
+    "artist": "Louis Armstrong"
+  },
+  {
+    "name": "Take It Easy - 2013 Remaster",
+    "artist": "Eagles"
+  },
+  {
+    "name": "Intergalactic - Remastered 2009",
+    "artist": "Beastie Boys"
+  },
+  {
+    "name": "Paint It, Black",
+    "artist": "The Rolling Stones"
+  },
+  {
+    "name": "Losing My Religion",
+    "artist": "R.E.M."
+  },
+  {
+    "name": "Zombie",
+    "artist": "The Cranberries"
+  },
+  {
+    "name": "What's Up?",
+    "artist": "4 Non Blondes"
+  },
+  {
+    "name": "Dixieland Delight",
+    "artist": "Alabama"
+  },
+  {
+    "name": "Time After Time",
+    "artist": "Cyndi Lauper"
+  },
+  {
+    "name": "Everybody Hurts",
+    "artist": "R.E.M."
+  },
+  {
+    "name": "You Spin Me Round (Like a Record)",
+    "artist": "Dead Or Alive"
+  },
+  {
+    "name": "Separate Ways (Worlds Apart)",
+    "artist": "Journey"
+  },
+  {
+    "name": "Free Bird",
+    "artist": "Lynyrd Skynyrd"
+  },
+  {
+    "name": "Running Up That Hill (A Deal with God)",
+    "artist": "Kate Bush"
+  },
+  {
+    "name": "Black or White - Single Version",
+    "artist": "Michael Jackson"
+  },
+  {
+    "name": "Island In The Sun",
+    "artist": "Weezer"
+  },
+  {
+    "name": "Rock with You - Single Version",
+    "artist": "Michael Jackson"
+  },
+  {
+    "name": "Touch of Grey",
+    "artist": "Grateful Dead"
+  },
+  {
+    "name": "Don't You Worry Child - Radio Edit",
+    "artist": "Swedish House Mafia, John Martin"
+  },
+  {
+    "name": "Find The River",
+    "artist": "R.E.M."
+  },
+  {
+    "name": "Summer Of '69",
+    "artist": "Bryan Adams"
+  },
+  {
+    "name": "Hold Me Now",
+    "artist": "Thompson Twins"
+  },
+  {
+    "name": "The Chain - 2004 Remaster",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "name": "Santeria",
+    "artist": "Sublime"
+  },
+  {
+    "name": "Girls, Girls, Girls",
+    "artist": "Mötley Crüe"
+  },
+  {
+    "name": "California Love - Original Version",
+    "artist": "2Pac, Roger, Dr. Dre"
+  },
+  {
+    "name": "Big Poppa - 2007 Remaster",
+    "artist": "The Notorious B.I.G."
+  },
+  {
+    "name": "Proud Mary",
+    "artist": "Creedence Clearwater Revival"
+  },
+  {
+    "name": "Runaway",
+    "artist": "Kanye West, Pusha T"
+  },
+  {
+    "name": "Nuthin' But A \"G\" Thang",
+    "artist": "Dr. Dre, Snoop Dogg"
+  },
+  {
+    "name": "Still D.R.E.",
+    "artist": "Dr. Dre, Snoop Dogg"
+  },
+  {
+    "name": "The Next Episode",
+    "artist": "Dr. Dre, Snoop Dogg"
+  },
+  {
+    "name": "Landslide",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "name": "Somebody Told Me",
+    "artist": "The Killers"
+  },
+  {
+    "name": "Get Over It",
+    "artist": "Eagles"
+  },
+  {
+    "name": "Let's Get It Started",
+    "artist": "Black Eyed Peas"
+  },
+  {
+    "name": "Hypnotize - 2007 Remaster",
+    "artist": "The Notorious B.I.G."
+  },
+  {
+    "name": "I Like It, I Love It",
+    "artist": "Tim McGraw"
+  },
+  {
+    "name": "Dreams - 2004 Remaster",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "name": "Bad Reputation",
+    "artist": "Joan Jett & the Blackhearts"
+  },
+  {
+    "name": "I Walk the Line",
+    "artist": "Johnny Cash"
+  },
+  {
+    "name": "It's Five O'Clock Somewhere",
+    "artist": "Alan Jackson, Jimmy Buffett"
+  },
+  {
+    "name": "Boogie Shoes - 2004 Remaster",
+    "artist": "KC & The Sunshine Band"
+  },
+  {
+    "name": "Good Time",
+    "artist": "Alan Jackson"
+  },
+  {
+    "name": "Paradise City",
+    "artist": "Guns N' Roses"
+  },
+  {
+    "name": "Forever Young",
+    "artist": "Alphaville"
+  },
+  {
+    "name": "Feel Good Inc.",
+    "artist": "Gorillaz"
+  },
+  {
+    "name": "Heaven",
+    "artist": "Warrant"
+  },
+  {
+    "name": "Cherry Pie",
+    "artist": "Warrant"
+  },
+  {
+    "name": "Sweet Child O' Mine",
+    "artist": "Guns N' Roses"
+  },
+  {
+    "name": "It Was A Good Day",
+    "artist": "Ice Cube"
+  },
+  {
+    "name": "Run-Around",
+    "artist": "Blues Traveler"
+  },
+  {
+    "name": "Come As You Are",
+    "artist": "Nirvana"
+  },
+  {
+    "name": "Hey You",
+    "artist": "Pink Floyd"
+  },
+  {
+    "name": "November Rain",
+    "artist": "Guns N' Roses"
+  },
+  {
+    "name": "Le Freak",
+    "artist": "CHIC"
+  },
+  {
+    "name": "Picture Me Rollin'",
+    "artist": "2Pac"
+  },
+  {
+    "name": "You Know How We Do It",
+    "artist": "Ice Cube"
+  },
+  {
+    "name": "I'm Yours",
+    "artist": "Jason Mraz"
+  },
+  {
+    "name": "Myth",
+    "artist": "Beach House"
+  },
+  {
+    "name": "2 Of Amerikaz Most Wanted (ft. Snoop Doggy Dogg)",
+    "artist": "2Pac, Snoop Dogg"
+  },
+  {
+    "name": "Mo Money Mo Problems (feat. Puff Daddy & Mase) - 2014 Remaster",
+    "artist": "The Notorious B.I.G., Mase, Diddy"
+  },
+  {
+    "name": "Juicy - 2005 Remaster",
+    "artist": "The Notorious B.I.G."
+  },
+  {
+    "name": "Hit 'Em Up - Single Version",
+    "artist": "2Pac, Outlawz"
+  },
+  {
+    "name": "Shoot to Thrill",
+    "artist": "AC/DC"
+  },
+  {
+    "name": "Dancing in the Moonlight",
+    "artist": "King Harvest"
+  },
+  {
+    "name": "Three Little Birds",
+    "artist": "Bob Marley & The Wailers"
+  },
+  {
+    "name": "Is This Love",
+    "artist": "Bob Marley & The Wailers"
+  },
+  {
+    "name": "Could You Be Loved",
+    "artist": "Bob Marley & The Wailers"
+  },
+  {
+    "name": "Get Down On It",
+    "artist": "Kool & The Gang"
+  },
+  {
+    "name": "Straight Outta Compton",
+    "artist": "N.W.A."
+  },
+  {
+    "name": "Fuck Tha Police",
+    "artist": "N.W.A."
+  },
+  {
+    "name": "Around the World",
+    "artist": "Daft Punk"
+  },
+  {
+    "name": "The Gambler",
+    "artist": "Kenny Rogers"
+  },
+  {
+    "name": "Only Wanna Be With You",
+    "artist": "Hootie & The Blowfish"
+  },
+  {
+    "name": "Sugar, We're Goin Down",
+    "artist": "Fall Out Boy"
+  },
+  {
+    "name": "Centuries",
+    "artist": "Fall Out Boy"
+  },
+  {
+    "name": "Glory Days",
+    "artist": "Bruce Springsteen"
+  },
+  {
+    "name": "Dancing In the Dark",
+    "artist": "Bruce Springsteen"
+  },
+  {
+    "name": "I'm Gonna Be (500 Miles)",
+    "artist": "The Proclaimers"
+  },
+  {
+    "name": "Another Brick in the Wall, Pt. 2",
+    "artist": "Pink Floyd"
+  },
+  {
+    "name": "Comfortably Numb",
+    "artist": "Pink Floyd"
+  },
+  {
+    "name": "Purple Haze",
+    "artist": "Jimi Hendrix"
+  },
+  {
+    "name": "Little Wing",
+    "artist": "Jimi Hendrix"
+  },
+  {
+    "name": "Our House",
+    "artist": "Madness"
+  },
+  {
+    "name": "Brandy (You're a Fine Girl)",
+    "artist": "Looking Glass"
+  },
+  {
+    "name": "All About U (ft. Nate Dogg, Snoop Dogg, Fatal, Yani Hadati)",
+    "artist": "2Pac, Yaki Kadafi, Snoop Dogg, Nate Dogg, Fatal"
+  },
+  {
+    "name": "What I Got",
+    "artist": "Sublime"
+  },
+  {
+    "name": "Gin and Juice",
+    "artist": "Snoop Dogg"
+  },
+  {
+    "name": "Kids",
+    "artist": "MGMT"
+  },
+  {
+    "name": "Go Your Own Way - 2004 Remaster",
+    "artist": "Fleetwood Mac"
+  },
+  {
+    "name": "Gangsta's Paradise",
+    "artist": "Coolio, L.V."
+  },
+  {
+    "name": "Banana Pancakes",
+    "artist": "Jack Johnson"
+  },
+  {
+    "name": "Human",
+    "artist": "Rag'n'Bone Man"
+  },
+  {
+    "name": "Hymn for the Weekend",
+    "artist": "Coldplay"
+  },
+  {
+    "name": "Drift Away",
+    "artist": "Dobie Gray"
+  },
+  {
+    "name": "Rocket Man (I Think It's Going To Be A Long, Long Time)",
+    "artist": "Elton John"
+  },
+  {
+    "name": "I Want To Break Free - Remastered 2011",
+    "artist": "Queen"
+  },
+  {
+    "name": "Don't Let Me Down",
+    "artist": "The Chainsmokers, Daya"
+  },
+  {
+    "name": "Summertime Sadness (Lana Del Rey Vs. Cedric Gervais) - Cedric Gervais Remix",
+    "artist": "Lana Del Rey, Cedric Gervais"
+  },
+  {
+    "name": "You Make My Dreams (Come True)",
+    "artist": "Daryl Hall & John Oates"
+  },
+  {
+    "name": "The Less I Know The Better",
+    "artist": "Tame Impala"
+  },
+  {
+    "name": "Electric Feel",
+    "artist": "MGMT"
+  },
+  {
+    "name": "Time to Pretend",
+    "artist": "MGMT"
+  },
+  {
+    "name": "You Should Be Dancing",
+    "artist": "Bee Gees"
+  },
+  {
+    "name": "Adventure of a Lifetime",
+    "artist": "Coldplay"
+  },
+  {
+    "name": "Kickstart My Heart",
+    "artist": "Mötley Crüe"
+  },
+  {
+    "name": "Jamming",
+    "artist": "Bob Marley & The Wailers"
+  },
+  {
+    "name": "Sparks",
+    "artist": "Coldplay"
+  },
+  {
+    "name": "Barbra Streisand",
+    "artist": "Duck Sauce, A-Trak, Armand Van Helden"
+  },
+  {
+    "name": "Where Is My Mind?",
+    "artist": "Pixies"
+  },
+  {
+    "name": "The Nights",
+    "artist": "Avicii"
+  },
+  {
+    "name": "Courtesy Of The Red, White And Blue (The Angry American)",
+    "artist": "Toby Keith"
+  },
+  {
+    "name": "Space Song",
+    "artist": "Beach House"
+  },
+  {
+    "name": "Master of Puppets (Remastered)",
+    "artist": "Metallica"
+  },
+  {
+    "name": "Enter Sandman (Remastered)",
+    "artist": "Metallica"
+  },
+  {
+    "name": "Welcome To The Jungle",
+    "artist": "Guns N' Roses"
+  },
+  {
+    "name": "Should I Stay or Should I Go - Remastered",
+    "artist": "The Clash"
+  },
+  {
+    "name": "I Wanna Be Yours",
+    "artist": "Arctic Monkeys"
+  },
+  {
+    "name": "Do I Wanna Know?",
+    "artist": "Arctic Monkeys"
+  },
+  {
+    "name": "Don't You (Forget About Me)",
+    "artist": "Simple Minds"
+  },
+  {
+    "name": "I Still Haven't Found What I'm Looking For",
+    "artist": "U2"
+  },
+  {
+    "name": "With Or Without You",
+    "artist": "U2"
+  },
+  {
+    "name": "Get Lucky (Radio Edit) [feat. Pharrell Williams and Nile Rodgers]",
+    "artist": "Pharrell Williams, Nile Rodgers, Thomas Bangalter, Guy-Manuel de Homem-Christo, Daft Punk"
+  },
+  {
+    "name": "One More Time",
+    "artist": "Daft Punk"
+  },
+  {
+    "name": "Ain't It Fun",
+    "artist": "Paramore"
+  },
+  {
+    "name": "Ride Wit Me",
+    "artist": "Nelly, City Spud"
+  },
+  {
+    "name": "Dirty Little Secret",
+    "artist": "The All-American Rejects"
+  },
+  {
+    "name": "Gives You Hell",
+    "artist": "The All-American Rejects"
+  },
+  {
+    "name": "Come On Eileen",
+    "artist": "Dexys Midnight Runners"
+  },
+  {
+    "name": "As She's Walking Away (feat. Alan Jackson)",
+    "artist": "Zac Brown Band, Alan Jackson"
+  },
+  {
+    "name": "Going Up The Country",
+    "artist": "Canned Heat"
+  },
+  {
+    "name": "(Don't Fear) The Reaper",
+    "artist": "Blue Öyster Cult"
+  },
+  {
+    "name": "Right Down the Line",
+    "artist": "Gerry Rafferty"
+  },
+  {
+    "name": "Who Can It Be Now?",
+    "artist": "Men At Work"
+  },
+  {
+    "name": "Party In The U.S.A.",
+    "artist": "Miley Cyrus"
+  },
+  {
+    "name": "Semi-Charmed Life",
+    "artist": "Third Eye Blind"
+  },
+  {
+    "name": "Lovely Day",
+    "artist": "Bill Withers"
+  },
+  {
+    "name": "Runnin' Down A Dream",
+    "artist": "Tom Petty"
+  },
+  {
+    "name": "Black Hole Sun",
+    "artist": "Soundgarden"
+  },
+  {
+    "name": "Killer Queen - Remastered 2011",
+    "artist": "Queen"
+  },
+  {
+    "name": "Can't Take My Eyes off You",
+    "artist": "Frankie Valli"
+  },
+  {
+    "name": "Chelsea Dagger",
+    "artist": "The Fratellis"
+  },
+  {
+    "name": "Save Tonight",
+    "artist": "Eagle-Eye Cherry"
+  },
+  {
+    "name": "Accidentally In Love - From \"Shrek 2\" Soundtrack",
+    "artist": "Counting Crows"
+  },
+  {
+    "name": "Run Like Hell",
+    "artist": "Pink Floyd"
+  },
+  {
+    "name": "Tiny Dancer",
+    "artist": "Elton John"
+  },
+  {
+    "name": "Candle In The Wind - Remastered 2014",
+    "artist": "Elton John"
+  },
+  {
+    "name": "I Gotta Feeling",
+    "artist": "Black Eyed Peas"
+  },
+  {
+    "name": "Where Is The Love?",
+    "artist": "Black Eyed Peas"
+  },
+  {
+    "name": "Just Can’t Get Enough",
+    "artist": "Black Eyed Peas"
+  },
+  {
+    "name": "Sweet Talkin' Woman",
+    "artist": "Electric Light Orchestra"
+  },
+  {
+    "name": "Walk of Life",
+    "artist": "Dire Straits"
+  },
+  {
+    "name": "Another One Bites The Dust - Remastered 2011",
+    "artist": "Queen"
+  },
+  {
+    "name": "Murder On The Dancefloor",
+    "artist": "Sophie Ellis-Bextor"
+  },
+  {
+    "name": "Somewhere Only We Know",
+    "artist": "Keane"
+  },
+  {
+    "name": "We Are The Champions - Remastered 2011",
+    "artist": "Queen"
+  },
+  {
+    "name": "Pump It",
+    "artist": "Black Eyed Peas"
+  },
+  {
+    "name": "Without Me",
+    "artist": "Eminem"
+  },
+  {
+    "name": "The Real Slim Shady",
+    "artist": "Eminem"
+  },
+  {
+    "name": "Rock'n Me",
+    "artist": "Steve Miller Band"
+  },
+  {
+    "name": "The Joker",
+    "artist": "Steve Miller Band"
+  },
+  {
+    "name": "Abracadabra",
+    "artist": "Steve Miller Band"
+  },
+  {
+    "name": "Yellow",
+    "artist": "Coldplay"
+  },
+  {
+    "name": "The Scientist",
+    "artist": "Coldplay"
+  },
+  {
+    "name": "CALIFORNIA (the OC theme)",
+    "artist": "Phantom Planet"
+  },
+  {
+    "name": "505",
+    "artist": "Arctic Monkeys"
+  },
+  {
+    "name": "Put Your Records On",
+    "artist": "Corinne Bailey Rae"
+  },
+  {
+    "name": "She's Always a Woman",
+    "artist": "Billy Joel"
+  },
+  {
+    "name": "Rich Girl",
+    "artist": "Daryl Hall & John Oates"
+  },
+  {
+    "name": "Linger",
+    "artist": "The Cranberries"
+  },
+  {
+    "name": "Two Princes",
+    "artist": "Spin Doctors"
+  },
+  {
+    "name": "Starman - 2012 Remaster",
+    "artist": "David Bowie"
+  },
+  {
+    "name": "We Are Young (feat. Janelle Monáe)",
+    "artist": "fun., Janelle Monáe"
+  },
+  {
+    "name": "Have You Ever Seen The Rain",
+    "artist": "Creedence Clearwater Revival"
+  },
+  {
+    "name": "Sharp Dressed Man (2008 Remaster)",
+    "artist": "ZZ Top"
+  },
+  {
+    "name": "Rockstar - 2020 Remaster",
+    "artist": "Nickelback"
+  },
+  {
+    "name": "Animals - 2020 Remaster",
+    "artist": "Nickelback"
+  },
+  {
+    "name": "Shooting Stars",
+    "artist": "Bag Raiders"
+  },
+  {
+    "name": "Freaks",
+    "artist": "Surf Curse"
+  },
+  {
+    "name": "Can't Stop",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "name": "Praise The Lord (Da Shine) (feat. Skepta)",
+    "artist": "A$AP Rocky, Skepta"
+  },
+  {
+    "name": "No Role Modelz",
+    "artist": "J. Cole"
+  },
+  {
+    "name": "Stronger",
+    "artist": "Kanye West"
+  },
+  {
+    "name": "Flashing Lights",
+    "artist": "Kanye West, Dwele"
+  },
+  {
+    "name": "Lucid Dreams",
+    "artist": "Juice WRLD"
+  },
+  {
+    "name": "HUMBLE.",
+    "artist": "Kendrick Lamar"
+  },
+  {
+    "name": "Riptide",
+    "artist": "Vance Joy"
+  },
+  {
+    "name": "XO Tour Llif3",
+    "artist": "Lil Uzi Vert"
+  },
+  {
+    "name": "Ophelia",
+    "artist": "The Lumineers"
+  },
+  {
+    "name": "BUTTERFLY EFFECT",
+    "artist": "Travis Scott"
+  },
+  {
+    "name": "SICKO MODE",
+    "artist": "Travis Scott"
+  },
+  {
+    "name": "Feel So Close - Radio Edit",
+    "artist": "Calvin Harris"
+  },
+  {
+    "name": "Stressed Out",
+    "artist": "Twenty One Pilots"
+  },
+  {
+    "name": "Ride",
+    "artist": "Twenty One Pilots"
+  },
+  {
+    "name": "Budapest",
+    "artist": "George Ezra"
+  },
+  {
+    "name": "In Da Club",
+    "artist": "50 Cent"
+  },
+  {
+    "name": "Crazy",
+    "artist": "Gnarls Barkley"
+  },
+  {
+    "name": "Unwritten",
+    "artist": "Natasha Bedingfield"
+  },
+  {
+    "name": "Starboy",
+    "artist": "The Weeknd, Daft Punk"
+  },
+  {
+    "name": "Safe And Sound",
+    "artist": "Capital Cities"
+  },
+  {
+    "name": "Way down We Go",
+    "artist": "KALEO"
+  },
+  {
+    "name": "Payphone",
+    "artist": "Maroon 5, Wiz Khalifa"
+  },
+  {
+    "name": "Panda",
+    "artist": "Desiigner"
+  },
+  {
+    "name": "The Night We Met",
+    "artist": "Lord Huron"
+  },
+  {
+    "name": "Stitches",
+    "artist": "Shawn Mendes"
+  },
+  {
+    "name": "Young Dumb & Broke",
+    "artist": "Khalid"
+  },
+  {
+    "name": "Redbone",
+    "artist": "Childish Gambino"
+  },
+  {
+    "name": "Ric Flair Drip (with Metro Boomin)",
+    "artist": "Offset, Metro Boomin"
+  },
+  {
+    "name": "Stolen Dance",
+    "artist": "Milky Chance"
+  },
+  {
+    "name": "Starships",
+    "artist": "Nicki Minaj"
+  },
+  {
+    "name": "Rather Be (feat. Jess Glynne)",
+    "artist": "Clean Bandit, Jess Glynne"
+  },
+  {
+    "name": "Mo Bamba",
+    "artist": "Sheck Wes"
+  },
+  {
+    "name": "Wild Thoughts (feat. Rihanna & Bryson Tiller)",
+    "artist": "DJ Khaled, Rihanna, Bryson Tiller"
+  },
+  {
+    "name": "Everybody Wants To Rule The World",
+    "artist": "Tears For Fears"
+  },
+  {
+    "name": "Meant to Be (feat. Florida Georgia Line)",
+    "artist": "Bebe Rexha, Florida Georgia Line"
+  },
+  {
+    "name": "Hey Brother",
+    "artist": "Avicii"
+  },
+  {
+    "name": "Hall of Fame (feat. will.i.am)",
+    "artist": "The Script, will.i.am"
+  },
+  {
+    "name": "Here Comes The Sun - Remastered 2009",
+    "artist": "The Beatles"
+  },
+  {
+    "name": "In the End",
+    "artist": "Linkin Park"
+  },
+  {
+    "name": "CAN'T STOP THE FEELING! (from DreamWorks Animation's \"TROLLS\")",
+    "artist": "Justin Timberlake"
+  },
+  {
+    "name": "Glimpse of Us",
+    "artist": "Joji"
+  },
+  {
+    "name": "Breaking Me",
+    "artist": "Topic, A7S"
+  },
+  {
+    "name": "The Reason",
+    "artist": "Hoobastank"
+  },
+  {
+    "name": "Stay With Me",
+    "artist": "Sam Smith"
+  },
+  {
+    "name": "Black Betty",
+    "artist": "Ram Jam"
+  },
+  {
+    "name": "ROXANNE",
+    "artist": "Arizona Zervas"
+  },
+  {
+    "name": "Bitter Sweet Symphony - Remastered 2016",
+    "artist": "The Verve"
+  },
+  {
+    "name": "All The Small Things",
+    "artist": "blink-182"
+  },
+  {
+    "name": "Creep",
+    "artist": "Radiohead"
+  },
+  {
+    "name": "The Hills",
+    "artist": "The Weeknd"
+  },
+  {
+    "name": "Everlong",
+    "artist": "Foo Fighters"
+  },
+  {
+    "name": "Till I Collapse",
+    "artist": "Eminem, Nate Dogg"
+  },
+  {
+    "name": "Father Stretch My Hands Pt. 1",
+    "artist": "Kanye West"
+  },
+  {
+    "name": "7 Years",
+    "artist": "Lukas Graham"
+  },
+  {
+    "name": "a thousand years",
+    "artist": "Christina Perri"
+  },
+  {
+    "name": "Dream On",
+    "artist": "Aerosmith"
+  },
+  {
+    "name": "Set Fire to the Rain",
+    "artist": "Adele"
+  },
+  {
+    "name": "Rolling in the Deep",
+    "artist": "Adele"
+  },
+  {
+    "name": "Hello",
+    "artist": "Adele"
+  },
+  {
+    "name": "Ni**as In Paris",
+    "artist": "JAY-Z, Kanye West"
+  },
+  {
+    "name": "FourFiveSeconds",
+    "artist": "Rihanna, Kanye West, Paul McCartney"
+  },
+  {
+    "name": "goosebumps",
+    "artist": "Travis Scott"
+  },
+  {
+    "name": "Chasing Pavements",
+    "artist": "Adele"
+  },
+  {
+    "name": "I Love Rock 'N Roll",
+    "artist": "Joan Jett & the Blackhearts"
+  },
+  {
+    "name": "Summertime Sadness",
+    "artist": "Lana Del Rey"
+  },
+  {
+    "name": "How You Remind Me",
+    "artist": "Nickelback"
+  },
+  {
+    "name": "Locked out of Heaven",
+    "artist": "Bruno Mars"
+  },
+  {
+    "name": "Night Changes",
+    "artist": "One Direction"
+  },
+  {
+    "name": "White Iverson",
+    "artist": "Post Malone"
+  },
+  {
+    "name": "Heathens",
+    "artist": "Twenty One Pilots"
+  },
+  {
+    "name": "Basket Case",
+    "artist": "Green Day"
+  },
+  {
+    "name": "American Idiot",
+    "artist": "Green Day"
+  },
+  {
+    "name": "For Whom The Bell Tolls (Remastered)",
+    "artist": "Metallica"
+  },
+  {
+    "name": "Bennie And The Jets - Remastered 2014",
+    "artist": "Elton John"
+  },
+  {
+    "name": "Good Riddance (Time of Your Life)",
+    "artist": "Green Day"
+  },
+  {
+    "name": "Vienna",
+    "artist": "Billy Joel"
+  },
+  {
+    "name": "Smooth Criminal - 2012 Remaster",
+    "artist": "Michael Jackson"
+  },
+  {
+    "name": "Boulevard of Broken Dreams",
+    "artist": "Green Day"
+  },
+  {
+    "name": "Wake Me up When September Ends",
+    "artist": "Green Day"
+  },
+  {
+    "name": "Save Your Tears (Remix) (with Ariana Grande) - Bonus Track",
+    "artist": "The Weeknd, Ariana Grande"
+  },
+  {
+    "name": "I Took A Pill In Ibiza - Seeb Remix",
+    "artist": "Mike Posner, Seeb"
+  },
+  {
+    "name": "When I Was Your Man",
+    "artist": "Bruno Mars"
+  },
+  {
+    "name": "Just the Way You Are",
+    "artist": "Bruno Mars"
+  },
+  {
+    "name": "drivers license",
+    "artist": "Olivia Rodrigo"
+  },
+  {
+    "name": "Counting Stars",
+    "artist": "OneRepublic"
+  },
+  {
+    "name": "Happier",
+    "artist": "Marshmello, Bastille"
+  },
+  {
+    "name": "7 rings",
+    "artist": "Ariana Grande"
+  },
+  {
+    "name": "Bang Bang",
+    "artist": "Jessie J, Ariana Grande, Nicki Minaj"
+  },
+  {
+    "name": "One Last Time",
+    "artist": "Ariana Grande"
+  },
+  {
+    "name": "no tears left to cry",
+    "artist": "Ariana Grande"
+  },
+  {
+    "name": "positions",
+    "artist": "Ariana Grande"
+  },
+  {
+    "name": "I Feel It Coming",
+    "artist": "The Weeknd, Daft Punk"
+  },
+  {
+    "name": "Earned It (Fifty Shades Of Grey)",
+    "artist": "The Weeknd"
+  },
+  {
+    "name": "Nothing Else Matters (Remastered)",
+    "artist": "Metallica"
+  },
+  {
+    "name": "Where Are Ü Now (with Justin Bieber)",
+    "artist": "Jack Ü, Skrillex, Diplo, Justin Bieber"
+  },
+  {
+    "name": "What Do You Mean?",
+    "artist": "Justin Bieber"
+  },
+  {
+    "name": "Sorry",
+    "artist": "Justin Bieber"
+  },
+  {
+    "name": "STAY (with Justin Bieber)",
+    "artist": "The Kid LAROI, Justin Bieber"
+  },
+  {
+    "name": "I'm the One (feat. Justin Bieber, Quavo, Chance the Rapper & Lil Wayne)",
+    "artist": "DJ Khaled, Justin Bieber, Quavo, Chance the Rapper, Lil Wayne"
+  },
+  {
+    "name": "1-800-273-8255",
+    "artist": "Logic, Alessia Cara, Khalid"
+  },
+  {
+    "name": "Ho Hey",
+    "artist": "The Lumineers"
+  },
+  {
+    "name": "Time of Our Lives",
+    "artist": "Pitbull, Ne-Yo"
+  },
+  {
+    "name": "Me, Myself & I",
+    "artist": "G-Eazy, Bebe Rexha"
+  },
+  {
+    "name": "I Fall Apart",
+    "artist": "Post Malone"
+  },
+  {
+    "name": "Falling Down - Bonus Track",
+    "artist": "Lil Peep, XXXTENTACION"
+  },
+  {
+    "name": "Bad Habit",
+    "artist": "Steve Lacy"
+  },
+  {
+    "name": "Bank Account",
+    "artist": "21 Savage"
+  },
+  {
+    "name": "Am I Wrong",
+    "artist": "Nico & Vinz"
+  },
+  {
+    "name": "Can't Hold Us (feat. Ray Dalton)",
+    "artist": "Macklemore, Ryan Lewis, Macklemore & Ryan Lewis, Ray Dalton"
+  },
+  {
+    "name": "Lemonade (feat. NAV)",
+    "artist": "Internet Money, Gunna, Don Toliver, NAV"
+  },
+  {
+    "name": "Umbrella",
+    "artist": "Rihanna, JAY-Z"
+  },
+  {
+    "name": "Under the Bridge",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "name": "Midnight City",
+    "artist": "M83"
+  },
+  {
+    "name": "Otherside",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "name": "Snow (Hey Oh)",
+    "artist": "Red Hot Chili Peppers"
+  },
+  {
+    "name": "Slide (feat. Frank Ocean & Migos)",
+    "artist": "Calvin Harris, Frank Ocean, Migos"
+  },
+  {
+    "name": "rockstar",
+    "artist": "Post Malone, 21 Savage"
+  },
+  {
+    "name": "Don't Start Now",
+    "artist": "Dua Lipa"
+  },
+  {
+    "name": "All of Me",
+    "artist": "John Legend"
+  },
+  {
+    "name": "Perfect",
+    "artist": "Ed Sheeran"
+  },
+  {
+    "name": "Dance Monkey",
+    "artist": "Tones And I"
+  },
+  {
+    "name": "Intentions (feat. Quavo)",
+    "artist": "Justin Bieber, Quavo"
+  },
+  {
+    "name": "Rap God",
+    "artist": "Eminem"
+  },
+  {
+    "name": "Kiss Me More (feat. SZA)",
+    "artist": "Doja Cat, SZA"
+  },
+  {
+    "name": "It Wasn't Me",
+    "artist": "Shaggy, Rik Rok"
+  },
+  {
+    "name": "Cake By The Ocean",
+    "artist": "DNCE"
+  },
+  {
+    "name": "Despacito - Remix",
+    "artist": "Luis Fonsi, Daddy Yankee, Justin Bieber"
+  },
+  {
+    "name": "Stuck with U (with Justin Bieber)",
+    "artist": "Ariana Grande, Justin Bieber"
+  },
+  {
+    "name": "The Stroke",
+    "artist": "Billy Squier"
+  },
+  {
+    "name": "Under Pressure",
+    "artist": "Queen, David Bowie"
+  },
+  {
+    "name": "Space Oddity - 2015 Remaster",
+    "artist": "David Bowie"
+  },
+  {
+    "name": "Mammas Don't Let Your Babies Grow up to Be Cowboys",
+    "artist": "Waylon Jennings, Willie Nelson"
+  },
+  {
+    "name": "Highwayman",
+    "artist": "The Highwaymen, Willie Nelson, Johnny Cash, Waylon Jennings, Kris Kristofferson"
+  },
+  {
+    "name": "On the Road Again",
+    "artist": "Willie Nelson"
+  },
+  {
+    "name": "Misery Business",
+    "artist": "Paramore"
+  },
+  {
+    "name": "Still into You",
+    "artist": "Paramore"
+  },
+  {
+    "name": "Ride The Lightning (Remastered)",
+    "artist": "Metallica"
+  },
+  {
+    "name": "All The Stars (with SZA)",
+    "artist": "Kendrick Lamar, SZA"
+  },
+  {
+    "name": "Money Trees",
+    "artist": "Kendrick Lamar, Jay Rock"
+  },
+  {
+    "name": "One Dance",
+    "artist": "Drake, Wizkid, Kyla"
+  },
+  {
+    "name": "God's Plan",
+    "artist": "Drake"
+  },
+  {
+    "name": "We Found Love",
+    "artist": "Rihanna, Calvin Harris"
+  },
+  {
+    "name": "Love On The Brain",
+    "artist": "Rihanna"
+  },
+  {
+    "name": "Ain't No Sunshine",
+    "artist": "Bill Withers"
+  },
+  {
+    "name": "Take Me to Church",
+    "artist": "Hozier"
+  },
+  {
+    "name": "Sex on Fire",
+    "artist": "Kings of Leon"
+  },
+  {
+    "name": "Use Somebody",
+    "artist": "Kings of Leon"
+  },
+  {
+    "name": "Pennies From Heaven",
+    "artist": "Louis Prima, Sam Butera & The Witnesses"
+  },
+  {
+    "name": "Story of My Life",
+    "artist": "One Direction"
+  },
+  {
+    "name": "The Boys Are Back In Town",
+    "artist": "Thin Lizzy"
+  },
+  {
+    "name": "Drop It Like It's Hot",
+    "artist": "Snoop Dogg, Pharrell Williams"
+  },
+  {
+    "name": "Young, Wild & Free (feat. Bruno Mars)",
+    "artist": "Snoop Dogg, Wiz Khalifa, Bruno Mars"
+  },
+  {
+    "name": "Just the Two of Us (feat. Bill Withers)",
+    "artist": "Grover Washington, Jr., Bill Withers"
+  },
+  {
+    "name": "No One",
+    "artist": "Alicia Keys"
+  },
+  {
+    "name": "Hold On, I'm Comin'",
+    "artist": "Sam & Dave"
+  },
+  {
+    "name": "Boogie Wonderland",
+    "artist": "Earth, Wind & Fire, The Emotions"
+  },
+  {
+    "name": "September",
+    "artist": "Earth, Wind & Fire"
+  },
+  {
+    "name": "Let's Groove",
+    "artist": "Earth, Wind & Fire"
+  },
+  {
+    "name": "Yesterday - Remastered 2009",
+    "artist": "The Beatles"
+  },
+  {
+    "name": "Why'd You Only Call Me When You're High?",
+    "artist": "Arctic Monkeys"
+  },
+  {
+    "name": "Side To Side",
+    "artist": "Ariana Grande, Nicki Minaj"
+  },
+  {
+    "name": "Dangerous Woman",
+    "artist": "Ariana Grande"
+  },
+  {
+    "name": "Fade Into You",
+    "artist": "Mazzy Star"
+  },
+  {
+    "name": "Don't Speak",
+    "artist": "No Doubt"
+  },
+  {
+    "name": "we can't be friends (wait for your love)",
+    "artist": "Ariana Grande"
+  },
+  {
+    "name": "I Don't Want To Miss A Thing - From \"Armageddon\" Soundtrack",
+    "artist": "Aerosmith"
+  },
+  {
+    "name": "Just Dance",
+    "artist": "Lady Gaga, Colby O'Donis"
+  },
+  {
+    "name": "Bad Romance",
+    "artist": "Lady Gaga"
+  },
+  {
+    "name": "You Really Got Me",
+    "artist": "The Kinks"
+  },
+  {
+    "name": "Hold the Line",
+    "artist": "TOTO"
+  },
+  {
+    "name": "So What",
+    "artist": "P!nk"
+  },
+  {
+    "name": "Try",
+    "artist": "P!nk"
+  },
+  {
+    "name": "Wet Dreamz",
+    "artist": "J. Cole"
+  },
+  {
+    "name": "Lost",
+    "artist": "Frank Ocean"
+  },
+  {
+    "name": "Demons",
+    "artist": "Imagine Dragons"
+  },
+  {
+    "name": "Photograph",
+    "artist": "Ed Sheeran"
+  },
+  {
+    "name": "Something Just Like This",
+    "artist": "The Chainsmokers, Coldplay"
+  },
+  {
+    "name": "The Night We Met",
+    "artist": "Lord Huron"
+  },
+  {
+    "name": "good 4 u",
+    "artist": "Olivia Rodrigo"
+  },
+  {
+    "name": "Material Girl",
+    "artist": "Madonna"
+  },
+  {
+    "name": "The Passenger",
+    "artist": "Iggy Pop"
+  }
+]

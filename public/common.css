@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap');
+
+
+
+:root {
+    --max-content-width: 700px;
+
+    --primary: #0092db;
+    /* Main accent color */
+    --secondary: #005f99;
+    /* Slightly darker accent */
+    --secondary-dark: #034f7f;
+
+    --background: #121212;
+    /* Main background */
+    --surface: #1a1a1a;
+    /* Cards, modals, elevated surfaces */
+    --popup: #222222;
+    /* General popups */
+    --popup-highlight: #333333;
+    /* Popups that need to stand out */
+    --popup-alert: #ff4444;
+    /* A really strong attention grabber */
+
+    --text-primary: #e0e0e0;
+    /* Main text */
+    --text-secondary: #a0a0a0;
+    /* Slightly dimmed text */
+    --text-muted: #707070;
+    /* Low emphasis text */
+
+    --border: #2e2e2e;
+    /* Standard border */
+    --button-bg: #0088cc;
+    /* Button background */
+    --button-hover: #0077b3;
+    --button-active: #00689c;
+    /* Button hover */
+    --button-text: #ffffff;
+    /* Button text */
+
+}
+
+
+* {
+    font-family: 'Exo 2', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--background);
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+
+
+button {
+    /* dark colors */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    padding: 13px 27px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: var(--button-bg);
+    transition: background 300ms ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+button:active,
+button:focus {
+    background-color: var(--button-active);
+    outline: 1px solid white;
+}
+
+
+input {
+    background-color: var(--surface);
+    border: none;
+    color: white;
+    padding: 13px 20px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    margin: 4px 2px;
+    cursor: text;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+}
+
+input:focus {
+    outline: none;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-secondary);
+    margin-block: 1rem;
+}
+
+.tall-divider {
+    width: 1px;
+    height: 100%;
+    min-height: 10rem;
+    max-height: 15rem;
+    margin-inline: 1rem;
+    background-color: var(--text-secondary);
+}
+
+label {
+    width: 100%;
+    display: flex;
+
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+
+    input {
+        flex: 1
+    }
+}
+
+.title {
+    font-family: "Audiowide", sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+
+.page {
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}

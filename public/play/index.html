@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Guesser</title>
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="page">
+        <div class="sidebar players">
+            <h2>Players</h2>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=1234" alt="Avatar">
+                <p>James</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=124" alt="Avatar">
+                <p>AllAboutThat</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=14" alt="Avatar">
+                <p>BaddiesPoseFor</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=4" alt="Avatar">
+                <p>JJ</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=4" alt="Avatar">
+                <p>Richard</p>
+            </div>
+        </div>
+        <div class="main">
+
+            <div>
+                <h1 class="title">Beatline Duels</h1>
+                <div class="guessLines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="timeline">
+                    <div class="progress">
+                        <div class="bar"></div>
+                        <div class="markers">
+                        </div>
+                    </div>
+                    <!-- import a well known play button svg below inside playBtn -->
+                    <button id="playBtn" class="styled">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="inputs">
+                    <div id="searchPopup" class="hidden">
+                    </div>
+                    <input type="text" id="searchInput" autocomplete="off" placeholder="Enter a song name">
+                    <button id="guessBtn" class="guessSkip">Skip</button>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar logs">
+            <h2>Round 1</h2>
+        </div>
+    </div>
+
+    <dialog id="loadingPopup">
+        <div id="loadingContent">
+            <div class="wave">
+                <div class="waveline"></div>
+                <div class="waveline"></div>
+                <div class="waveline"></div>
+                <div class="waveline"></div>
+                <div class="waveline"></div>
+                <div class="waveline"></div>
+                <div class="waveline"></div>
+            </div>
+            <p>Loading...</p>
+        </div>
+    </dialog>
+    <script src="script.js"></script>
+</body>
+
+</html>

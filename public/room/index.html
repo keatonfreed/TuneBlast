@@ -13,14 +13,37 @@
 
 <body>
     <div class="page">
-        <a href="../" id="backBtn"><svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round"
-                stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="m13.789 7.155c.141-.108.3-.157.456-.157.389 0 .755.306.755.749v8.501c0 .445-.367.75-.755.75-.157 0-.316-.05-.457-.159-1.554-1.203-4.199-3.252-5.498-4.258-.184-.142-.29-.36-.29-.592 0-.23.107-.449.291-.591zm-.289 7.563v-5.446l-3.522 2.719z"
-                    fill-rule="nonzero" />
-            </svg> Back</a>
+        <div class="sidebar players">
+            <h2>Players</h2>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=1234" alt="Avatar">
+                <p>James</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=124" alt="Avatar">
+                <p>AllAboutThat</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=14" alt="Avatar">
+                <p>BaddiesPoseFor</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=4" alt="Avatar">
+                <p>JJ</p>
+            </div>
+            <div class="playerAvatar">
+                <img src="https://api.dicebear.com/9.x/rings/svg?seed=4" alt="Avatar">
+                <p>Richard</p>
+            </div>
+        </div>
         <div class="main">
-
+            <a href="../" id="backBtn" class="backBtnInside"><svg clip-rule="evenodd" fill-rule="evenodd"
+                    stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m13.789 7.155c.141-.108.3-.157.456-.157.389 0 .755.306.755.749v8.501c0 .445-.367.75-.755.75-.157 0-.316-.05-.457-.159-1.554-1.203-4.199-3.252-5.498-4.258-.184-.142-.29-.36-.29-.592 0-.23.107-.449.291-.591zm-.289 7.563v-5.446l-3.522 2.719z"
+                        fill-rule="nonzero" />
+                </svg> Back</a>
             <div>
                 <h1 class="title">TuneBlast Duels</h1>
                 <div class="guessLines">
@@ -54,6 +77,9 @@
                     <button id="guessBtn" class="guessSkip">Skip</button>
                 </div>
             </div>
+        </div>
+        <div class="sidebar logs">
+            <h2>Round 1</h2>
         </div>
     </div>
 

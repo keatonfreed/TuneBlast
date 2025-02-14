@@ -52,6 +52,7 @@ function normalizeTrackName(track, lookGood) {
         track = track.split("-")[0]
         track = track.replace(/\s/g, '')
         track = track.replace(/\([^)]*\)/g, '')
+        track = track.replace(/\[[^\]]*\]/g, '')
         track = track.replace(/[^a-zA-Z0-9]/g, '')
         track = track.toLowerCase()
         // also remove anything after a dash

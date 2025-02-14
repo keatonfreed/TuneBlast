@@ -2,16 +2,95 @@
     display: flex;
     width: 100%;
     height: 100vh;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0;
     gap: 5px;
 }
 
+.page .sidebar {
+    width: 180px;
+    background-color: var(--popup);
+    margin-block: 0.5rem;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.page .players {
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+
+    .playerAvatar {
+        width: 110px;
+        height: 110px;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            border: 5px solid var(--border);
+            border-radius: 50%;
+            filter: contrast(1.3);
+            /* stop drag */
+            user-drag: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        p {
+            background-color: var(--popup-highlight);
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 1.1 rem;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            translate: -50%;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .page .sidebar {
+        width: 120px;
+
+        .playerAvatar {
+            max-width: 90px;
+            max-height: 90px;
+
+
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-height: 800px) {
+
+    /* make avatars smaller */
+    .page .players .playerAvatar {
+        width: 95px;
+        height: 95px;
+    }
+
+}
 
 .page .main {
     flex: 1;
     max-width: var(--max-content-width);
     padding: 1rem;
+    position: relative;
+
 }
 
 

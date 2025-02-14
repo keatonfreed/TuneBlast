@@ -125,4 +125,13 @@
             justify-content: center;
         }
     }
+
+    #joinError {
+        display: none;
+        background-color: red;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+    }
 }

@@ -2,10 +2,12 @@ import fetch from "node-fetch";
 import fs from "fs";
 import { exec } from "child_process";
 import express from "express";
+import env from "dotenv";
+env.config();
 
 // App Setup
 const app = express();
-const PORT = 3050;
+const PORT = process.env.PORT || 3050;
 
 // Middleware
 app.use(express.static("public"));

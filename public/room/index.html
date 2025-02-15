@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuneblast</title>
+    <title>TuneBlast</title>
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="style.css">
@@ -15,25 +15,8 @@
     <div class="page">
         <div class="sidebar players">
             <h2>Players</h2>
-            <div class="playerAvatar">
-                <img src="https://api.dicebear.com/9.x/rings/svg?seed=1234" alt="Avatar">
-                <p>James</p>
-            </div>
-            <div class="playerAvatar">
-                <img src="https://api.dicebear.com/9.x/rings/svg?seed=124" alt="Avatar">
-                <p>AllAboutThat</p>
-            </div>
-            <div class="playerAvatar">
-                <img src="https://api.dicebear.com/9.x/rings/svg?seed=14" alt="Avatar">
-                <p>BaddiesPoseFor</p>
-            </div>
-            <div class="playerAvatar">
-                <img src="https://api.dicebear.com/9.x/rings/svg?seed=4" alt="Avatar">
-                <p>JJ</p>
-            </div>
-            <div class="playerAvatar">
-                <img src="https://api.dicebear.com/9.x/rings/svg?seed=4" alt="Avatar">
-                <p>Richard</p>
+            <div id="playerList">
+
             </div>
         </div>
         <div class="main">
@@ -95,6 +78,14 @@
                 <div class="waveline"></div>
             </div>
             <p>Loading...</p>
+        </div>
+    </dialog>
+
+    <dialog id="roomError">
+        <div id="roomErrorContent">
+            <h2>Error</h2>
+            <p id="roomErrorText">There was a problem...</p>
+            <a href="../">Home</a>
         </div>
     </dialog>
 

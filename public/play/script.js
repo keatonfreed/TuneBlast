@@ -40,9 +40,9 @@ async function backendFetch(url) {
 async function trySongFetch() {
     let songUrl;
     for (let i = 0; i < 5 && !songUrl; i++) {
-        const { previewUrl, songId: id } = await backendFetch("/api/v1/randomsong").catch(() => { });
-        if (previewUrl) {
-            songUrl = previewUrl;
+        const { songData, songId: id } = await backendFetch("/api/v1/solo/randomsong").catch(() => { });
+        if (songData && songData.previewUrl) {
+            songUrl = songData.previewUrl;
             songId = id;
             globalAudio = new Audio(songUrl);
             globalAudio.onloadeddata = setMarkers;
@@ -193,7 +193,7 @@ guessBtn.onclick = async () => {
         return;
     }
 
-    const response = await backendFetch(`/api/v1/guess/?song=${encodeURIComponent(searchInput.value)}&artist=${searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim()}&id=${songId}`);
+    const response = await backendFetch(`/api/v1/solo/guess/?songName=${encodeURIComponent(searchInput.value)}&songArtist=${searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim()}&songId=${songId}`);
     if (lines[guessIndex]) {
         lines[guessIndex].textContent = searchInput.value;
     }

@@ -36,9 +36,9 @@ async function getPlaylistTracks(accessToken, playlistId) {
 
         const data = await response.json();
         tracks.push(...data.items.map(item => ({
-            name: normalizeTrackName(item.track.name, true),
-            artist: item.track.artists.map(artist => artist.name).join(', '),
-            id: item.track.id
+            songName: normalizeTrackName(item.track.name, true),
+            songArtist: item.track.artists.map(artist => artist.name).join(', '),
+            songId: item.track.id
         })));
 
         nextUrl = data.next; // Handle pagination
@@ -72,7 +72,7 @@ async function main() {
         for (const playlist of playlists) {
             let playlistResults = await getPlaylistTracks(token, playlist);
             playlistResults = playlistResults.filter(track => {
-                return tracks.every(t => normalizeTrackName(t.name) !== normalizeTrackName(track.name));
+                return tracks.every(t => normalizeTrackName(t.songName) !== normalizeTrackName(track.songName));
             });
             tracks.push(...playlistResults);
         }

@@ -5,18 +5,26 @@ const lines = document.querySelectorAll(".line");
 const searchInput = document.getElementById("searchInput");
 const searchPopup = document.getElementById("searchPopup");
 
+const playerListEl = document.getElementById("playerList");
+
 const loadingPopup = document.getElementById("loadingPopup");
 loadingPopup.showModal();
+
+
+const roomCode = window.location.search.slice(1);
+console.log("Room code:", roomCode);
 
 // State Variables
 let globalAudio, songId;
 let playing = false;
 let restartOnNext = false;
+let lastGuessLine;
 let guessIndex = 0;
 const maxTimes = [100, 1000, 2000, 3500, 9000, 35000];
 let lastInputUpdate;
 const suggestionLimit = 5;
 
+let playerList = [];
 
 // Prevent media key controls
 if ("mediaSession" in navigator) {
@@ -36,28 +44,147 @@ async function backendFetch(url) {
     }
 }
 
-// Get Random Song
-async function trySongFetch() {
-    let songUrl;
-    for (let i = 0; i < 5 && !songUrl; i++) {
-        const { previewUrl, songId: id } = await backendFetch("/api/v1/randomsong").catch(() => { });
-        if (previewUrl) {
-            songUrl = previewUrl;
-            songId = id;
-            globalAudio = new Audio(songUrl);
-            globalAudio.onloadeddata = setMarkers;
-            globalAudio.onended = () => stopPlaying(true);
-            updateControls();
-            setTimeout(() => loadingPopup.close(), 1000);
-            requestAnimationFrame(updateControls);
-        }
-    }
-    if (!songUrl) {
-        console.error("Failed to fetch song after 5 attempts.");
-        loadingPopup.close();
+// WebSocket Utility
+async function backendWebsocket(url, body) {
+    try {
+        const ws = new WebSocket(url);
+
+        ws.onerror = (error) => {
+            console.error('WebSocket Error:', error);
+        };
+
+        ws.onclose = (event) => {
+            if (!event.wasClean) {
+                console.warn('WebSocket connection lost. Code:', event.code);
+            }
+        };
+
+        await new Promise((resolve, reject) => {
+            ws.onopen = () => resolve();
+            setTimeout(() => reject(new Error('WebSocket connection timeout')), 5000);
+        });
+
+        return ws;
+    } catch (err) {
+        console.error('WebSocket connection failed:', err);
+        return null;
     }
 }
-trySongFetch();
+
+function getSavedUsername() {
+    return localStorage.getItem("TuneBlast-Username")
+}
+
+let roomSocket;
+let playerId;
+
+async function tryJoinRoom() {
+    if (!roomCode) {
+        console.error("No Room Code")
+        return;
+    }
+
+    if (!getSavedUsername()) {
+        console.error("No Saved Username")
+        return;
+    }
+    roomSocket = await backendWebsocket(`/api/v1/room/${roomCode}`);
+    if (!roomSocket) {
+        console.error("Failed to join room");
+        return;
+    }
+
+    roomSocket.send(JSON.stringify({ event: "player_init", playerName: getSavedUsername() }));
+    roomSocket.onmessage = (event) => {
+        let message
+        try {
+            message = JSON.parse(event.data);
+        } catch (error) {
+            console.error("Failed to parse message:", error);
+            return;
+        }
+        console.log("Message:", message);
+        switch (message.event) {
+            case "room_init":
+                playerId = message.playerId;
+
+                playerList = message.roomPlayers;
+                updatePlayerList();
+
+                songId = message.songId;
+
+                globalAudio = new Audio(message.songData.previewUrl);
+                globalAudio.onloadeddata = setMarkers;
+                globalAudio.onended = () => stopPlaying(true);
+                updateControls();
+                requestAnimationFrame(updateControls);
+
+                setTimeout(() => loadingPopup.close(), 1000);
+                break;
+            case "player_joined":
+                console.log("Player joined:", message.playerName);
+                playerList.push({ playerId: message.playerId, playerName: message.playerName });
+                updatePlayerList();
+                break;
+            case "player_left":
+                console.log("Player left:", message.playerName);
+                playerList = playerList.filter(p => p.playerId !== message.playerId);
+                updatePlayerList();
+                break;
+
+            case "player_status":
+                console.log("Player status:", message.playerId, message.status);
+                if (playerId && message.playerId === playerId) {
+                    if (message.status === "correct") {
+                        if (lastGuessLine) {
+                            lastGuessLine.classList.add("correct");
+                        }
+                    } else if (message.status === "incorrect") {
+                        if (lastGuessLine) {
+                            lastGuessLine.classList.add("incorrect");
+                        }
+                    }
+                }
+                break;
+
+            case "error":
+                document.getElementById("roomError").showModal();
+                document.getElementById("roomErrorText").textContent = message.message;
+                break;
+
+        }
+    }
+
+    roomSocket.onclose = (event) => {
+        console.warn("Room Socket Closed.");
+        if (!event.wasClean) {
+            document.getElementById("roomError").showModal();
+            document.getElementById("roomErrorText").textContent = "Connection Lost.";
+        }
+    }
+
+}
+
+tryJoinRoom();
+
+function updatePlayerList() {
+    playerListEl.innerHTML = ""
+    playerList.forEach(player => {
+        let playerAvatar = document.createElement("div");
+        playerAvatar.className = "playerAvatar";
+        let avatarImg = document.createElement("img");
+        avatarImg.src = `https://api.dicebear.com/9.x/rings/svg?seed=${player.playerName}`;
+        avatarImg.alt = "Avatar";
+        let playerName = document.createElement("p");
+        playerName.textContent = player.playerName;
+        playerAvatar.appendChild(avatarImg);
+        playerAvatar.appendChild(playerName);
+        playerListEl.appendChild(playerAvatar);
+    });
+    if (playerList.length === 0) {
+        playerListEl.innerHTML = "<p>No players in room.</p>"
+    }
+}
 
 // Progress Bar & Markers
 function updateControls() {
@@ -180,36 +307,37 @@ function checkGameOver() {
 // Guess Button
 guessBtn.onclick = async () => {
     if (searchInput.value.trim().length === 0) {
+
+        if (!roomSocket) return;
+        roomSocket.send(JSON.stringify({ event: "update_status", status: "skip" }));
+
         if (lines[guessIndex]) {
             lines[guessIndex].textContent = "Skipped";
-            lines[guessIndex].classList.add("skipped");
+            lines[guessIndex].classList.add("skip");
         }
         guessIndex++;
         checkGameOver();
         restartOnNext = false;
+
+        // globalAudio?.play();
 
         searchInput.value = "";
         searchInput.focus();
         return;
     }
 
-    const response = await backendFetch(`/api/v1/guess/?song=${encodeURIComponent(searchInput.value)}&artist=${searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim()}&id=${songId}`);
+    // const response = await backendFetch(`/api/v1/solo/guess/?songName=${encodeURIComponent(searchInput.value)}&songArtist=${searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim()}&songId=${songId}`);
+    if (!roomSocket) return;
+    roomSocket.send(JSON.stringify({ event: "update_status", songName: searchInput.value.trim().split("-")[0], songArtist: searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim() }));
     if (lines[guessIndex]) {
         lines[guessIndex].textContent = searchInput.value;
     }
-    if (response) {
-        let correct = response.correct;
-        if (correct) {
-            lines[guessIndex].classList.add("correct");
-        } else {
-            lines[guessIndex].classList.add("wrong");
-        }
-    } else {
-        console.error("Failed guess song request.");
-    }
+    lastGuessLine = lines[guessIndex];
+
     guessIndex++;
-    checkGameOver();
+    // checkGameOver();
     restartOnNext = false;
+    // globalAudio?.play();
 
     searchInput.value = "";
     searchInput.focus();

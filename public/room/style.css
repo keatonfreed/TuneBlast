@@ -12,7 +12,7 @@
     background-color: var(--popup);
     margin-block: 0.5rem;
     gap: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 20px 0 0 20px;
     display: flex;
     flex-direction: column;
@@ -25,14 +25,51 @@
     display: flex;
     flex-direction: column;
 
+    #playerList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        gap: 2rem;
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        overflow-y: auto;
+        padding-inline: 1rem;
+        overflow: visible;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border) var(--popup);
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--popup);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--border);
+            border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(--border);
+        }
+
+
+    }
+
     .playerAvatar {
-        width: 110px;
-        height: 110px;
+        width: 100%;
+        aspect-ratio: 1;
+        /* height: 110px; */
         position: relative;
 
         img {
             width: 100%;
             height: 100%;
+            aspect-ratio: 1;
             background-color: black;
             border: 5px solid var(--border);
             border-radius: 50%;
@@ -58,13 +95,25 @@
     }
 }
 
+@media screen and (max-height: 800px) {
+
+    /* make avatars smaller */
+    .page .players #playerList {
+        padding-inline: 1.8rem;
+    }
+
+}
+
 @media (max-width: 1000px) {
     .page .sidebar {
         width: 120px;
 
+        #playerList {
+            padding-inline: 0.3rem;
+        }
+
         .playerAvatar {
-            max-width: 90px;
-            max-height: 90px;
+
 
 
             p {
@@ -75,15 +124,7 @@
 
 }
 
-@media screen and (max-height: 800px) {
 
-    /* make avatars smaller */
-    .page .players .playerAvatar {
-        width: 95px;
-        height: 95px;
-    }
-
-}
 
 .page .main {
     flex: 1;
@@ -119,11 +160,11 @@
         filter: sepia(2) hue-rotate(62deg) saturate(2);
     }
 
-    &.wrong {
+    &.incorrect {
         filter: sepia(2) hue-rotate(292deg) saturate(2);
     }
 
-    &.skipped {
+    &.skip {
         filter: brightness(2);
     }
 }
@@ -262,5 +303,61 @@
 
 
 
+    }
+}
+
+#roomError[open] {
+    display: flex;
+}
+
+#roomError {
+    display: none;
+    z-index: 150;
+    pointer-events: all;
+    position: fixed;
+    inset: 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    margin: auto;
+
+    #roomErrorContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        width: 350px;
+        height: 250px;
+        background-color: rgb(226, 63, 63);
+        font-weight: bold;
+        border-radius: 35px
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: rgb(200, 200, 200);
+        margin-bottom: 30px;
+    }
+
+    a {
+        padding: 15px 30px;
+        font-size: 1.7rem;
+        background-color: var(--primary);
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    &::backdrop {
+        background-color: rgb(0, 0, 0, 0.3);
+        backdrop-filter: blur(5px);
     }
 }

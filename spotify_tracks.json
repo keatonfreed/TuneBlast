@@ -2710,6 +2710,26 @@
     "songId": "15BQ7vEDv2LJuh8TxWIhtd"
   },
   {
+    "songName": "Sweet Emotion",
+    "songArtist": "Aerosmith",
+    "songId": "73TxYZd0lBCVRrHawrAglA"
+  },
+  {
+    "songName": "Dancing On My Own",
+    "songArtist": "Calum Scott",
+    "songId": "2BOqDYLOJBiMOXShCV1neZ"
+  },
+  {
+    "songName": "You Are The Reason",
+    "songArtist": "Calum Scott",
+    "songId": "69vToJ9BMbbLlFZo7k7A7B"
+  },
+  {
+    "songName": "Where Are You Now",
+    "songArtist": "Lost Frequencies, Calum Scott",
+    "songId": "3mfER4ORePHvN35cbZ3dkV"
+  },
+  {
     "songName": "Careless Whisper",
     "songArtist": "George Michael",
     "songId": "5WDLRQ3VCdVrKw0njWe5E5"
@@ -2958,5 +2978,60 @@
     "songName": "tv off (feat. lefty gunplay)",
     "songArtist": "Kendrick Lamar, Lefty Gunplay",
     "songId": "0aB0v4027ukVziUGwVGYpG"
+  },
+  {
+    "songName": "Alexander Hamilton",
+    "songArtist": "Leslie Odom Jr., Daveed Diggs, Okieriete Onaodowan, Lin-Manuel Miranda, Phillipa Soo, Christopher Jackson, Original Broadway Cast of Hamilton, Anthony Ramos",
+    "songId": "4TTV7EcfroSLWzXRY6gLv6"
+  },
+  {
+    "songName": "HOT TO GO!",
+    "songArtist": "Chappell Roan",
+    "songId": "4xdBrk0nFZaP54vvZj0yx7"
+  },
+  {
+    "songName": "Austin (Boots Stop Workin')",
+    "songArtist": "Dasha",
+    "songId": "2uqYupMHANxnwgeiXTZXzd"
+  },
+  {
+    "songName": "Believer",
+    "songArtist": "Imagine Dragons",
+    "songId": "0pqnGHJpmpxLKifKRmU6WP"
+  },
+  {
+    "songName": "Natural",
+    "songArtist": "Imagine Dragons",
+    "songId": "2FY7b99s15jUprqC0M5NCT"
+  },
+  {
+    "songName": "Thunder",
+    "songArtist": "Imagine Dragons",
+    "songId": "1zB4vmk8tFRmM9UULNzbLB"
+  },
+  {
+    "songName": "Thinking out Loud",
+    "songArtist": "Ed Sheeran",
+    "songId": "34gCuhDGsG4bRPIf9bb02f"
+  },
+  {
+    "songName": "Shape of You",
+    "songArtist": "Ed Sheeran",
+    "songId": "7qiZfU4dY1lWllzX7mPBI3"
+  },
+  {
+    "songName": "Love Story",
+    "songArtist": "Taylor Swift",
+    "songId": "1vrd6UOGamcKNGnSHJQlSt"
+  },
+  {
+    "songName": "You Belong With Me",
+    "songArtist": "Taylor Swift",
+    "songId": "3GCL1PydwsLodcpv0Ll1ch"
+  },
+  {
+    "songName": "Shake It Off",
+    "songArtist": "Taylor Swift",
+    "songId": "5xTtaWoae3wi06K5WfVUUH"
   }
 ]

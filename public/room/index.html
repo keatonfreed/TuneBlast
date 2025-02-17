@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -18,6 +17,7 @@
             <div id="playerList">
 
             </div>
+            <p id="inviteFriends"><span class="tooltip">Copied Link!</span>Invite Friends</p>
         </div>
         <div class="main">
             <a href="../" id="backBtn" class="backBtnInside"><svg clip-rule="evenodd" fill-rule="evenodd"
@@ -41,9 +41,11 @@
             <div class="controls">
                 <div class="timeline">
                     <div class="progress">
-                        <div class="bar"></div>
-                        <div class="markers">
+                        <div class="progressLine">
+                            <div class="bar"></div>
+                            <div class="markers"></div>
                         </div>
+                        <span class="indicator">0.1s</span>
                     </div>
                     <!-- import a well known play button svg below inside playBtn -->
                     <button id="playBtn" class="styled">
@@ -62,8 +64,13 @@
             </div>
         </div>
         <div class="sidebar logs">
-            <h2>Round 1</h2>
+            <h2 id="roundDisplay">Round 1</h2>
         </div>
+    </div>
+
+    <div id="overlayVideos">
+        <video class="overlayVideo" src="../playing.mp4" muted autoplay loop></video>
+        <!-- <video class="overlayVideo" src="../overlay1.webm" muted autoplay loop></video> -->
     </div>
 
     <dialog id="loadingPopup">
@@ -86,6 +93,33 @@
             <h2>Error</h2>
             <p id="roomErrorText">There was a problem...</p>
             <a href="../">Home</a>
+        </div>
+    </dialog>
+
+    <dialog id="usernamePopup">
+        <div id="usernamePopupContent">
+            <h2>Enter a username to join room.</h2>
+            <p id="usernameError">Username Invalid</p>
+            <label>Username: <input type="text" id="usernameInput" autocomplete="on"
+                    placeholder="Enter a username (3-15 chars)"></label>
+            <div class="divider"></div>
+            <button id="usernameSubmit">Join</button>
+        </div>
+    </dialog>
+
+    <dialog id="gameOverPopup">
+        <div id="gameOverContent">
+            <h1 id="gameOverMessage">Game Over!</h1>
+            <p id="gameOverSubtitle">You didn't guess in time.</p>
+            <p>Song:</p>
+            <p id="gameOverSong">Loading...</p>
+            <div id="gameOverButtons">
+                <button id="gameOverFind">Find Song</button>
+
+                <button id="gameOverNext">
+                    <p id="gameOverNextCount">0/1</p>Play Next
+                </button>
+            </div>
         </div>
     </dialog>
 

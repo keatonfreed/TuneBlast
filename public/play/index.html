@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -22,7 +21,7 @@
         <div class="main">
 
             <div>
-                <h1 class="title">TuneBlast Duels</h1>
+                <h1 class="title">TuneBlast</h1>
                 <div class="guessLines">
                     <div class="line"></div>
                     <div class="line"></div>
@@ -35,9 +34,11 @@
             <div class="controls">
                 <div class="timeline">
                     <div class="progress">
-                        <div class="bar"></div>
-                        <div class="markers">
+                        <div class="progressLine">
+                            <div class="bar"></div>
+                            <div class="markers"></div>
                         </div>
+                        <span class="indicator">0.1s</span>
                     </div>
                     <!-- import a well known play button svg below inside playBtn -->
                     <button id="playBtn" class="styled">
@@ -69,6 +70,25 @@
                 <div class="waveline"></div>
             </div>
             <p>Loading...</p>
+        </div>
+    </dialog>
+
+    <div id="overlayVideos">
+        <video class="overlayVideo" src="../playing.mp4" muted autoplay loop></video>
+        <!-- <video class="overlayVideo" src="../overlay1.webm" muted autoplay loop></video> -->
+    </div>
+
+    <dialog id="gameOverPopup">
+        <div id="gameOverContent">
+            <h1 id="gameOverMessage">Game Over!</h1>
+            <p id="gameOverSubtitle">You didn't guess in time.</p>
+            <p>Song:</p>
+            <p id="gameOverSong">Loading...</p>
+            <div id="gameOverButtons">
+                <button id="gameOverFind">Find Song</button>
+
+                <button id="gameOverNext">Play Next</button>
+            </div>
         </div>
     </dialog>
 

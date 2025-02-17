@@ -60,7 +60,7 @@ function checkUsername(username) {
 
     const bannedUsernames = ["admin", "host", "server", "moderator", "administator"]
     // check if any part of username is these
-    if (bannedUsernames.some(banned => username.toLowerCase().includes(banned))) {
+    if (bannedUsernames.some(banned => username.toLowerCase().includes(banned)) || ["you", "me"].includes(username.toLowerCase().trim())) {
         joinError.textContent = "Username is not allowed."
         joinError.style.display = "block"
         return false

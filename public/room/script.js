@@ -257,10 +257,18 @@ async function tryJoinRoom() {
                 gameOverPopup.querySelector("#gameOverMessage").textContent = lastCorrect ? "Correct!" : "Game Over!";
                 let correctPlayersList = message.correctPlayers?.filter(p => (p.playerId !== playerId)).map(p => p.playerName);
                 let subtitle = "No one guessed the song.";
-                if (lastCorrect || correctPlayersList.length) {
-                    subtitle = (lastCorrect ? "You" : "") + (lastCorrect && correctPlayersList.length ? ", " : "") + correctPlayersList.join(", ");
-                    subtitle += ` guessed in ${guessIndex + 1} attempts.`;
+                let players = [...correctPlayersList]; // Copy the list
+
+                if (lastCorrect) players.unshift("You"); // Add "You" if lastCorrect
+
+                if (players.length) {
+                    let formattedList = players.length === 1
+                        ? players[0]
+                        : players.slice(0, -1).join(", ") + " and " + players.at(-1);
+
+                    subtitle = `${formattedList} guessed in ${guessIndex + 1} attempts.`;
                 }
+
                 gameOverPopup.querySelector("#gameOverSubtitle").textContent = subtitle;
                 lastCorrect = false;
 

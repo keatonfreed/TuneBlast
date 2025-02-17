@@ -135,3 +135,10 @@
         font-size: 1.2rem;
     }
 }
+
+@media (max-width: 600px) {
+    #joinPopup label {
+        flex-direction: column;
+    }
+
+}

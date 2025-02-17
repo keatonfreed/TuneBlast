@@ -52,6 +52,11 @@ function checkUsername(username) {
         return false
     }
 
+    if (/\s/.test(username)) {
+        joinError.textContent = "Username cannot contain spaces."
+        joinError.style.display = "block"
+        return false
+    }
     if (!/^[a-zA-Z0-9]+$/.test(username)) {
         joinError.textContent = "Username can only contain letters and numbers."
         joinError.style.display = "block"
@@ -110,6 +115,7 @@ async function backendFetch(url) {
 createRoomBtn.onclick = async () => {
     createRoomBtn.disabled = true
     if (!checkUsername(usernameInput.value.trim())) {
+        createRoomBtn.disabled = false
         return
     }
     setSavedUsername(usernameInput.value.trim())

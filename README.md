@@ -8,4 +8,4 @@ Play solo or challenge friends in this interactive music guessing game. Players 
 
 ## Play Now
 
-🎮 [Play Beatline](https://keatonfreed.com/projects)
+🎮 [Play Beatline](https://tuneblast.live)

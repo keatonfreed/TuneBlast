@@ -4,7 +4,7 @@ env.config();
 
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-const playlists = ['6HxB2RkMDwlgCofTaByutM', "1koyIdOfW4lxtr46r7Dwa8", "1hfdy1hTBCWb36GMdB76Kc"];
+const playlists = ['6HxB2RkMDwlgCofTaByutM', "1koyIdOfW4lxtr46r7Dwa8", "1hfdy1hTBCWb36GMdB76Kc", "4IyPv52FkSxwz1i4t9BSmI"];
 
 async function getAccessToken() {
     const authString = `${clientId}:${clientSecret}`;

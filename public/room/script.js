@@ -21,8 +21,10 @@ const overlayVidoes = document.getElementById("overlayVideos");
 const gameOverPopup = document.getElementById("gameOverPopup");
 
 
+const roomCodeEl = document.getElementById("roomCodeEl");
 const roomCode = window.location.search.slice(1);
 console.log("Room code:", roomCode);
+roomCodeEl.textContent = "Room: " + roomCode;
 
 
 // State Variables
@@ -148,6 +150,13 @@ async function tryJoinRoom() {
         switch (message.event) {
             case "room_init":
                 guessIndex = message.roomRound;
+                if (guessIndex > 0) {
+                    for (let i = 0; i < guessIndex; i++) {
+                        lines[i].textContent = "Skipped";
+                        lines[i].classList.add("skip");
+                    }
+                }
+
                 roundDisplay.textContent = `Round ${guessIndex + 1}`;
 
                 playerId = message.playerId;

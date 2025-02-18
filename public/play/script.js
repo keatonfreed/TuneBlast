@@ -313,7 +313,7 @@ guessBtn.onclick = async () => {
         return;
     }
 
-    const response = await backendFetch(`/api/v1/solo/guess/?songName=${encodeURIComponent(searchInput.value)}&songArtist=${searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim()}&songId=${songId}`);
+    const response = await backendFetch(`/api/v1/solo/guess/?songName=${encodeURIComponent(searchInput.value)}&songArtist=${encodeURIComponent(searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim())}&songId=${encodeURIComponent(songId)}`);
     if (lines[guessIndex]) {
         lines[guessIndex].textContent = searchInput.value;
     }

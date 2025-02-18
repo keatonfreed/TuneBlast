@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 3050;
 app.use(express.static("public"));
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
+    res.header("Cache-Control", req.path.startsWith("/api") ? "no-store" : "public, max-age=86400");
+
     next();
 });
 expressWs(app);
@@ -37,11 +39,12 @@ async function getAppleMusicData(songName, artistName) {
     return false;
 }
 
-async function getRandomSong() {
+async function getRandomSong(excludeList = []) {
     try {
         let songData = false;
         while (!songData || !songData.previewUrl) {
             const randomSong = songList[Math.floor(Math.random() * songList.length)];
+            if (excludeList.includes(randomSong.songId)) continue;
             songData = await getAppleMusicData(randomSong.songName, randomSong.songArtist);
             console.log(`Chose: ${randomSong.songName} by ${randomSong.songArtist}`);
             if (songData && songData.previewUrl) {
@@ -205,18 +208,23 @@ let currentRooms = [
                 previewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/c2/80/0c/c2800c2a-0b68-43c9-3701-7cb1ece6ef24/mzaf_9589312089850013533.plus.aac.p.m4a"
             }
         },
+        roomPreviousSongs: [
+            "6AI3ezQ4o3HUoP6Dhudph3",
+        ],
         roomRound: 0,
         roomReadyVotes: 0
     }
 ]
 
 app.get("/api/v1/room/create", async (req, res) => {
+    // console.log("got req:");
     const roomId = randomCode();
+    console.log("Created room:", roomId);
     const randomSong = await getRandomSong().catch(err => {
         console.error(err);
         return res.status(500).send("Failed To Create Room.");
     });
-    currentRooms.push({ roomId, roomPlayers: [], roomCreatedAt: new Date(), roomCurrentSong: randomSong, roomRound: 0 });
+    currentRooms.push({ roomId, roomPlayers: [], roomCreatedAt: new Date(), roomCurrentSong: randomSong, roomPreviousSongs: [], roomRound: 0 });
     res.send({ roomId });
 });
 
@@ -250,10 +258,64 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
         return;
     }
 
-    console.log("Connection started...");
+    // console.log("Connection started...");
 
     let playerId, playerName;
     let playerScore = 0;
+
+    async function endRound() {
+        // All players have guessed or skipped
+        broadcastToRoom(roomId, { event: "round_end" });
+
+        // Check if any players are correct
+        let correctPlayers = room.roomPlayers.filter(p => p.playerStatus === "correct");
+        if (correctPlayers.length > 0) {
+            let correctPoints = Math.round(100 / correctPlayers.length);
+            room.roomPlayers = room.roomPlayers.map(p => {
+                if (p.playerStatus === "correct") {
+                    p.playerScore += correctPoints;
+                    if (p.playerId === playerId) {
+                        playerScore = p.playerScore;
+                    }
+                    broadcastToRoom(roomId, { event: "player_status", playerId: p.playerId, playerScore: p.playerScore });
+                }
+                return p;
+            });
+        }
+
+        room.roomRound++;
+        if (room.roomRound >= 6 || correctPlayers.length > 0) {
+            room.roomRound = 0;
+            // Next Round
+            let songInfo = songList.find(s => s.songId === room.roomCurrentSong.songId);
+            setTimeout(() => {
+                broadcastToRoom(roomId, { event: "game_end", correctPlayers: correctPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName })), songInfo: { songName: songInfo.songName, songArtist: songInfo.songArtist } });
+            }, 200);
+            room.roomReadyVotes = 0;
+
+            room.roomPreviousSongs.push(room.roomCurrentSong.songId);
+            // console.log("Previous songs:", room.roomPreviousSongs);
+            let nextSong = await getRandomSong(room.roomPreviousSongs);
+            if (!nextSong) {
+                broadcastToRoom(roomId, { event: "error", message: "Failed to get next song." });
+                return;
+            }
+            room.roomCurrentSong = nextSong;
+            room.roomPlayers = room.roomPlayers.map(p => {
+                p.playerStatus = null;
+                return p;
+            });
+
+        } else {
+            setTimeout(() => {
+                room.roomPlayers = room.roomPlayers.map(p => {
+                    p.playerStatus = null;
+                    return p;
+                });
+                broadcastToRoom(roomId, { event: "round_start", roomRound: room.roomRound, songData: room.roomCurrentSong.songData });
+            }, 500);
+        }
+    }
 
     ws.on("message", async (msg) => {
         // Event Handling
@@ -321,55 +383,8 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                     }
                 }
                 if (room.roomPlayers.every(p => p.playerStatus != null)) {
-                    // All players have guessed or skipped
-                    broadcastToRoom(roomId, { event: "round_end" });
-
-                    // Check if any players are correct
-                    let correctPlayers = room.roomPlayers.filter(p => p.playerStatus === "correct");
-                    if (correctPlayers.length > 0) {
-                        let correctPoints = Math.round(100 / correctPlayers.length);
-                        room.roomPlayers = room.roomPlayers.map(p => {
-                            if (p.playerStatus === "correct") {
-                                p.playerScore += correctPoints;
-                                if (p.playerId === playerId) {
-                                    playerScore = p.playerScore;
-                                }
-                                broadcastToRoom(roomId, { event: "player_status", playerId: p.playerId, playerScore: p.playerScore });
-                            }
-                            return p;
-                        });
-                    }
-
-                    room.roomRound++;
-                    if (room.roomRound >= 6 || correctPlayers.length > 0) {
-                        room.roomRound = 0;
-                        // Next Round
-                        let songInfo = songList.find(s => s.songId === room.roomCurrentSong.songId);
-                        setTimeout(() => {
-                            broadcastToRoom(roomId, { event: "game_end", correctPlayers: correctPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName })), songInfo: { songName: songInfo.songName, songArtist: songInfo.songArtist } });
-                        }, 200);
-                        room.roomReadyVotes = 0;
-
-                        let nextSong = await getRandomSong();
-                        if (!nextSong) {
-                            broadcastToRoom(roomId, { event: "error", message: "Failed to get next song." });
-                            return;
-                        }
-                        room.roomCurrentSong = nextSong;
-                        room.roomPlayers = room.roomPlayers.map(p => {
-                            p.playerStatus = null;
-                            return p;
-                        });
-
-                    } else {
-                        setTimeout(() => {
-                            room.roomPlayers = room.roomPlayers.map(p => {
-                                p.playerStatus = null;
-                                return p;
-                            });
-                            broadcastToRoom(roomId, { event: "round_start", roomRound: room.roomRound, songData: room.roomCurrentSong.songData });
-                        }, 500);
-                    }
+                    endRound();
+                    // console.log("All players have guessed or skipped.");
 
                 }
                 break;
@@ -389,19 +404,23 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
     });
 
     ws.on("close", () => {
-        console.log("Connection closed.");
+        // console.log("Connection closed.");
         if (!playerId) return;
         room.roomPlayers = room.roomPlayers.filter(p => p.playerId !== playerId);
         broadcastToRoom(roomId, { event: "player_left", playerId });
 
-        // if (room.roomReadyVotes > 0) {
+        // recheck for all players have status
+        if (room.roomPlayers.every(p => p.playerStatus != null)) {
+            endRound();
+            // console.log("All players have guessed or skipped.");
+        }
+
         if (room.roomReadyVotes > room.roomPlayers.length / 2) {
             room.roomReadyVotes = 0;
             broadcastToRoom(roomId, { event: "game_start", songData: room.roomCurrentSong.songData });
         } else {
             broadcastToRoom(roomId, { event: "ready_votes", roomReadyVotes: room.roomReadyVotes });
         }
-        // }
     });
 
 

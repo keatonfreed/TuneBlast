@@ -59,7 +59,7 @@
         }
     }
 
-    #roomInfo {
+    .roomInfo {
         width: 100%;
         margin-bottom: 10px;
     }
@@ -214,7 +214,7 @@
         min-height: 200px;
         height: 200px;
 
-        #roomInfo {
+        .roomInfo {
             width: fit-content;
             margin-bottom: 0;
         }

@@ -12,6 +12,35 @@ const gameOverPopup = document.getElementById("gameOverPopup");
 
 const overlayVidoes = document.getElementById("overlayVideos");
 
+// get TuneBlast
+
+const volumeSliderEl = document.getElementById("volumeSlider").querySelector("input[type='range']");
+
+let winningVolAnim = false;
+let maxVolume = 0.8;
+function setSavedVolume(volume) {
+    localStorage.setItem("TuneBlast-Volume", volume)
+    maxVolume = volume;
+}
+
+function getSavedVolume() {
+    return localStorage.getItem("TuneBlast-Volume") ?? 80
+}
+
+function updateVolumeSlider() {
+    // globalAudio.volume = Number(maxVolume) / 100;
+    volumeSliderEl.style.setProperty("--progress", maxVolume * 100 + "%");
+    volumeSliderEl.value = maxVolume * 100;
+}
+
+volumeSliderEl.oninput = () => {
+    setSavedVolume(Number(volumeSliderEl.value) / 100);
+    updateVolumeSlider();
+}
+
+maxVolume = getSavedVolume();
+updateVolumeSlider();
+
 // State Variables
 let globalAudio, songId;
 let playing = false;
@@ -82,6 +111,11 @@ function updateControls() {
         guessBtn.classList.add("guessSkip");
         guessBtn.textContent = "Skip";
     }
+
+    if (!winningVolAnim && globalAudio) {
+        globalAudio.volume = maxVolume;
+    }
+
     requestAnimationFrame(updateControls);
 }
 
@@ -182,8 +216,9 @@ async function gameOver(win = false) {
     globalAudio.currentTime = 0;
     globalAudio.play();
     globalAudio.volume = 0;
+    winningVolAnim = true;
     let fadeIn = setInterval(() => {
-        if (globalAudio.volume < 1) {
+        if (globalAudio.volume < maxVolume) {
             globalAudio.volume = Math.min(globalAudio.volume + 0.03, 1);
         } else {
             clearInterval(fadeIn);
@@ -218,19 +253,19 @@ async function gameOver(win = false) {
     });
 
 
+    globalAudio.onended = () => {
+        globalAudio.currentTime = 0;
+        globalAudio.play();
+        globalAudio.volume = 0;
+        let fadeIn = setInterval(() => {
+            if (globalAudio.volume < maxVolume) {
+                globalAudio.volume = Math.min(globalAudio.volume + 0.03, 1);
+            } else {
+                clearInterval(fadeIn);
+            }
+        }, 20);
+    };
     await new Promise(resolve => {
-        globalAudio.onended = async () => {
-            globalAudio.currentTime = 0;
-            globalAudio.play();
-            globalAudio.volume = 0;
-            let fadeIn = setInterval(() => {
-                if (globalAudio.volume < 1) {
-                    globalAudio.volume = Math.min(globalAudio.volume + 0.03, 1);
-                } else {
-                    clearInterval(fadeIn);
-                }
-            }, 20);
-        };
         playAgainBtn.onclick = async () => {
             resolve();
         }
@@ -251,7 +286,7 @@ async function gameOver(win = false) {
     }
 
     await new Promise((resolve) => {
-        globalAudio.volume = 1;
+        globalAudio.volume = maxVolume;
         let fadeOut = setInterval(() => {
             if (globalAudio.volume > 0.01) {
                 globalAudio.volume = Math.max(globalAudio.volume - 0.03, 0);
@@ -262,6 +297,7 @@ async function gameOver(win = false) {
             }
         }, 20);
     });
+    winningVolAnim = false;
 
     guessIndex = 0;
 

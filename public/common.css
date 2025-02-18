@@ -277,23 +277,34 @@ label {
     }
 }
 
-#backBtn {
+#pageControls {
+
     position: fixed;
     top: 0.4rem;
     left: 0.4rem;
     color: white;
     border: none;
-    border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 100;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
 
-    &.backBtnInside {
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    padding-inline: 10px;
+
+    &.controlsInside {
         position: absolute;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
     }
 
     svg {
@@ -302,7 +313,78 @@ label {
         width: 2rem;
         margin-right: -0.2rem;
     }
+
+    svg:last-of-type {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    #volumeSlider {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    input[type="range"] {
+        position: relative;
+        -webkit-appearance: none;
+        cursor: pointer;
+        margin: 0;
+        width: 100px;
+        height: 10px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        /* Prevents background from interfering */
+        outline: none;
+    }
+
+    /* The actual track */
+    input[type="range"]::-webkit-slider-runnable-track {
+        height: 10px;
+        border-radius: 5px;
+        background: var(--popup);
+    }
+
+    /* The thumb (dot) */
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 14px;
+        height: 14px;
+        background: var(--thumb, white);
+        /* Default to white if not set */
+        border-radius: 50%;
+        margin-top: -2px;
+        /* Aligns it with the track */
+        position: relative;
+        z-index: 2;
+    }
+
+    /* The filled progress bar */
+    input[type="range"]::before {
+        content: "";
+        position: absolute;
+        height: 10px;
+        background: linear-gradient(to left, var(--primary), var(--secondary-dark));
+        /* Default highlight color */
+        border-radius: 5px;
+        width: var(--progress, 0%);
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        pointer-events: none;
+        /* Prevent interaction */
+    }
+
+
+    /* Adjust progress dynamically */
+    input[type="range"] {
+        --progress: 80%;
+        /* Default, updated dynamically */
+    }
 }
+
 
 #gameOverPopup[open] {
     display: flex;
@@ -474,7 +556,12 @@ label {
     .line {
         max-height: 50px;
     }
+}
 
+@media screen and (max-width: 550px) {
+    .page .title {
+        padding-top: 1rem;
+    }
 }
 
 .controls {
@@ -495,6 +582,7 @@ label {
 
 .inputs #searchInput {
     flex: 1;
+    min-width: 0;
 }
 
 .inputs:focus-within #searchPopup:not(.hidden) {

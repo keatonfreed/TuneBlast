@@ -27,6 +27,33 @@ console.log("Room code:", roomCode);
 roomCodeEl.textContent = "Room: " + roomCode;
 
 
+const volumeSliderEl = document.getElementById("volumeSlider").querySelector("input[type='range']");
+
+let winningVolAnim = false;
+let maxVolume = 0.8;
+function setSavedVolume(volume) {
+    localStorage.setItem("TuneBlast-Volume", volume)
+    maxVolume = volume;
+}
+
+function getSavedVolume() {
+    return localStorage.getItem("TuneBlast-Volume") ?? 0.8
+}
+
+function updateVolumeSlider() {
+    // globalAudio.volume = Number(maxVolume) / 100;
+    volumeSliderEl.style.setProperty("--progress", maxVolume * 100 + "%");
+    volumeSliderEl.value = maxVolume * 100;
+}
+
+volumeSliderEl.oninput = () => {
+    setSavedVolume(Number(volumeSliderEl.value) / 100);
+    updateVolumeSlider();
+}
+
+maxVolume = getSavedVolume();
+updateVolumeSlider();
+
 // State Variables
 let globalAudio;
 let playing = false;
@@ -252,14 +279,16 @@ async function tryJoinRoom() {
 
                 globalAudio.currentTime = 0;
                 globalAudio.play();
+                winningVolAnim = true;
                 globalAudio.volume = 0;
                 let fadeIn = setInterval(() => {
-                    if (globalAudio.volume < 1) {
+                    if (globalAudio.volume < maxVolume) {
                         globalAudio.volume = Math.min(globalAudio.volume + 0.03, 1);
                     } else {
                         clearInterval(fadeIn);
                     }
                 }, 20);
+
 
                 controlsDisabled = true;
 
@@ -301,7 +330,7 @@ async function tryJoinRoom() {
                     globalAudio.play();
                     globalAudio.volume = 0;
                     let fadeIn = setInterval(() => {
-                        if (globalAudio.volume < 1) {
+                        if (globalAudio.volume < maxVolume) {
                             globalAudio.volume = Math.min(globalAudio.volume + 0.03, 1);
                         } else {
                             clearInterval(fadeIn);
@@ -358,7 +387,7 @@ async function tryJoinRoom() {
                 restartOnNext = false;
 
                 await new Promise((resolve) => {
-                    globalAudio.volume = 1;
+                    globalAudio.volume = maxVolume;
                     let fadeOut = setInterval(() => {
                         // console.log(globalAudio.volume);
                         if (globalAudio.volume > 0.01) {
@@ -370,6 +399,7 @@ async function tryJoinRoom() {
                         }
                     }, 20);
                 });
+                winningVolAnim = false;
                 guessIndex = 0;
                 roundDisplay.textContent = `Round ${guessIndex + 1}`;
 
@@ -480,6 +510,10 @@ function updateControls() {
     } else {
         // searchInput.disabled = false;
         guessBtn.disabled = false;
+    }
+
+    if (!winningVolAnim && globalAudio) {
+        globalAudio.volume = maxVolume;
     }
     requestAnimationFrame(updateControls);
 }

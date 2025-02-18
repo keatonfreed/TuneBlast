@@ -24,7 +24,7 @@ function setSavedVolume(volume) {
 }
 
 function getSavedVolume() {
-    return localStorage.getItem("TuneBlast-Volume") ?? 80
+    return localStorage.getItem("TuneBlast-Volume") ?? 0.8
 }
 
 function updateVolumeSlider() {

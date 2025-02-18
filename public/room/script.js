@@ -436,6 +436,8 @@ async function tryJoinRoom() {
         if (!event.wasClean) {
             document.getElementById("roomError").showModal();
             document.getElementById("roomErrorText").textContent = "Connection Lost.";
+            document.getElementById("roomErrorLink").href = window.location.href;
+            document.getElementById("roomErrorLink").textContent = "Retry";
         }
     }
 

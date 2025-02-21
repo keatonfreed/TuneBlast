@@ -54,6 +54,21 @@ volumeSliderEl.oninput = () => {
 maxVolume = getSavedVolume();
 updateVolumeSlider();
 
+
+let savedPlayerId;
+
+function setSavedPlayerId(playerId) {
+    localStorage.setItem("TuneBlast-PlayerId", playerId)
+}
+
+function getSavedPlayerId() {
+    return localStorage.getItem("TuneBlast-PlayerId")
+}
+
+savedPlayerId = getSavedPlayerId();
+
+
+
 // State Variables
 let globalAudio;
 let playing = false;
@@ -67,6 +82,8 @@ const suggestionLimit = 5;
 let playerList = [];
 
 let controlsDisabled = false;
+
+let pingInterval;
 
 // Prevent media key controls
 if ("mediaSession" in navigator) {
@@ -164,7 +181,7 @@ async function tryJoinRoom() {
 
     let lastCorrect = false;
 
-    roomSocket.send(JSON.stringify({ event: "player_init", playerName: getSavedUsername() }));
+    roomSocket.send(JSON.stringify({ event: "player_init", playerName: getSavedUsername(), playerId: savedPlayerId }));
     roomSocket.onmessage = async (event) => {
         let message
         try {
@@ -175,7 +192,12 @@ async function tryJoinRoom() {
         }
         console.log("Message:", message);
         switch (message.event) {
+
             case "room_init":
+                let pingInterval = setInterval(() => {
+                    roomSocket.send(JSON.stringify({ event: "ping" }));
+                }, 5000);
+
                 guessIndex = message.roomRound;
                 if (guessIndex > 0) {
                     for (let i = 0; i < guessIndex; i++) {
@@ -187,6 +209,7 @@ async function tryJoinRoom() {
                 roundDisplay.textContent = `Round ${guessIndex + 1}`;
 
                 playerId = message.playerId;
+                setSavedPlayerId(playerId);
 
                 playerList = message.roomPlayers;
                 updatePlayerList();
@@ -213,7 +236,7 @@ async function tryJoinRoom() {
                 break;
             case "player_joined":
                 console.log("Player joined:", message.playerName);
-                playerList.push({ playerId: message.playerId, playerName: message.playerName, playerScore: 0 });
+                playerList.push({ playerId: message.playerId, playerName: message.playerName, playerScore: message.playerScore });
                 updatePlayerList();
                 break;
             case "player_left":
@@ -232,7 +255,13 @@ async function tryJoinRoom() {
                         lastCorrect = true;
                         let correctSound = new Audio("../correct.mp3");
                         correctSound.play();
-
+                    } else if (message.status === "close") {
+                        if (lastGuessLine) {
+                            lastGuessLine.classList.add("close");
+                        }
+                        lastCorrect = false;
+                        let closeSound = new Audio("../incorrect.mp3");
+                        closeSound.play();
                     } else if (message.status === "incorrect") {
                         if (lastGuessLine) {
                             lastGuessLine.classList.add("incorrect");
@@ -275,6 +304,9 @@ async function tryJoinRoom() {
 
             case "game_end":
 
+                overlayVidoes.querySelectorAll("video").forEach(video => {
+                    video.play();
+                });
                 overlayVidoes.style.opacity = 0.4;
 
                 globalAudio.currentTime = 0;
@@ -379,13 +411,14 @@ async function tryJoinRoom() {
 
                 for (let line of lines) {
                     line.textContent = "";
-                    line.classList.remove("correct", "incorrect", "skip");
+                    line.classList.remove("correct", "close", "incorrect", "skip");
                 }
 
                 searchInput.value = "";
                 searchInput.focus();
                 restartOnNext = false;
 
+                globalAudio.play();
                 await new Promise((resolve) => {
                     globalAudio.volume = maxVolume;
                     let fadeOut = setInterval(() => {
@@ -398,6 +431,11 @@ async function tryJoinRoom() {
                             resolve();
                         }
                     }, 20);
+                    setTimeout(() => {
+                        clearInterval(fadeOut);
+                        globalAudio.pause();
+                        resolve();
+                    }, 2000);
                 });
                 winningVolAnim = false;
                 guessIndex = 0;
@@ -437,8 +475,13 @@ async function tryJoinRoom() {
             document.getElementById("roomError").showModal();
             document.getElementById("roomErrorText").textContent = "Connection Lost.";
             document.getElementById("roomErrorLink").href = window.location.href;
+            // document.getElementById("roomErrorLink").href = "";
             document.getElementById("roomErrorLink").textContent = "Retry";
+            // document.getElementById("roomErrorLink").onclick = () => {
+            //     tryJoinRoom();
+            // }
         }
+        clearInterval(pingInterval);
     }
 
 }
@@ -462,10 +505,12 @@ function updatePlayerList() {
         playerAvatar.appendChild(avatarImg);
         playerAvatar.appendChild(playerName);
         playerAvatar.appendChild(playerScore);
-        playerAvatar.classList.remove("correct", "incorrect", "skip");
+        playerAvatar.classList.remove("correct", "close", "incorrect", "skip");
         if (player.playerStatus) {
             if (player.playerStatus === "correct") {
                 playerAvatar.classList.add("correct");
+            } else if (player.playerStatus === "close") {
+                playerAvatar.classList.add("close");
             } else if (player.playerStatus === "incorrect") {
                 playerAvatar.classList.add("incorrect");
             } else if (player.playerStatus === "skip") {

@@ -137,6 +137,11 @@
             box-shadow: 0 0 15px 0 red;
         }
 
+        &.close img {
+            border-color: #ffab4f;
+            box-shadow: 0 0 15px 0 #ff9c00;
+        }
+
         &.skip img {
             border-color: #afafaf;
             box-shadow: 0 0 10px 0px #b5b5b5;

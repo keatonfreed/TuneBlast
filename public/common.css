@@ -514,7 +514,8 @@ label {
         max-height: 100%;
         object-fit: cover;
         /* mix-blend-mode: screen; */
-        filter: brightness(1.4)
+        filter: brightness(1.4);
+        pointer-events: none;
     }
 }
 
@@ -543,9 +544,14 @@ label {
         filter: sepia(2) hue-rotate(62deg) saturate(2);
     }
 
+    &.close {
+        filter: sepia(2) hue-rotate(339deg) saturate(2);
+    }
+
     &.incorrect {
         filter: sepia(2) hue-rotate(292deg) saturate(2);
     }
+
 
     &.skip {
         filter: brightness(2);

@@ -211,7 +211,10 @@ searchInput.onkeyup = (e) => {
 
 
 async function gameOver(win = false) {
-    overlayVidoes.style.opacity = 0.1;
+    overlayVidoes.querySelectorAll("video").forEach(video => {
+        video.play();
+    });
+    overlayVidoes.style.opacity = 0.2;
 
     globalAudio.currentTime = 0;
     globalAudio.play();
@@ -282,7 +285,7 @@ async function gameOver(win = false) {
 
     for (let line of lines) {
         line.textContent = "";
-        line.classList.remove("correct", "incorrect", "skip");
+        line.classList.remove("correct", "close", "incorrect", "skip");
     }
 
     await new Promise((resolve) => {
@@ -354,10 +357,11 @@ guessBtn.onclick = async () => {
         lines[guessIndex].textContent = searchInput.value;
     }
     if (response) {
-        let correct = response.correct;
-        if (correct) {
+        let { nameCorrect, artistCorrect } = response;
+        if (nameCorrect && artistCorrect) {
             globalAudio.pause();
             let correctSound = new Audio("../correct.mp3");
+
             correctSound.play();
             correctSound.onended = () => {
                 gameOver(true);
@@ -365,8 +369,18 @@ guessBtn.onclick = async () => {
             searchInput.value = "";
             lines[guessIndex]?.classList.add("correct");
             return
+        } else if (nameCorrect || artistCorrect) {
+            let closeSound = new Audio("../close.mp3");
+            closeSound.play();
+            closeSound.onended = () => {
+                playing = true;
+                updatePlayBtn();
+                globalAudio?.play();
+            }
+            lines[guessIndex]?.classList.add("close");
         } else {
             let incorrectSound = new Audio("../incorrect.mp3");
+
             incorrectSound.play();
             incorrectSound.onended = () => {
                 playing = true;

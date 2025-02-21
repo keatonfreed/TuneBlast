@@ -121,7 +121,7 @@ function checkSongMatch(songId, checkName, checkArtist) {
             artistCorrect = true;
         }
     });
-    return nameCorrect && artistCorrect;
+    return { nameCorrect, artistCorrect };
 }
 
 const songList = JSON.parse(fs.readFileSync('song_choices.json', 'utf8'));
@@ -142,8 +142,8 @@ app.get("/api/v1/solo/guess", async (req, res) => {
     if (!songName) return res.status(400).send("No song provsongIded");
     if (!songId) return res.status(400).send("No id provided");
 
-    const correct = checkSongMatch(songId, songName, songArtist);
-    res.send({ correct });
+    const { nameCorrect, artistCorrect } = checkSongMatch(songId, songName, songArtist);
+    res.send({ nameCorrect, artistCorrect });
 });
 
 app.get("/api/v1/solo/finish", async (req, res) => {
@@ -201,6 +201,13 @@ let currentRooms = [
                 playerWS: null,
             },
         ],
+        roomRecentPlayers: [
+            {
+                playerId: "2B3C4A",
+                playerName: "Jamie",
+                playerScore: 50,
+            },
+        ],
         roomCreatedAt: '2025-02-15T02:33:20.102Z',
         roomCurrentSong: {
             songId: "6AI3ezQ4o3HUoP6Dhudph3",
@@ -224,7 +231,7 @@ app.get("/api/v1/room/create", async (req, res) => {
         console.error(err);
         return res.status(500).send("Failed To Create Room.");
     });
-    currentRooms.push({ roomId, roomPlayers: [], roomCreatedAt: new Date(), roomCurrentSong: randomSong, roomPreviousSongs: [], roomRound: 0 });
+    currentRooms.push({ roomId, roomPlayers: [], roomRecentPlayers: [], roomCreatedAt: new Date(), roomCurrentSong: randomSong, roomPreviousSongs: [], roomRound: 0 });
     res.send({ roomId });
 });
 
@@ -260,7 +267,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
     // console.log("Connection started...");
 
-    let playerId, playerName;
+    let playerId;
     let playerScore = 0;
 
     async function endRound() {
@@ -329,6 +336,8 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
         if (!data.event) return sendMessage({ event: "error", message: "No event provided." });
 
         switch (data.event) {
+            case "ping":
+                break;
             case "player_init":
                 let playerName = data.playerName;
                 if (!playerName) {
@@ -341,10 +350,29 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                     ws.close();
                     break;
                 }
+                let prevPlayerId = data.playerId;
+                if (prevPlayerId) {
+
+                    // Reconnect player
+                    let recentPlayer = room.roomRecentPlayers.find(p => p.playerId === prevPlayerId)
+                    if (recentPlayer && recentPlayer.playerName === playerName) {
+                        playerId = prevPlayerId;
+                        playerName = recentPlayer.playerName;
+                        playerScore = recentPlayer.playerScore;
+                        room.roomPlayers.push({ playerId, playerName, playerWS: ws, playerStatus: null, playerScore: recentPlayer.playerScore });
+                        room.roomRecentPlayers = room.roomRecentPlayers.filter(p => p.playerId !== playerId);
+                        broadcastToRoom(roomId, { event: "player_joined", playerId, playerName, playerScore }, playerId);
+                        sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
+                        console.log("Player reconnected to room:", roomId, "Player:", playerName);
+                        break;
+                    }
+                }
+
                 playerId = randomCode();
                 room.roomPlayers.push({ playerId, playerName, playerWS: ws, playerStatus: null, playerScore: 0 });
                 broadcastToRoom(roomId, { event: "player_joined", playerId, playerName }, playerId);
                 // only send playerid and playername for each player
+
                 sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
                 console.log("Player joined room:", roomId, "Player:", playerName);
                 break;
@@ -372,11 +400,12 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                             return p;
                         });
                     } else {
-                        const correct = checkSongMatch(room.roomCurrentSong.songId, data.songName, data.songArtist);
-                        broadcastToRoom(roomId, { event: "player_status", playerId, status: correct ? "correct" : "incorrect" });
+                        const { nameCorrect, artistCorrect } = checkSongMatch(room.roomCurrentSong.songId, data.songName, data.songArtist);
+                        let newStatus = nameCorrect && artistCorrect ? "correct" : nameCorrect || artistCorrect ? "close" : "incorrect";
+                        broadcastToRoom(roomId, { event: "player_status", playerId, status: newStatus });
                         room.roomPlayers = room.roomPlayers.map(p => {
                             if (p.playerId === playerId) {
-                                p.playerStatus = correct ? "correct" : "incorrect";
+                                p.playerStatus = newStatus;
                             }
                             return p;
                         });
@@ -404,9 +433,14 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
     });
 
     ws.on("close", () => {
-        // console.log("Connection closed.");
-        if (!playerId) return;
+        console.log("Connection closed.", playerId);
+
+        let player = room.roomPlayers.find(p => p.playerId === playerId);
+        if (!player) return;
+        let { playerName, playerScore } = player;
+        room.roomRecentPlayers.push({ playerId, playerName, playerScore });
         room.roomPlayers = room.roomPlayers.filter(p => p.playerId !== playerId);
+
         broadcastToRoom(roomId, { event: "player_left", playerId });
 
         // recheck for all players have status

@@ -57,15 +57,29 @@ updateVolumeSlider();
 
 let savedPlayerId;
 
-function setSavedPlayerId(playerId) {
-    localStorage.setItem("TuneBlast-PlayerId", playerId)
+function setSavedPlayerId(roomId, playerId) {
+    try {
+        let playerMap = JSON.parse(localStorage.getItem("TuneBlast-PlayerId")) || {};
+        playerMap[roomId] = playerId;
+        localStorage.setItem("TuneBlast-PlayerId", JSON.stringify(playerMap));
+    } catch (err) {
+        console.error("Failed to save player ID:", err);
+        localStorage.removeItem("TuneBlast-PlayerId");
+    }
 }
 
-function getSavedPlayerId() {
-    return localStorage.getItem("TuneBlast-PlayerId")
+function getSavedPlayerId(roomId) {
+    try {
+        const playerMap = JSON.parse(localStorage.getItem("TuneBlast-PlayerId"));
+        return playerMap ? playerMap[roomId] : {};
+    } catch (err) {
+        console.error("Failed to get player ID:", err);
+        localStorage.removeItem("TuneBlast-PlayerId");
+        return null;
+    }
 }
 
-savedPlayerId = getSavedPlayerId();
+
 
 
 
@@ -82,6 +96,7 @@ const suggestionLimit = 5;
 let playerList = [];
 
 let controlsDisabled = false;
+let updateControlLoop = false;
 
 let pingInterval;
 
@@ -152,6 +167,52 @@ function playGlobalAudio() {
     }
 }
 
+let retryInterval;
+let retrying = false;
+
+function roomError(message, retry = false) {
+    console.error("Room Error:", message);
+
+    if (!retrying && retry && roomSocket) {
+        console.log("Auto 1 Retry");
+
+        setTimeout(() => {
+            tryJoinRoom();
+        }, 100);
+        retrying = true;
+        return
+    };
+
+    document.getElementById("roomError").showModal();
+    document.getElementById("roomErrorText").textContent = message || "An error occurred.";
+
+    if (retry && roomSocket) {
+        document.getElementById("roomErrorLink").href = "";
+        document.getElementById("roomErrorLink").textContent = "Retry";
+        document.getElementById("roomErrorLink").onclick = () => {
+            console.log("Manual Retry");
+            clearTimeout(retryInterval);
+            tryJoinRoom();
+            document.getElementById("roomError").close();
+            return false;
+        }
+
+        clearInterval(retryInterval);
+        retryInterval = setInterval(() => {
+            console.log("Retrying...");
+            tryJoinRoom();
+            document.getElementById("roomError").close();
+        }, 500);
+
+    } else {
+        document.getElementById("roomErrorLink").href = "../";
+        document.getElementById("roomErrorLink").textContent = "Home";
+        document.getElementById("roomErrorLink").onclick = null;
+        clearTimeout(retryInterval);
+    }
+}
+
+
 window.addEventListener("blur", () => {
     if (playing && globalAudio && !gameOverPopup.open) {
         stopPlaying();
@@ -159,10 +220,9 @@ window.addEventListener("blur", () => {
 });
 
 async function tryJoinRoom() {
+
     if (!roomCode) {
-        document.getElementById("roomError").showModal();
-        document.getElementById("roomErrorText").textContent = "Invalid Join Code.";
-        console.error("No Room Code")
+        roomError("Invalid Join Code.");
         return;
     }
 
@@ -171,15 +231,20 @@ async function tryJoinRoom() {
         console.error("No Saved Username")
         return;
     }
+    if (roomSocket) {
+        roomSocket.close();
+        roomSocket = null;
+    }
     roomSocket = await backendWebsocket(`/api/v1/room/${roomCode}`);
     if (!roomSocket) {
-        document.getElementById("roomError").showModal();
-        document.getElementById("roomErrorText").textContent = "Could not connect to room.";
         console.error("Failed to join room");
+        roomError("Failed to join room.");
         return;
     }
 
     let lastCorrect = false;
+
+    savedPlayerId = getSavedPlayerId(roomCode);
 
     roomSocket.send(JSON.stringify({ event: "player_init", playerName: getSavedUsername(), playerId: savedPlayerId }));
     roomSocket.onmessage = async (event) => {
@@ -192,9 +257,15 @@ async function tryJoinRoom() {
         }
         console.log("Message:", message);
         switch (message.event) {
-
+            case "pong":
+                break;
             case "room_init":
-                let pingInterval = setInterval(() => {
+                clearInterval(retryInterval)
+
+                let thisPlayer = message.roomPlayers.find(p => p.playerId === message.playerId);
+
+
+                pingInterval = setInterval(() => {
                     roomSocket.send(JSON.stringify({ event: "ping" }));
                 }, 5000);
 
@@ -205,11 +276,30 @@ async function tryJoinRoom() {
                         lines[i].classList.add("skip");
                     }
                 }
+                if (thisPlayer.playerStatus) {
+                    if (thisPlayer.playerStatus === "correct") {
+                        lines[guessIndex].classList.add("correct");
+                        lines[guessIndex].textContent = "Correct!";
+                    } else if (thisPlayer.playerStatus === "close") {
+                        lines[guessIndex].classList.add("close");
+                        lines[guessIndex].textContent = "Almost!";
+                    } else if (thisPlayer.playerStatus === "incorrect") {
+                        lines[guessIndex].textContent = "Incorrect!";
+                        lines[guessIndex].classList.add("incorrect");
+                    } else if (thisPlayer.playerStatus === "skip") {
+                        lines[guessIndex].classList.add("skip");
+                        lines[guessIndex].textContent = "Skipped";
+                    }
+                    controlsDisabled = true;
+                } else {
+                    controlsDisabled = false;
+                }
+
 
                 roundDisplay.textContent = `Round ${guessIndex + 1}`;
 
                 playerId = message.playerId;
-                setSavedPlayerId(playerId);
+                setSavedPlayerId(roomCode, playerId);
 
                 playerList = message.roomPlayers;
                 updatePlayerList();
@@ -225,18 +315,28 @@ async function tryJoinRoom() {
                     });
                 }
 
+                if (globalAudio) {
+                    globalAudio.pause();
+                    globalAudio = null;
+                    playing = false;
+                    updatePlayBtn();
+                }
+
                 globalAudio = new Audio(message.songData.previewUrl);
                 globalAudio.onloadeddata = setMarkers;
                 globalAudio.onended = () => stopPlaying(true);
 
-                updateControls();
-                requestAnimationFrame(updateControls);
+                if (!updateControlLoop) {
+                    updateControls();
+                    requestAnimationFrame(updateControls);
+                }
+                updateControlLoop = true
 
                 setTimeout(() => loadingPopup.close(), 1000);
                 break;
             case "player_joined":
                 console.log("Player joined:", message.playerName);
-                playerList.push({ playerId: message.playerId, playerName: message.playerName, playerScore: message.playerScore });
+                playerList.push({ playerId: message.playerId, playerName: message.playerName, playerScore: message.playerScore, playerStatus: message.playerStatus });
                 updatePlayerList();
                 break;
             case "player_left":
@@ -416,6 +516,7 @@ async function tryJoinRoom() {
 
                 searchInput.value = "";
                 searchInput.focus();
+                updateSearchPopup();
                 restartOnNext = false;
 
                 globalAudio.play();
@@ -462,24 +563,22 @@ async function tryJoinRoom() {
                 break;
 
             case "error":
-                document.getElementById("roomError").showModal();
-                document.getElementById("roomErrorText").textContent = message.message;
+                roomError(message.message);
                 break;
 
         }
     }
 
+    let testClosed = false;
+    // setTimeout(() => {
+    //     roomSocket.close();
+    //     testClosed = true;
+    // }, 5000);
+
     roomSocket.onclose = (event) => {
         console.warn("Room Socket Closed.");
-        if (!event.wasClean) {
-            document.getElementById("roomError").showModal();
-            document.getElementById("roomErrorText").textContent = "Connection Lost.";
-            document.getElementById("roomErrorLink").href = window.location.href;
-            // document.getElementById("roomErrorLink").href = "";
-            document.getElementById("roomErrorLink").textContent = "Retry";
-            // document.getElementById("roomErrorLink").onclick = () => {
-            //     tryJoinRoom();
-            // }
+        if (!event.wasClean || testClosed) {
+            roomError("Reconnecting...", true);
         }
         clearInterval(pingInterval);
     }
@@ -652,8 +751,6 @@ searchInput.onkeyup = (e) => {
         return
     }
     lastInputUpdate = setTimeout(updateSearchPopup, 100);
-
-
 };
 
 
@@ -689,6 +786,7 @@ guessBtn.onclick = async () => {
 
         searchInput.value = "";
         searchInput.focus();
+        updateSearchPopup();
         return;
     }
 
@@ -711,6 +809,7 @@ guessBtn.onclick = async () => {
 
     searchInput.value = "";
     searchInput.focus();
+    updateSearchPopup();
 
 };
 

@@ -32,7 +32,15 @@
             <label>Username: <input type="text" id="usernameInput" autocomplete="on"
                     placeholder="Enter a username (3-15 chars)"></label>
             <div class="divider"></div>
-            <input type="text" id="roomInput" autocomplete="off" placeholder="Enter room code, or join link">
+            <input type="text" list="roomOptions" id="roomInput" autocomplete="off"
+                placeholder="Enter room code, or join link">
+            <datalist id="roomOptions">
+                <option value="room1"></option>
+                <option value="room2"></option>
+                <option value="room3"></option>
+                <option value="room4"></option>
+                <option value="room5"></option>
+            </datalist>
             <button id="joinRoom">Join Room</button>
             <div class="divider"></div>
             <button id="createRoom">Create Room</button>

@@ -28,8 +28,14 @@ async function getAppleMusicData(songName, artistName) {
         limit: 1
     });
 
-    const response = await fetch(`${baseURL}?${query}`);
-    const data = await response.json();
+    let data;
+    try {
+        const response = await fetch(`${baseURL}?${query}`);
+        data = await response.json();
+    } catch (err) {
+        console.error("Error fetching Apple Music data:", err);
+        return false;
+    }
 
     if (data.results.length > 0 && data.results[0].previewUrl) {
         // console.log("Got preview:", data.results[0].previewUrl);
@@ -205,6 +211,7 @@ let currentRooms = [
             {
                 playerId: "2B3C4A",
                 playerName: "Jamie",
+                playerStatus: "skip",
                 playerScore: 50,
             },
         ],
@@ -337,6 +344,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
         switch (data.event) {
             case "ping":
+                sendMessage({ event: "pong" });
                 break;
             case "player_init":
                 let playerName = data.playerName;
@@ -359,11 +367,11 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                         playerId = prevPlayerId;
                         playerName = recentPlayer.playerName;
                         playerScore = recentPlayer.playerScore;
-                        room.roomPlayers.push({ playerId, playerName, playerWS: ws, playerStatus: null, playerScore: recentPlayer.playerScore });
+                        room.roomPlayers.push({ playerId, playerName, playerWS: ws, playerStatus: null, playerStatus: recentPlayer.playerStatus, playerScore: recentPlayer.playerScore });
                         room.roomRecentPlayers = room.roomRecentPlayers.filter(p => p.playerId !== playerId);
-                        broadcastToRoom(roomId, { event: "player_joined", playerId, playerName, playerScore }, playerId);
+                        broadcastToRoom(roomId, { event: "player_joined", playerId, playerName, playerScore, playerStatus: recentPlayer.playerStatus }, playerId);
                         sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
-                        console.log("Player reconnected to room:", roomId, "Player:", playerName);
+                        console.log("Player reconnected to room:", roomId, "Player:", playerId, playerName);
                         break;
                     }
                 }
@@ -374,7 +382,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                 // only send playerid and playername for each player
 
                 sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
-                console.log("Player joined room:", roomId, "Player:", playerName);
+                console.log("Player joined room:", roomId, "Player:", playerId, playerName);
                 break;
             case "update_status":
                 if (room.roomPlayers.find(p => p.playerId === playerId).playerStatus != null) {
@@ -433,18 +441,20 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
     });
 
     ws.on("close", () => {
-        console.log("Connection closed.", playerId);
 
         let player = room.roomPlayers.find(p => p.playerId === playerId);
         if (!player) return;
-        let { playerName, playerScore } = player;
-        room.roomRecentPlayers.push({ playerId, playerName, playerScore });
+        let { playerName, playerScore, playerStatus } = player;
+
+        console.log("Player left room:", roomId, "Player:", playerId, playerName);
+
+        room.roomRecentPlayers.push({ playerId, playerName, playerScore, playerStatus: playerStatus });
         room.roomPlayers = room.roomPlayers.filter(p => p.playerId !== playerId);
 
         broadcastToRoom(roomId, { event: "player_left", playerId });
 
         // recheck for all players have status
-        if (room.roomPlayers.every(p => p.playerStatus != null)) {
+        if (room.roomPlayers.length && room.roomPlayers.every(p => p.playerStatus != null)) {
             endRound();
             // console.log("All players have guessed or skipped.");
         }

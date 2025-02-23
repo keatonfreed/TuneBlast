@@ -11,6 +11,43 @@ const roomIdInput = document.getElementById("roomInput")
 const joinRoomBtn = document.getElementById("joinRoom")
 const createRoomBtn = document.getElementById("createRoom")
 
+const roomDatalist = document.getElementById("roomOptions");
+
+recentRooms = []
+
+function setRecentRoom(roomId) {
+    try {
+        let rooms = JSON.parse(localStorage.getItem("TuneBlast-RecentRooms")) || [];
+        rooms = rooms.filter(room => room.roomId !== roomId);
+        rooms.unshift({ roomId, date: Date.now() });
+
+        const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
+        rooms = rooms.filter(room => room.date >= oneDayAgo);
+
+        localStorage.setItem("TuneBlast-RecentRooms", JSON.stringify(rooms));
+    } catch (err) {
+        console.error("Failed to save recent room:", err);
+        localStorage.removeItem("TuneBlast-RecentRooms");
+    }
+}
+
+try {
+    const rooms = JSON.parse(localStorage.getItem("TuneBlast-RecentRooms")) || [];
+    const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
+    recentRooms = rooms
+        .filter(room => room.date >= oneDayAgo)
+        .map(room => room.roomId);
+} catch (err) {
+    console.error("Failed to get recent rooms:", err);
+    localStorage.removeItem("TuneBlast-RecentRooms");
+}
+
+roomDatalist.innerHTML = ""; // Clear previous options
+recentRooms.forEach(option => {
+    const item = document.createElement("option");
+    item.value = option;
+    roomDatalist.appendChild(item);
+});
 
 
 joinSingleplayerBtn.onclick = () => {
@@ -97,6 +134,7 @@ joinRoomBtn.onclick = () => {
         return
     }
 
+    setRecentRoom(roomIdInput.value.trim())
     window.location.href = `./room?${roomIdInput.value.trim()}`
 }
 
@@ -128,6 +166,7 @@ createRoomBtn.onclick = async () => {
         return
     }
     console.log("Created room:", roomId)
+    setRecentRoom(roomId)
     window.location.href = `./room?${roomId}`
 
     createRoomBtn.disabled = false

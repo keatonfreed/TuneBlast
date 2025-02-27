@@ -20,11 +20,14 @@ const overlayVidoes = document.getElementById("overlayVideos");
 
 const gameOverPopup = document.getElementById("gameOverPopup");
 
+const timeDisplay = document.getElementById("timeDisplay");
+
 
 const roomCodeEl = document.getElementById("roomCodeEl");
 const roomCode = window.location.search.slice(1);
 console.log("Room code:", roomCode);
 roomCodeEl.textContent = "Room: " + roomCode;
+
 
 
 const volumeSliderEl = document.getElementById("volumeSlider").querySelector("input[type='range']");
@@ -80,8 +83,15 @@ function getSavedPlayerId(roomId) {
 }
 
 
+let timeLeft = 0
+
+function updateTimeLeft() {
+    timeDisplay.textContent = `${String(Math.floor(timeLeft / 60)).padStart(1, '0')}:${String(timeLeft % 60).padStart(2, '0')}`;
+}
+updateTimeLeft();
 
 
+let roomPlayMode = "normal";
 
 // State Variables
 let globalAudio;
@@ -89,7 +99,9 @@ let playing = false;
 let restartOnNext = false;
 let lastGuessLine;
 let guessIndex = 0;
-const maxTimes = [100, 1000, 2000, 3500, 9000, 30000];
+// const maxTimes = [100, 1000, 2000, 3500, 9000, 30000];
+const maxTimes = [100, 500, 1500, 3500, 9000, 30000];
+
 let lastInputUpdate;
 const suggestionLimit = 5;
 
@@ -202,7 +214,7 @@ function roomError(message, retry = false) {
             console.log("Retrying...");
             tryJoinRoom();
             document.getElementById("roomError").close();
-        }, 500);
+        }, 250);
 
     } else {
         document.getElementById("roomErrorLink").href = "../";
@@ -217,7 +229,19 @@ window.addEventListener("blur", () => {
     if (playing && globalAudio && !gameOverPopup.open) {
         stopPlaying();
     }
+
+    if (roomSocket && playerId) {
+        roomSocket.send(JSON.stringify({ event: "update_idle", playerIdle: true }));
+    }
 });
+
+window.addEventListener("focus", () => {
+    if (roomSocket && playerId) {
+        roomSocket.send(JSON.stringify({ event: "update_idle", playerIdle: false }));
+    }
+});
+
+let playingTicking;
 
 async function tryJoinRoom() {
 
@@ -243,6 +267,7 @@ async function tryJoinRoom() {
     }
 
     let lastCorrect = false;
+    let lastGuessed = false;
 
     savedPlayerId = getSavedPlayerId(roomCode);
 
@@ -259,11 +284,33 @@ async function tryJoinRoom() {
         switch (message.event) {
             case "pong":
                 break;
+            case "update_timer":
+                timeLeft = Math.max(0, message.roomTimeLeft ?? timeLeft);
+                updateTimeLeft();
+
+                if (timeLeft <= 5) {
+                    if (!playingTicking) {
+                        playingTicking = new Audio("../timer_tick.mp3");
+                        playingTicking.loop = true;
+                        playingTicking.volume = 0.7;
+                        playingTicking.play();
+                    }
+                }
+                break;
             case "room_init":
                 clearInterval(retryInterval)
 
+                roomPlayMode = message.roomPlayMode || "normal";
+
+                if (roomPlayMode === "duel") {
+
+                }
+
+
                 let thisPlayer = message.roomPlayers.find(p => p.playerId === message.playerId);
 
+                timeLeft = message.roomTimeLeft ?? timeLeft;
+                updateTimeLeft();
 
                 pingInterval = setInterval(() => {
                     roomSocket.send(JSON.stringify({ event: "ping" }));
@@ -322,6 +369,12 @@ async function tryJoinRoom() {
                     updatePlayBtn();
                 }
 
+                if (globalAudio) {
+                    globalAudio.pause();
+                    globalAudio = null;
+                    playing = false;
+                    updatePlayBtn();
+                }
                 globalAudio = new Audio(message.songData.previewUrl);
                 globalAudio.onloadeddata = setMarkers;
                 globalAudio.onended = () => stopPlaying(true);
@@ -336,7 +389,7 @@ async function tryJoinRoom() {
                 break;
             case "player_joined":
                 console.log("Player joined:", message.playerName);
-                playerList.push({ playerId: message.playerId, playerName: message.playerName, playerScore: message.playerScore, playerStatus: message.playerStatus });
+                playerList.push({ playerId: message.playerId, playerName: message.playerName, playerScore: message.playerScore, playerStatus: message.playerStatus, playerIdle: message.playerIdle });
                 updatePlayerList();
                 break;
             case "player_left":
@@ -345,6 +398,16 @@ async function tryJoinRoom() {
                 updatePlayerList();
                 break;
 
+            case "player_idle":
+                console.log("Player idle:", message.playerId, message.playerIdle);
+                playerList = playerList.map(p => {
+                    if (p.playerId === message.playerId) {
+                        return { ...p, playerIdle: message.playerIdle ?? p.playerIdle, playerScore: message.playerScore ?? p.playerScore };
+                    }
+                    return p;
+                });
+                updatePlayerList();
+                break;
             case "player_status":
                 console.log("Player status:", message.playerId, message.status);
                 if (playerId && message.playerId === playerId) {
@@ -353,6 +416,7 @@ async function tryJoinRoom() {
                             lastGuessLine.classList.add("correct");
                         }
                         lastCorrect = true;
+                        lastGuessed = true;
                         let correctSound = new Audio("../correct.mp3");
                         correctSound.play();
                     } else if (message.status === "close") {
@@ -360,6 +424,8 @@ async function tryJoinRoom() {
                             lastGuessLine.classList.add("close");
                         }
                         lastCorrect = false;
+                        lastGuessed = true;
+
                         let closeSound = new Audio("../incorrect.mp3");
                         closeSound.play();
                     } else if (message.status === "incorrect") {
@@ -367,10 +433,13 @@ async function tryJoinRoom() {
                             lastGuessLine.classList.add("incorrect");
                         }
                         lastCorrect = false;
+                        lastGuessed = true;
+
                         let incorrectSound = new Audio("../incorrect.mp3");
                         incorrectSound.play();
                     } else if (message.status === "skip") {
                         lastCorrect = false;
+                        lastGuessed = true;
                     }
                 }
                 playerList = playerList.map(p => {
@@ -381,10 +450,31 @@ async function tryJoinRoom() {
                 });
                 updatePlayerList();
                 break;
+            case "round_end":
+                if (lines[guessIndex] && !lastGuessed) {
+                    lines[guessIndex].classList.add("skip");
+                    lines[guessIndex].textContent = "Skipped";
+                }
+                timeLeft = 0;
+                if (playingTicking) {
+                    playingTicking.pause();
+                    playingTicking = null;
+                }
+                if (message.endType === "timer") {
+                    // player ../timer_done.mp3
+                    let timerDone = new Audio("../timer_done.mp3");
+                    timerDone.volume = maxVolume;
+                    timerDone.play();
+                }
+                break;
 
             case "round_start":
                 console.log("Round Start.");
 
+                timeLeft = message.roomTimeLeft ?? timeLeft;
+                updateTimeLeft();
+
+                lastGuessed = false;
                 lastCorrect = false;
 
                 playerList = playerList.map(p => {
@@ -441,6 +531,7 @@ async function tryJoinRoom() {
 
                 gameOverPopup.querySelector("#gameOverSubtitle").textContent = subtitle;
                 lastCorrect = false;
+                lastGuessed = false;
 
                 let findSongBtn = gameOverPopup.querySelector("#gameOverFind");
                 let playAgainBtn = gameOverPopup.querySelector("#gameOverNext");
@@ -543,7 +634,12 @@ async function tryJoinRoom() {
                 roundDisplay.textContent = `Round ${guessIndex + 1}`;
 
                 console.log("Playing next song.");
-                globalAudio.pause();
+                if (globalAudio) {
+                    globalAudio.pause();
+                    globalAudio = null;
+                    playing = false;
+                    updatePlayBtn();
+                }
                 globalAudio = new Audio(message.songData.previewUrl);
                 globalAudio.onloadeddata = setMarkers;
                 globalAudio.onended = () => stopPlaying(true);
@@ -595,6 +691,32 @@ function updatePlayerList() {
         let avatarImg = document.createElement("img");
         avatarImg.src = `https://api.dicebear.com/9.x/rings/svg?seed=${player.playerId}`;
         avatarImg.alt = "Avatar";
+        avatarImg.className = "playerImg";
+
+        //         let playerCrown = document.createElement("svg");
+
+        //         playerCrown.setAttribute("viewBox", "0 0 200 150");
+        //         playerCrown.setAttribute("width", "200");
+        //         playerCrown.setAttribute("height", "150");
+        //         playerCrown.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        //         playerAvatar.appendChild(playerCrown);
+        //         playerCrown.innerHTML = `
+        //   <!-- Crown shape with three spikes, rounded bottom corners, and a single outline -->
+        //   <path d="
+        //     M20,100 
+        //     Q50,20 70,100 
+        //     Q100,20 130,100 
+        //     Q160,20 180,100 
+        //     L180,120 
+        //     Q180,130 170,135 
+        //     L30,135 
+        //     Q20,130 20,120 
+        //     Z"
+        //     fill="#FFD700" stroke="#B8860B" stroke-width="5" stroke-linejoin="round"/>
+        // `;
+        //         playerCrown.alt = "Avatar";
+        //         playerCrown.className = "playerCrown";
+
         let playerName = document.createElement("p");
         playerName.textContent = player.playerName;
         playerName.className = "playerName";
@@ -604,7 +726,7 @@ function updatePlayerList() {
         playerAvatar.appendChild(avatarImg);
         playerAvatar.appendChild(playerName);
         playerAvatar.appendChild(playerScore);
-        playerAvatar.classList.remove("correct", "close", "incorrect", "skip");
+        playerAvatar.classList.remove("correct", "close", "incorrect", "skip", "idle");
         if (player.playerStatus) {
             if (player.playerStatus === "correct") {
                 playerAvatar.classList.add("correct");
@@ -615,6 +737,10 @@ function updatePlayerList() {
             } else if (player.playerStatus === "skip") {
                 playerAvatar.classList.add("skip");
             }
+        }
+        console.log("Player idle:", player.playerIdle);
+        if (player.playerIdle) {
+            playerAvatar.classList.add("idle");
         }
         playerListEl.appendChild(playerAvatar);
     }

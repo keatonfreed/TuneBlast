@@ -60,6 +60,12 @@
     }
 
     .roomInfo {
+
+        #roundDisplay,
+        h2 {
+            font-size: 1.3rem;
+        }
+
         width: 100%;
         margin-bottom: 10px;
     }
@@ -109,9 +115,10 @@
 
         border-radius: 50%;
 
+        transition: opacity 200ms ease-out;
 
 
-        img {
+        .playerImg {
             transition: border 100ms ease, box-shadow 100ms ease;
             box-shadow: 0 0 5px 0 black;
             width: 100%;
@@ -120,11 +127,30 @@
             background-color: black;
             border: 5px solid var(--border);
             border-radius: 50%;
-            filter: contrast(1.3);
+            filter: contrast(1.3) grayscale(0);
             /* stop drag */
             user-drag: none;
             user-select: none;
             -webkit-user-drag: none;
+
+            transition: filter 200ms ease-out;
+        }
+
+        .playerCrown {
+            box-shadow: 0 0 2px 0 gold;
+            width: 50px;
+            height: 100%;
+            user-drag: none;
+            user-select: none;
+            -webkit-user-drag: none;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            rotate: -45deg;
+            translate: 0 -50%;
+
+
         }
 
         &.correct img {
@@ -137,6 +163,7 @@
             box-shadow: 0 0 15px 0 red;
         }
 
+
         &.close img {
             border-color: #ffab4f;
             box-shadow: 0 0 15px 0 #ff9c00;
@@ -145,6 +172,15 @@
         &.skip img {
             border-color: #afafaf;
             box-shadow: 0 0 10px 0px #b5b5b5;
+        }
+
+
+        &.idle {
+            opacity: 0.5;
+
+            img {
+                filter: grayscale(1) contrast(1);
+            }
         }
 
         p {
@@ -185,6 +221,16 @@
     .page .sidebar {
         width: 120px;
 
+        .roomInfo {
+
+            #roundDisplay,
+            h2 {
+                font-size: 1.15rem;
+            }
+
+
+        }
+
         #playerList {
             padding-inline: 0.3rem;
         }
@@ -222,6 +268,15 @@
         .roomInfo {
             width: fit-content;
             margin-bottom: 0;
+
+            font-size: 0.7rem;
+
+
+
+            #inviteFriends {
+                font-size: 0.8rem;
+                margin-top: 7px;
+            }
         }
 
         #playerList {

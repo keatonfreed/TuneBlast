@@ -23,9 +23,12 @@ expressWs(app);
 async function getAppleMusicData(songName, artistName) {
     const baseURL = "https://itunes.apple.com/search";
     const query = new URLSearchParams({
-        term: `${songName} ${artistName || ""}`,
+        term: `"${songName}" by ${artistName || ""}`,
         media: "music",
-        limit: 1
+        entity: "musicTrack",
+        country: "us",
+        isStreamable: "true",
+        limit: 10
     });
 
     let data;
@@ -37,19 +40,42 @@ async function getAppleMusicData(songName, artistName) {
         return false;
     }
 
-    if (data.results.length > 0 && data.results[0].previewUrl) {
+    if (data.results.length > 0) {
+        let filteredResults = data.results.filter(result => {
+            if (result.previewUrl) {
+                if (normalizeTrackName(result.trackName).includes(normalizeTrackName(songName)) || normalizeTrackName(songName).includes(normalizeTrackName(result.trackName))) {
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        });
         // console.log("Got preview:", data.results[0].previewUrl);
-        return data.results[0];
+        if (filteredResults.length > 0) {
+            return filteredResults[0];
+        } else {
+            console.log("All music results filtered, none correct:", data.results, songName, artistName);
+            return false;
+        }
     }
     console.log("No preview available.");
     return false;
 }
 
 async function getRandomSong(excludeList = []) {
+    // return {
+    //     songId: "2tpWsVSb9UEmDRxAl1zhX1",
+    //     songData: {
+    //         previewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/c2/80/0c/c2800c2a-0b68-43c9-3701-7cb1ece6ef24/mzaf_9589312089850013533.plus.aac.p.m4a"
+    //     }
+    // }
+    let randomRetries = 0;
     try {
         let songData = false;
-        while (!songData || !songData.previewUrl) {
+        while ((!songData || !songData.previewUrl) && randomRetries < 200) {
             const randomSong = songList[Math.floor(Math.random() * songList.length)];
+            randomRetries++;
+
             if (excludeList.includes(randomSong.songId)) continue;
             songData = await getAppleMusicData(randomSong.songName, randomSong.songArtist);
             console.log(`Chose: ${randomSong.songName} by ${randomSong.songArtist}`);
@@ -60,6 +86,8 @@ async function getRandomSong(excludeList = []) {
                 };
             }
         }
+        console.log("Failed to get random song.");
+        return false;
     } catch (err) {
         console.error('Error reading song_choices.json:', err);
         return false;
@@ -120,12 +148,12 @@ function checkSongMatch(songId, checkName, checkArtist) {
         if (normalizeTrackName(checkArtist).includes(normalizeTrackName(realArtist))) {
             artistCorrect = true;
         }
-    });
-    let dashedArtists = realSongInfo.songArtist.split("-");
-    dashedArtists.forEach(realArtist => {
-        if (normalizeTrackName(checkArtist).includes(normalizeTrackName(realArtist))) {
-            artistCorrect = true;
-        }
+        let dashedArtists = realArtist.split("-");
+        dashedArtists.forEach(realArtist => {
+            if (normalizeTrackName(checkArtist).includes(normalizeTrackName(realArtist))) {
+                artistCorrect = true;
+            }
+        });
     });
     return { nameCorrect, artistCorrect };
 }
@@ -138,7 +166,7 @@ app.get("/api/v1/solo/randomsong", async (req, res) => {
     if (songData && songId) {
         res.send({ songData, songId });
     } else {
-        res.status(500).send("Failed to get random song");
+        res.status(500).send("Failed to fetch new song");
     }
 });
 
@@ -212,6 +240,7 @@ let currentRooms = [
                 playerId: "2B3C4A",
                 playerName: "Jamie",
                 playerStatus: "skip",
+                playerSongId: "6AI3ezQ4o3HUoP6Dhudph3",
                 playerScore: 50,
             },
         ],
@@ -226,7 +255,8 @@ let currentRooms = [
             "6AI3ezQ4o3HUoP6Dhudph3",
         ],
         roomRound: 0,
-        roomReadyVotes: 0
+        roomReadyVotes: 0,
+        roomTimeLeft: 27,
     }
 ]
 
@@ -238,8 +268,9 @@ app.get("/api/v1/room/create", async (req, res) => {
         console.error(err);
         return res.status(500).send("Failed To Create Room.");
     });
-    currentRooms.push({ roomId, roomPlayers: [], roomRecentPlayers: [], roomCreatedAt: new Date(), roomCurrentSong: randomSong, roomPreviousSongs: [], roomRound: 0 });
+    currentRooms.push({ roomId, roomPlayers: [], roomRecentPlayers: [], roomCreatedAt: new Date(), roomCurrentSong: randomSong, roomPreviousSongs: [], roomRound: 0, roomReadyVotes: 0, roomTimeLeft: 30 });
     res.send({ roomId });
+
 });
 
 
@@ -274,12 +305,13 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
     // console.log("Connection started...");
 
+
     let playerId;
     let playerScore = 0;
 
-    async function endRound() {
+    async function endRound(endType = "guessed") {
         // All players have guessed or skipped
-        broadcastToRoom(roomId, { event: "round_end" });
+        broadcastToRoom(roomId, { event: "round_end", endType });
 
         // Check if any players are correct
         let correctPlayers = room.roomPlayers.filter(p => p.playerStatus === "correct");
@@ -305,6 +337,12 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
             setTimeout(() => {
                 broadcastToRoom(roomId, { event: "game_end", correctPlayers: correctPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName })), songInfo: { songName: songInfo.songName, songArtist: songInfo.songArtist } });
             }, 200);
+
+            clearInterval(room.roomTimer);
+            room.roomTimer = null;
+            room.roomTimeLeft = 30;
+            broadcastToRoom(roomId, { event: "update_timer", roomTimeLeft: room.roomTimeLeft });
+
             room.roomReadyVotes = 0;
 
             room.roomPreviousSongs.push(room.roomCurrentSong.songId);
@@ -326,7 +364,22 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                     p.playerStatus = null;
                     return p;
                 });
-                broadcastToRoom(roomId, { event: "round_start", roomRound: room.roomRound, songData: room.roomCurrentSong.songData });
+
+                // update time left
+                room.roomTimeLeft = room.roomRound * 5 + 30;
+                clearInterval(room.roomTimer);
+                room.roomTimer = null;
+                room.roomTimer = setInterval(() => {
+                    room.roomTimeLeft--;
+                    broadcastToRoom(roomId, { event: "update_timer", roomTimeLeft: room.roomTimeLeft });
+                    if (room.roomTimeLeft <= 0) {
+                        clearInterval(room.roomTimer);
+                        endRound("timer");
+                    }
+                }, 1000);
+
+                broadcastToRoom(roomId, { event: "round_start", roomRound: room.roomRound, roomTimeLeft: room.roomTimeLeft, songData: room.roomCurrentSong.songData });
+
             }, 500);
         }
     }
@@ -344,7 +397,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
         switch (data.event) {
             case "ping":
-                sendMessage({ event: "pong" });
+                sendMessage({ event: "pong", roomTimeLeft: room.roomTimeLeft });
                 break;
             case "player_init":
                 let playerName = data.playerName;
@@ -367,10 +420,11 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                         playerId = prevPlayerId;
                         playerName = recentPlayer.playerName;
                         playerScore = recentPlayer.playerScore;
-                        room.roomPlayers.push({ playerId, playerName, playerWS: ws, playerStatus: null, playerStatus: recentPlayer.playerStatus, playerScore: recentPlayer.playerScore });
+                        let calculatedStatus = recentPlayer.playerSongId === room.roomCurrentSong.songId ? recentPlayer.playerStatus : null;
+                        room.roomPlayers.push({ playerId, playerName, playerWS: ws, playerStatus: null, playerStatus: calculatedStatus, playerScore: recentPlayer.playerScore });
                         room.roomRecentPlayers = room.roomRecentPlayers.filter(p => p.playerId !== playerId);
                         broadcastToRoom(roomId, { event: "player_joined", playerId, playerName, playerScore, playerStatus: recentPlayer.playerStatus }, playerId);
-                        sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
+                        sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, roomTimeLeft: room.roomTimeLeft, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
                         console.log("Player reconnected to room:", roomId, "Player:", playerId, playerName);
                         break;
                     }
@@ -381,10 +435,31 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                 broadcastToRoom(roomId, { event: "player_joined", playerId, playerName }, playerId);
                 // only send playerid and playername for each player
 
-                sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
+                sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, roomTimeLeft: room.roomTimeLeft, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore, playerIdle: p.playerIdle })) });
                 console.log("Player joined room:", roomId, "Player:", playerId, playerName);
                 break;
+            case "update_idle":
+                let newIdle = data.playerIdle ?? false;
+                broadcastToRoom(roomId, { event: "player_idle", playerId, playerIdle: newIdle });
+                room.roomPlayers = room.roomPlayers.map(p => {
+                    if (p.playerId === playerId) {
+                        p.playerIdle = newIdle;
+                    }
+                    return p;
+                });
+                break;
             case "update_status":
+                if (!room.roomTimer) {
+                    room.roomTimer = setInterval(() => {
+                        room.roomTimeLeft--;
+                        broadcastToRoom(roomId, { event: "update_timer", roomTimeLeft: room.roomTimeLeft });
+                        if (room.roomTimeLeft <= 0) {
+                            clearInterval(room.roomTimer);
+                            endRound("timer");
+                        }
+                    }, 1000);
+                }
+
                 if (room.roomPlayers.find(p => p.playerId === playerId).playerStatus != null) {
                     sendMessage({ event: "error", message: "Player has already guessed or skipped." });
                     break;
@@ -429,7 +504,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                 room.roomReadyVotes++;
                 if (room.roomReadyVotes > room.roomPlayers.length / 2) {
                     room.roomReadyVotes = 0;
-                    broadcastToRoom(roomId, { event: "game_start", songData: room.roomCurrentSong.songData });
+                    broadcastToRoom(roomId, { event: "game_start", roomTimeLeft: room.roomTimeLeft, songData: room.roomCurrentSong.songData });
                 }
                 broadcastToRoom(roomId, { event: "ready_votes", roomReadyVotes: room.roomReadyVotes });
                 break
@@ -448,7 +523,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
         console.log("Player left room:", roomId, "Player:", playerId, playerName);
 
-        room.roomRecentPlayers.push({ playerId, playerName, playerScore, playerStatus: playerStatus });
+        room.roomRecentPlayers.push({ playerId, playerName, playerScore, playerStatus: playerStatus, playerSongId: room.roomCurrentSong.songId });
         room.roomPlayers = room.roomPlayers.filter(p => p.playerId !== playerId);
 
         broadcastToRoom(roomId, { event: "player_left", playerId });
@@ -461,7 +536,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
         if (room.roomReadyVotes > room.roomPlayers.length / 2) {
             room.roomReadyVotes = 0;
-            broadcastToRoom(roomId, { event: "game_start", songData: room.roomCurrentSong.songData });
+            broadcastToRoom(roomId, { event: "game_start", roomTimeLeft: room.roomTimeLeft, songData: room.roomCurrentSong.songData });
         } else {
             broadcastToRoom(roomId, { event: "ready_votes", roomReadyVotes: room.roomReadyVotes });
         }

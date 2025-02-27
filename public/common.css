@@ -422,6 +422,7 @@ label {
         margin: 50px;
 
 
+
     }
 
     #gameOverMessage {
@@ -564,9 +565,22 @@ label {
     }
 }
 
+
+
+@media screen and (max-width: 800px) {
+
+    #gameOverPopup #gameOverContent {
+        zoom: 0.8;
+    }
+}
+
 @media screen and (max-width: 550px) {
     .page .title {
         padding-top: 1rem;
+    }
+
+    #gameOverPopup #gameOverContent {
+        zoom: 0.5;
     }
 }
 

@@ -46,7 +46,8 @@ let globalAudio, songId;
 let playing = false;
 let restartOnNext = false;
 let guessIndex = 0;
-const maxTimes = [100, 1000, 2000, 3500, 9000, 30000];
+// const maxTimes = [100, 1000, 2000, 3500, 9000, 30000];
+const maxTimes = [100, 500, 1500, 3500, 9000, 30000];
 let lastInputUpdate;
 const suggestionLimit = 5;
 
@@ -69,19 +70,22 @@ async function backendFetch(url) {
     }
 }
 
+let playedSongs = [];
+
 // Get Random Song
 async function trySongFetch() {
     let songUrl;
     for (let i = 0; i < 5 && !songUrl; i++) {
         const { songData, songId: id } = await backendFetch("/api/v1/solo/randomsong").catch(() => { });
-        if (songData && songData.previewUrl) {
+        if (songData && songData.previewUrl && !playedSongs.includes(id)) {
             songUrl = songData.previewUrl;
+            playedSongs.push(id);
             songId = id;
             globalAudio = new Audio(songUrl);
             globalAudio.onloadeddata = setMarkers;
             globalAudio.onended = () => stopPlaying(true);
             updateControls();
-            setTimeout(() => loadingPopup.close(), 1000);
+            setTimeout(() => loadingPopup.close(), 500);
             requestAnimationFrame(updateControls);
         }
     }
@@ -272,6 +276,9 @@ async function gameOver(win = false) {
         playAgainBtn.onclick = async () => {
             resolve();
         }
+        gameOverPopup.onclose = async () => {
+            resolve();
+        }
     });
 
     gameOverPopup.close();
@@ -370,7 +377,7 @@ guessBtn.onclick = async () => {
             lines[guessIndex]?.classList.add("correct");
             return
         } else if (nameCorrect || artistCorrect) {
-            let closeSound = new Audio("../close.mp3");
+            let closeSound = new Audio("../incorrect.mp3");
             closeSound.play();
             closeSound.onended = () => {
                 playing = true;

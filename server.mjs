@@ -5,6 +5,8 @@ import expressWs from "express-ws";
 import env from "dotenv";
 env.config();
 
+import { request } from 'undici';
+
 // App Setup
 const app = express();
 const PORT = process.env.PORT || 3050;
@@ -33,8 +35,11 @@ async function getAppleMusicData(songName, artistName) {
 
     let data;
     try {
-        const response = await fetch(`${baseURL}?${query}`);
-        data = await response.json();
+        // console.log("opening fetch")
+        const { body } = await request(`${baseURL}?${query}`, {
+            method: 'GET'
+        });
+        data = await body.json(); // `undici` handles streaming better
     } catch (err) {
         console.error("Error fetching Apple Music data:", err);
         return false;
@@ -62,7 +67,7 @@ async function getAppleMusicData(songName, artistName) {
     return false;
 }
 
-async function getRandomSong(excludeList = []) {
+async function getRandomSong({ excludeList = [], genres = null } = {}) {
     // return {
     //     songId: "2tpWsVSb9UEmDRxAl1zhX1",
     //     songData: {
@@ -72,11 +77,17 @@ async function getRandomSong(excludeList = []) {
     let randomRetries = 0;
     try {
         let songData = false;
-        while ((!songData || !songData.previewUrl) && randomRetries < 200) {
+        while ((!songData || !songData.previewUrl) && randomRetries < 200 && excludeList.length < songList.length) {
+            if (randomRetries > 0) {
+                console.log("Retrying to get random song...");
+                await new Promise(resolve => setTimeout(resolve, randomRetries * 100));
+            }
             const randomSong = songList[Math.floor(Math.random() * songList.length)];
-            randomRetries++;
 
             if (excludeList.includes(randomSong.songId)) continue;
+            if (genres && !genres.includes(randomSong.songCategory)) continue;
+            randomRetries++;
+
             songData = await getAppleMusicData(randomSong.songName, randomSong.songArtist);
             console.log(`Chose: ${randomSong.songName} by ${randomSong.songArtist}`);
             if (songData && songData.previewUrl) {
@@ -85,6 +96,7 @@ async function getRandomSong(excludeList = []) {
                     songData: { previewUrl: songData.previewUrl }
                 };
             }
+
         }
         console.log("Failed to get random song.");
         return false;
@@ -159,10 +171,37 @@ function checkSongMatch(songId, checkName, checkArtist) {
 }
 
 const songList = JSON.parse(fs.readFileSync('song_choices.json', 'utf8'));
+const validGenres = ["Pop", "HipHop", "Classics", "Throwbacks"];
 
 // --------------- Solo Game Routes ---------------
 app.get("/api/v1/solo/randomsong", async (req, res) => {
-    let { songId, songData } = await getRandomSong();
+    // get categories url param
+    const { categories } = req.query;
+    let parsedCategories = null;
+    if (categories) {
+        // parse json
+        try {
+            parsedCategories = JSON.parse(categories);
+
+            if (!Array.isArray(parsedCategories)) {
+                return res.status(400).send("Invalid categories format");
+            }
+            // check if all categories are in songList
+
+            const invalidCategories = parsedCategories.filter(c => !validGenres.includes(c));
+            if (invalidCategories.length > 0) {
+                return res.status(400).send(`Invalid categories: ${invalidCategories.join(", ")}`);
+            }
+            // check if categories are empty
+            if (parsedCategories.length === 0) {
+                return res.status(400).send("No categories provided");
+            }
+
+        } catch (error) {
+            return res.status(400).send("Invalid categories format");
+        }
+    }
+    let { songId, songData } = await getRandomSong({ genres: parsedCategories });
     if (songData && songId) {
         res.send({ songData, songId });
     } else {
@@ -201,18 +240,29 @@ app.get("/api/v1/solo/finish", async (req, res) => {
 // WebSocket Endpoint: /api/v1/room/:roomId
 
 // On connection:
-// - Body: {playerName}
-// - Add player to room
-// - Broadcast player join
+// - Check if room exists and other errors
 
 // WebSocket in events:
-// - update_status: Listen for player guessing or skipping
+// - player_init: Listen for player init
+// - update_status: Listen for player status update
+// - update_idle: Listen for player idle status
+// - player_ready: Listen for player ready to continue status
+// - ping: Listen for ping from client
+// - update_genres : Listen for genre update
 
 // WebSocket out events:
+// - update_timer: Broadcast  timer update
+// - room_init: Broadcast room init with player list
+// - ready_votes: Broadcast ready votes
+// - player_idle: Broadcast when player idle status changes
+// - error: Broadcast error message
+
+// - update_genres: Broadcast genre update
+
 // - player_joined: Broadcast when player joins
 // - player_left: Broadcast when player leaves
 
-// - round_start: Broadcast next round start 
+// - round_start: Broadcast next round start
 // - player_status: Broadcast when player makes guess or skip
 // - round_end: Broadcast round results
 
@@ -257,6 +307,7 @@ let currentRooms = [
         roomRound: 0,
         roomReadyVotes: 0,
         roomTimeLeft: 27,
+        roomSongGenres: ["Pop", "HipHop", "Classics", "Throwbacks"],
     }
 ]
 
@@ -268,7 +319,18 @@ app.get("/api/v1/room/create", async (req, res) => {
         console.error(err);
         return res.status(500).send("Failed To Create Room.");
     });
-    currentRooms.push({ roomId, roomPlayers: [], roomRecentPlayers: [], roomCreatedAt: new Date(), roomCurrentSong: randomSong, roomPreviousSongs: [], roomRound: 0, roomReadyVotes: 0, roomTimeLeft: 30 });
+    currentRooms.push({
+        roomId,
+        roomSongGenres: ["Pop", "HipHop", "Classics", "Throwbacks"],
+        roomPlayers: [],
+        roomRecentPlayers: [],
+        roomCreatedAt: new Date(),
+        roomCurrentSong: randomSong,
+        roomPreviousSongs: [],
+        roomRound: 0,
+        roomReadyVotes: 0,
+        roomTimeLeft: 30
+    });
     res.send({ roomId });
 
 });
@@ -347,7 +409,7 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
             room.roomPreviousSongs.push(room.roomCurrentSong.songId);
             // console.log("Previous songs:", room.roomPreviousSongs);
-            let nextSong = await getRandomSong(room.roomPreviousSongs);
+            let nextSong = await getRandomSong({ excludeList: room.roomPreviousSongs, genres: room.roomSongGenres });
             if (!nextSong) {
                 broadcastToRoom(roomId, { event: "error", message: "Failed to get next song." });
                 return;
@@ -424,7 +486,24 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                         room.roomPlayers.push({ playerId, playerName, playerWS: ws, playerStatus: null, playerStatus: calculatedStatus, playerScore: recentPlayer.playerScore });
                         room.roomRecentPlayers = room.roomRecentPlayers.filter(p => p.playerId !== playerId);
                         broadcastToRoom(roomId, { event: "player_joined", playerId, playerName, playerScore, playerStatus: recentPlayer.playerStatus }, playerId);
-                        sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, roomTimeLeft: room.roomTimeLeft, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore })) });
+                        sendMessage({
+                            event: "room_init",
+                            playerId,
+                            roomRound: room.roomRound,
+                            roomTimeLeft: room.roomTimeLeft,
+                            songData: room.roomCurrentSong.songData,
+                            roomSongGenres: room.roomSongGenres,
+                            roomPlayers: room.roomPlayers.map(
+                                p => (
+                                    {
+                                        playerId: p.playerId,
+                                        playerName: p.playerName,
+                                        playerStatus: p.playerStatus,
+                                        playerScore: p.playerScore
+                                    }
+                                )
+                            )
+                        });
                         console.log("Player reconnected to room:", roomId, "Player:", playerId, playerName);
                         break;
                     }
@@ -435,7 +514,23 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                 broadcastToRoom(roomId, { event: "player_joined", playerId, playerName }, playerId);
                 // only send playerid and playername for each player
 
-                sendMessage({ event: "room_init", playerId, roomRound: room.roomRound, roomTimeLeft: room.roomTimeLeft, songData: room.roomCurrentSong.songData, roomPlayers: room.roomPlayers.map(p => ({ playerId: p.playerId, playerName: p.playerName, playerStatus: p.playerStatus, playerScore: p.playerScore, playerIdle: p.playerIdle })) });
+                sendMessage({
+                    event: "room_init",
+                    playerId,
+                    roomRound: room.roomRound,
+                    roomTimeLeft: room.roomTimeLeft,
+                    songData: room.roomCurrentSong.songData,
+                    roomSongGenres: room.roomSongGenres,
+                    roomPlayers: room.roomPlayers.map(
+                        p => (
+                            {
+                                playerId: p.playerId,
+                                playerName: p.playerName,
+                                playerStatus: p.playerStatus,
+                                playerScore: p.playerScore,
+                                playerIdle: p.playerIdle
+                            }))
+                });
                 console.log("Player joined room:", roomId, "Player:", playerId, playerName);
                 break;
             case "update_idle":
@@ -508,6 +603,28 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                 }
                 broadcastToRoom(roomId, { event: "ready_votes", roomReadyVotes: room.roomReadyVotes });
                 break
+            case "update_genres":
+                if (!data.songGenres || !Array.isArray(data.songGenres)) {
+                    sendMessage({ event: "error", message: "Invalid genres." });
+                    break;
+                }
+                if (data.songGenres.length > 4) {
+                    sendMessage({ event: "error", message: "Too many genres." });
+                    break;
+                }
+                if (data.songGenres.length < 1) {
+                    sendMessage({ event: "error", message: "No genres." });
+                    break;
+                }
+                if (data.songGenres.some(genre => !validGenres.includes(genre))) {
+                    sendMessage({ event: "error", message: "Invalid genres." });
+                    break;
+                }
+
+                room.roomSongGenres = data.songGenres;
+
+                broadcastToRoom(roomId, { event: "update_genres", roomSongGenres: room.roomSongGenres });
+                break;
             default:
                 console.log("Unknown event:", data.event);
                 sendMessage({ event: "error", message: "Unknown event." });
@@ -541,9 +658,76 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
             broadcastToRoom(roomId, { event: "ready_votes", roomReadyVotes: room.roomReadyVotes });
         }
     });
-
-
 });
+
+
+
+const SPOTIFY_CLIENT_ID = 'your_client_id';
+const SPOTIFY_CLIENT_SECRET = 'your_client_secret';
+let spotifyAccessToken = '';
+
+// Function to get a new access token
+async function getSpotifyAccessToken() {
+    try {
+        const response = await axios.post(
+            'https://accounts.spotify.com/api/token',
+            qs.stringify({
+                grant_type: 'client_credentials',
+                client_id: SPOTIFY_CLIENT_ID,
+                client_secret: SPOTIFY_CLIENT_SECRET,
+            }),
+            {
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            }
+        );
+        spotifyAccessToken = response.data.access_token;
+    } catch (error) {
+        console.error('Error getting Spotify access token:', error.response?.data || error.message);
+        throw new Error('Failed to get Spotify access token');
+    }
+}
+
+// Middleware to check and refresh token if needed
+async function ensureSpotifyToken(req, res, next) {
+    if (!spotifyAccessToken) {
+        try {
+            await getSpotifyAccessToken();
+        } catch (err) {
+            return res.status(500).json({ error: 'Failed to authenticate with Spotify' });
+        }
+    }
+    next();
+}
+
+// Spotify search API route
+app.get('/api/v1/spotify/search', ensureSpotifyToken, async (req, res) => {
+    const query = req.query.q;
+    if (!query) {
+        return res.status(400).json({ error: 'Missing search query parameter' });
+    }
+
+    try {
+        const response = await axios.get('https://api.spotify.com/v1/search', {
+            headers: { Authorization: `Bearer ${spotifyAccessToken}` },
+            params: { q: query, type: 'playlist', limit: 10 },
+        });
+
+        const playlists = response.data.playlists.items.map((playlist) => ({
+            id: playlist.id,
+            name: playlist.name,
+            image: playlist.images.length ? playlist.images[0].url : null,
+            owner: playlist.owner.display_name,
+            url: playlist.external_urls.spotify,
+        }));
+
+        res.json({ playlists });
+    } catch (error) {
+        console.error('Error fetching playlists from Spotify:', error.response?.data || error.message);
+        res.status(500).json({ error: 'Failed to fetch playlists from Spotify' });
+    }
+});
+
+
 
 
 // Start Server

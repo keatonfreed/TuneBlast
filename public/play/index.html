@@ -8,6 +8,12 @@
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="TuneBlast">
+    <meta property="og:description" content="Play TuneBlast and test your music guessing skills!">
+    <meta property="og:image" content="https://tuneblast.live/tuneblast.png">
+    <meta property="og:url" content="https://tuneblast.live">
+    <meta property="og:type" content="website">
 </head>
 
 <body>
@@ -31,6 +37,25 @@
 
             <div>
                 <h1 class="title">TuneBlast</h1>
+                <button id="genreDisplay" class="subtitle"><span></span><svg width="800" height="800"
+                        viewBox="6 4.5 14 14" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10l5 5 5-5z" />
+                    </svg>
+                </button>
+                <dialog id="genreSelector">
+                    <label for="genre-classics">
+                        <input type="checkbox" id="genre-classics" class="genreCheckbox" data-genre="Classics">
+                        Classics</label>
+                    <label for="genre-hiphop">
+                        <input type="checkbox" id="genre-hiphop" class="genreCheckbox" data-genre="HipHop">
+                        Hip Hop</label>
+                    <label for="genre-pop">
+                        <input type="checkbox" id="genre-pop" class="genreCheckbox" data-genre="Pop">
+                        Pop</label>
+                    <label for="genre-throwbacks">
+                        <input type="checkbox" id="genre-throwbacks" class="genreCheckbox" data-genre="Throwbacks">
+                        Throwbacks</label>
+                </dialog>
                 <div class="guessLines">
                     <div class="line"></div>
                     <div class="line"></div>

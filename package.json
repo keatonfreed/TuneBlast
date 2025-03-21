@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "dev": "nodemon server.mjs"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "fs": "^0.0.1-security",
     "jsdom": "^26.0.0",
     "node-fetch": "^3.3.2",
-    "openai": "^4.85.4"
+    "openai": "^4.85.4",
+    "undici": "^7.4.0"
   }
 }

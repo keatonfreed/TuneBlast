@@ -1,293 +1,5 @@
 [
   {
-    "songName": "Ain't No Mountain High Enough",
-    "songArtist": "Marvin Gaye, Tammi Terrell",
-    "songId": "7tqhbajSfrz2F7E1Z75ASX",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Everybody Wants To Rule The World",
-    "songArtist": "Tears For Fears",
-    "songId": "4RvWPyQ5RL0ao9LPZeSouE",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "I'm Still Standing",
-    "songArtist": "Elton John",
-    "songId": "1jDJFeK9x3OZboIAHsY9k2",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Take on Me",
-    "songArtist": "a-ha",
-    "songId": "2WfaOiMkCvy7F5fcp2zZ8L",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Wake Me Up Before You Go-Go",
-    "songArtist": "Wham!",
-    "songId": "0ikz6tENMONtK6qGkOrU3c",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Walking On Sunshine",
-    "songArtist": "Katrina & The Waves",
-    "songId": "05wIrZSwuaVWhcv5FfqeH0",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "In The Air Tonight - 2015 Remastered",
-    "songArtist": "Phil Collins",
-    "songId": "18AXbzPzBS8Y3AkgSxzJPb",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Africa",
-    "songArtist": "TOTO",
-    "songId": "2374M0fQpWi3dLnB54qaLX",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Sweet Child O' Mine",
-    "songArtist": "Guns N' Roses",
-    "songId": "7snQQk1zcKl8gZ92AnueZW",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Piano Man",
-    "songArtist": "Billy Joel",
-    "songId": "70C4NyhjD5OZUMzvWZ3njJ",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Sweet Home Alabama",
-    "songArtist": "Lynyrd Skynyrd",
-    "songId": "7e89621JPkKaeDSTQ3avtg",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Billie Jean",
-    "songArtist": "Michael Jackson",
-    "songId": "5ChkMS8OtdzJeqyybCc9R5",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Thriller",
-    "songArtist": "Michael Jackson",
-    "songId": "3S2R0EVwBSAVMd5UMgKTL0",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Smooth Criminal - 2012 Remaster",
-    "songArtist": "Michael Jackson",
-    "songId": "5T7ywazdGIydr6JCW6t02j",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Livin' On A Prayer",
-    "songArtist": "Bon Jovi",
-    "songId": "37ZJ0p5Jm13JPevGcx4SkF",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Bohemian Rhapsody",
-    "songArtist": "Queen",
-    "songId": "6l8GvAyoUZwWDgF1e4822w",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "I Want It That Way",
-    "songArtist": "Backstreet Boys",
-    "songId": "47BBI51FKFwOMlIiX6m8ya",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Should I Stay or Should I Go - Remastered",
-    "songArtist": "The Clash",
-    "songId": "39shmbIHICJ2Wxnk1fPSdz",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Dancing Queen",
-    "songArtist": "ABBA",
-    "songId": "0GjEhVFGZW8afUYGChu3Rr",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Don't Go Breaking My Heart",
-    "songArtist": "Elton John, Kiki Dee",
-    "songId": "7HW5WIw7ZgZORCzUxv5gW5",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Uptown Girl",
-    "songArtist": "Billy Joel",
-    "songId": "5zA8vzDGqPl2AzZkEYQGKh",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Jessie's Girl",
-    "songArtist": "Rick Springfield",
-    "songId": "5RsUlxLto4NZbhJpqJbHfN",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Jack & Diane",
-    "songArtist": "John Mellencamp",
-    "songId": "43btz2xjMKpcmjkuRsvxyg",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "My Heart Will Go On - Love Theme from \"Titanic\"",
-    "songArtist": "Céline Dion",
-    "songId": "33LC84JgLvK2KuW43MfaNq",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Jump - 2015 Remaster",
-    "songArtist": "Van Halen",
-    "songId": "7N3PAbqfTjSEU1edb2tY8j",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Sweet Caroline",
-    "songArtist": "Neil Diamond",
-    "songId": "62AuGbAkt8Ox2IrFFb8GKV",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Free Fallin'",
-    "songArtist": "Tom Petty",
-    "songId": "5tVA6TkbaAH9QMITTQRrNv",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Brown Eyed Girl",
-    "songArtist": "Van Morrison",
-    "songId": "3yrSvpt2l1xhsV9Em88Pul",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "American Pie",
-    "songArtist": "Don McLean",
-    "songId": "1fDsrQ23eTAVFElUMaf38X",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Summer Of '69",
-    "songArtist": "Bryan Adams",
-    "songId": "0GONea6G2XdnHWjNZd6zt3",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Santeria",
-    "songArtist": "Sublime",
-    "songId": "2hnMS47jN0etwvFPzYk11f",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "You Give Love A Bad Name",
-    "songArtist": "Bon Jovi",
-    "songId": "0rmGAIH9LNJewFw7nKzZnc",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Rocket Man (I Think It's Going To Be A Long, Long Time)",
-    "songArtist": "Elton John",
-    "songId": "3gdewACMIVMEWVbyb8O9sY",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Easy",
-    "songArtist": "Commodores",
-    "songId": "1JQ6Xm1JrvHfvAqhl5pwaA",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Ain't No Sunshine",
-    "songArtist": "Bill Withers",
-    "songId": "1k1Bqnv2R0uJXQN4u6LKYt",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Here Comes The Sun - Remastered 2009",
-    "songArtist": "The Beatles",
-    "songId": "6dGnYIeXmHdcikdzNNDMm2",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Vienna",
-    "songArtist": "Billy Joel",
-    "songId": "4U45aEWtQhrm8A5mxPaFZ7",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Time After Time",
-    "songArtist": "Cyndi Lauper",
-    "songId": "7o9uu2GDtVDr9nsR7ZRN73",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Don't You (Forget About Me)",
-    "songArtist": "Simple Minds",
-    "songId": "3fH4KjXFYMmljxrcGrbPj9",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Just the Two of Us (feat. Bill Withers)",
-    "songArtist": "Grover Washington, Jr., Bill Withers",
-    "songId": "1ko2lVN0vKGUl9zrU0qSlT",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Black Betty",
-    "songArtist": "Ram Jam",
-    "songId": "6kooDsorCpWVMGc994XjWN",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "I Want You Back",
-    "songArtist": "The Jackson 5",
-    "songId": "5LxvwujISqiB8vpRYv887S",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "What A Wonderful World",
-    "songArtist": "Louis Armstrong",
-    "songId": "29U7stRjqHU6rMiS8BfaI9",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "I Wanna Dance with Somebody (Who Loves Me)",
-    "songArtist": "Whitney Houston",
-    "songId": "2tUBqZG2AbRi7Q0BIrVrEj",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Girls Just Want to Have Fun",
-    "songArtist": "Cyndi Lauper",
-    "songId": "4y1LsJpmMti1PfRQV9AWWe",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Forever Young",
-    "songArtist": "Alphaville",
-    "songId": "4S1VYqwfkLit9mKVY3MXoo",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Linger",
-    "songArtist": "The Cranberries",
-    "songId": "0gEyKnHvgkrkBM6fbeHdwK",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "How to Save a Life",
-    "songArtist": "The Fray",
-    "songId": "5fVZC9GiM4e8vu99W0Xf6J",
-    "songCategory": "Pop"
-  },
-  {
     "songName": "Set Fire to the Rain",
     "songArtist": "Adele",
     "songId": "73CMRj62VK8nUS4ezD2wvi",
@@ -477,7 +189,7 @@
     "songName": "Hey, Soul Sister",
     "songArtist": "Train",
     "songId": "4HlFJV71xXKIGcU3kRyttv",
-    "songCategory": "Classics"
+    "songCategory": "Pop"
   },
   {
     "songName": "Shut Up and Dance",
@@ -498,10 +210,16 @@
     "songCategory": "Pop"
   },
   {
+    "songName": "I Want It That Way",
+    "songArtist": "Backstreet Boys",
+    "songId": "47BBI51FKFwOMlIiX6m8ya",
+    "songCategory": "Pop"
+  },
+  {
     "songName": "A Thousand Miles",
     "songArtist": "Vanessa Carlton",
     "songId": "4w1lzcaoZ1IC2K5TwjalRP",
-    "songCategory": "Throwback"
+    "songCategory": "Pop"
   },
   {
     "songName": "Symphony (feat. Zara Larsson)",
@@ -654,6 +372,12 @@
     "songCategory": "Pop"
   },
   {
+    "songName": "Take on Me",
+    "songArtist": "a-ha",
+    "songId": "2WfaOiMkCvy7F5fcp2zZ8L",
+    "songCategory": "Pop"
+  },
+  {
     "songName": "Night Changes",
     "songArtist": "One Direction",
     "songId": "5O2P9iiztwhomNh8xkR9lJ",
@@ -685,7 +409,7 @@
   },
   {
     "songName": "Rockabye (feat. Sean Paul & Anne-Marie)",
-    "songArtist": "Clean Bandit, Sean Paul, Anne-Marie",
+    "songArtist": "Clean Bandit, Anne-Marie, Sean Paul",
     "songId": "2hrUO4drrO63i7FYbCLBl2",
     "songCategory": "Pop"
   },
@@ -891,7 +615,7 @@
     "songName": "Sunflower - Spider-Man: Into the Spider-Verse",
     "songArtist": "Post Malone, Swae Lee",
     "songId": "3KkXRkHbMCARz0aVfEt68P",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Sweater Weather",
@@ -903,7 +627,7 @@
     "songName": "One Dance",
     "songArtist": "Drake, Wizkid, Kyla",
     "songId": "1xznGGDReH1oQq0xzbwXa3",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Believer",
@@ -948,16 +672,16 @@
     "songCategory": "Pop"
   },
   {
-    "songName": "Simulation",
-    "songArtist": "Band of Silver",
-    "songId": "4jOsYw8WLcxpd6xI0e5ASk",
+    "songName": "Ecstasy",
+    "songArtist": "To1Swerve",
+    "songId": "2C8VsGaiAoO2dqbPeVlOFB",
     "songCategory": "Pop"
   },
   {
     "songName": "rockstar",
     "songArtist": "Post Malone, 21 Savage",
     "songId": "7wGoVu4Dady5GV0Sv4UIsx",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Watermelon Sugar",
@@ -1023,7 +747,7 @@
     "songName": "Lucid Dreams",
     "songArtist": "Juice WRLD",
     "songId": "285pBltuF7vW8TeWk8hdRR",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Echo",
@@ -1038,9 +762,9 @@
     "songCategory": "Pop"
   },
   {
-    "songName": "Sunlight",
-    "songArtist": "The Hourglass Effect",
-    "songId": "2NQzj8czPzUw9ufCOvAT8W",
+    "songName": "Fuck Around And Find Out",
+    "songArtist": "Andrew Cassara",
+    "songId": "7c68kuJ880qQt2JF09dqhQ",
     "songCategory": "Pop"
   },
   {
@@ -1065,7 +789,7 @@
     "songName": "Can't Hold Us (feat. Ray Dalton)",
     "songArtist": "Macklemore, Ryan Lewis, Macklemore & Ryan Lewis, Ray Dalton",
     "songId": "3bidbhpOYeV4knp8AIu8Xn",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Fireflies",
@@ -1077,18 +801,24 @@
     "songName": "goosebumps",
     "songArtist": "Travis Scott",
     "songId": "6gBFPUFcJLzWGx4lenP6h2",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "God's Plan",
     "songArtist": "Drake",
     "songId": "6T8cJz5lAqGer9GUHGyelE",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
-    "songName": "Replacing Sands",
-    "songArtist": "Sound vs Silence",
-    "songId": "116L1W71ptjVn6GI1jD8gX",
+    "songName": "Bohemian Rhapsody - Remastered 2011",
+    "songArtist": "Queen",
+    "songId": "4u7EnebtmKWzUH433cf5Qv",
+    "songCategory": "Pop"
+  },
+  {
+    "songName": "Bring It Out of Me",
+    "songArtist": "Lotti",
+    "songId": "3MdQmEN09sPWNydVihrNr4",
     "songCategory": "Pop"
   },
   {
@@ -1122,9 +852,9 @@
     "songCategory": "Pop"
   },
   {
-    "songName": "Bones",
-    "songArtist": "Catlea",
-    "songId": "68oXI6rTbHzEaQ1mLcVHCX",
+    "songName": "See why",
+    "songArtist": "CY",
+    "songId": "4EPZ8J7o9wzclpDl1mlg6o",
     "songCategory": "Pop"
   },
   {
@@ -1137,6 +867,12 @@
     "songName": "All of Me",
     "songArtist": "John Legend",
     "songId": "3U4isOIWM3VvDubwSI3y7a",
+    "songCategory": "Pop"
+  },
+  {
+    "songName": "Fineboy",
+    "songArtist": "Bori",
+    "songId": "3fopwbN8oANZDwj1M4d383",
     "songCategory": "Pop"
   },
   {
@@ -1164,22 +900,22 @@
     "songCategory": "Pop"
   },
   {
-    "songName": "Everything I Wanted",
-    "songArtist": "MELINDA LINDNER",
-    "songId": "1PnP7dLxHhy5JoQJMtwnb4",
+    "songName": "Hemingway",
+    "songArtist": "Phil Makes",
+    "songId": "1Tg5DssC7nOXICVUMySVkC",
     "songCategory": "Pop"
   },
   {
     "songName": "Mr. Brightside",
     "songArtist": "The Killers",
     "songId": "003vvx7Niy0yvhvHt4a68B",
-    "songCategory": "Throwback"
+    "songCategory": "Pop"
   },
   {
     "songName": "No Role Modelz",
     "songArtist": "J. Cole",
     "songId": "68Dni7IE4VyPkTOH9mRWHr",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "That's What I Like",
@@ -1191,7 +927,7 @@
     "songName": "HUMBLE.",
     "songArtist": "Kendrick Lamar",
     "songId": "7ujx3NYtwO2LkmKGz59mXp",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Let Her Go",
@@ -1221,24 +957,24 @@
     "songName": "Lose Yourself",
     "songArtist": "Eminem",
     "songId": "7MJQ9Nfxzh8LPZ9e9u68Fq",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Every Breath You Take",
     "songArtist": "The Police",
     "songId": "1JSTJqkT5qHq8MDJnJbRE1",
-    "songCategory": "Classics"
+    "songCategory": "Pop"
   },
   {
     "songName": "In the End",
     "songArtist": "Linkin Park",
     "songId": "60a0Rd6pjrkxjPbaKzXjfq",
-    "songCategory": "Throwback"
+    "songCategory": "Pop"
   },
   {
-    "songName": "Not Okay",
-    "songArtist": "Cwby, Rowlan",
-    "songId": "2yRiJCQXmFu5gqY00gmQhQ",
+    "songName": "DIVINE RETRIBUTION",
+    "songArtist": "Overpade, Joseph Wolff",
+    "songId": "4cZGQCtfcvLsPPGGH9j4fA",
     "songCategory": "Pop"
   },
   {
@@ -1287,37 +1023,37 @@
     "songName": "SAD!",
     "songArtist": "XXXTENTACION",
     "songId": "3ee8Jmje8o58CHK66QrVC2",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Jocelyn Flores",
     "songArtist": "XXXTENTACION",
     "songId": "7m9OqQk4RVRkw9JJdeAw96",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "XO Tour Llif3",
     "songArtist": "Lil Uzi Vert",
     "songId": "7GX5flRQZVHRAGd6B4TmDO",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Childish (feat. Vory)",
     "songArtist": "Jt5k, Vory",
     "songId": "63kQbC2s7Qr9MbNqUPWdep",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "SICKO MODE",
     "songArtist": "Travis Scott",
     "songId": "2xLMifQCjDGFmkHkpNLD9h",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Smells Like Teen Spirit",
     "songArtist": "Nirvana",
     "songId": "4CeeEOM32jQcH3eN9Q2dGj",
-    "songCategory": "Throwback"
+    "songCategory": "Pop"
   },
   {
     "songName": "Lean On (feat. MØ & DJ Snake)",
@@ -1329,7 +1065,7 @@
     "songName": "Don't Stop Believin'",
     "songArtist": "Journey",
     "songId": "77NNZQSqzLNqh2A9JhLRkg",
-    "songCategory": "Classics"
+    "songCategory": "Pop"
   },
   {
     "songName": "Cold Heart - PNAU Remix",
@@ -1365,2437 +1101,2845 @@
     "songName": "Never Gonna Give You Up",
     "songArtist": "Rick Astley",
     "songId": "7GhIk7Il098yCjg4BQjzvb",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Y.M.C.A.",
     "songArtist": "Village People",
     "songId": "4YOJFyjqh8eAcbKFfv88mV",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Forget You",
     "songArtist": "CeeLo Green",
     "songId": "7AqISujIaWcY3h5zrOqt5v",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Girls Just Want to Have Fun",
+    "songArtist": "Cyndi Lauper",
+    "songId": "4y1LsJpmMti1PfRQV9AWWe",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Radioactive",
     "songArtist": "Imagine Dragons",
     "songId": "4G8gkOterJn0Ywt6uhqbhp",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Chicken Fried",
     "songArtist": "Zac Brown Band",
     "songId": "3eBnEo9WL34ulBCZlLpUQO",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "All Star",
     "songArtist": "Smash Mouth",
     "songId": "3cfOd4CMv2snFaKAnMdnvK",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Africa",
+    "songArtist": "TOTO",
+    "songId": "2374M0fQpWi3dLnB54qaLX",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Eye of the Tiger",
     "songArtist": "Survivor",
     "songId": "2KH16WveTQWT6KOG9Rg6e2",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Every Rose Has Its Thorn - 2003 Remaster",
     "songArtist": "Poison",
     "songId": "43GS3mtezoIFiuIZCLLiDY",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "See You Again (feat. Charlie Puth)",
     "songArtist": "Wiz Khalifa, Charlie Puth",
     "songId": "2JzZzZUQj3Qff7wapcbKjc",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "My House",
     "songArtist": "Flo Rida",
     "songId": "6Knv6wdA0luoMUuuoYi2i1",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Celebration",
     "songArtist": "Kool & The Gang",
     "songId": "3K7Q9PHUWPTaknlbFPThn2",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Who Let The Dogs Out",
     "songArtist": "Baha Men",
     "songId": "1H5tvpoApNDxvxDexoaAUo",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bad Day",
     "songArtist": "Daniel Powter",
     "songId": "0mUyMawtxj1CJ76kn9gIZK",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hey Ya!",
     "songArtist": "Outkast",
     "songId": "2PpruBYCo4H7WOBJ7Q2EwM",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Knee Deep (feat. Jimmy Buffett)",
     "songArtist": "Zac Brown Band, Jimmy Buffett",
     "songId": "0b2IVjeD268pYd7VUhmtKI",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "People Are Crazy",
     "songArtist": "Billy Currington",
     "songId": "5JnLiuMgRAWoHYOhatFP3s",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Highway 20 Ride",
     "songArtist": "Zac Brown Band",
     "songId": "2oAGUpLorRToXExl2FtUVy",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Life is a Highway",
     "songArtist": "Rascal Flatts",
     "songId": "2Fs18NaCDuluPG1DHGw1XG",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "All Summer Long",
     "songArtist": "Kid Rock",
     "songId": "5rX6C5QVvvZB7XckETNych",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Sweet Home Alabama",
+    "songArtist": "Lynyrd Skynyrd",
+    "songId": "7e89621JPkKaeDSTQ3avtg",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Shook Me All Night Long",
     "songArtist": "AC/DC",
     "songId": "2SiXAy7TuUkycRVbbWDEpo",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Highway to Hell",
     "songArtist": "AC/DC",
     "songId": "2zYzyRzz6pRmhPzyfMEC8s",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Back In Black",
     "songArtist": "AC/DC",
     "songId": "08mG3Y1vljYA6bvDt4Wqkj",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "T.N.T.",
     "songArtist": "AC/DC",
     "songId": "7LRMbd3LEoV5wZJvXT1Lwb",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Thunderstruck",
     "songArtist": "AC/DC",
     "songId": "57bgtoPSgt236HzfBOd8kj",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "How to Save a Life",
+    "songArtist": "The Fray",
+    "songId": "5fVZC9GiM4e8vu99W0Xf6J",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hey There Delilah",
     "songArtist": "Plain White T's",
     "songId": "4RCWB3V8V0dignt99LZ8vH",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Californication",
     "songArtist": "Red Hot Chili Peppers",
     "songId": "48UPSzbZjgc449aqz8bxox",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Seven Nation Army",
     "songArtist": "The White Stripes",
     "songId": "3dPQuX8Gs42Y7b454ybpMR",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Nothin' But A Good Time - Remastered 2006",
     "songArtist": "Poison",
     "songId": "2V8KvnD5LVeeDChMWEkSzC",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Springsteen",
     "songArtist": "Eric Church",
     "songId": "05ZACkzW8YbRq3eFgIfSNB",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Don't Worry Be Happy",
     "songArtist": "Bobby McFerrin",
     "songId": "4hObp5bmIJ3PP3cKA9K9GY",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ice Ice Baby",
     "songArtist": "Vanilla Ice",
     "songId": "3XVozq1aeqsJwpXrEZrDJ9",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Thriller",
+    "songArtist": "Michael Jackson",
+    "songId": "3S2R0EVwBSAVMd5UMgKTL0",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hooked On A Feeling",
     "songArtist": "Blue Swede, Björn Skifs",
     "songId": "2Nz6aF1umHh5Et6I5H581L",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Mr. Blue Sky",
     "songArtist": "Electric Light Orchestra",
     "songId": "2RlgNHKcydI9sayD2Df2xp",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Spirit In The Sky - Deluxe Edition",
     "songArtist": "Norman Greenbaum",
     "songId": "0jvN7eQJJt4nxQzgQfZ1SP",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Werewolves of London",
     "songArtist": "Warren Zevon",
     "songId": "6kotXaSQaGYxE62hVpdHWu",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Stereo Hearts (feat. Adam Levine)",
     "songArtist": "Gym Class Heroes, Adam Levine",
     "songId": "0qOnSQQF0yzuPWsXrQ9paz",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Classic",
     "songArtist": "MKTO",
     "songId": "6FE2iI43OZnszFLuLtvvmg",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Wagon Wheel",
     "songArtist": "Darius Rucker",
     "songId": "3xdjjKMcMOFgo1eQrfbogM",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "We Didn't Start the Fire",
     "songArtist": "Billy Joel",
     "songId": "3Cx4yrFaX8CeHwBMReOWXI",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Escape (The Pina Colada Song)",
     "songArtist": "Rupert Holmes",
     "songId": "5IMtdHjJ1OtkxbGe4zfUxQ",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Old Time Rock & Roll",
     "songArtist": "Bob Seger",
     "songId": "5EOoMWIB9iK4ZpcSex9Ec7",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "More Than a Feeling",
     "songArtist": "Boston",
     "songId": "1QEEqeFIZktqIpPI4jSVSF",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Drops of Jupiter (Tell Me)",
     "songArtist": "Train",
     "songId": "2hKdd3qO7cWr2Jo0Bcs0MA",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "We Built This City",
     "songArtist": "Starship",
     "songId": "6OnfBiiSc9RGKiBKKtZXgQ",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Drift Away",
     "songArtist": "Uncle Kracker",
     "songId": "0RFgvrhkf9FiDRLA0BhzpZ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Toes",
     "songArtist": "Zac Brown Band",
     "songId": "2Esf7NTKQNCPE4G17QvVCs",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Might Think",
     "songArtist": "The Cars",
     "songId": "35wVRTJlUu2kDkqXFegOKt",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Won't Back Down",
     "songArtist": "Tom Petty",
     "songId": "7gSQv1OHpkIoAdUiRLdmI6",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Here I Go Again - Radio Mix",
     "songArtist": "Whitesnake",
     "songId": "6m8FEpCFkSrzhH1W3R2yKU",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Wannabe",
     "songArtist": "Spice Girls",
     "songId": "1Je1IMUlBXcx1Fz0WE7oPT",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Baby Got Back",
     "songArtist": "Sir Mix-A-Lot",
     "songId": "1SAkL1mYNJlaqnBQxVZrRl",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Upside Down",
     "songArtist": "Jack Johnson",
     "songId": "6shRGWCtBUOPFLFTTqXZIC",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Mirrors",
     "songArtist": "Justin Timberlake",
     "songId": "4rHZZAmHpZrA3iH5zx8frV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Gravity",
     "songArtist": "John Mayer",
     "songId": "3SktMqZmo3M9zbB7oKMIF7",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Can Only Imagine",
     "songArtist": "MercyMe",
     "songId": "0lVYRIVjK77Z6uG2GgM8Kl",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Sound of Silence",
     "songArtist": "Disturbed",
     "songId": "1Cj2vqUwlJVG27gJrun92y",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Wish You Were Here",
     "songArtist": "Pink Floyd",
     "songId": "6mFkJmJqdDVQ1REhVfGgd1",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Won't Back Down",
     "songArtist": "Johnny Cash",
     "songId": "5AmPClBlU5sK45i6kMSngt",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Waiting On the World to Change",
     "songArtist": "John Mayer",
     "songId": "5imShWWzwqfAJ9gXFpGAQh",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Smile",
     "songArtist": "Uncle Kracker",
     "songId": "4ZC8hXXqu2hPcDLw9QTdtQ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Sweet Caroline",
+    "songArtist": "Neil Diamond",
+    "songId": "62AuGbAkt8Ox2IrFFb8GKV",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Just Give Me a Reason (feat. Nate Ruess)",
     "songArtist": "P!nk, Nate Ruess",
     "songId": "1mKXFLRA179hdOWQBwUk9e",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Cruise",
     "songArtist": "Florida Georgia Line",
     "songId": "0i5el041vd6nxrGEU8QRxy",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "What Hurts The Most",
     "songArtist": "Rascal Flatts",
     "songId": "4bVuIlGQBMWS7vIhcx8Ae4",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Uptown Girl",
+    "songArtist": "Billy Joel",
+    "songId": "5zA8vzDGqPl2AzZkEYQGKh",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Walking On Sunshine",
+    "songArtist": "Katrina & The Waves",
+    "songId": "05wIrZSwuaVWhcv5FfqeH0",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Cotton Eye Joe",
     "songArtist": "Rednex",
     "songId": "0Jg602cHeMCnPez9baacIe",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Moves Like Jagger - Studio Recording From \"The Voice\" Performance",
     "songArtist": "Maroon 5, Christina Aguilera",
     "songId": "7LcfRTgAVTs5pQGEQgUEzN",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "We Will Rock You",
     "songArtist": "Queen",
     "songId": "0a9sd6MEXZXIPHk0fAxpZ4",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Billie Jean",
+    "songArtist": "Michael Jackson",
+    "songId": "5ChkMS8OtdzJeqyybCc9R5",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Monster",
     "songArtist": "Eminem, Rihanna",
     "songId": "5U8hKxSaDXB8cVeLFQjvwx",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Don't Go Breaking My Heart",
+    "songArtist": "Elton John, Kiki Dee",
+    "songId": "7HW5WIw7ZgZORCzUxv5gW5",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Piano Man",
+    "songArtist": "Billy Joel",
+    "songId": "70C4NyhjD5OZUMzvWZ3njJ",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hit Me With Your Best Shot",
     "songArtist": "Pat Benatar",
     "songId": "0vOkmmJEtjuFZDzrQSFzEE",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "U Can't Touch This",
     "songArtist": "MC Hammer",
     "songId": "1B75hgRqe7A4fwee3g3Wmu",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Stayin Alive",
+    "songArtist": "Bee Gees",
+    "songId": "5ubvP9oKmxLUVq506fgLhk",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Final Countdown",
     "songArtist": "Europe",
     "songId": "3MrRksHupTVEQ7YbA0FsZK",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "I'm Still Standing",
+    "songArtist": "Elton John",
+    "songId": "1jDJFeK9x3OZboIAHsY9k2",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Beat It",
+    "songArtist": "Michael Jackson",
+    "songId": "1OOtq8tRnDM8kG2gqUPjAj",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "You Give Love A Bad Name",
+    "songArtist": "Bon Jovi",
+    "songId": "0rmGAIH9LNJewFw7nKzZnc",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Livin' On A Prayer",
+    "songArtist": "Bon Jovi",
+    "songId": "37ZJ0p5Jm13JPevGcx4SkF",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Jump - 2015 Remaster",
+    "songArtist": "Van Halen",
+    "songId": "7N3PAbqfTjSEU1edb2tY8j",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Hotel California - Live at The Forum, Los Angeles, CA, 10/20-22/1976",
+    "songArtist": "Eagles",
+    "songId": "0cNwyA4Qiyr29I90ezhr0X",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Wake Me Up Before You Go-Go",
+    "songArtist": "Wham!",
+    "songId": "0ikz6tENMONtK6qGkOrU3c",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Happy - From \"Despicable Me 2\"",
     "songArtist": "Pharrell Williams",
     "songId": "60nZcImufyMA1MKQY3dcCH",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Can't Feel My Face",
     "songArtist": "The Weeknd",
     "songId": "22VdIZQfgXJea34mQxlt81",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Rapper's Delight - Single Version",
     "songArtist": "The Sugarhill Gang",
     "songId": "24uWTDsjSCWHXmZritNFvu",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Heroes - 1999 Remaster",
     "songArtist": "David Bowie",
     "songId": "5j6ZZwA9BnxZi5Bk0Ng4jB",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Wonderwall",
+    "songArtist": "Oasis",
+    "songId": "79RUMZfMNMpqZnswovvTqv",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Someone Like You",
     "songArtist": "Adele",
     "songId": "6QPKYGnAW9QozVz2dSWqRg",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Brown Eyed Girl",
+    "songArtist": "Van Morrison",
+    "songId": "3yrSvpt2l1xhsV9Em88Pul",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Sultans Of Swing",
     "songArtist": "Dire Straits",
     "songId": "3LTMnFa0hhwisyq6ILahyj",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Poker Face",
     "songArtist": "Lady Gaga",
     "songId": "2VRGC9H1a4TBaC22HIZ8Mv",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Celebration - Single Version",
     "songArtist": "Kool & The Gang",
     "songId": "6pc8xULSlsMdFB3OrqbvZ4",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Gangnam Style (강남스타일)",
     "songArtist": "PSY",
     "songId": "1R2SZUOGJqqBiLuvwKOT2Y",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Money For Nothing",
     "songArtist": "Dire Straits",
     "songId": "6bOTe8T116DNpwp2H6Hxgh",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Iris",
     "songArtist": "The Goo Goo Dolls",
     "songId": "6vrUTGn5p8IrfTZ0J6sIVM",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Somebody That I Used To Know",
     "songArtist": "Gotye, Kimbra",
     "songId": "4wCmqSrbyCgxEXROQE6vtV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Fortunate Son",
     "songArtist": "Creedence Clearwater Revival",
     "songId": "4BP3uh0hFLFRb5cjsgLqDh",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You're The One That I Want - From \"Grease\" Original Motion Picture Soundtrack",
     "songArtist": "John Travolta, Olivia Newton-John",
     "songId": "3Zuf70897YkrVRAsrBMMSF",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ms. Jackson",
     "songArtist": "Outkast",
     "songId": "0I3q5fE6wg7LIfHGngUTnV",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "I Wanna Dance with Somebody (Who Loves Me)",
+    "songArtist": "Whitney Houston",
+    "songId": "2tUBqZG2AbRi7Q0BIrVrEj",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Get Around (Mono)",
     "songArtist": "The Beach Boys",
     "songId": "3v9xlH6BpmRbqL7hgNJhfT",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Take Me Home, Country Roads - Original Version",
     "songArtist": "John Denver",
     "songId": "1YYhDizHx7PnDhAhko6cDS",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Want You to Want Me",
     "songArtist": "Cheap Trick",
     "songId": "1JkZg3eMQTmTn93E8Yd3UL",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Mr. Jones",
     "songArtist": "Counting Crows",
     "songId": "5DiXcVovI0FcY2s0icWWUu",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Good Vibrations - Remastered 2001",
     "songArtist": "The Beach Boys",
     "songId": "5t9KYe0Fhd5cW6UYT4qP8f",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Radio Ga Ga",
     "songArtist": "Queen",
     "songId": "2jAc9KIQ9XoZxkydXh3MVh",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Was Made For Lovin' You",
     "songArtist": "KISS",
     "songId": "07q0QVgO56EorrSGHC48y3",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bad To The Bone",
     "songArtist": "George Thorogood & The Destroyers",
     "songId": "6s0NHplywwr1IjnQpUpWJk",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Best Day Of My Life",
     "songArtist": "American Authors",
     "songId": "5Hroj5K7vLpIG4FNCRIjbP",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Red Dirt Road",
     "songArtist": "Brooks & Dunn",
     "songId": "3EZzghqykkfOB0Z8d0kTSt",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ain't Nothing 'Bout You",
     "songArtist": "Brooks & Dunn",
     "songId": "5dPSCeB8Ly3RxNLme5bomi",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Kung Fu Fighting",
     "songArtist": "Carl Douglas",
     "songId": "40NRm1ZLvZpUSCUXAGGZ8J",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Dancing Queen",
+    "songArtist": "ABBA",
+    "songId": "0GjEhVFGZW8afUYGChu3Rr",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Breakeven",
     "songArtist": "The Script",
     "songId": "285hMzLhJwHVLe9QT9qilk",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Lazy Song",
     "songArtist": "Bruno Mars",
     "songId": "1ExfPZEiahqhLyajhybFeS",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "What I Like About You",
     "songArtist": "The Romantics",
     "songId": "4ebcE2SmkG7nplvzFAWRu7",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "American Pie",
+    "songArtist": "Don McLean",
+    "songId": "1fDsrQ23eTAVFElUMaf38X",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "In The Air Tonight - 2015 Remastered",
+    "songArtist": "Phil Collins",
+    "songId": "18AXbzPzBS8Y3AkgSxzJPb",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Love Shack",
     "songArtist": "The B-52's",
     "songId": "4W4wYHtsrgDiivRASVOINL",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I'll Be There for You - Theme From \"Friends\"",
     "songArtist": "The Rembrandts",
     "songId": "15tHagkk8z306XkyOHqiip",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Born in the U.S.A.",
     "songArtist": "Bruce Springsteen",
     "songId": "0dOg1ySSI7NkpAe89Zo0b9",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Carry on Wayward Son",
     "songArtist": "Kansas",
     "songId": "4DMKwE2E2iYDKY01C335Uw",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Red Solo Cup",
     "songArtist": "Toby Keith",
     "songId": "4YKAOXyqkKZ5gOZR0AmVMN",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Jessie's Girl",
+    "songArtist": "Rick Springfield",
+    "songId": "5RsUlxLto4NZbhJpqJbHfN",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Margaritaville",
     "songArtist": "Jimmy Buffett",
     "songId": "4EEjMyQub6tgFVshlM9j1M",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Second Chance",
     "songArtist": "Shinedown",
     "songId": "0CwYG1UnRmOx8Q1EzElCIL",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Any Way You Want It",
     "songArtist": "Journey",
     "songId": "71SvEDmsOwIWw1IozsZoMA",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Don't Stop Me Now",
+    "songArtist": "Queen",
+    "songId": "43DHLzDkncpby82Po5jlOZ",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Your Love",
+    "songArtist": "The Outfield",
+    "songId": "4oDZ5L8izBals6jKBJDBcX",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Still The Same",
     "songArtist": "Bob Seger",
     "songId": "5uujhDA7WTFfGBkLh491KI",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Time for Me to Fly",
     "songArtist": "REO Speedwagon",
     "songId": "0cO7JEo8deKuQMWpDyjenY",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Something In The Way",
     "songArtist": "Nirvana",
     "songId": "1nFtiJxYdhtFfFtfXBv06s",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Can I Kick It?",
     "songArtist": "A Tribe Called Quest",
     "songId": "3Ti0GdlrotgwsAVBBugv0I",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Easy",
+    "songArtist": "Commodores",
+    "songId": "1JQ6Xm1JrvHfvAqhl5pwaA",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Islands In the Stream",
     "songArtist": "Dolly Parton, Kenny Rogers",
     "songId": "6dnco8haegnJYtylV26cBq",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Free Fallin'",
+    "songArtist": "Tom Petty",
+    "songId": "5tVA6TkbaAH9QMITTQRrNv",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Jack & Diane",
+    "songArtist": "John Mellencamp",
+    "songId": "43btz2xjMKpcmjkuRsvxyg",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Walk This Way",
     "songArtist": "Aerosmith",
     "songId": "5SZ6zX4rOrEQferfFC2MfP",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Against The Wind",
     "songArtist": "Bob Seger",
     "songId": "1SWmFiFSIBoDbQJjNKC7SR",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Down Under",
     "songArtist": "Men At Work",
     "songId": "3ZZq9396zv8pcn5GYVhxUi",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bad Moon Rising",
     "songArtist": "Creedence Clearwater Revival",
     "songId": "20OFwXhEXf12DzwXmaV7fj",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Low Rider",
     "songArtist": "War",
     "songId": "7Bz8yww6UMbTgTVLG6zbI4",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Slipping Through My Fingers",
     "songArtist": "ABBA",
     "songId": "6TvxPS4fj4LUdjw2es4g21",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "What A Wonderful World",
+    "songArtist": "Louis Armstrong",
+    "songId": "29U7stRjqHU6rMiS8BfaI9",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Take It Easy - 2013 Remaster",
     "songArtist": "Eagles",
     "songId": "4yugZvBYaoREkJKtbG08Qr",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Intergalactic - Remastered 2009",
     "songArtist": "Beastie Boys",
     "songId": "5fpizYGbi5IQoEraj6FP0R",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Paint It, Black",
     "songArtist": "The Rolling Stones",
     "songId": "63T7DJ1AFDD6Bn8VzG6JE8",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Losing My Religion",
     "songArtist": "R.E.M.",
     "songId": "31AOj9sFz2gM0O3hMARRBx",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Zombie",
     "songArtist": "The Cranberries",
     "songId": "7EZC6E7UjZe63f1jRmkWxt",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "What's Up?",
     "songArtist": "4 Non Blondes",
     "songId": "0jWgAnTrNZmOGmqgvHhZEm",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dixieland Delight",
     "songArtist": "Alabama",
     "songId": "0bM1z18RQpr61UuI1LemIK",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Time After Time",
+    "songArtist": "Cyndi Lauper",
+    "songId": "7o9uu2GDtVDr9nsR7ZRN73",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Everybody Hurts",
     "songArtist": "R.E.M.",
     "songId": "6PypGyiu0Y2lCDBN1XZEnP",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Spin Me Round (Like a Record)",
     "songArtist": "Dead Or Alive",
     "songId": "1ChulFMnwxoD74Me8eX2TU",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Separate Ways (Worlds Apart)",
     "songArtist": "Journey",
     "songId": "4ECNtOnqzxutZkXP4TE3n3",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Free Bird",
     "songArtist": "Lynyrd Skynyrd",
     "songId": "5EWPGh7jbTNO2wakv8LjUI",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Running Up That Hill (A Deal with God)",
     "songArtist": "Kate Bush",
     "songId": "6VfKhnmbqCj14zcjZNjZTk",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Black or White - Single Version",
     "songArtist": "Michael Jackson",
     "songId": "6wdviVWctiZnY6tVn6bh6A",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Island In The Sun",
     "songArtist": "Weezer",
     "songId": "2MLHyLy5z5l5YRp7momlgw",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Rock with You - Single Version",
     "songArtist": "Michael Jackson",
     "songId": "7oOOI85fVQvVnK5ynNMdW7",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Touch of Grey",
     "songArtist": "Grateful Dead",
     "songId": "5YzzWlWfAVNvtduNDHKhHc",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Don't You Worry Child - Radio Edit",
     "songArtist": "Swedish House Mafia, John Martin",
     "songId": "2V65y3PX4DkRhy1djlxd9p",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Find The River",
     "songArtist": "R.E.M.",
     "songId": "1e3Q7gE5TRUklXOlZFKIrv",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Summer Of '69",
+    "songArtist": "Bryan Adams",
+    "songId": "0GONea6G2XdnHWjNZd6zt3",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hold Me Now",
     "songArtist": "Thompson Twins",
     "songId": "0BJU4rYOfj43xHw6gvTIwE",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Santeria",
+    "songArtist": "Sublime",
+    "songId": "2hnMS47jN0etwvFPzYk11f",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Girls, Girls, Girls",
     "songArtist": "Mötley Crüe",
     "songId": "549Go7a66CX6k523uK9kUv",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "California Love - Original Version",
     "songArtist": "2Pac, Roger, Dr. Dre",
     "songId": "3ia3dJETSOllPsv3LJkE35",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Big Poppa - 2007 Remaster",
     "songArtist": "The Notorious B.I.G.",
     "songId": "63BcfK6YAzJYeISaTPr6IO",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Proud Mary",
     "songArtist": "Creedence Clearwater Revival",
     "songId": "2EZc13S7YRi6bTS3SKteRN",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Runaway",
     "songArtist": "Kanye West, Pusha T",
     "songId": "3DK6m7It6Pw857FcQftMds",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Nuthin' But A \"G\" Thang",
     "songArtist": "Dr. Dre, Snoop Dogg",
     "songId": "5Tbpp3OLLClPJF8t1DmrFD",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Still D.R.E.",
     "songArtist": "Dr. Dre, Snoop Dogg",
     "songId": "503OTo2dSqe7qk76rgsbep",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Next Episode",
     "songArtist": "Dr. Dre, Snoop Dogg",
     "songId": "4LwU4Vp6od3Sb08CsP99GC",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Landslide",
     "songArtist": "Fleetwood Mac",
     "songId": "5ihS6UUlyQAfmp48eSkxuQ",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Somebody Told Me",
     "songArtist": "The Killers",
     "songId": "6PwjJ58I4t7Mae9xfZ9l9v",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Get Over It",
     "songArtist": "Eagles",
     "songId": "3KSFUTxxJ2XqyrQkNwY7y8",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Let's Get It Started",
     "songArtist": "Black Eyed Peas",
     "songId": "37LEkmNdegFwoS55DdL6Ov",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hypnotize - 2007 Remaster",
     "songArtist": "The Notorious B.I.G.",
     "songId": "6Tsu3OsuMz4KEGKbOYd6A0",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Like It, I Love It",
     "songArtist": "Tim McGraw",
     "songId": "3IvcWWehbBcBR4YZxlGM9R",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dreams - 2004 Remaster",
     "songArtist": "Fleetwood Mac",
     "songId": "0ofHAoxe9vBkTCp2UQIavz",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bad Reputation",
     "songArtist": "Joan Jett & the Blackhearts",
     "songId": "7pu8AhGUxHZSCWTkQ2eb5M",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Walk the Line",
     "songArtist": "Johnny Cash",
     "songId": "7ijNqRvwWCkF2RG5oHoKCA",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "It's Five O'Clock Somewhere",
     "songArtist": "Alan Jackson, Jimmy Buffett",
     "songId": "07KYRDFf8Q6sqj4PWCP9vh",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Boogie Shoes - 2004 Remaster",
     "songArtist": "KC & The Sunshine Band",
     "songId": "37d8O4cIq36tssCoJnhJxg",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Good Time",
     "songArtist": "Alan Jackson",
     "songId": "6lyKOW0FNW6aAZdKVgoM8m",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Paradise City",
     "songArtist": "Guns N' Roses",
     "songId": "6eN1f9KNmiWEhpE2RhQqB5",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Forever Young",
+    "songArtist": "Alphaville",
+    "songId": "4S1VYqwfkLit9mKVY3MXoo",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Feel Good Inc.",
     "songArtist": "Gorillaz",
     "songId": "0d28khcov6AiegSCpG5TuT",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Heaven",
     "songArtist": "Warrant",
     "songId": "2dEgwtRjYl6TJkIwjRwn6z",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Cherry Pie",
     "songArtist": "Warrant",
     "songId": "18ESXa5mEm1V4Pkt5GSXWx",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Sweet Child O' Mine",
+    "songArtist": "Guns N' Roses",
+    "songId": "7snQQk1zcKl8gZ92AnueZW",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "It Was A Good Day",
     "songArtist": "Ice Cube",
     "songId": "2qOm7ukLyHUXWyR4ZWLwxA",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Run-Around",
     "songArtist": "Blues Traveler",
     "songId": "500Tkm3vJmVtdUwdCVxCTb",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Come As You Are",
     "songArtist": "Nirvana",
     "songId": "2RsAajgo0g7bMCHxwH3Sk0",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hey You",
     "songArtist": "Pink Floyd",
     "songId": "7F02x6EKYIQV3VcTaTm7oN",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "November Rain",
     "songArtist": "Guns N' Roses",
     "songId": "3YRCqOhFifThpSRFJ1VWFM",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Le Freak",
     "songArtist": "CHIC",
     "songId": "7z3aH1QV2zwMKXxShBNOGe",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Picture Me Rollin'",
     "songArtist": "2Pac",
     "songId": "37zQVgP3aTLKNvluXLB5Ii",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Know How We Do It",
     "songArtist": "Ice Cube",
     "songId": "2Ih217RCGAmyQR68Nn7Cqo",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I'm Yours",
     "songArtist": "Jason Mraz",
     "songId": "1EzrEOXmMH3G43AXT1y7pA",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Myth",
     "songArtist": "Beach House",
     "songId": "2NfxtzCIrpCmJX5Z2KMdD5",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "2 Of Amerikaz Most Wanted (ft. Snoop Doggy Dogg)",
     "songArtist": "2Pac, Snoop Dogg",
     "songId": "6LwrEZNkvFTOypNwSLjuaJ",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Mo Money Mo Problems (feat. Puff Daddy & Mase) - 2014 Remaster",
     "songArtist": "The Notorious B.I.G., Mase, Diddy",
     "songId": "4INDiWSKvqSKDEu7mh8HFz",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Juicy - 2005 Remaster",
     "songArtist": "The Notorious B.I.G.",
     "songId": "5ByAIlEEnxYdvpnezg7HTX",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hit 'Em Up - Single Version",
     "songArtist": "2Pac, Outlawz",
     "songId": "0Z2J91b2iTGLVTZC4fKgxf",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Shoot to Thrill",
     "songArtist": "AC/DC",
     "songId": "0C80GCp0mMuBzLf3EAXqxv",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dancing in the Moonlight",
     "songArtist": "King Harvest",
     "songId": "0q21FNwES2bbtcduB6kjEU",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Three Little Birds",
     "songArtist": "Bob Marley & The Wailers",
     "songId": "75FYqcxt1YEAtqDLrOeIJn",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Is This Love",
     "songArtist": "Bob Marley & The Wailers",
     "songId": "6JRLFiX9NJSoRRKxowlBYr",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Could You Be Loved",
     "songArtist": "Bob Marley & The Wailers",
     "songId": "5O4erNlJ74PIF6kGol1ZrC",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Get Down On It",
     "songArtist": "Kool & The Gang",
     "songId": "4Cv6ongCvJy9JfSkWVnb5D",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Straight Outta Compton",
     "songArtist": "N.W.A.",
     "songId": "6KIKRz9eSTXdNsGUnomdtW",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Fuck Tha Police",
     "songArtist": "N.W.A.",
     "songId": "5n8Aro6j1bEGIy7Tpo7FV7",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Around the World",
     "songArtist": "Daft Punk",
     "songId": "1pKYYY0dkg23sQQXi0Q5zN",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Gambler",
     "songArtist": "Kenny Rogers",
     "songId": "5KqldkCunQ2rWxruMEtGh0",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Only Wanna Be With You",
     "songArtist": "Hootie & The Blowfish",
     "songId": "1OFKUn2VLafrHj7ybnap0Q",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Sugar, We're Goin Down",
     "songArtist": "Fall Out Boy",
     "songId": "2TfSHkHiFO4gRztVIkggkE",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Centuries",
     "songArtist": "Fall Out Boy",
     "songId": "04aAxqtGp5pv12UXAg4pkq",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Glory Days",
     "songArtist": "Bruce Springsteen",
     "songId": "2Y90nL1ohB4sgYELDs7uNx",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dancing In the Dark",
     "songArtist": "Bruce Springsteen",
     "songId": "7FwBtcecmlpc1sLySPXeGE",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I'm Gonna Be (500 Miles)",
     "songArtist": "The Proclaimers",
     "songId": "67iAlVNDDdddxqSD2EZhFs",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Another Brick in the Wall, Pt. 2",
     "songArtist": "Pink Floyd",
     "songId": "4gMgiXfqyzZLMhsksGmbQV",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Comfortably Numb",
     "songArtist": "Pink Floyd",
     "songId": "5HNCy40Ni5BZJFw1TKzRsC",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Purple Haze",
     "songArtist": "Jimi Hendrix",
     "songId": "0wJoRiX5K5BxlqZTolB2LD",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Little Wing",
     "songArtist": "Jimi Hendrix",
     "songId": "1Eolhana7nKHYpcYpdVcT5",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Our House",
     "songArtist": "Madness",
     "songId": "1qV6e4ITnfGmA6m6Vklvbi",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Brandy (You're a Fine Girl)",
     "songArtist": "Looking Glass",
     "songId": "2BY7ALEWdloFHgQZG6VMLA",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "All About U (ft. Nate Dogg, Snoop Dogg, Fatal, Yani Hadati)",
     "songArtist": "2Pac, Yaki Kadafi, Snoop Dogg, Nate Dogg, Fatal",
     "songId": "3j9UIPpivEXyfV67agjXKH",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "What I Got",
     "songArtist": "Sublime",
     "songId": "3B4q6KbHbGV51HO3GznBFF",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Gin and Juice",
     "songArtist": "Snoop Dogg",
     "songId": "39QBkWKnap8wRSW4WB9OK0",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Kids",
     "songArtist": "MGMT",
     "songId": "1jJci4qxiYcOHhQR247rEU",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Go Your Own Way - 2004 Remaster",
     "songArtist": "Fleetwood Mac",
     "songId": "07GvNcU1WdyZJq3XxP0kZa",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Gangsta's Paradise",
     "songArtist": "Coolio, L.V.",
     "songId": "1DIXPcTDzTj8ZMHt3PDt8p",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Banana Pancakes",
     "songArtist": "Jack Johnson",
     "songId": "451GvHwY99NKV4zdKPRWmv",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Human",
     "songArtist": "Rag'n'Bone Man",
     "songId": "58zsLZPvfflaiIbNWoA22O",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hymn for the Weekend",
     "songArtist": "Coldplay",
     "songId": "3RiPr603aXAoi4GHyXx0uy",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Drift Away",
     "songArtist": "Dobie Gray",
     "songId": "11YWR8tzDTR2P4KZ3lAySj",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Rocket Man (I Think It's Going To Be A Long, Long Time)",
+    "songArtist": "Elton John",
+    "songId": "3gdewACMIVMEWVbyb8O9sY",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "I Want To Break Free - Remastered 2011",
+    "songArtist": "Queen",
+    "songId": "7h2yhVxcZOGyQdOwD4Hu8J",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Don't Let Me Down",
     "songArtist": "The Chainsmokers, Daya",
     "songId": "1i1fxkWeaMmKEB4T7zqbzK",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Summertime Sadness (Lana Del Rey Vs. Cedric Gervais) - Cedric Gervais Remix",
     "songArtist": "Lana Del Rey, Cedric Gervais",
     "songId": "6PUIzlqotEmPuBfjbwYWOB",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Make My Dreams (Come True)",
     "songArtist": "Daryl Hall & John Oates",
     "songId": "4o6BgsqLIBViaGVbx5rbRk",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Less I Know The Better",
     "songArtist": "Tame Impala",
     "songId": "6K4t31amVTZDgR3sKmwUJJ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Electric Feel",
     "songArtist": "MGMT",
     "songId": "3FtYbEfBqAlGO46NUDQSAt",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Time to Pretend",
     "songArtist": "MGMT",
     "songId": "4iG2gAwKXsOcijVaVXzRPW",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Should Be Dancing",
     "songArtist": "Bee Gees",
     "songId": "4T5Y25pWs2pVZVcFIqFuf8",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Adventure of a Lifetime",
     "songArtist": "Coldplay",
     "songId": "69uxyAqqPIsUyTO8txoP2M",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Kickstart My Heart",
     "songArtist": "Mötley Crüe",
     "songId": "2hYFCMj1OmXA6Zq5HxVlQG",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Jamming",
     "songArtist": "Bob Marley & The Wailers",
     "songId": "5LyfiK6iXEIBNEtcaGKohl",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Sparks",
     "songArtist": "Coldplay",
     "songId": "7D0RhFcb3CrfPuTJ0obrod",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Barbra Streisand",
     "songArtist": "Duck Sauce, A-Trak, Armand Van Helden",
     "songId": "6HkmOvGpoYrJ1BdppBNp2t",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Where Is My Mind?",
     "songArtist": "Pixies",
     "songId": "0KzAbK6nItSqNh8q70tb0K",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Nights",
     "songArtist": "Avicii",
     "songId": "0ct6r3EGTcMLPtrXHDvVjc",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Courtesy Of The Red, White And Blue (The Angry American)",
     "songArtist": "Toby Keith",
     "songId": "0M7mWKqwTIaVjYyxfZmtTa",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Space Song",
     "songArtist": "Beach House",
     "songId": "7H0ya83CMmgFcOhw0UB6ow",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Master of Puppets (Remastered)",
     "songArtist": "Metallica",
     "songId": "54bm2e3tk8cliUz3VSdCPZ",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Enter Sandman (Remastered)",
     "songArtist": "Metallica",
     "songId": "3VqHuw0wFlIHcIPWkhIbdQ",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Welcome To The Jungle",
     "songArtist": "Guns N' Roses",
     "songId": "0G21yYKMZoHa30cYVi1iA8",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Should I Stay or Should I Go - Remastered",
+    "songArtist": "The Clash",
+    "songId": "39shmbIHICJ2Wxnk1fPSdz",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Don't You (Forget About Me)",
+    "songArtist": "Simple Minds",
+    "songId": "3fH4KjXFYMmljxrcGrbPj9",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Still Haven't Found What I'm Looking For",
     "songArtist": "U2",
     "songId": "6wpGqhRvJGNNXwWlPmkMyO",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "With Or Without You",
     "songArtist": "U2",
     "songId": "6ADSaE87h8Y3lccZlBJdXH",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Get Lucky (Radio Edit) [feat. Pharrell Williams and Nile Rodgers]",
     "songArtist": "Pharrell Williams, Nile Rodgers, Thomas Bangalter, Guy-Manuel de Homem-Christo, Daft Punk",
     "songId": "2Foc5Q5nqNiosCNqttzHof",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "One More Time",
     "songArtist": "Daft Punk",
     "songId": "0DiWol3AO6WpXZgp0goxAV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ain't It Fun",
     "songArtist": "Paramore",
     "songId": "1j8z4TTjJ1YOdoFEDwJTQa",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ride Wit Me",
     "songArtist": "Nelly, City Spud",
     "songId": "3Gf5nttwcX9aaSQXRWidEZ",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dirty Little Secret",
     "songArtist": "The All-American Rejects",
     "songId": "5lDriBxJd22IhOH9zTcFrV",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Gives You Hell",
     "songArtist": "The All-American Rejects",
     "songId": "6ihL9TjfRjadfEePzXXyVF",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Come On Eileen",
     "songArtist": "Dexys Midnight Runners",
     "songId": "3MrWxJaD2AT0W9DjWF64Vm",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "As She's Walking Away (feat. Alan Jackson)",
     "songArtist": "Zac Brown Band, Alan Jackson",
     "songId": "65UCejW01DAovmluVYHWAt",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Going Up The Country",
     "songArtist": "Canned Heat",
     "songId": "57460SJgSpCXaRJ9YIYHxy",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "(Don't Fear) The Reaper",
     "songArtist": "Blue Öyster Cult",
     "songId": "5QTxFnGygVM4jFQiBovmRo",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Right Down the Line",
     "songArtist": "Gerry Rafferty",
     "songId": "2Xb6wJYGi0QXwURw5WWvI5",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Who Can It Be Now?",
     "songArtist": "Men At Work",
     "songId": "5rfJ2Bq2PEL8yBjZLzouEu",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Semi-Charmed Life",
     "songArtist": "Third Eye Blind",
     "songId": "42et6fnHCw1HIPSrdPprMl",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Lovely Day",
     "songArtist": "Bill Withers",
     "songId": "0bRXwKfigvpKZUurwqAlEh",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Runnin' Down A Dream",
     "songArtist": "Tom Petty",
     "songId": "5yAu4njFSdM47dfsTkQPZ2",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Black Hole Sun",
     "songArtist": "Soundgarden",
     "songId": "7fURZRPkB2S70sYR1naKTK",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Killer Queen - Remastered 2011",
     "songArtist": "Queen",
     "songId": "7GqWnsKhMtEW0nzki5o0d8",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Can't Take My Eyes off You",
+    "songArtist": "Frankie Valli",
+    "songId": "0bfvHnWWOeU1U5XeKyVLbW",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Chelsea Dagger",
     "songArtist": "The Fratellis",
     "songId": "1bCmvezFg5MRcENzCGG1Cy",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Save Tonight",
     "songArtist": "Eagle-Eye Cherry",
     "songId": "1t2Hq2WIBcZINOEnK6mdJG",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Accidentally In Love - From \"Shrek 2\" Soundtrack",
     "songArtist": "Counting Crows",
     "songId": "2Y6uY65ZwKl9WbVOvKyZg6",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Run Like Hell",
     "songArtist": "Pink Floyd",
     "songId": "0EaLRxrtnq7Mqhdf8q9txr",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Tiny Dancer",
     "songArtist": "Elton John",
     "songId": "2TVxnKdb3tqe1nhQWwwZCO",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Candle In The Wind - Remastered 2014",
     "songArtist": "Elton John",
     "songId": "1L9fzw2pXprOqtemTwtxXF",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Gotta Feeling",
     "songArtist": "Black Eyed Peas",
     "songId": "2H1047e0oMSj10dgp7p2VG",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Where Is The Love?",
     "songArtist": "Black Eyed Peas",
     "songId": "0xmjwnQ3FNE6HuWCt2nHdZ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Just Can’t Get Enough",
     "songArtist": "Black Eyed Peas",
     "songId": "3JA9Jsuxr4xgHXEawAdCp4",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Sweet Talkin' Woman",
     "songArtist": "Electric Light Orchestra",
     "songId": "0xAhbD6lCf5re1RXl5yiTm",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Walk of Life",
     "songArtist": "Dire Straits",
     "songId": "423o3ZHIaBtGXyhF1uH41a",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Another One Bites The Dust - Remastered 2011",
     "songArtist": "Queen",
     "songId": "57JVGBtBLCfHw2muk5416J",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Murder On The Dancefloor",
     "songArtist": "Sophie Ellis-Bextor",
     "songId": "4tKGFmENO69tZR9ahgZu48",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Somewhere Only We Know",
     "songArtist": "Keane",
     "songId": "6uNP8aOZphmhsYlOwRhNh1",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "We Are The Champions - Remastered 2011",
     "songArtist": "Queen",
     "songId": "7ccI9cStQbQdystvc6TvxD",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Pump It",
     "songArtist": "Black Eyed Peas",
     "songId": "6btyEL6NwUa97Nex9cZFvo",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Real Slim Shady",
     "songArtist": "Eminem",
     "songId": "3yfqSUWxFvZELEM4PmlwIR",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Rock'n Me",
     "songArtist": "Steve Miller Band",
     "songId": "1orVKbp6vqtfAPOmvRofVq",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Joker",
     "songArtist": "Steve Miller Band",
     "songId": "1bp2IO61zbQrbWNmKKxg3f",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Abracadabra",
     "songArtist": "Steve Miller Band",
     "songId": "2E2ZVy2fxslpAUgbb4zu84",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Scientist",
     "songArtist": "Coldplay",
     "songId": "75JFxkI2RXiU7L9VXzMkle",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "CALIFORNIA (the OC theme)",
     "songArtist": "Phantom Planet",
     "songId": "2LFMWAOFyVJypKBgOFfdok",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "505",
     "songArtist": "Arctic Monkeys",
     "songId": "58ge6dfP91o9oXMzq3XkIS",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Put Your Records On",
     "songArtist": "Corinne Bailey Rae",
     "songId": "2nGFzvICaeEWjIrBrL2RAx",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "She's Always a Woman",
     "songArtist": "Billy Joel",
     "songId": "5RgFlk1fcClZd0Y4SGYhqH",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Rich Girl",
     "songArtist": "Daryl Hall & John Oates",
     "songId": "0qRR9d89hIS0MHRkQ0ejxX",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Linger",
+    "songArtist": "The Cranberries",
+    "songId": "0gEyKnHvgkrkBM6fbeHdwK",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Two Princes",
     "songArtist": "Spin Doctors",
     "songId": "0cuq829zRNq4AEdmDJA4aw",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Starman - 2012 Remaster",
     "songArtist": "David Bowie",
     "songId": "0pQskrTITgmCMyr85tb9qq",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "We Are Young (feat. Janelle Monáe)",
     "songArtist": "fun., Janelle Monáe",
     "songId": "7a86XRg84qjasly9f6bPSD",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Have You Ever Seen The Rain",
     "songArtist": "Creedence Clearwater Revival",
     "songId": "5DnT9a5IM3eMjKgXTWVJvi",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Sharp Dressed Man (2008 Remaster)",
     "songArtist": "ZZ Top",
     "songId": "0bRNszTbTFLNlunAeh7eom",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Shooting Stars",
     "songArtist": "Bag Raiders",
     "songId": "0UeYCHOETPfai02uskjJ3x",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Freaks",
     "songArtist": "Surf Curse",
     "songId": "7EkWXAI1wn8Ii883ecd9xr",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Can't Stop",
     "songArtist": "Red Hot Chili Peppers",
     "songId": "3ZOEytgrvLwQaqXreDs2Jx",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Praise The Lord (Da Shine) (feat. Skepta)",
     "songArtist": "A$AP Rocky, Skepta",
     "songId": "7ycWLEP1GsNjVvcjawXz3z",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Flashing Lights",
     "songArtist": "Kanye West, Dwele",
     "songId": "5TRPicyLGbAF2LGBFbHGvO",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "BUTTERFLY EFFECT",
     "songArtist": "Travis Scott",
     "songId": "2cYqizR4lgvp4Qu6IQ3qGN",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Feel So Close - Radio Edit",
     "songArtist": "Calvin Harris",
     "songId": "1gihuPhrLraKYrJMAEONyc",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Budapest",
     "songArtist": "George Ezra",
     "songId": "2ixsaeFioXJmMgkkbd4uj1",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "In Da Club",
     "songArtist": "50 Cent",
     "songId": "4RY96Asd9IefaL3X4LOLZ8",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Crazy",
+    "songArtist": "Gnarls Barkley",
+    "songId": "6o1l9I0faXJN2iqulHrdCQ",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Unwritten",
     "songArtist": "Natasha Bedingfield",
     "songId": "3U5JVgI2x4rDyHGObzJfNf",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Way down We Go",
     "songArtist": "KALEO",
     "songId": "0y1QJc3SJVPKJ1OvFmFqe6",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Payphone",
     "songArtist": "Maroon 5, Wiz Khalifa",
     "songId": "1LmN9SSHISbtp9LoaR5ZVJ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Panda",
     "songArtist": "Desiigner",
     "songId": "5YEOzOojehCqxGQCcQiyR4",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Young Dumb & Broke",
     "songArtist": "Khalid",
     "songId": "5Z3GHaZ6ec9bsiI5BenrbY",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Redbone",
     "songArtist": "Childish Gambino",
     "songId": "0WtDGnWL2KrMCk0mI1Gpwz",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ric Flair Drip (with Metro Boomin)",
     "songArtist": "Offset, Metro Boomin",
     "songId": "7sO5G9EABYOXQKNPNiE9NR",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Stolen Dance",
     "songArtist": "Milky Chance",
     "songId": "0ZfByLXCeKchuj7zi1CJ0S",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Starships",
     "songArtist": "Nicki Minaj",
     "songId": "1oHNvJVbFkexQc0BpQp7Y4",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Rather Be (feat. Jess Glynne)",
     "songArtist": "Clean Bandit, Jess Glynne",
     "songId": "3s4U7OHV7gnj42VV72eSZ6",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Mo Bamba",
     "songArtist": "Sheck Wes",
     "songId": "1xzBco0xcoJEDXktl7Jxrr",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Wild Thoughts (feat. Rihanna & Bryson Tiller)",
     "songArtist": "DJ Khaled, Rihanna, Bryson Tiller",
     "songId": "45XhKYRRkyeqoW3teSOkCM",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Everybody Wants To Rule The World",
+    "songArtist": "Tears For Fears",
+    "songId": "4RvWPyQ5RL0ao9LPZeSouE",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Meant to Be (feat. Florida Georgia Line)",
     "songArtist": "Bebe Rexha, Florida Georgia Line",
     "songId": "7iDa6hUg2VgEL1o1HjmfBn",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hey Brother",
     "songArtist": "Avicii",
     "songId": "4lhqb6JvbHId48OUJGwymk",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hall of Fame (feat. will.i.am)",
     "songArtist": "The Script, will.i.am",
     "songId": "1X1DWw2pcNZ8zSub3uhlNz",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Here Comes The Sun - Remastered 2009",
+    "songArtist": "The Beatles",
+    "songId": "6dGnYIeXmHdcikdzNNDMm2",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "CAN'T STOP THE FEELING! (from DreamWorks Animation's \"TROLLS\")",
     "songArtist": "Justin Timberlake",
     "songId": "1WkMMavIMc4JZ8cfMmxHkI",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Glimpse of Us",
     "songArtist": "Joji",
     "songId": "6xGruZOHLs39ZbVccQTuPZ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Breaking Me",
     "songArtist": "Topic, A7S",
     "songId": "3H7ihDc1dqLriiWXwsc2po",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Reason",
     "songArtist": "Hoobastank",
     "songId": "5B5eTk7DF8KVp1zpQoY1XY",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Stay With Me",
     "songArtist": "Sam Smith",
     "songId": "5Nm9ERjJZ5oyfXZTECKmRt",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Black Betty",
+    "songArtist": "Ram Jam",
+    "songId": "6kooDsorCpWVMGc994XjWN",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "ROXANNE",
     "songArtist": "Arizona Zervas",
     "songId": "696DnlkuDOXcMAnKlTgXXK",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bitter Sweet Symphony - Remastered 2016",
     "songArtist": "The Verve",
     "songId": "57iDDD9N9tTWe75x6qhStw",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "All The Small Things",
     "songArtist": "blink-182",
     "songId": "2m1hi0nfMR9vdGC8UcrnwU",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Creep",
     "songArtist": "Radiohead",
     "songId": "70LcF31zb1H0PyJoS1Sx1r",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Everlong",
     "songArtist": "Foo Fighters",
     "songId": "5UWwZ5lm5PKu6eKsHAGxOk",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Till I Collapse",
     "songArtist": "Eminem, Nate Dogg",
     "songId": "4xkOaSrkexMciUUogZKVTS",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Father Stretch My Hands Pt. 1",
     "songArtist": "Kanye West",
     "songId": "4KW1lqgSr8TKrvBII0Brf8",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "7 Years",
     "songArtist": "Lukas Graham",
     "songId": "5kqIPrATaCc2LqxVWzQGbk",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dream On",
     "songArtist": "Aerosmith",
     "songId": "1xsYj84j7hUDDnTTerGWlH",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Rolling in the Deep",
     "songArtist": "Adele",
     "songId": "1c8gk2PeTE04A1pIDH9YMk",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ni**as In Paris",
     "songArtist": "JAY-Z, Kanye West",
     "songId": "1auxYwYrFRqZP7t3s7w4um",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "FourFiveSeconds",
     "songArtist": "Rihanna, Kanye West, Paul McCartney",
     "songId": "78TTtXnFQPzwqlbtbwqN0y",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Chasing Pavements",
     "songArtist": "Adele",
     "songId": "0Z5ok0QLLttAKsujOZYOXf",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Love Rock 'N Roll",
     "songArtist": "Joan Jett & the Blackhearts",
     "songId": "2Cdvbe2G4hZsnhNMKyGrie",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Summertime Sadness",
     "songArtist": "Lana Del Rey",
     "songId": "1Ist6PR2BZR3n2z2Y5R6S1",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "How You Remind Me",
     "songArtist": "Nickelback",
     "songId": "0gmbgwZ8iqyMPmXefof8Yf",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "White Iverson",
     "songArtist": "Post Malone",
     "songId": "6eT7xZZlB2mwyzJ2sUKG6w",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Basket Case",
     "songArtist": "Green Day",
     "songId": "6L89mwZXSOwYl76YXfX13s",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "American Idiot",
     "songArtist": "Green Day",
     "songId": "6nTiIhLmQ3FWhvrGafw2zj",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "For Whom The Bell Tolls (Remastered)",
     "songArtist": "Metallica",
     "songId": "51YZAJhOwIC5Gg3jMbAmhZ",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bennie And The Jets - Remastered 2014",
     "songArtist": "Elton John",
     "songId": "5Wj1rJnCLpMHdLaxsFtJLs",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Good Riddance (Time of Your Life)",
     "songArtist": "Green Day",
     "songId": "6ORqU0bHbVCRjXm9AjyHyZ",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Vienna",
+    "songArtist": "Billy Joel",
+    "songId": "4U45aEWtQhrm8A5mxPaFZ7",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Smooth Criminal - 2012 Remaster",
+    "songArtist": "Michael Jackson",
+    "songId": "5T7ywazdGIydr6JCW6t02j",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Boulevard of Broken Dreams",
     "songArtist": "Green Day",
     "songId": "5GorCbAP4aL0EJ16frG2hd",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Wake Me up When September Ends",
     "songArtist": "Green Day",
     "songId": "3ZffCQKLFLUvYM59XKLbVm",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Took A Pill In Ibiza - Seeb Remix",
     "songArtist": "Mike Posner, Seeb",
     "songId": "0vbtURX4qv1l7besfwmnD8",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bang Bang",
     "songArtist": "Jessie J, Ariana Grande, Nicki Minaj",
     "songId": "0puf9yIluy9W0vpMEUoAnN",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "no tears left to cry",
     "songArtist": "Ariana Grande",
     "songId": "2qT1uLXPVPzGgFOx4jtEuo",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "positions",
     "songArtist": "Ariana Grande",
     "songId": "35mvY5S1H3J2QZyna3TFe0",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Feel It Coming",
     "songArtist": "The Weeknd, Daft Punk",
     "songId": "3dhjNA0jGA8vHBQ1VdD6vV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Earned It (Fifty Shades Of Grey)",
     "songArtist": "The Weeknd",
     "songId": "4frLb7nWtsz2ymBE6k2GRP",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Nothing Else Matters (Remastered)",
     "songArtist": "Metallica",
     "songId": "2CtemffYhT0DJWcT1XW047",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Where Are Ü Now (with Justin Bieber)",
     "songArtist": "Jack Ü, Skrillex, Diplo, Justin Bieber",
     "songId": "66hayvUbTotekKU3H4ta1f",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "What Do You Mean?",
     "songArtist": "Justin Bieber",
     "songId": "4B0JvthVoAAuygILe3n4Bs",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I'm the One (feat. Justin Bieber, Quavo, Chance the Rapper & Lil Wayne)",
     "songArtist": "DJ Khaled, Justin Bieber, Quavo, Chance the Rapper, Lil Wayne",
     "songId": "1jYiIOC5d6soxkJP81fxq2",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "1-800-273-8255",
     "songArtist": "Logic, Alessia Cara, Khalid",
     "songId": "5tz69p7tJuGPeMGwNTxYuV",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ho Hey",
     "songArtist": "The Lumineers",
     "songId": "0DwClY2t9YAWHBROMIgrXb",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Time of Our Lives",
     "songArtist": "Pitbull, Ne-Yo",
     "songId": "2bJvI42r8EF3wxjOuDav4r",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Me, Myself & I",
     "songArtist": "G-Eazy, Bebe Rexha",
     "songId": "40YcuQysJ0KlGQTeGUosTC",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Fall Apart",
     "songArtist": "Post Malone",
     "songId": "75ZvA4QfFiZvzhj2xkaWAh",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Falling Down - Bonus Track",
     "songArtist": "Lil Peep, XXXTENTACION",
     "songId": "4jvjzW7Hm0yK4LvvE0Paz9",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bad Habit",
     "songArtist": "Steve Lacy",
     "songId": "1R7TwnwF1RuYNf5vXlpQUT",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bank Account",
     "songArtist": "21 Savage",
     "songId": "5eqK0tbzUPo2SoeZsov04s",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Am I Wrong",
     "songArtist": "Nico & Vinz",
     "songId": "1fidCEsYlaVE3pHwKCvpFZ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Lemonade (feat. NAV)",
     "songArtist": "Internet Money, Gunna, Don Toliver, NAV",
     "songId": "1p0rEzrK7YtdRZVtiyV7RN",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Umbrella",
     "songArtist": "Rihanna, JAY-Z",
     "songId": "2yPoXCs7BSIUrucMdK5PzV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Under the Bridge",
     "songArtist": "Red Hot Chili Peppers",
     "songId": "3d9DChrdc6BOeFsbrZ3Is0",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Midnight City",
     "songArtist": "M83",
     "songId": "1eyzqe2QqGZUmfcPZtrIyt",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Otherside",
     "songArtist": "Red Hot Chili Peppers",
     "songId": "64BbK9SFKH2jk86U3dGj2P",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Snow (Hey Oh)",
     "songArtist": "Red Hot Chili Peppers",
     "songId": "2aibwv5hGXSgw7Yru8IYTO",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Slide (feat. Frank Ocean & Migos)",
     "songArtist": "Calvin Harris, Frank Ocean, Migos",
     "songId": "6gpcs5eMhJwax4mIfKDYQk",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Intentions (feat. Quavo)",
     "songArtist": "Justin Bieber, Quavo",
     "songId": "4umIPjkehX1r7uhmGvXiSV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Rap God",
     "songArtist": "Eminem",
     "songId": "6or1bKJiZ06IlK0vFvY75k",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Kiss Me More (feat. SZA)",
     "songArtist": "Doja Cat, SZA",
     "songId": "748mdHapucXQri7IAO8yFK",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "It Wasn't Me",
     "songArtist": "Shaggy, Rik Rok",
     "songId": "3WkibOpDF7cQ5xntM1epyf",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Despacito - Remix",
     "songArtist": "Luis Fonsi, Daddy Yankee, Justin Bieber",
     "songId": "6rPO02ozF3bM7NnOV4h6s2",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Stuck with U (with Justin Bieber)",
     "songArtist": "Ariana Grande, Justin Bieber",
     "songId": "4HBZA5flZLE435QTztThqH",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Stroke",
     "songArtist": "Billy Squier",
     "songId": "153NHo5ncbWeJdhgwNgCON",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Under Pressure",
     "songArtist": "Queen, David Bowie",
     "songId": "4okLKeB83VLZFGGtrMQxpd",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Space Oddity - 2015 Remaster",
     "songArtist": "David Bowie",
     "songId": "72Z17vmmeQKAg8bptWvpVG",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Mammas Don't Let Your Babies Grow up to Be Cowboys",
     "songArtist": "Waylon Jennings, Willie Nelson",
     "songId": "7nVQ8mo77KaUvhUQzh4vMy",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Highwayman",
     "songArtist": "The Highwaymen, Willie Nelson, Johnny Cash, Waylon Jennings, Kris Kristofferson",
     "songId": "7jWbXvrgdbkajU8L28ahn5",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "On the Road Again",
     "songArtist": "Willie Nelson",
     "songId": "3MpK9vnxxgYvh0CNeGvx6G",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Misery Business",
     "songArtist": "Paramore",
     "songId": "6SpLc7EXZIPpy0sVko0aoU",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Still into You",
     "songArtist": "Paramore",
     "songId": "1yjY7rpaAQvKwpdUliHx0d",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Ride The Lightning (Remastered)",
     "songArtist": "Metallica",
     "songId": "36DLF96pjKydN0MZtsahQz",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "All The Stars (with SZA)",
     "songArtist": "Kendrick Lamar, SZA",
     "songId": "3GCdLUSnKSMJhs4Tj6CV3s",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Money Trees",
     "songArtist": "Kendrick Lamar, Jay Rock",
     "songId": "2HbKqm4o0w5wEeEFXm2sD4",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "We Found Love",
     "songArtist": "Rihanna, Calvin Harris",
     "songId": "6qn9YLKt13AGvpq9jfO8py",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Love On The Brain",
     "songArtist": "Rihanna",
     "songId": "5oO3drDxtziYU2H1X23ZIp",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Ain't No Sunshine",
+    "songArtist": "Bill Withers",
+    "songId": "1k1Bqnv2R0uJXQN4u6LKYt",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Sex on Fire",
     "songArtist": "Kings of Leon",
     "songId": "0ntQJM78wzOLVeCUAW7Y45",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Use Somebody",
     "songArtist": "Kings of Leon",
     "songId": "5VGlqQANWDKJFl0MBG3sg2",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Pennies From Heaven",
     "songArtist": "Louis Prima, Sam Butera & The Witnesses",
     "songId": "4tmy6FB76bR5eLmx0zO1mn",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Boys Are Back In Town",
     "songArtist": "Thin Lizzy",
     "songId": "43DeSV93pJPT4lCZaWZ6b1",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Drop It Like It's Hot",
     "songArtist": "Snoop Dogg, Pharrell Williams",
     "songId": "2NBQmPrOEEjA8VbeWOQGxO",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Young, Wild & Free (feat. Bruno Mars)",
     "songArtist": "Snoop Dogg, Wiz Khalifa, Bruno Mars",
     "songId": "6YbhspuOar1D9WSSnfe7ds",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Just the Two of Us (feat. Bill Withers)",
+    "songArtist": "Grover Washington, Jr., Bill Withers",
+    "songId": "1ko2lVN0vKGUl9zrU0qSlT",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "No One",
     "songArtist": "Alicia Keys",
     "songId": "0mZ5GyrHG908lqrHaTw4hi",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hold On, I'm Comin'",
     "songArtist": "Sam & Dave",
     "songId": "6PgVDY8GTkxF3GmhVGPzoB",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Boogie Wonderland",
     "songArtist": "Earth, Wind & Fire, The Emotions",
     "songId": "6ztstiyZL6FXzh4aG46ZPD",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "September",
+    "songArtist": "Earth, Wind & Fire",
+    "songId": "3kXoKlD84c6OmIcOLfrfEs",
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Let's Groove",
     "songArtist": "Earth, Wind & Fire",
     "songId": "3koCCeSaVUyrRo3N2gHrd8",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Yesterday - Remastered 2009",
     "songArtist": "The Beatles",
     "songId": "3BQHpFgAp4l80e1XslIjNI",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Why'd You Only Call Me When You're High?",
     "songArtist": "Arctic Monkeys",
     "songId": "086myS9r57YsLbJpU0TgK9",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Side To Side",
     "songArtist": "Ariana Grande, Nicki Minaj",
     "songId": "43bCmCI0nSgcT7QdMXY6LV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dangerous Woman",
     "songArtist": "Ariana Grande",
     "songId": "6RUhbFEhrvGISaQ8u2j2JN",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Fade Into You",
     "songArtist": "Mazzy Star",
     "songId": "1LzNfuep1bnAUR9skqdHCK",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Don't Speak",
     "songArtist": "No Doubt",
     "songId": "6urCAbunOQI4bLhmGpX7iS",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "we can't be friends (wait for your love)",
     "songArtist": "Ariana Grande",
     "songId": "51ZQ1vr10ffzbwIjDCwqm4",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "I Don't Want To Miss A Thing - From \"Armageddon\" Soundtrack",
     "songArtist": "Aerosmith",
     "songId": "5qlJg0Wbj3sslxfwiaRNpq",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Just Dance",
     "songArtist": "Lady Gaga, Colby O'Donis",
     "songId": "2x7MyWybabEz6Y6wvHuwGE",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Bad Romance",
     "songArtist": "Lady Gaga",
     "songId": "7kUOJYN2ynGfTYNlgNLpgY",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Really Got Me",
     "songArtist": "The Kinks",
     "songId": "6tZdL3Zp8JgrfDbsSeSV1S",
-    "songCategory": "Classics"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Hold the Line",
     "songArtist": "TOTO",
     "songId": "4aVuWgvD0X63hcOCnZtNFA",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "So What",
     "songArtist": "P!nk",
     "songId": "0JiY190vktuhSGN6aqJdrt",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Wet Dreamz",
     "songArtist": "J. Cole",
     "songId": "4tqcoej1zPvwePZCzuAjJd",
-    "songCategory": "HipHop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Material Girl",
     "songArtist": "Madonna",
     "songId": "7bkyXSi4GtVfD7itZRUR3e",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "The Passenger",
     "songArtist": "Iggy Pop",
     "songId": "15BQ7vEDv2LJuh8TxWIhtd",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Sweet Emotion",
     "songArtist": "Aerosmith",
     "songId": "73TxYZd0lBCVRrHawrAglA",
-    "songCategory": "Throwback"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Dancing On My Own",
     "songArtist": "Calum Scott",
     "songId": "2BOqDYLOJBiMOXShCV1neZ",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "You Are The Reason",
     "songArtist": "Calum Scott",
     "songId": "69vToJ9BMbbLlFZo7k7A7B",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Where Are You Now",
     "songArtist": "Lost Frequencies, Calum Scott",
     "songId": "3mfER4ORePHvN35cbZ3dkV",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
   },
   {
     "songName": "Drag Me Down",
     "songArtist": "One Direction",
     "songId": "2K87XMYnUMqLcX3zvtAF4G",
-    "songCategory": "Pop"
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Your Song",
+    "songArtist": "Elton John",
+    "songId": "38zsOOcu31XbbYj9BIPUF1",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Congratulations",
+    "songArtist": "Post Malone, Quavo",
+    "songId": "3a1lNhkSLSkpJE4MSHpDu9",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Psycho (feat. Ty Dolla $ign)",
+    "songArtist": "Post Malone, Ty Dolla $ign",
+    "songId": "3swc6WTsr7rl9DqQKQA55C",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "deja vu",
+    "songArtist": "Olivia Rodrigo",
+    "songId": "6HU7h9RYOaPRFeh0R3UeAr",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Walking On A Dream",
+    "songArtist": "Empire Of The Sun",
+    "songId": "5r5cp9IpziiIsR6b93vcnQ",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "She Will Be Loved",
+    "songArtist": "Maroon 5",
+    "songId": "7sapKrjDij2fpDVj0GxP66",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Empire State Of Mind",
+    "songArtist": "JAY-Z, Alicia Keys",
+    "songId": "2igwFfvr1OAGX9SKDCPBwO",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "POWER",
+    "songArtist": "Kanye West",
+    "songId": "2gZUPNdnz5Y45eiGxpHGSc",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Royals",
+    "songArtist": "Lorde",
+    "songId": "2dLLR6qlu5UJ5gk0dKz0h3",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Memories (feat. Kid Cudi)",
+    "songArtist": "David Guetta, Kid Cudi",
+    "songId": "4dTaAiV9xFFCxnPur9c9yL",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Secrets",
+    "songArtist": "OneRepublic",
+    "songId": "1NhPKVLsHhFUHIOZ32QnS2",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "I Like It",
+    "songArtist": "Cardi B, Bad Bunny, J Balvin",
+    "songId": "58q2HKrzhC3ozto2nDdN4z",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Eastside (with Halsey & Khalid)",
+    "songArtist": "benny blanco, Halsey, Khalid",
+    "songId": "0d2iYfpKoM0QCKvcLCkBao",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Promiscuous",
+    "songArtist": "Nelly Furtado, Timbaland",
+    "songId": "2gam98EZKrF9XuOkU13ApN",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Home",
+    "songArtist": "Edward Sharpe & The Magnetic Zeros",
+    "songId": "2x1jP9BexWtOKudvuUHbaD",
+    "songCategory": "Throwbacks"
+  },
+  {
+    "songName": "Careless Whisper",
+    "songArtist": "George Michael",
+    "songId": "5WDLRQ3VCdVrKw0njWe5E5",
+    "songCategory": "Classics"
   },
   {
     "songName": "I Will Always Love You",
@@ -3807,19 +3951,19 @@
     "songName": "Sweet Dreams (Are Made of This) - 2005 Remaster",
     "songArtist": "Eurythmics, Annie Lennox, Dave Stewart",
     "songId": "1TfqLAPs4K3s2rJMoCokcS",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Macarena - Bayside Boys Remix",
     "songArtist": "Los Del Rio",
     "songId": "7obdw7ZGr6l1GqSBkFiY11",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "...Baby One More Time",
     "songArtist": "Britney Spears",
     "songId": "3MjUtNVVq3C8Fn0MP3zhXa",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Hey Jude - Remastered 2009",
@@ -3831,13 +3975,13 @@
     "songName": "Bad - 2012 Remaster",
     "songArtist": "Michael Jackson",
     "songId": "2gSNBigeWMVtY3QBIvPAEc",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Waka Waka (This Time for Africa) [The Official 2010 FIFA World Cup (TM) Song] (feat. Freshlyground)",
     "songArtist": "Shakira, Freshlyground",
     "songId": "6bNB5gxFX6Q87DbQWb8OWZ",
-    "songCategory": "Pop"
+    "songCategory": "Classics"
   },
   {
     "songName": "Gimme! Gimme! Gimme! (A Man After Midnight)",
@@ -3861,19 +4005,25 @@
     "songName": "Numb",
     "songArtist": "Linkin Park",
     "songId": "2nLtzopw4rPReszdYBJU6h",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Toxic",
     "songArtist": "Britney Spears",
     "songId": "6I9VzXrHxO9rA9A5euc8Ak",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
+  },
+  {
+    "songName": "My Heart Will Go On - Love Theme from \"Titanic\"",
+    "songArtist": "Céline Dion",
+    "songId": "33LC84JgLvK2KuW43MfaNq",
+    "songCategory": "Classics"
   },
   {
     "songName": "Hips Don't Lie (feat. Wyclef Jean)",
     "songArtist": "Shakira, Wyclef Jean",
     "songId": "3ZFTkvIE7kyPt6Nu3PEa7V",
-    "songCategory": "Pop"
+    "songCategory": "Classics"
   },
   {
     "songName": "Let It Be - Remastered 2009",
@@ -3885,19 +4035,19 @@
     "songName": "Crazy In Love (feat. JAY-Z)",
     "songArtist": "Beyoncé, JAY-Z",
     "songId": "0TwBtDAWpkpM3srywFVOV5",
-    "songCategory": "Pop"
+    "songCategory": "Classics"
   },
   {
     "songName": "Call Me Maybe",
     "songArtist": "Carly Rae Jepsen",
     "songId": "20I6sIOMTCkB6w7ryavxtO",
-    "songCategory": "Pop"
+    "songCategory": "Classics"
   },
   {
     "songName": "Ghostbusters",
     "songArtist": "Ray Parker Jr.",
     "songId": "569uHYIB0X324FZOBEhvit",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Mamma Mia",
@@ -3921,31 +4071,37 @@
     "songName": "Rasputin",
     "songArtist": "Majestic, Boney M.",
     "songId": "0b18g3G5spr4ZCkz7Y6Q0Q",
-    "songCategory": "Pop"
+    "songCategory": "Classics"
   },
   {
     "songName": "Blue (Da Ba Dee) - Gabry Ponte Ice Pop Radio",
     "songArtist": "Eiffel 65, Gabry Ponte",
     "songId": "2yAVzRiEQooPEJ9SYx11L3",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "What Is Love - 7\" Mix",
     "songArtist": "Haddaway",
     "songId": "2IHaGyfxNoFPLJnaEg4GTs",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
+  },
+  {
+    "songName": "I Want You Back",
+    "songArtist": "The Jackson 5",
+    "songId": "5LxvwujISqiB8vpRYv887S",
+    "songCategory": "Classics"
   },
   {
     "songName": "Barbie Girl",
     "songArtist": "Aqua",
     "songId": "6qPWmXOXPnVB5lxH7EScHB",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Oops!...I Did It Again",
     "songArtist": "Britney Spears",
     "songId": "6naxalmIoLFWR0siv8dnQQ",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Die With A Smile",
@@ -3999,25 +4155,37 @@
     "songName": "When I'm Sixty Four - Remastered 2009",
     "songArtist": "The Beatles",
     "songId": "1NrbnHlR2BFREcyWXHIHip",
-    "songCategory": "Classics"
+    "songCategory": "Pop"
+  },
+  {
+    "songName": "Surfin' U.S.A. - Remastered 2001",
+    "songArtist": "The Beach Boys",
+    "songId": "0wz1LjDb9ZNEYwOmDJ3Q4b",
+    "songCategory": "Pop"
+  },
+  {
+    "songName": "Ain't No Mountain High Enough",
+    "songArtist": "Marvin Gaye, Tammi Terrell",
+    "songId": "7tqhbajSfrz2F7E1Z75ASX",
+    "songCategory": "Pop"
   },
   {
     "songName": "Great Balls Of Fire",
     "songArtist": "Jerry Lee Lewis",
     "songId": "5jw1zzcYFivmuJK52JrnMK",
-    "songCategory": "Classics"
+    "songCategory": "Pop"
   },
   {
     "songName": "A Bar Song (Tipsy)",
     "songArtist": "Shaboozey",
     "songId": "2FQrifJ1N335Ljm3TjTVVf",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Betty (Get Money)",
     "songArtist": "Yung Gravy",
     "songId": "4cacyP5c3PMlfnyjpg13xW",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "TEXAS HOLD 'EM",
@@ -4029,25 +4197,25 @@
     "songName": "Ransom",
     "songArtist": "Lil Tecca",
     "songId": "1lOe9qE0vR9zwWQAOk6CoO",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Not Like Us",
     "songArtist": "Kendrick Lamar",
     "songId": "6AI3ezQ4o3HUoP6Dhudph3",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "tv off (feat. lefty gunplay)",
     "songArtist": "Kendrick Lamar, Lefty Gunplay",
     "songId": "0aB0v4027ukVziUGwVGYpG",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "Alexander Hamilton",
     "songArtist": "Leslie Odom Jr., Daveed Diggs, Okieriete Onaodowan, Lin-Manuel Miranda, Phillipa Soo, Christopher Jackson, Original Broadway Cast of Hamilton, Anthony Ramos",
     "songId": "4TTV7EcfroSLWzXRY6gLv6",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "HOT TO GO!",
@@ -4077,7 +4245,7 @@
     "songName": "The Devil Went Down to Georgia",
     "songArtist": "The Charlie Daniels Band",
     "songId": "383Xl5QTigwj3QiA3Qc6S7",
-    "songCategory": "Classics"
+    "songCategory": "Pop"
   },
   {
     "songName": "Rewrite The Stars (with James Arthur & Anne-Marie)",
@@ -4095,7 +4263,7 @@
     "songName": "The Search",
     "songArtist": "NF",
     "songId": "2OKo7g3KfmCt3kyLvUAL0g",
-    "songCategory": "HipHop"
+    "songCategory": "Pop"
   },
   {
     "songName": "vampire",
@@ -4125,7 +4293,7 @@
     "songName": "Criminal",
     "songArtist": "Britney Spears",
     "songId": "6T689Jvh5KrSXyaPtUWZtQ",
-    "songCategory": "Throwback"
+    "songCategory": "Pop"
   },
   {
     "songName": "Castle on the Hill",
@@ -4266,12 +4434,6 @@
     "songCategory": "Pop"
   },
   {
-    "songName": "Memories",
-    "songArtist": "Maroon 5",
-    "songId": "4cktbXiXOapiLBMprHFErI",
-    "songCategory": "Pop"
-  },
-  {
     "songName": "No Lie",
     "songArtist": "Sean Paul, Dua Lipa",
     "songId": "48QmG1dfvMuYLxMPt7KSRA",
@@ -4317,12 +4479,6 @@
     "songName": "I Think I'm In Love",
     "songArtist": "Kat Dahlia",
     "songId": "3U1TuSqHIubBA10cVP7Sk6",
-    "songCategory": "Pop"
-  },
-  {
-    "songName": "Eastside (with Halsey & Khalid)",
-    "songArtist": "benny blanco, Halsey, Khalid",
-    "songId": "7FGq80cy8juXBCD2nrqdWU",
     "songCategory": "Pop"
   },
   {
@@ -4431,7 +4587,7 @@
     "songName": "Replay",
     "songArtist": "Iyaz",
     "songId": "5vlEg2fT4cFWAqU5QptIpQ",
-    "songCategory": "Throwback"
+    "songCategory": "Pop"
   },
   {
     "songName": "Under The Influence - Nightcore",
@@ -4503,7 +4659,7 @@
     "songName": "Airplanes (feat. Hayley Williams of Paramore)",
     "songArtist": "B.o.B, Hayley Williams",
     "songId": "6lV2MSQmRIkycDScNtrBXO",
-    "songCategory": "Throwback"
+    "songCategory": "Pop"
   },
   {
     "songName": "Bad Habits",
@@ -4584,6 +4740,2784 @@
     "songCategory": "Pop"
   },
   {
+    "songName": "Mockingbird",
+    "songArtist": "Eminem",
+    "songId": "561jH07mF1jHuk7KlaeF0s",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "fukumean",
+    "songArtist": "Gunna",
+    "songId": "4rXLjWdF2ZZpXCVTfWcshS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Smack That",
+    "songArtist": "Akon, Eminem",
+    "songId": "2kQuhkFX7uSVepCD3h29g5",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Mask Off",
+    "songArtist": "Future",
+    "songId": "0VgkVdmE4gld66l8iyGjgx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "HOTEL LOBBY (Unc & Phew)",
+    "songArtist": "Quavo, Takeoff",
+    "songId": "4vVjPTApwXZwB2H3mBq3ml",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Creepin' (with The Weeknd & 21 Savage)",
+    "songArtist": "Metro Boomin, The Weeknd, 21 Savage",
+    "songId": "2dHHgzDwk4BJdRwy9uXhTO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Kiss Me Thru The Phone",
+    "songArtist": "Soulja Boy, Sammie",
+    "songId": "2q4rjDy9WhaN3o9MvDbO21",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "For The Night (feat. Lil Baby & DaBaby)",
+    "songArtist": "Pop Smoke, Lil Baby, DaBaby",
+    "songId": "0PvFJmanyNQMseIFrU708S",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Started From the Bottom",
+    "songArtist": "Drake",
+    "songId": "3dgQqOiQ9fCKVhNOedd2lf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "CARNIVAL",
+    "songArtist": "¥$, Kanye West, Ty Dolla $ign",
+    "songId": "4OssqCixV2Xsxd43wMIQyS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Like That",
+    "songArtist": "Future, Metro Boomin, Kendrick Lamar",
+    "songId": "2tudvzsrR56uom6smgOcSf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bandit (with YoungBoy Never Broke Again)",
+    "songArtist": "Juice WRLD, YoungBoy Never Broke Again",
+    "songId": "6Gg1gjgKi2AK4e0qzsR7sd",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Crank That (Soulja Boy)",
+    "songArtist": "Soulja Boy",
+    "songId": "66TRwr5uJwPt15mfFkzhbi",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Life Is Good (feat. Drake)",
+    "songArtist": "Future, Drake",
+    "songId": "5yY9lUy8nbvjM1Uyo1Uqoc",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bad and Boujee (feat. Lil Uzi Vert)",
+    "songArtist": "Migos, Lil Uzi Vert",
+    "songId": "0M9ydKzuF3oZTfYYPfaGX1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "First Class",
+    "songArtist": "Jack Harlow",
+    "songId": "1rDQ4oMwGJI7B4tovsBOxc",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "King's Dead (with Kendrick Lamar, Future & James Blake)",
+    "songArtist": "Jay Rock, Kendrick Lamar, Future, James Blake",
+    "songId": "1eLSF6HfrRA0AsNmTkUlKx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "We Paid (feat. 42 Dugg)",
+    "songArtist": "Lil Baby, 42 Dugg",
+    "songId": "6gxKUmycQX7uyMwJcweFjp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Candy Shop",
+    "songArtist": "50 Cent, Olivia",
+    "songId": "5D2mYZuzcgjpchVY1pmTPh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bounce Out With That",
+    "songArtist": "YBN Nahmir",
+    "songId": "5gQcxYXqnofyocKgEbGYKt",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Numb / Encore",
+    "songArtist": "JAY-Z, Linkin Park",
+    "songId": "5sNESr6pQfIhL3krM8CtZn",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "FE!N (feat. Playboi Carti)",
+    "songArtist": "Travis Scott, Playboi Carti",
+    "songId": "42VsgItocQwOQC3XWZ8JNA",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lonely",
+    "songArtist": "Speaker Knockerz",
+    "songId": "0dbZ2iUuKvsm3FupBw6M9N",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Black and Yellow",
+    "songArtist": "Wiz Khalifa",
+    "songId": "5A6OHHy73AR5tLxgTc98zz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I Love It (& Lil Pump)",
+    "songArtist": "Kanye West, Lil Pump",
+    "songId": "4S8d14HvHb70ImctNgVzQQ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Freestyle",
+    "songArtist": "Lil Baby",
+    "songId": "5BbdKBZO0TH0GhfxUfyhL9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Magnolia",
+    "songArtist": "Playboi Carti",
+    "songId": "1e1JKLEDKP7hEQzJfNAgPl",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "JAPAN",
+    "songArtist": "Famous Dex",
+    "songId": "5PTG6rrL6EPFD9E2QMI2pl",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "P.I.M.P.",
+    "songArtist": "50 Cent",
+    "songId": "3G0yz3DZn3lfraledmBCT0",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "EARFQUAKE",
+    "songArtist": "Tyler, The Creator",
+    "songId": "5hVghJ4KaYES3BFUATCYn0",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "X Gon' Give It To Ya",
+    "songArtist": "DMX",
+    "songId": "4O9ICXbrUTAVR5kkx6xANJ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Relationship (feat. Future)",
+    "songArtist": "Young Thug, Future",
+    "songId": "25oOaleife6E2MIKmFkPvg",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Idea",
+    "songArtist": "Don Toliver",
+    "songId": "7AzlLxHn24DxjgQX73F9fU",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "HIGHEST IN THE ROOM",
+    "songArtist": "Travis Scott",
+    "songId": "3eekarcy7kvN4yt5ZFzltW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Locked Up",
+    "songArtist": "Akon",
+    "songId": "48EQasc6XD0pOQtkIOWqOC",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Day 'N' Nite (Nightmare)",
+    "songArtist": "Kid Cudi",
+    "songId": "60PAzFNW3vAiAiVK6DRJfB",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Taking A Walk",
+    "songArtist": "Trippie Redd",
+    "songId": "4mHgYpuGHu99Mw69E83CP2",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Under The Sun (with J. Cole & Lute feat. DaBaby)",
+    "songArtist": "Dreamville, J. Cole, Lute, DaBaby",
+    "songId": "6MF4tRr5lU8qok8IKaFOBE",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "iSpy (feat. Lil Yachty)",
+    "songArtist": "KYLE, Lil Yachty",
+    "songId": "6xbraxG0bSBOuAr5IUXmtM",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Forever",
+    "songArtist": "Drake, Kanye West, Lil Wayne, Eminem",
+    "songId": "5UsLjwBaTHBX4ektWIr4XX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "OUT WEST (feat. Young Thug)",
+    "songArtist": "JACKBOYS, Travis Scott, Young Thug",
+    "songId": "6gi6y1xwmVszDWkUqab1qw",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Broccoli (feat. Lil Yachty)",
+    "songArtist": "DRAM, Lil Yachty",
+    "songId": "7yyRTcZmCiyzzJlNzGC9Ol",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Ambitionz Az A Ridah",
+    "songArtist": "2Pac",
+    "songId": "5g9lS8deSIxItFBmZRC4vN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Superhero (Heroes & Villains) [with Future & Chris Brown]",
+    "songArtist": "Metro Boomin, Future, Chris Brown",
+    "songId": "0vjeOZ3Ft5jvAi9SBFJm1j",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Forgot About Dre",
+    "songArtist": "Dr. Dre, Eminem",
+    "songId": "7iXF2W9vKmDoGAhlHdpyIa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "MotorSport",
+    "songArtist": "Migos, Nicki Minaj, Cardi B",
+    "songId": "4wFjTWCunQFKtukqrNijEt",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Ridin'",
+    "songArtist": "Chamillionaire, Krayzie Bone",
+    "songId": "3kZoay4ANo86ehb6s4RwS9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Racks in the Middle (feat. Roddy Ricch and Hit-Boy)",
+    "songArtist": "Nipsey Hussle, Roddy Ricch, Hit-Boy",
+    "songId": "6ya8ejoKgw906Y8LWclqrp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Passionfruit",
+    "songArtist": "Drake",
+    "songId": "5mCPDVBb16L4XQwDdbRUpz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hot N*gga",
+    "songArtist": "Bobby Shmurda",
+    "songId": "19gEmPjfqSZT0ulDRfjl0m",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Yes Indeed",
+    "songArtist": "Lil Baby, Drake",
+    "songId": "6vN77lE9LK6HP2DewaN6HZ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "We Dem Boyz",
+    "songArtist": "Wiz Khalifa",
+    "songId": "1ULa3GfdMKs0MfRpm6xVlu",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Jumpman",
+    "songArtist": "Drake, Future",
+    "songId": "27GmP9AWRs744SzKcpJsTZ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Champions",
+    "songArtist": "Kanye West, Gucci Mane, Big Sean, 2 Chainz, Travis Scott, Yo Gotti, Quavo, Desiigner",
+    "songId": "2nBI3iWLhupR7LyAJ5GGkE",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Walk It Talk It",
+    "songArtist": "Migos, Drake",
+    "songId": "6n4U3TlzUGhdSFbUUhTvLP",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Not Afraid",
+    "songArtist": "Eminem",
+    "songId": "7Ie9W94M7OjPoZVV216Xus",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Love Sosa",
+    "songArtist": "Chief Keef",
+    "songId": "01Lr5YepbgjXAWR9iOEyH1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Go Crazy",
+    "songArtist": "Chris Brown, Young Thug",
+    "songId": "1IIKrJVP1C9N7iPtG6eOsK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Work REMIX (feat. A$AP Rocky, French Montana, Trinidad James & ScHoolboy Q)",
+    "songArtist": "A$AP Ferg, French Montana, A$AP Rocky, Trinidad James, ScHoolboy Q",
+    "songId": "7xVLFuuYdAvcTfcP3IG3dS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "DNA.",
+    "songArtist": "Kendrick Lamar",
+    "songId": "6HZILIRieu8S0iqY8kIKhj",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I Don't Fuck With You",
+    "songArtist": "Big Sean, E-40",
+    "songId": "7FYH5AW3bVfZHJIQpq3UOA",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "The Race",
+    "songArtist": "Tay-K",
+    "songId": "3wGXyJGsCf1myH5MooQIqE",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Many Men (Wish Death)",
+    "songArtist": "50 Cent",
+    "songId": "5STdMlrBf6pqWiNE7WqxSi",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "beibs in the trap",
+    "songArtist": "Travis Scott",
+    "songId": "0ESJlaM8CE1jRWaNtwSNj8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Low (feat. T-Pain)",
+    "songArtist": "Flo Rida, T-Pain",
+    "songId": "0CAfXk7DXMnon4gLudAp7J",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Flex (Ooh, Ooh, Ooh)",
+    "songArtist": "Rich Homie Quan",
+    "songId": "4T0ScSPdQKmGvruK7pavNP",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Plain Jane",
+    "songArtist": "A$AP Ferg",
+    "songId": "4dVpf9jZjcORqGTLUaeYj9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Type",
+    "songArtist": "Rae Sremmurd",
+    "songId": "4scpF6J5uMBvoh6sFB7EL1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Look Alive (feat. Drake)",
+    "songArtist": "BlocBoy JB, Drake",
+    "songId": "4qKcDkK6siZ7Jp1Jb4m0aL",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Portland",
+    "songArtist": "Drake, Quavo, Travis Scott",
+    "songId": "2bjwRfXMk4uRgOD9IBYl9h",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Hands (feat. Roscoe Dash & Wale)",
+    "songArtist": "Waka Flocka Flame, Roscoe Dash, Wale",
+    "songId": "03tqyYWC9Um2ZqU0ZN849H",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Look At Me!",
+    "songArtist": "XXXTENTACION",
+    "songId": "7floNISpH8VF4z4459Qo18",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Energy",
+    "songArtist": "Drake",
+    "songId": "79XrkTOfV1AqySNjVlygpW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Money Longer",
+    "songArtist": "Lil Uzi Vert",
+    "songId": "0B8QzDH7YWih85V5SEMnyJ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Slippery (feat. Gucci Mane)",
+    "songArtist": "Migos, Gucci Mane",
+    "songId": "0TBgMKD86t1VP3IzhxCoUl",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Going Bad (feat. Drake)",
+    "songArtist": "Meek Mill, Drake",
+    "songId": "2IRZnDFmlqMuOrYOLnZZyc",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "ZEZE (feat. Travis Scott & Offset)",
+    "songArtist": "Kodak Black, Offset, Travis Scott",
+    "songId": "0FZ4Dmg8jJJAPJnvBIzD9z",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Plug Walk",
+    "songArtist": "Rich The Kid",
+    "songId": "1ZAyjvIk9YiD76yYy0TEG6",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I Don't Like",
+    "songArtist": "Chief Keef, Lil Reese",
+    "songId": "1h6kgem1ai8vUgO1rZOwfB",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Tunnel Vision",
+    "songArtist": "Kodak Black",
+    "songId": "4Q3N4Ct4zCuIHuZ65E3BD4",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "My Nigga",
+    "songArtist": "YG, Jeezy, Rich Homie Quan",
+    "songId": "19OHDib8Jrqi3o2nm5lzdA",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "WAIT FOR U (feat. Drake & Tems)",
+    "songArtist": "Future, Drake, Tems",
+    "songId": "59nOXPmaKlBfGMDeOVGrIK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "2 Phones",
+    "songArtist": "Kevin Gates",
+    "songId": "0wdKiSBUT7aZkXUIdJWcwC",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Nonstop",
+    "songArtist": "Drake",
+    "songId": "0TlLq3lA83rQOYtrqBqSct",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "The Way Life Goes (feat. Oh Wonder)",
+    "songArtist": "Lil Uzi Vert, Oh Wonder",
+    "songId": "2eAZfqOm4EnOF9VvN50Tyc",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bounce Back",
+    "songArtist": "Big Sean",
+    "songId": "0SGkqnVQo9KPytSri1H6cF",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Godzilla (feat. Juice WRLD)",
+    "songArtist": "Eminem, Juice WRLD",
+    "songId": "7FIWs0pqAYbP91WWM0vlTQ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Laugh Now Cry Later (feat. Lil Durk)",
+    "songArtist": "Drake, Lil Durk",
+    "songId": "2SAqBLGA283SUiwJ3xOUVI",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "All The Way Up (feat. Infared)",
+    "songArtist": "Fat Joe, Remy Ma, French Montana, InfaRed",
+    "songId": "7Ezwtgfw7khBrpvaNPtMoT",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Just A Lil Bit",
+    "songArtist": "50 Cent",
+    "songId": "4nva9EpKntUTs6CRSGBCn9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Black Beatles",
+    "songArtist": "Rae Sremmurd, Gucci Mane",
+    "songId": "6fujklziTHa8uoM5OQSfIo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Ballin' (with Roddy Ricch)",
+    "songArtist": "Mustard, Roddy Ricch",
+    "songId": "3QzAOrNlsabgbMwlZt7TAY",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Antidote",
+    "songArtist": "Travis Scott",
+    "songId": "1wHZx0LgzFHyeIZkUydNXq",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Heartless",
+    "songArtist": "Kanye West",
+    "songId": "4EWCNWgDS8707fNSZ1oaA5",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "THE SCOTTS",
+    "songArtist": "THE SCOTTS, Travis Scott, Kid Cudi",
+    "songId": "39Yp9wwQiSRIDOvrVg7mbk",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hate Bein' Sober",
+    "songArtist": "Chief Keef, 50 Cent, Wiz Khalifa",
+    "songId": "2oHM9KAdFdFvDCaE4V6RST",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "The Box",
+    "songArtist": "Roddy Ricch",
+    "songId": "0nbXyq5TXYPCO7pr3N8S4I",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Both (feat. Drake)",
+    "songArtist": "Gucci Mane, Drake",
+    "songId": "5tFep7dXGd7vEJ668wTPux",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "ORANGE SODA",
+    "songArtist": "Baby Keem",
+    "songId": "5FkoSXiJPKTNyYgALRJFhD",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lean Wit Me",
+    "songArtist": "Juice WRLD",
+    "songId": "3oDkdAySo1VQQG0ptV7uwa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bandit (with YoungBoy Never Broke Again)",
+    "songArtist": "Juice WRLD, YoungBoy Never Broke Again",
+    "songId": "1oWM79mUVdZGCGYjSirHZR",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hope",
+    "songArtist": "XXXTENTACION",
+    "songId": "2ZRo7axmMPeSVUvDbGkJah",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Super Gremlin",
+    "songArtist": "Kodak Black",
+    "songId": "4A8cWXxKfIL3lAyUDzXbCF",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Pop Out (feat. Lil Tjay)",
+    "songArtist": "Polo G, Lil Tjay",
+    "songId": "6uFn47ACjqYkc0jADwEdj1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Knife Talk (with 21 Savage ft. Project Pat)",
+    "songArtist": "Drake, 21 Savage, Project Pat",
+    "songId": "2BcMwX1MPV6ZHP4tUT9uq6",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Walk Em Down (feat. Roddy Ricch)",
+    "songArtist": "NLE Choppa, Roddy Ricch",
+    "songId": "1Z0cZI0UzNbP9L8MzzGxqf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "pick up the phone",
+    "songArtist": "Young Thug, Travis Scott",
+    "songId": "4GXl8l1MfZPf2GvpyRPJBf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "R.I.C.O. (feat. Drake)",
+    "songArtist": "Meek Mill, Drake",
+    "songId": "0Y0TOsE1q11qgbi7c5WZsG",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Come Get Her",
+    "songArtist": "Rae Sremmurd",
+    "songId": "1Ser4X0TKttOvo8bgdytTP",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hurricane",
+    "songArtist": "Kanye West",
+    "songId": "6Hfu9sc7jvv6coyy2LlzBF",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "pushin P (feat. Young Thug)",
+    "songArtist": "Gunna, Future, Young Thug",
+    "songId": "3XOalgusokruzA5ZBA2Qcb",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "F**kin' Problems (feat. Drake, 2 Chainz & Kendrick Lamar)",
+    "songArtist": "A$AP Rocky, Drake, 2 Chainz, Kendrick Lamar",
+    "songId": "4X5f3vT8MRuXF68pfjNte5",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Swang",
+    "songArtist": "Rae Sremmurd",
+    "songId": "6mapJIPnQ23RTAevUoE0DL",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Diggity",
+    "songArtist": "Blackstreet, Dr. Dre, Queen Pen",
+    "songId": "6MdqqkQ8sSC0WB4i8PyRuQ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Drip Too Hard (Lil Baby & Gunna)",
+    "songArtist": "Lil Baby, Gunna",
+    "songId": "78QR3Wp35dqAhFEc2qAGjE",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Swervin (feat. 6ix9ine)",
+    "songArtist": "A Boogie Wit da Hoodie, 6ix9ine",
+    "songId": "1wJRveJZLSb1rjhnUHQiv6",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Back in Blood (feat. Lil Durk)",
+    "songArtist": "Pooh Shiesty, Lil Durk",
+    "songId": "7FGdjbZ32vMybPuP0IuE7d",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Nuketown (feat. Juice WRLD)",
+    "songArtist": "Ski Mask The Slump God, Juice WRLD",
+    "songId": "74lnM5V6ecvoTPV0fvptx9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Tell Em",
+    "songArtist": "Cochise, $NOT",
+    "songId": "7nc7mlSdWYeFom84zZ8Wr8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Took Her To The O",
+    "songArtist": "King Von",
+    "songId": "7fEoXCZTZFosUFvFQg1BmW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Sky",
+    "songArtist": "Playboi Carti",
+    "songId": "29TPjc8wxfz4XMn21O7VsZ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "What You Know Bout Love",
+    "songArtist": "Pop Smoke",
+    "songId": "1tkg4EHVoqnhR6iFEXb60y",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Murder on My Mind",
+    "songArtist": "YNW Melly",
+    "songId": "7eBqSVxrzQZtK2mmgRG6lC",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Way 2 Sexy (with Future & Young Thug)",
+    "songArtist": "Drake, Future, Young Thug",
+    "songId": "0k1WUmIRnG3xU6fvvDVfRG",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Shotta Flow (feat. Blueface) [Remix]",
+    "songArtist": "NLE Choppa, Blueface",
+    "songId": "5BJMeoCXXgbRAWfp6fTulr",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Space Cadet (feat. Gunna)",
+    "songArtist": "Metro Boomin, Gunna",
+    "songId": "1fewSx2d5KIZ04wsooEBOz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Champion (feat. Travis Scott)",
+    "songArtist": "NAV, Travis Scott",
+    "songId": "6nO3tr47nr2P7f3hXb8JIo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Thotiana",
+    "songArtist": "Blueface",
+    "songId": "5GBuCHuPKx6UC7VsSPK0t3",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Leave Me Alone",
+    "songArtist": "Flipp Dinero",
+    "songId": "6V7g6qM8wheMivMWrzbPTM",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Wants and Needs (feat. Lil Baby)",
+    "songArtist": "Drake, Lil Baby",
+    "songId": "65OVbaJR5O1RmwOQx0875b",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Limit",
+    "songArtist": "G-Eazy, A$AP Rocky, Cardi B",
+    "songId": "2DQ1ITjI0YoLFzuADN1ZBW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "N95",
+    "songArtist": "Kendrick Lamar",
+    "songId": "0fX4oNGBWO3dSGUZcVdVV2",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Noticed",
+    "songArtist": "Lil Mosey",
+    "songId": "7zLYKWcXnYeHHWidalz7rj",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Heart",
+    "songArtist": "21 Savage, Metro Boomin",
+    "songId": "4gmmRb6bZJffOOiww1JGTO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "witchblades",
+    "songArtist": "Lil Peep, Lil Tracy",
+    "songId": "5GLW3IBX8Nhsup4bBLyGxa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lust",
+    "songArtist": "Lil Skies",
+    "songId": "7oJrVhiTPZGBXWPwhxjy9S",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Where The Hood At",
+    "songArtist": "DMX",
+    "songId": "6RUpJeXT6U4SPEafnr9Wr7",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Shoota (feat. Lil Uzi Vert)",
+    "songArtist": "Playboi Carti, Lil Uzi Vert",
+    "songId": "2BJSMvOGABRxokHKB0OI8i",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "2055",
+    "songArtist": "Sleepy Hallow",
+    "songId": "4XvcHTUfIlWfyJTRG0aqlo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "GUMMO",
+    "songArtist": "6ix9ine",
+    "songId": "4HbiCvH1R7mVOJ7KY7JQBD",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Only",
+    "songArtist": "Nicki Minaj, Drake, Lil Wayne, Chris Brown",
+    "songId": "1UZ25gykR30Oewh3dBRtVZ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Camelot",
+    "songArtist": "NLE Choppa",
+    "songId": "44sYqNBttbXNxya33FJ3Dj",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Martin & Gina",
+    "songArtist": "Polo G",
+    "songId": "1VLtjHwRWOVJiE5Py7JxoQ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Benz Truck (гелик)",
+    "songArtist": "Lil Peep",
+    "songId": "3kBD2xHIqKWXjLAGidDTSz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Miss The Rage (feat. Playboi Carti)",
+    "songArtist": "Trippie Redd, Playboi Carti",
+    "songId": "5gZYpjakt37G3c58FKcQwJ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "223's (feat. 9lokknine)",
+    "songArtist": "YNW Melly, 9lokknine",
+    "songId": "29ZXwWOOLz9t5fa3eT3i7T",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Sucker for Pain (with Wiz Khalifa, Imagine Dragons, Logic & Ty Dolla $ign feat. X Ambassadors)",
+    "songArtist": "Lil Wayne, Wiz Khalifa, Imagine Dragons, X Ambassadors, Logic, Ty Dolla $ign",
+    "songId": "4dASQiO1Eoo3RJvt74FtXB",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Do What I Want",
+    "songArtist": "Lil Uzi Vert",
+    "songId": "4IWGnyOHDrVZEtPWfs4s7q",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "LOVE. FEAT. ZACARI.",
+    "songArtist": "Kendrick Lamar, Zacari",
+    "songId": "6PGoSes0D9eUDeeAafB2As",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Stuck In A Dream (feat. Gunna)",
+    "songArtist": "Lil Mosey, Gunna",
+    "songId": "7iHHxY2NLlJRAmlAmC4ahQ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Love Scars",
+    "songArtist": "Trippie Redd",
+    "songId": "0AICBlLzFCTpUqmAbtzB2z",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "$ave Dat Money (feat. Fetty Wap & Rich Homie Quan)",
+    "songArtist": "Lil Dicky, Fetty Wap, Rich Homie Quan",
+    "songId": "1TkWsnheqK0gBtvh07BtNX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "New Freezer (feat. Kendrick Lamar)",
+    "songArtist": "Rich The Kid, Kendrick Lamar",
+    "songId": "2EgB4n6XyBsuNUbuarr4eG",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Narcos",
+    "songArtist": "Migos",
+    "songId": "0wbnC9AUenxp613TYaJsGK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "MONTERO (Call Me By Your Name)",
+    "songArtist": "Lil Nas X",
+    "songId": "1SC5rEoYDGUK4NfG82494W",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Whoopty",
+    "songArtist": "CJ",
+    "songId": "1t9WgS8FN0534tLBRwbaxO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "My Shit",
+    "songArtist": "A Boogie Wit da Hoodie",
+    "songId": "5uQOauh47VFt3B2kV9kRXw",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Trap Queen",
+    "songArtist": "Fetty Wap",
+    "songId": "0TzxcB6dK46vgXZT2P8qeR",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fuck Love",
+    "songArtist": "XXXTENTACION, Trippie Redd",
+    "songId": "7AQim7LbvFVZJE3O8TYgf2",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lucky You (feat. Joyner Lucas)",
+    "songArtist": "Eminem, Joyner Lucas",
+    "songId": "60SdxE8apGAxMiRrpbmLY0",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Whats Poppin (feat. DaBaby, Tory Lanez & Lil Wayne) [Remix] - Bonus Track",
+    "songArtist": "Jack Harlow, Tory Lanez, DaBaby, Lil Wayne",
+    "songId": "0ZLuW8uOXdFNWcI40C0OC2",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Wow.",
+    "songArtist": "Post Malone",
+    "songId": "7xQAfvXzm3AkraOtGPWIZg",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Alright",
+    "songArtist": "Kendrick Lamar",
+    "songId": "3iVcZ5G6tvkXZkZKlMpIUs",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Too Young",
+    "songArtist": "Post Malone",
+    "songId": "4SYUUlkScpNR1QvPscXf8t",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Better Now",
+    "songArtist": "Post Malone",
+    "songId": "7dt6x5M1jzdTEt8oCbisTK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "X (feat. Future)",
+    "songArtist": "21 Savage, Metro Boomin, Future",
+    "songId": "6fwdbPMwP1zVStm8FybmkO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Roll in Peace (feat. XXXTENTACION)",
+    "songArtist": "Kodak Black, XXXTENTACION",
+    "songId": "40oKW22ZNNkEdZLJTScaQI",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Or Nah (feat. The Weeknd, Wiz Khalifa & DJ Mustard) - Remix",
+    "songArtist": "Ty Dolla $ign, The Weeknd, Wiz Khalifa, Mustard",
+    "songId": "7t2bFihaDvhIrd2gn2CWJO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "PICK IT UP (feat. A$AP Rocky)",
+    "songArtist": "Famous Dex, A$AP Rocky",
+    "songId": "0dSIrRkA4PadGll16TgbnV",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Skateboard P (feat. Big Sean)",
+    "songArtist": "MadeinTYO, Big Sean",
+    "songId": "72UCHNyJcymw81x0AKevho",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Money In The Grave (Drake ft. Rick Ross)",
+    "songArtist": "Drake, Rick Ross",
+    "songId": "5ry2OE6R2zPQFDO85XkgRb",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Chill Bill (feat. J. Davi$ & Spooks)",
+    "songArtist": "Rob $tone, J. Davi$, J Spooks",
+    "songId": "5uDASfU19gDxSjW8cnCaBp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Flex Zone",
+    "songArtist": "Rae Sremmurd",
+    "songId": "2L8cFPItBljPNJgPjTnuIf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Drowning (feat. Kodak Black)",
+    "songArtist": "A Boogie Wit da Hoodie, Kodak Black",
+    "songId": "1f5cbQtDrykjarZVrShaDI",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hate It Or Love It",
+    "songArtist": "The Game, 50 Cent",
+    "songId": "2wGSgTmgSF3xjRrHkTc25R",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Money",
+    "songArtist": "Cardi B",
+    "songId": "2GGMabyHXnJmjY6CXhhB2e",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Envy Me",
+    "songArtist": "Calboy",
+    "songId": "7rvyVWja33WG9R97oeJAjx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "The London (feat. J. Cole & Travis Scott)",
+    "songArtist": "Young Thug, J. Cole, Travis Scott",
+    "songId": "3s4mrPrEFFPF0LmAfutW0n",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Mercury: Retrograde",
+    "songArtist": "Ghostemane",
+    "songId": "2Vc6NJ9PW9gD9q343XFRKx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "King's Dead (with Kendrick Lamar, Future & James Blake)",
+    "songArtist": "Jay Rock, Kendrick Lamar, Future, James Blake",
+    "songId": "51rXHuKN8Loc4sUlKPODgH",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Uber Everywhere",
+    "songArtist": "MadeinTYO",
+    "songId": "7zBPzAjKAqQpcv8F8GCq5s",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "King Kunta",
+    "songArtist": "Kendrick Lamar",
+    "songId": "0N3W5peJUQtI4eyR6GJT5O",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fair Trade (with Travis Scott)",
+    "songArtist": "Drake, Travis Scott",
+    "songId": "40iJIUlhi6renaREYGeIDS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Walk",
+    "songArtist": "Comethazine",
+    "songId": "0sVcnEo2jnUnr3p7uVDZ9o",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "FEFE",
+    "songArtist": "6ix9ine, Nicki Minaj, Murda Beatz",
+    "songId": "1M6SuEJZJkZf2S419vIPkB",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Digits",
+    "songArtist": "Young Thug",
+    "songId": "4cg1yakyRSIOjxKM2I7J1q",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Tiimmy Turner",
+    "songArtist": "Desiigner",
+    "songId": "3NJG6vMH1ZsectZkocMEm0",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Sauce It Up",
+    "songArtist": "Lil Uzi Vert",
+    "songId": "1uL78kFWxhz3umTMWJu8n5",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Suge",
+    "songArtist": "DaBaby",
+    "songId": "2gwkD6igEhQbDQegRCcdoB",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "MIDDLE CHILD",
+    "songArtist": "J. Cole",
+    "songId": "2JvzF1RMd7lE3KmFlsyZD8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Red Roses (feat. Landon Cube)",
+    "songArtist": "Lil Skies, Landon Cube",
+    "songId": "3ZhTT6yjZwpPph5MIJ53XY",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Robbery",
+    "songArtist": "Juice WRLD",
+    "songId": "6iaSML1PIYq936g62BDtBq",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Goodbyes (feat. Young Thug)",
+    "songArtist": "Post Malone, Young Thug",
+    "songId": "0t3ZvGKlmYmVsDzBJAXK8C",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Dior",
+    "songArtist": "Pop Smoke",
+    "songId": "79s5XnCN4TJKTVMSmOx8Ep",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Betrayed",
+    "songArtist": "Lil Xan",
+    "songId": "4vaxvNDaLSoD36iZX515ug",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Catch Me Outside",
+    "songArtist": "Ski Mask The Slump God",
+    "songId": "4rgwri7LajWVZvdj2N81SS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Man Of The Year",
+    "songArtist": "ScHoolboy Q",
+    "songId": "5SsR3wtCOafDmZgvIdRhSm",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Clout (feat. Cardi B)",
+    "songArtist": "Offset, Cardi B",
+    "songId": "59ywHNwwchG4nZJMLyxSzd",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Wake Up in the Sky",
+    "songArtist": "Gucci Mane, Bruno Mars, Kodak Black",
+    "songId": "2G1tXoGBaEMJ7FKGnkf6ud",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "What They Want",
+    "songArtist": "Russ",
+    "songId": "3pndPhlQWjuSoXhcIIdBjv",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "OOOUUU",
+    "songArtist": "Young M.A",
+    "songId": "7JYsArznYOjX2jsrT3UEnL",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Got Your Money (feat. Kelis)",
+    "songArtist": "Ol' Dirty Bastard, Kelis",
+    "songId": "6YYd5MLpu45J0uLrMdivF7",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Caroline",
+    "songArtist": "Aminé",
+    "songId": "5hTpBe8h35rJ67eAWHQsJx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Ultimate",
+    "songArtist": "Denzel Curry",
+    "songId": "6R0GRYk2vs2XuBVemYK5YZ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "One Night",
+    "songArtist": "Lil Yachty",
+    "songId": "40yJGQyEaBbIkXpwMFkXip",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "a lot",
+    "songArtist": "21 Savage",
+    "songId": "2t8yVaLvJ0RenpXUIAC52d",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "First Day Out",
+    "songArtist": "Tee Grizzley",
+    "songId": "3muBQDekYAg7jm6hDu6R0Z",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Slippery (feat. Gucci Mane)",
+    "songArtist": "Migos, Gucci Mane",
+    "songId": "6p8NuHm8uCGnn2Dtbtf7zE",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Audi.",
+    "songArtist": "Smokepurpp",
+    "songId": "4Iy73U3ZqfhF1cxPDRSMKp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Transportin'",
+    "songArtist": "Kodak Black",
+    "songId": "1WIZiOuNO3woKfdlSK2gNn",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Day 'N' Nite (nightmare)",
+    "songArtist": "Kid Cudi",
+    "songId": "5FEXPoPnzueFJQCPRIrC3c",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "X (with 2 Chainz & Saudi)",
+    "songArtist": "ScHoolboy Q, 2 Chainz, Saudi",
+    "songId": "4LmAnpjlhWTahvRkYR8xJa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bitch Better Have My Money",
+    "songArtist": "Rihanna",
+    "songId": "0NTMtAO2BV4tnGvw9EgBVq",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Gas Pedal",
+    "songArtist": "Sage The Gemini, Iamsu!",
+    "songId": "1UMKquW1olreYO1LlLmTqi",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Watch Me (Whip / Nae Nae)",
+    "songArtist": "Silentó",
+    "songId": "5RIVoVdkDLEygELLCniZFr",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Black Widow",
+    "songArtist": "Iggy Azalea, Rita Ora",
+    "songId": "71vsEyBd4X1D5BUmLdFSVH",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fuck Up Some Commas",
+    "songArtist": "Future",
+    "songId": "49zD0wr2S3d0lZPib0K4e1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Low Life (feat. The Weeknd)",
+    "songArtist": "Future, The Weeknd",
+    "songId": "7EiZI6JVHllARrX9PUvAdX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I Get the Bag (feat. Migos)",
+    "songArtist": "Gucci Mane, Migos",
+    "songId": "1XRgIKC5TPwo7nWGyKqgG0",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "VIBEZ",
+    "songArtist": "DaBaby",
+    "songId": "0fySG6A6qLE8IvDpayb5bM",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Arms Around You (feat. Maluma & Swae Lee)",
+    "songArtist": "XXXTENTACION, Lil Pump, Swae Lee, Maluma",
+    "songId": "2LskIZrCeLxRvCiGP8gxlh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Gassed Up",
+    "songArtist": "Nebu Kiniza",
+    "songId": "6JjEVlMkfHWMeYavkEYzNO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "CoCo",
+    "songArtist": "O.T. Genasis",
+    "songId": "2JI71GHwq2LN8mtq3iCLYo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "This Is America",
+    "songArtist": "Childish Gambino",
+    "songId": "0b9oOr2ZgvyQu88wzixux9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Best Friend",
+    "songArtist": "Young Thug",
+    "songId": "33JcUj9qQDayKswunZP9ar",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "BOP",
+    "songArtist": "DaBaby",
+    "songId": "6Ozh9Ok6h4Oi1wUSLtBseN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "My Band",
+    "songArtist": "D12",
+    "songId": "4XHQyvbrBsQaaBUW1VvmsL",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Panini",
+    "songArtist": "Lil Nas X",
+    "songId": "1000nHvUdawXuUHgBod4Wv",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "wokeuplikethis*",
+    "songArtist": "Playboi Carti, Lil Uzi Vert",
+    "songId": "59J5nzL1KniFHnU120dQzt",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "All Girls Are The Same",
+    "songArtist": "Juice WRLD",
+    "songId": "4VXIryQMWpIdGgYR4TrjT1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "RAPSTAR",
+    "songArtist": "Polo G",
+    "songId": "18vXApRmJSgQ6wG2ll9AOg",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "L$D",
+    "songArtist": "A$AP Rocky",
+    "songId": "4S7YHmlWwfwArgd8LfSPud",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "N.Y. State of Mind",
+    "songArtist": "Nas",
+    "songId": "0trHOzAhNpGCsGBEu7dOJo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "F.N",
+    "songArtist": "Lil Tjay",
+    "songId": "0RLLvYBopDwooCyvnTwgYu",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "My Way (feat. Monty)",
+    "songArtist": "Fetty Wap, Monty",
+    "songId": "1WoOzgvz6CgH4pX6a1RKGp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Pursuit Of Happiness (Nightmare)",
+    "songArtist": "Kid Cudi, MGMT, Ratatat",
+    "songId": "4kTLpAbhuEGHAAdDjOIWaa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Throw Sum Mo",
+    "songArtist": "Rae Sremmurd, Nicki Minaj, Young Thug",
+    "songId": "5uqphUYsR45kPYplrYSAQh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Save That Shit",
+    "songArtist": "Lil Peep",
+    "songId": "0S0vWvyZ6Rc79TXkWxT9QA",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "A Milli",
+    "songArtist": "Lil Wayne",
+    "songId": "3uqinR4FCjLv28bkrTdNX5",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Wishing Well",
+    "songArtist": "Juice WRLD",
+    "songId": "2U5WueTLIK5WJLD7mvDODv",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "VALENTINO",
+    "songArtist": "24kGoldn",
+    "songId": "6piAUJJQFD8oHDUr0b7l7q",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I'm Upset",
+    "songArtist": "Drake",
+    "songId": "3qN5qMTKyEEmiTZD38BNTT",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "20 Min",
+    "songArtist": "Lil Uzi Vert",
+    "songId": "0uxSUdBrJy9Un0EYoBowng",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Stir Fry",
+    "songArtist": "Migos",
+    "songId": "2UVbBKQOdFAekPTRsnkzcf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "POPSTAR (feat. Drake)",
+    "songArtist": "DJ Khaled, Drake",
+    "songId": "1sbEeUY8KsdvgiQi26JBFz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "T-Shirt",
+    "songArtist": "Migos",
+    "songId": "1rkfJLgTlB6XYNjgZ0sVaK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Look Back at It",
+    "songArtist": "A Boogie Wit da Hoodie",
+    "songId": "3Ol2xnObFdKV9pmRD2t9x8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I Wanna Love You",
+    "songArtist": "Akon, Snoop Dogg",
+    "songId": "0CXVjQI9wsqaGeIARkkpYc",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "High Fashion (feat. Mustard)",
+    "songArtist": "Roddy Ricch, Mustard",
+    "songId": "07KXEDMj78x68D884wgVEm",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Star Shopping",
+    "songArtist": "Lil Peep",
+    "songId": "30bqVoKjX479ab90a8Pafp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Mood Swings (feat. Lil Tjay)",
+    "songArtist": "Pop Smoke, Lil Tjay",
+    "songId": "5rZlwNFl01HqLWBQGryKSm",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lonely",
+    "songArtist": "Akon",
+    "songId": "4v7DCN09hgXkKazefkznDQ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Outside Today",
+    "songArtist": "YoungBoy Never Broke Again",
+    "songId": "5PIfH6BzcmH04RDmtzF0BN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fine China",
+    "songArtist": "Future, Juice WRLD",
+    "songId": "5274I4mUMnYczyeXkGDWZN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "m.A.A.d city",
+    "songArtist": "Kendrick Lamar, MC Eiht",
+    "songId": "3qX1dqmDdmMvvfMVfsx4Bh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "WHATS POPPIN",
+    "songArtist": "Jack Harlow",
+    "songId": "1jaTQ3nqY3oAAYyCTbIvnM",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Nowadays (feat. Landon Cube)",
+    "songArtist": "Lil Skies, Landon Cube",
+    "songId": "2u7mxWSeoqTXndK5e08jMp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "4 AM",
+    "songArtist": "2 Chainz, Travis Scott",
+    "songId": "1nX9KhK3Fff27SnrIor2Yb",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "REEL IT IN",
+    "songArtist": "Aminé",
+    "songId": "5qHirGR7M9tdm6C17DlzSY",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Candy Paint",
+    "songArtist": "Post Malone",
+    "songId": "32lItqlMi4LBhb4k0BaSaC",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Suicidal",
+    "songArtist": "YNW Melly",
+    "songId": "1iSqfoUFnQwV0QW1EfUit8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Faucet Failure",
+    "songArtist": "Ski Mask The Slump God",
+    "songId": "1ThmUihH9dF8EV08ku5AXN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fake Love",
+    "songArtist": "Drake",
+    "songId": "343YBumqHu19cGoGARUTsd",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Everyday (feat. Rod Stewart, Miguel & Mark Ronson)",
+    "songArtist": "A$AP Rocky, Rod Stewart, Miguel, Mark Ronson",
+    "songId": "2N3U8uTYhjX2KwGT0pf5x0",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "1400 / 999 Freestyle",
+    "songArtist": "Trippie Redd, Juice WRLD",
+    "songId": "75lcPkAkUsKWHGBlGM476R",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Calling My Phone",
+    "songArtist": "Lil Tjay, 6LACK",
+    "songId": "3J8EOeKLTLXORtWPpOU5bE",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "After Party",
+    "songArtist": "Don Toliver",
+    "songId": "527k23H0A4Q0UJN3vGs0Da",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "This Could Be Us",
+    "songArtist": "Rae Sremmurd",
+    "songId": "4jTiyLlOJVJj3mCr7yfPQD",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Shook Ones, Pt. II",
+    "songArtist": "Mobb Deep",
+    "songId": "33ZXjLCpiINn8eQIDYEPTD",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Taste (feat. Offset)",
+    "songArtist": "Tyga, Offset",
+    "songId": "2toVe5hfuIi97ytDPDbQFt",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Erase Your Social",
+    "songArtist": "Lil Uzi Vert",
+    "songId": "4uhvMW7ly7tJil31YYscAN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Armed And Dangerous",
+    "songArtist": "Juice WRLD",
+    "songId": "5wujBwqG7INdStqGd4tRMX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "The Woo (feat. 50 Cent & Roddy Ricch)",
+    "songArtist": "Pop Smoke, 50 Cent, Roddy Ricch",
+    "songId": "1H7KnK26kc1YyellpbINEn",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Sky Walker (feat. Travis Scott)",
+    "songArtist": "Miguel, Travis Scott",
+    "songId": "5WoaF1B5XIEnWfmb5NZikf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Blueberry Faygo",
+    "songArtist": "Lil Mosey",
+    "songId": "22LAwLoDA5b4AaGSkg6bKW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "GREECE (feat. Drake)",
+    "songArtist": "DJ Khaled, Drake",
+    "songId": "3gruCKVuhCsRjs3a3dG8CA",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Love Me",
+    "songArtist": "Lil Wayne, Drake, Future",
+    "songId": "2XHzzp1j4IfTNp1FTn7YFg",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Nice For What",
+    "songArtist": "Drake",
+    "songId": "3CA9pLiwRIGtUBiMjbZmRw",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Homicide (feat. Eminem)",
+    "songArtist": "Logic, Eminem",
+    "songId": "7M2tXmeS15NAzEn7ABFeBg",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Old Town Road (feat. Billy Ray Cyrus) - Remix",
+    "songArtist": "Lil Nas X, Billy Ray Cyrus",
+    "songId": "2YpeDb67231RjR0MgVLzsG",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Praise God",
+    "songArtist": "Kanye West",
+    "songId": "0WSEq9Ko4kFPt8yo3ICd6T",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "10 Freaky Girls (with 21 Savage)",
+    "songArtist": "Metro Boomin, 21 Savage",
+    "songId": "0AluA5RNsa4Cx6XRhf2hWZ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Swimming Pools (Drank)",
+    "songArtist": "Kendrick Lamar",
+    "songId": "6REbwUNlppTfcnV4d4ZoZi",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Rolex",
+    "songArtist": "Ayo & Teo",
+    "songId": "0pSBuHjILhNEo55xK1zrRt",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Rubbin off the Paint",
+    "songArtist": "YBN Nahmir",
+    "songId": "6V4KHt9xu4TPEnDFoBeacT",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Moonlight",
+    "songArtist": "XXXTENTACION",
+    "songId": "0JP9xo3adEtGSdUEISiszL",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "All Mine",
+    "songArtist": "Kanye West",
+    "songId": "3U21A07gAloCc4P7J8rxcn",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bodak Yellow",
+    "songArtist": "Cardi B",
+    "songId": "6KBYefIoo7KydImq1uUQlL",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hotline Bling",
+    "songArtist": "Drake",
+    "songId": "0wwPcA6wtMf6HUMpIRdeP7",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "21 Questions",
+    "songArtist": "50 Cent, Nate Dogg",
+    "songId": "70FCugJxa7XW04Np6iYJdI",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "INDUSTRY BABY (feat. Jack Harlow)",
+    "songArtist": "Lil Nas X, Jack Harlow",
+    "songId": "27NovPIUIRrOZoCHxABJwK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Icon",
+    "songArtist": "Jaden",
+    "songId": "22nyEAEM29tcBRhukR089b",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Pure Water (with Migos)",
+    "songArtist": "Mustard, Migos",
+    "songId": "3j84U36KvLeXNDPv4t5pI8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hot (Remix) [feat. Gunna and Travis Scott]",
+    "songArtist": "Young Thug, Travis Scott, Gunna",
+    "songId": "4ea9w8c4ROqiZpJVhfBA3m",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Love The Way You Lie",
+    "songArtist": "Eminem, Rihanna",
+    "songId": "15JINEqzVMv3SvJTAXAKED",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Work Out",
+    "songArtist": "J. Cole",
+    "songId": "2wAJTrFhCnQyNSD3oUgTZO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bitch, Don’t Kill My Vibe",
+    "songArtist": "Kendrick Lamar",
+    "songId": "5h5tBFnbcVioFXiOixTn6E",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Self Care",
+    "songArtist": "Mac Miller",
+    "songId": "5bJ1DrEM4hNCafcDd1oxHx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Dilemma",
+    "songArtist": "Nelly, Kelly Rowland",
+    "songId": "0ARK753YaiJbpLUk7z5yIM",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Collard Greens",
+    "songArtist": "ScHoolboy Q, Kendrick Lamar",
+    "songId": "0zO8ctW0UiuOefR87OeJOZ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Guidance (feat. Drake)",
+    "songArtist": "Chris Brown, Drake",
+    "songId": "6XHVuErjQ4XNm6nDPVCxVX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "All Falls Down",
+    "songArtist": "Kanye West, Syleena Johnson",
+    "songId": "5SkRLpaGtvYPhw02vZhQQ9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Flockin'",
+    "songArtist": "Kodak Black",
+    "songId": "34oWbFBfGEElvgO0a5c9V4",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "C.R.E.A.M. (Cash Rules Everything Around Me)",
+    "songArtist": "Wu-Tang Clan",
+    "songId": "119c93MHjrDLJTApCVGpvx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Best I Ever Had",
+    "songArtist": "Drake",
+    "songId": "3QLjDkgLh9AOEHlhQtDuhs",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Live Your Life",
+    "songArtist": "T.I., Rihanna",
+    "songId": "3jlbL2OTD5YmIunYzgQTAN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bad Things (with Camila Cabello)",
+    "songArtist": "mgk, Camila Cabello",
+    "songId": "1PSBzsahR2AKwLJgx8ehBj",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "G.O.M.D",
+    "songArtist": "J. Cole",
+    "songId": "0Thqjtu54vKMP06pwZkAWp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Stylist (feat. Drake)",
+    "songArtist": "French Montana, Drake",
+    "songId": "1LYYsrjs2VIKB8t534B3cm",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lifestyle",
+    "songArtist": "Rich Gang, Young Thug, Rich Homie Quan",
+    "songId": "7DTlsMOQjGysXHpwwpHuPl",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "All Of The Lights",
+    "songArtist": "Kanye West",
+    "songId": "22L7bfCiAkJo5xGSQgmiIO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Anaconda",
+    "songArtist": "Nicki Minaj",
+    "songId": "5eqiMMbaeUZ32Q7sS00H35",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bugatti",
+    "songArtist": "Ace Hood, Future, Rick Ross",
+    "songId": "0uFvvXbmGIXlf5ZgtHyYpf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "23",
+    "songArtist": "Mike WiLL Made-It, Miley Cyrus, Wiz Khalifa, Juicy J",
+    "songId": "20FZrLl9zSbO9b3DhaqO6M",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Ready or Not",
+    "songArtist": "Fugees, Ms. Lauryn Hill, Wyclef Jean, Pras",
+    "songId": "3vZO25GdYuqFrR1kzZADnp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Yeah! (feat. Lil Jon & Ludacris)",
+    "songArtist": "USHER, Lil Jon, Ludacris",
+    "songId": "5rb9QrpfcKFHM1EUbSIurX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Toosie Slide",
+    "songArtist": "Drake",
+    "songId": "127QTOFJsJQp5LbJbu3A1y",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Remember the Name (feat. Styles of Beyond)",
+    "songArtist": "Fort Minor, Styles Of Beyond",
+    "songId": "6ljbkNIzfmFrGyYUTUAleN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Down On Me",
+    "songArtist": "Jeremih, 50 Cent",
+    "songId": "0x3TibRgnSqzkcwrqBd4iX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "We Own It (Fast & Furious)",
+    "songArtist": "2 Chainz, Wiz Khalifa",
+    "songId": "2OQJKTtrH482waGFmOfJni",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "7/11",
+    "songArtist": "Beyoncé",
+    "songId": "02M6vucOvmRfMxTXDUwRXu",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Changes",
+    "songArtist": "2Pac, Talent",
+    "songId": "1ofhfV90EnYhEr7Un2fWiv",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Check",
+    "songArtist": "Young Thug",
+    "songId": "1jk9c0gZI0wbn5GvAj7PBV",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "X Gon' Give It To Ya - Int'l Bonus track",
+    "songArtist": "DMX",
+    "songId": "66orjI5vOkyxOZLHWrPklh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I'll Be Missing You (feat. Faith Evans & 112) - 2014 Remaster",
+    "songArtist": "Diddy, 112, Faith Evans",
+    "songId": "1yy2DlSDtEt90d54rPDPXz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Trophies",
+    "songArtist": "Young Money, Drake",
+    "songId": "6HfOzLLjsaXsehIFEsrxTk",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "DENIAL IS A RIVER",
+    "songArtist": "Doechii",
+    "songId": "1eTaznNW4Xxtx9za2SMTXB",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "squabble up",
+    "songArtist": "Kendrick Lamar",
+    "songId": "0nj9Bq5sHDiTxSHunhgkFb",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Big Dawgs",
+    "songArtist": "Hanumankind, Kalmi",
+    "songId": "0OA00aPt3BV10qeMIs3meW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "WHATCHU KNO ABOUT ME (feat. Sexyy Red)",
+    "songArtist": "GloRilla, Sexyy Red",
+    "songId": "5xeSd4HgzrYpNLEf3LfYLK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Paint The Town Red",
+    "songArtist": "Doja Cat",
+    "songId": "2IGMVunIBsBLtEQyoI1Mu7",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Houdini",
+    "songArtist": "Eminem",
+    "songId": "2HYFX63wP3otVIvopRS99Z",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Empty Out Your Pockets",
+    "songArtist": "Juice WRLD",
+    "songId": "2QxekHjOYDnzNO5w8hu2D9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "All My Life (feat. J. Cole)",
+    "songArtist": "Lil Durk, J. Cole",
+    "songId": "6HgWWaMu31KdOpEG5l28BG",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Type Shit",
+    "songArtist": "Future, Metro Boomin, Travis Scott, Playboi Carti",
+    "songId": "28drn6tQo95MRvO0jQEo5C",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I LUV HER (wth T-Pain)",
+    "songArtist": "GloRilla, T-Pain",
+    "songId": "1GpDcABDptCpIOALmD2S5f",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "redrum",
+    "songArtist": "21 Savage",
+    "songId": "52eIcoLUM25zbQupAZYoFh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Too Many Nights (feat. Don Toliver & with Future)",
+    "songArtist": "Metro Boomin, Future, Don Toliver",
+    "songId": "4DGrMHTVjxecZbYStawUK1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "euphoria",
+    "songArtist": "Kendrick Lamar",
+    "songId": "77DRzu7ERs0TX3roZcre7Q",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Tomorrow 2 (with Cardi B)",
+    "songArtist": "GloRilla, Cardi B",
+    "songId": "7KXVIAuw3m2hxZanrpSXS3",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bad Dreams",
+    "songArtist": "Teddy Swims",
+    "songId": "3BntzKsnLf2pc0dsvE3Zav",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "back to friends",
+    "songArtist": "sombr",
+    "songId": "0FTmksd2dxiE5e3rWyJXs6",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Shake Dat Ass(Twerk Song)",
+    "songArtist": "BossMan Dlow",
+    "songId": "001dVqDI4LUA4DUThvVaRS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Help Me",
+    "songArtist": "Real Boston Richey",
+    "songId": "487JCvAXVblflZyDJn3fSp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Thang For You (feat. No Cap)",
+    "songArtist": "Rylo Rodriguez, NoCap",
+    "songId": "1GlLIz7AtCYnwvXpz2rzbo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Sticky (feat. GloRilla, Sexyy Red & Lil Wayne)",
+    "songArtist": "Tyler, The Creator, GloRilla, Sexyy Red, Lil Wayne",
+    "songId": "3tFed7YsjGnIfxeLEQwx3R",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Deli",
+    "songArtist": "Ice Spice",
+    "songId": "5JYPXqMwYc0zTODQdjMEZN",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "California Breeze",
+    "songArtist": "Lil Baby",
+    "songId": "6ug9fUi5oLLgQgOF1G8WkM",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Trance (with Travis Scott & Young Thug)",
+    "songArtist": "Metro Boomin, Travis Scott, Young Thug",
+    "songId": "7Ap7Fpqnh2BUQBQxbLEC9I",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Put It On Da Floor Again (feat. Cardi B)",
+    "songArtist": "Latto, Cardi B",
+    "songId": "6c6WmIHcHlhccEwSFBhzNa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "I KNOW ?",
+    "songArtist": "Travis Scott",
+    "songId": "6wsqVwoiVH2kde4k4KKAFU",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lady Killers II (Christoph Andersson Remix)",
+    "songArtist": "G-Eazy, Christoph Andersson",
+    "songId": "0QRhtV1MwywpkLTvCdMaWq",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Yeah Glo!",
+    "songArtist": "GloRilla",
+    "songId": "0SdBkFh6u5IHIXqlBu0NyI",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Enough (Miami)",
+    "songArtist": "Cardi B",
+    "songId": "7pDfRnoEDRkcz7bQsOjnPc",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Get It Sexyy",
+    "songArtist": "Sexyy Red",
+    "songId": "2MjXWroB9wlTG2kqv3avfS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Mr Pot Scraper",
+    "songArtist": "BossMan Dlow",
+    "songId": "3yX73YM73j5BF6gIcqZdM7",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Ms. Whitman",
+    "songArtist": "Bhad Bhabie",
+    "songId": "1LjSbD1yQ0RQc6mwxGHw4m",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "NUNCA MUDA?",
+    "songArtist": "Scythermane, NXGHT!",
+    "songId": "3VFySvZMSn4z4X4YDDQb0H",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "M a k e I t T o T h e M o r n i n g",
+    "songArtist": "PARTYNEXTDOOR",
+    "songId": "73987AIMr6DOqy8QAsmexU",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lose Control - The Village Sessions",
+    "songArtist": "Teddy Swims",
+    "songId": "22ESdhHM8SaMQgMMOttjow",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Dreamin",
+    "songArtist": "PARTYNEXTDOOR",
+    "songId": "35sZOqVnTQNIGWGURrFdLh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "THAT GUY",
+    "songArtist": "etmnx, 20keazyy",
+    "songId": "0tNmqPu4DwGKXCIOpV2USh",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "NIGHTS LIKE THIS PT 2",
+    "songArtist": "The Kid LAROI",
+    "songId": "57G4kEAuP7muC8UzZXtcVi",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Headlock",
+    "songArtist": "Imogen Heap",
+    "songId": "7vTENp2sLS3sPY5z4npYNr",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Heart Of A Woman",
+    "songArtist": "Summer Walker",
+    "songId": "2oVVaVY0LkzwAYYcyzon6Z",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "HIM ALL ALONG",
+    "songArtist": "Gunna",
+    "songId": "2EKL77lwxvo615Ga7VjEUl",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Mo Chicken (feat. French Montana)",
+    "songArtist": "BossMan Dlow, French Montana",
+    "songId": "5pSpNlqyYsSjdVKdrxvgHn",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Pole",
+    "songArtist": "Don Toliver",
+    "songId": "0eaVIYo2zeOaGJeqZ5TwYz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Lonely Dirt Road",
+    "songArtist": "Dax",
+    "songId": "6jbV8P3fq5jFY7zd3UjGnV",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Sneaking",
+    "songArtist": "YoungBoy Never Broke Again",
+    "songId": "18vCZw9j8AjifMNnOIjjfa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "The Largest",
+    "songArtist": "BigXthaPlug",
+    "songId": "1F5Qp0SJS0QUfqIoQggrLz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "F U 2x",
+    "songArtist": "Lil Baby",
+    "songId": "2ubNuGSCWRRxUfojPRebiA",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Passport Junkie",
+    "songArtist": "Rod Wave",
+    "songId": "5ahdQDl9WGN9dNDDH0RKyJ",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Love You",
+    "songArtist": "J.I the Prince of N.Y",
+    "songId": "5xDAPu0xNFVJo299H3Tave",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "NEW DROP",
+    "songArtist": "Don Toliver",
+    "songId": "4hCOgguVnZqPuYWdi9W6eW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "25",
+    "songArtist": "Rod Wave",
+    "songId": "0U60hgxzGit7juEuHul2y3",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "By Myself (feat. Rod Wave & Rylo Rodriguez)",
+    "songArtist": "Lil Baby, Rylo Rodriguez, Rod Wave",
+    "songId": "6zrCf0MGof32vwLPZIZY2S",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fat Juicy & Wet",
+    "songArtist": "Sexyy Red, Bruno Mars",
+    "songId": "5M2lX0ZAYSAzCs1xPPi9BX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "NISSAN ALTIMA",
+    "songArtist": "Doechii",
+    "songId": "2dKkVF2m160z0RNDN2dddc",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "FUNK DO BOUNCE (Sped)",
+    "songArtist": "Ariis",
+    "songId": "0GAdZ44pjq8Q66q5YvYOQu",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "void - super slowed",
+    "songArtist": "isq",
+    "songId": "0ujPplwuZcH5skG5R2E9Hz",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Guess featuring billie eilish",
+    "songArtist": "Charli xcx, Billie Eilish",
+    "songId": "3WOhcATHxK2SLNeP5W3v1v",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Whites",
+    "songArtist": "Masicka",
+    "songId": "4Sf6Kt4Tnskbszxl7hui7t",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "TGIF",
+    "songArtist": "GloRilla",
+    "songId": "56qiAh3R5y85Ng26tkAUD3",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Thought I Was Dead (feat. ScHoolboy Q & Santigold)",
+    "songArtist": "Tyler, The Creator, ScHoolboy Q, Santigold",
+    "songId": "2aYHxnMF2umAavtgBvmkY1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fall Fast in Love",
+    "songArtist": "Rod Wave",
+    "songId": "1mg8rzws9v1V7OrHAIwT84",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Good News",
+    "songArtist": "Shaboozey",
+    "songId": "54p6vNJwGkt4FTaM8SCsxt",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Blick Sum (feat. Playboi Carti)",
+    "songArtist": "Latto, Playboi Carti",
+    "songId": "3PAvwFSVQ4K4hMo7yJLv0I",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Set It Off",
+    "songArtist": "Boosie Badazz",
+    "songId": "6Efmq0wDgijxWFdBkzIOvb",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "1000 Blunts",
+    "songArtist": "$uicideboy$",
+    "songId": "09riz9pAPJyYYDVynE5xxY",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Johnny Dang (with Paul Wall & DRODi)",
+    "songArtist": "That Mexican OT, Paul Wall, DRODi",
+    "songId": "1kwPxt35W7cG3rryxR48PO",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Miles On It",
+    "songArtist": "Marshmello, Kane Brown",
+    "songId": "4pkb8SbRGeHAvdb87v9rpf",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "In A Minute",
+    "songArtist": "Lil Baby",
+    "songId": "5XmwzDNDrhlIRv3eHiitTo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "2AM",
+    "songArtist": "BigXthaPlug",
+    "songId": "26TX1oZbaDeKxfTYDclSAo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Finesse",
+    "songArtist": "BossMan Dlow",
+    "songId": "7FCBaE2gGhlWUzUaROPqoV",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Dum, Dumb, and Dumber (with Young Thug & Future)",
+    "songArtist": "Lil Baby, Young Thug, Future",
+    "songId": "4IKvw1OdeTJIN3g4zWE38f",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Cyber Truck",
+    "songArtist": "Kodak Black",
+    "songId": "4DpqKZHmMLx1YN8ieULMp9",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Brokey",
+    "songArtist": "Latto",
+    "songId": "6g7vo9RiTkmCDHywj9HKEW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Paint The Town Blue (from the series Arcane League of Legends)",
+    "songArtist": "Ashnikko, Arcane, League of Legends",
+    "songId": "0g0qfC3nAaIsfbxS29ksJx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "prove it",
+    "songArtist": "21 Savage, Summer Walker",
+    "songId": "5wttBUDyaHAR5q9fYnN3YF",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "IRan",
+    "songArtist": "Rod Wave",
+    "songId": "2urKjD3flF92sLtpCmPPxo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Peaches & Eggplants (feat. 21 Savage)",
+    "songArtist": "Young Nudy, 21 Savage",
+    "songId": "1KUZ33cOqk3X4Ezk0aZnVp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Mmhmm",
+    "songArtist": "BigXthaPlug",
+    "songId": "1nQaTUDJ7Rc4yOvZmg9Ozr",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Tobey (feat. Big Sean and BabyTron)",
+    "songArtist": "Eminem, Big Sean, BabyTron",
+    "songId": "4KWeGKChLKcnZsj3sIOSkW",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Whip It",
+    "songArtist": "BigXthaPlug",
+    "songId": "3TmwzKk7dOnMka3Q7NvGht",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Not So Bad (Leans Gone Cold)",
+    "songArtist": "Rae Sremmurd",
+    "songId": "4qZLvqy5Wg4sgQ9gKusb1B",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bigger In Texas",
+    "songArtist": "Megan Thee Stallion",
+    "songId": "0XW9AyYhwwUyBYFvRfrfIs",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Jimmy Cooks (feat. 21 Savage)",
+    "songArtist": "Drake, 21 Savage",
+    "songId": "3F5CgOj3wFlRv51JsHbxhe",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Count Me Out",
+    "songArtist": "Kendrick Lamar",
+    "songId": "7pj6P5WnxkZsw3XRc8eMe1",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Rich Baby Daddy (feat. Sexyy Red & SZA)",
+    "songArtist": "Drake, Sexyy Red, SZA",
+    "songId": "1yeB8MUNeLo9Ek1UEpsyz6",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Self Esteem (featuring NLE Choppa)",
+    "songArtist": "Lambo4oe, NLE Choppa",
+    "songId": "1hnNjI1da0xqGhR81JFVdx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Last Of My Kind (feat. Paul Cauthen)",
+    "songArtist": "Shaboozey, Paul Cauthen",
+    "songId": "5BmmDKMuVvqENYA6g750OX",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "TORE UP",
+    "songArtist": "Don Toliver",
+    "songId": "1jKXjxMWlq4BhH6f9GtZbu",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "All Dere (feat. Moneybagg Yo)",
+    "songArtist": "GloRilla, Moneybagg Yo",
+    "songId": "0KLbL3svWeZyhE02nSW8QG",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Oscar Winning Tears.",
+    "songArtist": "RAYE",
+    "songId": "0iO2iCAjtX0t5duvczNQt6",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "nuts (feat. rainy bear)",
+    "songArtist": "Lil Peep, rainy bear",
+    "songId": "2SabxRgV7VMc1LRHgw0HIo",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "GOT DAMN",
+    "songArtist": "Gunna",
+    "songId": "6D1Pr14PtFHoj6gBEoOfQP",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Or What",
+    "songArtist": "NLE Choppa, 41, Kyle Richh",
+    "songId": "3lUYO6zvXI88sNDpyKvIJ2",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "KEEP UP",
+    "songArtist": "Odetari",
+    "songId": "2yR2sziCF4WEs3klW1F38d",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "500lbs",
+    "songArtist": "Lil Tecca",
+    "songId": "1xWkeSPhf3bZqHY7Ncz8vp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Missing Everything",
+    "songArtist": "YoungBoy Never Broke Again",
+    "songId": "720XllkKq9Pmjk1KOS7Z0F",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "EVIL EMPIRE (feat. DD Osama)",
+    "songArtist": "Lil Mabu, DD Osama",
+    "songId": "6591oPA9nKFawSWOcQcL8A",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Tailor Swif",
+    "songArtist": "A$AP Rocky",
+    "songId": "5xMjhZKSo8yh5r9b5vrYRr",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Hanging With Wolves",
+    "songArtist": "Lil Durk",
+    "songId": "5RBmSBME2JNHuCGe3dCGnm",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "If We Being Rëal",
+    "songArtist": "Yeat",
+    "songId": "0YThXX1dqUpYBLyJNAsF9N",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Great Gatsby",
+    "songArtist": "Rod Wave",
+    "songId": "4M68xjcc42oxyphhzpOWXS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Last Lap",
+    "songArtist": "Rod Wave",
+    "songId": "1qJGJR5DXftoDjeNjNvIDy",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "BILLIE EILISH.",
+    "songArtist": "Armani White",
+    "songId": "7GKd7FI7IcSoVNQIwYxAQI",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "SHAKA LAKA (feat. Kodak Black)",
+    "songArtist": "6ix9ine, Yailin la Mas Viral, Kodak Black",
+    "songId": "4thyim0b9fKcBByGgtnqHF",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "WHISKEY WHISKEY (feat. Morgan Wallen)",
+    "songArtist": "Moneybagg Yo, Morgan Wallen",
+    "songId": "7hRLuo4QnzCsjICXUOhTE6",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Monitoring Me",
+    "songArtist": "Lil Durk",
+    "songId": "5et07CoblayzSAQIFLtP3d",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Barbie World (with Aqua) [From Barbie The Album]",
+    "songArtist": "Nicki Minaj, Ice Spice, Aqua",
+    "songId": "54JoSuLllU1JUlm0wIIeAF",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Limbo",
+    "songArtist": "Freddie Dredd",
+    "songId": "37F7E7BKEw2E4O2L7u0IEp",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "BABY I'M BACK",
+    "songArtist": "The Kid LAROI",
+    "songId": "5kDgJffgJ0lYHTSiaXFWNw",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Back End",
+    "songArtist": "Finesse2tymes",
+    "songId": "3eHOsD9gXqWYPxVr0JVVWv",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "PHAT",
+    "songArtist": "DaBaby",
+    "songId": "0UXC93QrbB1by2v4Fa6ILS",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Sleep",
+    "songArtist": "NBA YoungBoy",
+    "songId": "4RRQWg5pCJ8DRnxtJqpeGa",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Rich Spirit",
+    "songArtist": "Kendrick Lamar",
+    "songId": "6kYGOFNUMxpab09L5Ukoke",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Temporary",
+    "songArtist": "Eminem, Skylar Grey",
+    "songId": "0JarHeck5c9TbguVahtmr5",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Interlude",
+    "songArtist": "Hunxho",
+    "songId": "6OPDekqfGfwlmBixJAfCff",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Matte Black",
+    "songArtist": "$uicideboy$",
+    "songId": "0hPRWztAIbNkt6GcFcLiqF",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Area Codes",
+    "songArtist": "Kaliii",
+    "songId": "7sliFe6W30tPBPh6dvZsIH",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "one of wun",
+    "songArtist": "Gunna",
+    "songId": "4Na2HfNSr58chvfX69fy36",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Who Is She ?",
+    "songArtist": "I Monster",
+    "songId": "6AdgGDGbdRMoCVkGye11Zw",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bitch Let's Do It",
+    "songArtist": "YoungBoy Never Broke Again",
+    "songId": "3EN9CgupFLmuwmHYUPq0ny",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "FEEL",
+    "songArtist": "Kevin Gates",
+    "songId": "7eDUdsz2b3R2qs0k1fNIzx",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Famax",
+    "songArtist": "RAFFA GUIDO",
+    "songId": "4yhqQAKFiHNCXpxxFVhxRq",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Truth Be Told",
+    "songArtist": "Kevin Gates",
+    "songId": "06e50b9Wa80zHfsSVKZiJE",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "First Person Shooter (feat. J. Cole)",
+    "songArtist": "Drake, J. Cole",
+    "songId": "7aqfrAY2p9BUSiupwk3svU",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "By Tomorrow",
+    "songArtist": "Hunxho",
+    "songId": "1ePhm7v6AHwhCzABOfATuK",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Feel Something",
+    "songArtist": "Chris Brown",
+    "songId": "6zRgT7Ku0Z9hCbjbSGNgIk",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Bongos (feat. Megan Thee Stallion)",
+    "songArtist": "Cardi B, Megan Thee Stallion",
+    "songId": "4YQImHflXSiIMXntcwPkx8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Swing My Way",
+    "songArtist": "Offset",
+    "songId": "4wFiEt5XdXVcUAxcMRZnCR",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Boogieman",
+    "songArtist": "EBK Jaaybo",
+    "songId": "7Mg5CBO37Rifk2RyDJ8fzd",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Conspiracy V2",
+    "songArtist": "YTB Fatt, Lil Durk",
+    "songId": "7vHST6OyzmuCAHTpqu7LAr",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Get In With Me",
+    "songArtist": "BossMan Dlow",
+    "songId": "4iEoDBAgMJIzest7VsDgmT",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Georgia Peach",
+    "songArtist": "Latto",
+    "songId": "3UidcB20Bb0f9WGZ08TNCL",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Get Away",
+    "songArtist": "Young Dolph",
+    "songId": "65nmqAEqW7CJIkXOIkxyg8",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "No Time",
+    "songArtist": "YoungBoy Never Broke Again",
+    "songId": "4dWyDMoU9Dv3xKzI1KYXgb",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Not Even Ghosts Are This Empty",
+    "songArtist": "$uicideboy$",
+    "songId": "7rzNKooM3JrKVT40fR22HI",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "ss",
+    "songArtist": "Ken Carson",
+    "songId": "26QJuQfM8PVAWkIm1JRyqq",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Leave a Light On (Talk Away The Dark)",
+    "songArtist": "Papa Roach, Carrie Underwood",
+    "songId": "05N2CVEkUbEd0slHLapdER",
+    "songCategory": "HipHop"
+  },
+  {
+    "songName": "Fuck My Cousin, Pt. II (feat. Lil Durk)",
+    "songArtist": "Lil Zay Osama, Lil Durk",
+    "songId": "6QCWPC6OFUxuoaMtRe573z",
+    "songCategory": "HipHop"
+  },
+  {
     "songName": "Stand By Me",
     "songArtist": "Ben E. King",
     "songId": "3SdTKo2uVsxFblQjpScoHy",
@@ -4596,28 +7530,16 @@
     "songCategory": "Classics"
   },
   {
-    "songName": "Stayin' Alive",
-    "songArtist": "Bee Gees",
-    "songId": "4UDmDIqJIbrW0hMBQMFOsM",
-    "songCategory": "Throwback"
-  },
-  {
     "songName": "Hit the Road Jack",
     "songArtist": "Ray Charles",
     "songId": "5dUMh0ugelpKfoFp3qChuK",
     "songCategory": "Classics"
   },
   {
-    "songName": "Careless Whisper",
-    "songArtist": "George Michael",
-    "songId": "4jDmJ51x1o9NZB5Nxxc7gY",
-    "songCategory": "Throwback"
-  },
-  {
     "songName": "Somebody's Watching Me",
     "songArtist": "Rockwell",
     "songId": "7jwQlYGpOml9ETGre1HqGA",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Purple Rain",
@@ -4629,12 +7551,6 @@
     "songName": "When Doves Cry",
     "songArtist": "Prince",
     "songId": "51H2y6YrNNXcy3dfc3qSbA",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Hotel California - 2013 Remaster",
-    "songArtist": "Eagles",
-    "songId": "40riOy7x9W7GXjyGp4pjAv",
     "songCategory": "Classics"
   },
   {
@@ -4654,12 +7570,6 @@
     "songArtist": "The Righteous Brothers",
     "songId": "2qhASBzpbFhPRtrnZ5lLnz",
     "songCategory": "Classics"
-  },
-  {
-    "songName": "Beat It",
-    "songArtist": "Michael Jackson",
-    "songId": "3BovdzfaX4jb5KFQwoPfAw",
-    "songCategory": "Throwback"
   },
   {
     "songName": "How Sweet It Is (To Be Loved by You)",
@@ -4686,46 +7596,34 @@
     "songCategory": "Classics"
   },
   {
-    "songName": "I Want To Break Free",
-    "songArtist": "Queen",
-    "songId": "25H6P7a94WUr5102lC6TNI",
-    "songCategory": "Throwback"
-  },
-  {
     "songName": "Crazy Little Thing Called Love - Live at Wembley Stadium, 13th July 1985",
     "songArtist": "Queen",
     "songId": "6tHbdO9NoLK5kahpXqw8xi",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Don't Dream It's Over",
     "songArtist": "Crowded House",
     "songId": "7G7tgVYORlDuVprcYHuFJh",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "(I Just) Died In Your Arms",
     "songArtist": "Cutting Crew",
     "songId": "4ByEFOBuLXpCqvO1kw8Wdm",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Break My Stride",
     "songArtist": "Matthew Wilder",
     "songId": "1mCsF9Tw4AkIZOjvZbZZdT",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "September",
-    "songArtist": "Earth, Wind & Fire",
-    "songId": "7Cuk8jsPPoNYQWXK9XRFvG",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Believe",
     "songArtist": "Cher",
     "songId": "2goLsvvODILDzeeiT4dAoR",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Wouldn't It Be Nice",
@@ -4737,13 +7635,13 @@
     "songName": "Sunglasses At Night",
     "songArtist": "Corey Hart",
     "songId": "5uRsBdLhn91AYcsTCOGNOC",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Baby Come Back",
     "songArtist": "Player",
     "songId": "2eRYuzlSOBk3HlMsCSOLPJ",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Fly Me To The Moon",
@@ -4761,7 +7659,7 @@
     "songName": "Mr. Telephone Man",
     "songArtist": "New Edition",
     "songId": "4DiNls6kFmF1ZittKsPsTc",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Peaceful Easy Feeling - 2013 Remaster",
@@ -4782,12 +7680,6 @@
     "songCategory": "Classics"
   },
   {
-    "songName": "Your Love",
-    "songArtist": "The Outfield",
-    "songId": "5dRQUolXAVX3BbCiIxmSsf",
-    "songCategory": "Throwback"
-  },
-  {
     "songName": "Somethin' Stupid",
     "songArtist": "Frank Sinatra, Nancy Sinatra",
     "songId": "4feXcsElKIVsGwkbnTHAfV",
@@ -4797,7 +7689,7 @@
     "songName": "True",
     "songArtist": "Spandau Ballet",
     "songId": "4q2lRiodoQnyFO65watkse",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Lucy In The Sky With Diamonds - Remastered 2009",
@@ -4869,18 +7761,12 @@
     "songName": "Baby, I Love Your Way",
     "songArtist": "Big Mountain",
     "songId": "1Rvl8qsKJurfFTyWLBI9ib",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "What's Love Got to Do with It",
     "songArtist": "Tina Turner",
     "songId": "4kOfxxnW1ukZdsNbCKY9br",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Can't Take My Eyes off You",
-    "songArtist": "Frankie Valli",
-    "songId": "6ft9PAgNOjmZ2kFVP7LGqb",
     "songCategory": "Classics"
   },
   {
@@ -4893,30 +7779,24 @@
     "songName": "Suspicions",
     "songArtist": "Eddie Rabbitt",
     "songId": "19oPsdlHwigJm2Ewk1ypRb",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Little Lies",
     "songArtist": "Fleetwood Mac",
     "songId": "08o75xMKmGrKny6GsXrNJW",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Take My Breath Away",
     "songArtist": "Berlin",
     "songId": "1hZJcuz9iMoz6tLkFlIaUy",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Twist And Shout - Remastered 2009",
     "songArtist": "The Beatles",
     "songId": "5ZBeML7Lf3FMEVviTyvi8l",
-    "songCategory": "Classics"
-  },
-  {
-    "songName": "Your Song",
-    "songArtist": "Elton John",
-    "songId": "38zsOOcu31XbbYj9BIPUF1",
     "songCategory": "Classics"
   },
   {
@@ -4929,13 +7809,13 @@
     "songName": "Send Me on My Way",
     "songArtist": "Rusted Root",
     "songId": "6hs3SDnbO3f6VQuPO4KBEb",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Too Many Walls",
     "songArtist": "Cathy Dennis",
     "songId": "3lQrGsSzg5C38sqsza5C3E",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Sail On",
@@ -4947,97 +7827,79 @@
     "songName": "Missing You",
     "songArtist": "John Waite",
     "songId": "1Qrdlkgg9I4J7r3P4kZNwr",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Surfin' U.S.A.",
-    "songArtist": "The Beach Boys",
-    "songId": "2EPr9Wx7e1cpGEbNAtuN7x",
     "songCategory": "Classics"
   },
   {
     "songName": "Your Latest Trick",
     "songArtist": "Dire Straits",
     "songId": "4UK1g9Z1lWedkmIQuSyCe5",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Dance with Me",
     "songArtist": "Orleans",
     "songId": "3D0fUBloGwPcLGLyheGWXu",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Can't Fight This Feeling",
     "songArtist": "REO Speedwagon",
     "songId": "5WwqdeavrQrbeAMDxGawse",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Wonderwall",
-    "songArtist": "Oasis",
-    "songId": "1qPbGZqppFwLwcBC1JQ6Vr",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Dream Weaver",
     "songArtist": "Gary Wright",
     "songId": "74DrA5fFoGSy4xgkZarZtP",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "She's so High",
     "songArtist": "Tal Bachman",
     "songId": "7mnGQesk1TzQLzQ9bYWZPR",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Simple Man",
     "songArtist": "Lynyrd Skynyrd",
     "songId": "1ju7EsSGvRybSNEsRvc7qY",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Surrender",
     "songArtist": "Cheap Trick",
     "songId": "2ccUQnjjNWT0rsNnsBpsCA",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "You Get What You Give",
     "songArtist": "New Radicals",
     "songId": "6FnNZ53sbMwL71gE5yy0TF",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Head Over Heels",
     "songArtist": "Tears For Fears",
     "songId": "748yv6bb3l3CcKS45a6SZ8",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Look After You",
     "songArtist": "The Fray",
     "songId": "5l6hpyTGBK0LAAxgPnqTQL",
-    "songCategory": "Pop"
+    "songCategory": "Classics"
   },
   {
     "songName": "Over My Head (Cable Car)",
     "songArtist": "The Fray",
     "songId": "1N62wozuHCvczCkY4QidpP",
-    "songCategory": "Pop"
+    "songCategory": "Classics"
   },
   {
     "songName": "Believe It or Not (Theme from \"Greatest American Hero\")",
     "songArtist": "Joey Scarbury",
     "songId": "375ntCG12wzCyfzclwYFwG",
-    "songCategory": "Throwback"
-  },
-  {
-    "songName": "Crazy",
-    "songArtist": "Kenny Rogers",
-    "songId": "1Cg8HzQLJ4rjjXprgotjJj",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Running With The Night",
@@ -5055,7 +7917,7 @@
     "songName": "Sail On",
     "songArtist": "Lionel Richie, Tim McGraw",
     "songId": "6KUw2fMsxHGGuwAkaD03xS",
-    "songCategory": "Throwback"
+    "songCategory": "Classics"
   },
   {
     "songName": "Beautiful Boy (Darling Boy) - Ultimate Mix",
@@ -5064,9 +7926,9 @@
     "songCategory": "Classics"
   },
   {
-    "songName": "Don't Stop Me Now - Remastered 2011",
-    "songArtist": "Queen",
-    "songId": "5T8EDUDqKcs6OSOwEsfqG7",
+    "songName": "Scar Tissue",
+    "songArtist": "Red Hot Chili Peppers",
+    "songId": "1G391cbiT3v3Cywg8T7DM1",
     "songCategory": "Classics"
   }
 ]

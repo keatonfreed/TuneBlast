@@ -12,7 +12,81 @@ const gameOverPopup = document.getElementById("gameOverPopup");
 
 const overlayVidoes = document.getElementById("overlayVideos");
 
-// get TuneBlast
+const genreDisplay = document.getElementById("genreDisplay")
+const genreSelector = document.getElementById("genreSelector");
+
+const genreOptions = document.querySelectorAll("#genreSelector input[type='checkbox']");
+
+function getSavedGenres() {
+    const saved = localStorage.getItem("TuneBlast-SelectedGenres");
+    return saved ? JSON.parse(saved) : ["Pop", "HipHop", "Classics", "Throwbacks"];
+}
+
+function setSavedGenres(genres) {
+    localStorage.setItem("TuneBlast-SelectedGenres", JSON.stringify(genres));
+    selectedGenres = genres;
+}
+
+let selectedGenres = getSavedGenres();
+
+function updateGenreDisplay() {
+    selectedGenres = selectedGenres.sort((a, b) => a.localeCompare(b));
+    let genreText = selectedGenres.length <= 2
+        ? selectedGenres.join(", ")
+        : `${selectedGenres.slice(0, 2).join(", ")}, ${selectedGenres.length - 2} more...`;
+    genreDisplay.querySelector("span").textContent = genreText;
+    genreOptions.forEach(option => {
+        if (selectedGenres.includes(option.getAttribute("data-genre"))) {
+            option.checked = true;
+        } else {
+            option.checked = false;
+        }
+    });
+
+    setSavedGenres(selectedGenres);
+}
+
+
+genreDisplay.addEventListener("click", () => {
+    // Get h2 position
+    const rect = genreDisplay.getBoundingClientRect();
+
+    // Position the dialog below h2
+    genreSelector.style.left = `${rect.left + rect.width / 2}px`;
+    genreSelector.style.top = `${rect.bottom + window.scrollY}px`;
+
+    genreSelector.showModal();
+    genreDisplay.classList.add("open")
+});
+
+// Close when clicking outside
+genreSelector.addEventListener("click", (event) => {
+    if (event.target === genreSelector) {
+        genreSelector.close();
+    }
+});
+
+genreSelector.addEventListener("close", () => {
+    genreDisplay.classList.remove("open")
+});
+
+genreOptions.forEach(option => {
+    option.addEventListener("change", () => {
+        if (option.checked) {
+            selectedGenres.push(option.getAttribute("data-genre"));
+        } else {
+            if (selectedGenres.length >= 2) {
+                selectedGenres = selectedGenres.filter(genre => genre !== option.getAttribute("data-genre"));
+
+            } else {
+                option.checked = true;
+            }
+        }
+        updateGenreDisplay();
+    });
+});
+
+updateGenreDisplay();
 
 const volumeSliderEl = document.getElementById("volumeSlider").querySelector("input[type='range']");
 
@@ -76,7 +150,7 @@ let playedSongs = [];
 async function trySongFetch() {
     let songUrl;
     for (let i = 0; i < 5 && !songUrl; i++) {
-        const { songData, songId: id } = await backendFetch("/api/v1/solo/randomsong").catch(() => { });
+        const { songData, songId: id } = await backendFetch(`/api/v1/solo/randomsong?categories=${encodeURIComponent(JSON.stringify(selectedGenres || []))}`,).catch(() => { });
         if (songData && songData.previewUrl && !playedSongs.includes(id)) {
             songUrl = songData.previewUrl;
             playedSongs.push(id);
@@ -315,6 +389,7 @@ async function gameOver(win = false) {
 
     searchInput.value = "";
     searchInput.focus();
+    updateSearchPopup();
 
     restartOnNext = false;
 
@@ -356,6 +431,8 @@ guessBtn.onclick = async () => {
 
         searchInput.value = "";
         searchInput.focus();
+        updateSearchPopup();
+
         return;
     }
 
@@ -374,6 +451,7 @@ guessBtn.onclick = async () => {
                 gameOver(true);
             }
             searchInput.value = "";
+            updateSearchPopup();
             lines[guessIndex]?.classList.add("correct");
             return
         } else if (nameCorrect || artistCorrect) {
@@ -409,5 +487,7 @@ guessBtn.onclick = async () => {
 
     searchInput.value = "";
     searchInput.focus();
+    updateSearchPopup();
+
 
 };

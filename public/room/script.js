@@ -29,6 +29,58 @@ console.log("Room code:", roomCode);
 roomCodeEl.textContent = "Room: " + roomCode;
 
 
+const genreDisplay = document.getElementById("genreDisplay")
+const genreSelector = document.getElementById("genreSelector");
+
+const genreOptions = document.querySelectorAll("#genreSelector input[type='checkbox']");
+
+
+let selectedGenres = ["Pop", "Classics", "HipHop", "Throwbacks"];
+
+function updateGenreDisplay() {
+    selectedGenres = selectedGenres.sort((a, b) => a.localeCompare(b));
+    let genreText = selectedGenres.length <= 2
+        ? selectedGenres.join(", ")
+        : `${selectedGenres.slice(0, 2).join(", ")}, ${selectedGenres.length - 2} more...`;
+    genreDisplay.querySelector("span").textContent = genreText;
+    genreOptions.forEach(option => {
+        if (selectedGenres.includes(option.getAttribute("data-genre"))) {
+            option.checked = true;
+        } else {
+            option.checked = false;
+        }
+    });
+}
+
+
+genreDisplay.addEventListener("click", () => {
+    // Get h2 position
+    const rect = genreDisplay.getBoundingClientRect();
+
+    // Position the dialog below h2
+    genreSelector.style.left = `${rect.left + rect.width / 2}px`;
+    genreSelector.style.top = `${rect.bottom + window.scrollY}px`;
+
+    genreSelector.showModal();
+    genreDisplay.classList.add("open")
+});
+
+// Close when clicking outside
+genreSelector.addEventListener("click", (event) => {
+    if (event.target === genreSelector) {
+        genreSelector.close();
+    }
+});
+
+genreSelector.addEventListener("close", () => {
+    genreDisplay.classList.remove("open")
+});
+
+
+
+updateGenreDisplay();
+
+
 
 const volumeSliderEl = document.getElementById("volumeSlider").querySelector("input[type='range']");
 
@@ -291,7 +343,7 @@ async function tryJoinRoom() {
                 if (timeLeft <= 5) {
                     if (!playingTicking) {
                         playingTicking = new Audio("../timer_tick.mp3");
-                        playingTicking.loop = true;
+                        playingTicking.loop = false;
                         playingTicking.volume = 0.7;
                         playingTicking.play();
                     }
@@ -385,7 +437,36 @@ async function tryJoinRoom() {
                 }
                 updateControlLoop = true
 
+                selectedGenres = message.roomSongGenres || selectedGenres;
+                updateGenreDisplay();
+
+                genreOptions.forEach(option => {
+                    option.onchange = () => {
+                        if (option.checked) {
+                            selectedGenres.push(option.getAttribute("data-genre"));
+                            if (roomSocket) {
+                                roomSocket.send(JSON.stringify({ event: "update_genres", songGenres: selectedGenres }));
+                            }
+                        } else {
+                            if (selectedGenres.length >= 2) {
+                                selectedGenres = selectedGenres.filter(genre => genre !== option.getAttribute("data-genre"));
+                                if (roomSocket) {
+                                    roomSocket.send(JSON.stringify({ event: "update_genres", songGenres: selectedGenres }));
+                                }
+                            } else {
+                                option.checked = true;
+                            }
+                        }
+                        updateGenreDisplay();
+                    };
+                });
+
                 setTimeout(() => loadingPopup.close(), 1000);
+                break;
+            case "update_genres":
+                console.log("Updated genres:", message.roomSongGenres);
+                selectedGenres = message.roomSongGenres;
+                updateGenreDisplay();
                 break;
             case "player_joined":
                 console.log("Player joined:", message.playerName);
@@ -607,6 +688,7 @@ async function tryJoinRoom() {
 
                 searchInput.value = "";
                 searchInput.focus();
+                searchPopup.classList.add("hidden");
                 updateSearchPopup();
                 restartOnNext = false;
 
@@ -912,6 +994,7 @@ guessBtn.onclick = async () => {
 
         searchInput.value = "";
         searchInput.focus();
+        searchPopup.classList.add("hidden");
         updateSearchPopup();
         return;
     }
@@ -935,6 +1018,8 @@ guessBtn.onclick = async () => {
 
     searchInput.value = "";
     searchInput.focus();
+    searchPopup.classList.add("hidden");
+
     updateSearchPopup();
 
 };

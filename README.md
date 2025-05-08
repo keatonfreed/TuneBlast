@@ -1,4 +1,4 @@
-# Beatline
+# TuneBlast
 
 A web-based music guessing game where players test their music knowledge by identifying songs.
 
@@ -8,4 +8,4 @@ Play solo or challenge friends in this interactive music guessing game. Players 
 
 ## Play Now
 
-🎮 [Play Beatline](https://tuneblast.live)
+🎮 [Play TuneBlast](https://tuneblast.live)

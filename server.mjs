@@ -74,18 +74,23 @@ async function getRandomSong({ excludeList = [], genres = null } = {}) {
     //         previewUrl: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/c2/80/0c/c2800c2a-0b68-43c9-3701-7cb1ece6ef24/mzaf_9589312089850013533.plus.aac.p.m4a"
     //     }
     // }
-    let randomRetries = 0;
     try {
+        const excludedSongs = new Set(excludeList);
+        let eligibleSongs = songList.filter(song => {
+            if (excludedSongs.has(song.songId)) return false;
+            if (genres && !genres.includes(song.songCategory)) return false;
+            return true;
+        });
+
+        let randomRetries = 0;
         let songData = false;
-        while ((!songData || !songData.previewUrl) && randomRetries < 200 && excludeList.length < songList.length) {
+        while ((!songData || !songData.previewUrl) && randomRetries < 200 && eligibleSongs.length > 0) {
             if (randomRetries > 0) {
                 console.log("Retrying to get random song...");
                 await new Promise(resolve => setTimeout(resolve, randomRetries * 100));
             }
-            const randomSong = songList[Math.floor(Math.random() * songList.length)];
-
-            if (excludeList.includes(randomSong.songId)) continue;
-            if (genres && !genres.includes(randomSong.songCategory)) continue;
+            const randomIndex = Math.floor(Math.random() * eligibleSongs.length);
+            const [randomSong] = eligibleSongs.splice(randomIndex, 1);
             randomRetries++;
 
             songData = await getAppleMusicData(randomSong.songName, randomSong.songArtist);
@@ -107,18 +112,174 @@ async function getRandomSong({ excludeList = [], genres = null } = {}) {
 }
 
 
-function normalizeTrackName(track, lookGood) {
-    if (!lookGood) {
-        track = track.split("-")[0]
-        track = track.replace(/\s/g, '')
-        track = track.replace(/\([^)]*\)/g, '')
-        track = track.replace(/\[[^\]]*\]/g, '')
+function normalizeTrackName(track = "", lookGood) {
+    if (lookGood) return String(track).trim();
 
-        track = track.replace(/[^a-zA-Z0-9]/g, '')
-        track = track.toLowerCase()
-        // also remove anything after a dash
+    return String(track)
+        .split("-")[0]
+        .replace(/\s/g, "")
+        .replace(/\([^)]*\)/g, "")
+        .replace(/\[[^\]]*\]/g, "")
+        .replace(/[^a-zA-Z0-9]/g, "")
+        .toLowerCase()
+        .trim();
+}
+
+function normalizeSongText(value = "", { removeArticles = true } = {}) {
+    let text = String(value)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/&/g, " and ")
+        .replace(/['’]/g, "")
+        .replace(/\bo\b/g, " of ")
+        .replace(/\b(feat|ft|featuring|with|prod|remaster(?:ed)?|radio edit|single version|explicit|clean)\b(?:\s*\d{2,4})?/g, " ")
+        .replace(/\b(remix|version|edit|live|deluxe|mono|stereo|slowed|sped up|speed up|nightcore|cover|karaoke|instrumental|acoustic)\b(?:\s*\d{2,4})?/g, " ")
+        .replace(/\b(19|20)\d{2}\b/g, " ");
+
+    if (removeArticles) {
+        text = text.replace(/\b(the|a|an)\b/g, " ");
     }
-    return track.trim();
+
+    return text.replace(/[^a-z0-9]/g, "");
+}
+
+function tokenizeSongText(value = "") {
+    return String(value)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/&/g, " and ")
+        .replace(/['’]/g, "")
+        .replace(/\bo\b/g, " of ")
+        .replace(/\b(19|20)\d{2}\b/g, " ")
+        .replace(/[^a-z0-9]+/g, " ")
+        .split(/\s+/)
+        .filter(Boolean)
+        .filter(token => ![
+            "the", "a", "an", "of", "to", "in", "on", "at", "for", "and", "or", "with", "by",
+            "feat", "ft", "featuring", "remix", "version", "edit", "live", "deluxe", "mono", "stereo",
+            "remaster", "remastered", "slowed", "sped", "speed", "up", "nightcore", "cover", "karaoke", "instrumental", "acoustic"
+        ].includes(token))
+        .filter(token => token.length > 1);
+}
+
+function songTokensEqual(left, right) {
+    if (left === right) return true;
+    if (`${left}g` === right || `${right}g` === left) return true;
+    if (left.length >= 5 && right.length >= 5 && levenshteinDistance(left, right) <= 2) return true;
+    return false;
+}
+
+function levenshteinDistance(left, right) {
+    const previous = Array.from({ length: right.length + 1 }, (_, index) => index);
+
+    for (let i = 0; i < left.length; i++) {
+        let current = [i + 1];
+        for (let j = 0; j < right.length; j++) {
+            current[j + 1] = Math.min(
+                current[j] + 1,
+                previous[j + 1] + 1,
+                previous[j] + (left[i] === right[j] ? 0 : 1)
+            );
+        }
+        previous.splice(0, previous.length, ...current);
+    }
+
+    return previous[right.length];
+}
+
+function enoughTokensMatch(inputTokens, targetTokens) {
+    if (!inputTokens.length || !targetTokens.length) return false;
+
+    const matchedTargetCount = targetTokens.filter(targetToken =>
+        inputTokens.some(inputToken => songTokensEqual(inputToken, targetToken))
+    ).length;
+    const matchedInputCount = inputTokens.filter(inputToken =>
+        targetTokens.some(targetToken => songTokensEqual(inputToken, targetToken))
+    ).length;
+
+    if (matchedTargetCount === targetTokens.length) return true;
+    if (matchedInputCount === inputTokens.length && inputTokens.length >= 2) return true;
+    if (targetTokens.length >= 4 && matchedTargetCount >= targetTokens.length - 1) return true;
+
+    return false;
+}
+
+function normalizeSongParts(value = "") {
+    const text = String(value)
+        .replace(/\([^)]*\)|\[[^\]]*\]/g, match => ` ${match.slice(1, -1)} `)
+        .replace(/[-–—]/g, " ")
+        .replace(/\b(by|feat|ft|featuring|with|and|x|&)\b/gi, " ");
+
+    return text
+        .split(/[,/|]+|\s{2,}/)
+        .map(part => normalizeSongText(part))
+        .filter(part => part.length >= 3);
+}
+
+function getSongCandidates(value = "") {
+    const raw = String(value);
+    const pieces = [
+        raw,
+        ...raw.match(/\(([^)]*)\)|\[([^\]]*)\]/g)?.map(part => part.slice(1, -1)) || [],
+        ...raw.split(/\s*[-–—]\s*|[,/|]+|\bby\b|\bfeat\b|\bft\b|\bfeaturing\b|\bwith\b|\band\b|\bx\b|&/i)
+    ];
+
+    return [...new Set(
+        pieces
+            .map(piece => normalizeSongText(piece))
+            .filter(piece => piece.length >= 2)
+    )];
+}
+
+function candidateHasTarget(candidates, target) {
+    const targetCandidates = getSongCandidates(target);
+    const normalizedTarget = normalizeSongText(target);
+    const allTargets = [...new Set([normalizedTarget, ...targetCandidates].filter(Boolean))];
+
+    return candidates.some(candidate =>
+        allTargets.some(targetPart =>
+            candidate.includes(targetPart) ||
+            targetPart.includes(candidate) ||
+            enoughTokensMatch(tokenizeSongText(candidate), tokenizeSongText(targetPart))
+        )
+    );
+}
+
+function fullTextHasTarget(input, target) {
+    const normalizedInput = normalizeSongText(input);
+    const normalizedTarget = normalizeSongText(target);
+    return !!normalizedInput && !!normalizedTarget && normalizedInput.includes(normalizedTarget);
+}
+
+function targetMatchesGuess(guess, target) {
+    return fullTextHasTarget(guess, target) ||
+        enoughTokensMatch(tokenizeSongText(guess), tokenizeSongText(target)) ||
+        getSongCandidates(target).some(targetPart =>
+            fullTextHasTarget(guess, targetPart) ||
+            enoughTokensMatch(tokenizeSongText(guess), tokenizeSongText(targetPart))
+        );
+}
+
+function textHasMatch(input, target) {
+    const normalizedInput = normalizeSongText(input);
+    const normalizedTarget = normalizeSongText(target);
+    if (!normalizedInput || !normalizedTarget) return false;
+
+    if (normalizedInput.includes(normalizedTarget) || normalizedTarget.includes(normalizedInput)) {
+        return true;
+    }
+
+    if (enoughTokensMatch(tokenizeSongText(input), tokenizeSongText(target))) {
+        return true;
+    }
+
+    const inputParts = normalizeSongParts(input);
+    const targetParts = normalizeSongParts(target);
+    return targetParts.some(targetPart =>
+        inputParts.some(inputPart => inputPart.includes(targetPart) || targetPart.includes(inputPart))
+    );
 }
 
 function randomCode() {
@@ -151,32 +312,70 @@ function checkUsername(username) {
 
 function checkSongMatch(songId, checkName, checkArtist) {
     const realSongInfo = songList.find(s => s.songId === songId);
-    if (!realSongInfo) return false;
-    const nameCorrect = normalizeTrackName(checkName).includes(normalizeTrackName(realSongInfo.songName));
+    if (!realSongInfo) return { nameCorrect: false, artistCorrect: false };
 
-    let artistCorrect = false;
-    let realArtists = realSongInfo.songArtist.split(",");
-    realArtists.forEach(realArtist => {
-        if (normalizeTrackName(checkArtist).includes(normalizeTrackName(realArtist))) {
-            artistCorrect = true;
-        }
-        let dashedArtists = realArtist.split("-");
-        dashedArtists.forEach(realArtist => {
-            if (normalizeTrackName(checkArtist).includes(normalizeTrackName(realArtist))) {
-                artistCorrect = true;
-            }
-        });
-    });
+    const fullGuess = [checkName, checkArtist].filter(Boolean).join(" ");
+    const nameCorrect = targetMatchesGuess(fullGuess, realSongInfo.songName);
+    const realArtists = String(realSongInfo.songArtist)
+        .split(/,|&|\band\b|\bx\b|\bwith\b|\bfeat\b|\bft\b|\bfeaturing\b|-/i)
+        .map(artist => artist.trim())
+        .filter(Boolean);
+    const artistCorrect = realArtists.some(realArtist => targetMatchesGuess(fullGuess, realArtist));
+
     return { nameCorrect, artistCorrect };
 }
 
 const songList = JSON.parse(fs.readFileSync('song_choices.json', 'utf8'));
 const validGenres = ["Pop", "HipHop", "Classics", "Throwbacks"];
 
+function parseSongIdList(value) {
+    if (!value) return [];
+
+    try {
+        const parsed = JSON.parse(value);
+        return Array.isArray(parsed) ? parsed.filter(id => typeof id === "string") : [];
+    } catch {
+        return [];
+    }
+}
+
+function startRoomNextSongFetch(room) {
+    if (!room || room.roomNextSongPromise) return;
+
+    const excludeList = [...new Set([...room.roomPreviousSongs, room.roomCurrentSong?.songId].filter(Boolean))];
+    const genres = [...room.roomSongGenres];
+    room.roomNextSongGenresKey = JSON.stringify(genres);
+    room.roomNextSongPromise = getRandomSong({ excludeList, genres })
+        .catch(err => {
+            console.error("Failed to preload room song:", err);
+            return false;
+        });
+}
+
+async function consumeRoomNextSong(room) {
+    let nextSong = false;
+
+    if (room.roomNextSongPromise && room.roomNextSongGenresKey === JSON.stringify(room.roomSongGenres)) {
+        nextSong = await room.roomNextSongPromise;
+    }
+
+    room.roomNextSongPromise = null;
+    room.roomNextSongGenresKey = null;
+
+    if (!nextSong) {
+        nextSong = await getRandomSong({
+            excludeList: room.roomPreviousSongs,
+            genres: room.roomSongGenres
+        });
+    }
+
+    return nextSong;
+}
+
 // --------------- Solo Game Routes ---------------
 app.get("/api/v1/solo/randomsong", async (req, res) => {
     // get categories url param
-    const { categories } = req.query;
+    const { categories, exclude } = req.query;
     let parsedCategories = null;
     if (categories) {
         // parse json
@@ -201,7 +400,8 @@ app.get("/api/v1/solo/randomsong", async (req, res) => {
             return res.status(400).send("Invalid categories format");
         }
     }
-    let { songId, songData } = await getRandomSong({ genres: parsedCategories });
+    const randomSong = await getRandomSong({ genres: parsedCategories, excludeList: parseSongIdList(exclude) });
+    let { songId, songData } = randomSong || {};
     if (songData && songId) {
         res.send({ songData, songId });
     } else {
@@ -319,7 +519,7 @@ app.get("/api/v1/room/create", async (req, res) => {
         console.error(err);
         return res.status(500).send("Failed To Create Room.");
     });
-    currentRooms.push({
+    const room = {
         roomId,
         roomSongGenres: ["Pop", "HipHop", "Classics", "Throwbacks"],
         roomPlayers: [],
@@ -330,7 +530,9 @@ app.get("/api/v1/room/create", async (req, res) => {
         roomRound: 0,
         roomReadyVotes: 0,
         roomTimeLeft: 30
-    });
+    };
+    currentRooms.push(room);
+    startRoomNextSongFetch(room);
     res.send({ roomId });
 
 });
@@ -409,12 +611,13 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
 
             room.roomPreviousSongs.push(room.roomCurrentSong.songId);
             // console.log("Previous songs:", room.roomPreviousSongs);
-            let nextSong = await getRandomSong({ excludeList: room.roomPreviousSongs, genres: room.roomSongGenres });
+            let nextSong = await consumeRoomNextSong(room);
             if (!nextSong) {
                 broadcastToRoom(roomId, { event: "error", message: "Failed to get next song." });
                 return;
             }
             room.roomCurrentSong = nextSong;
+            startRoomNextSongFetch(room);
             room.roomPlayers = room.roomPlayers.map(p => {
                 p.playerStatus = null;
                 return p;
@@ -622,6 +825,9 @@ app.ws("/api/v1/room/:roomId", (ws, req) => {
                 }
 
                 room.roomSongGenres = data.songGenres;
+                room.roomNextSongPromise = null;
+                room.roomNextSongGenresKey = null;
+                startRoomNextSongFetch(room);
 
                 broadcastToRoom(roomId, { event: "update_genres", roomSongGenres: room.roomSongGenres });
                 break;

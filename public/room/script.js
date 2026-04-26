@@ -4,6 +4,7 @@ const guessBtn = document.getElementById("guessBtn");
 const lines = document.querySelectorAll(".line");
 const searchInput = document.getElementById("searchInput");
 const searchPopup = document.getElementById("searchPopup");
+const shouldRefocusSearchInput = !window.matchMedia("(max-width: 700px), (pointer: coarse)").matches;
 
 const playerListEl = document.getElementById("playerList");
 const inviteFriends = document.getElementById("inviteFriends");
@@ -1281,7 +1282,11 @@ guessBtn.onclick = async () => {
         // updatePlayBtn();
 
         searchInput.value = "";
-        searchInput.focus();
+        if (shouldRefocusSearchInput) {
+            searchInput.focus();
+        } else {
+            searchInput.blur();
+        }
         searchPopup.classList.add("hidden");
         return;
     }

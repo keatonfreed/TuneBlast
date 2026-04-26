@@ -4,6 +4,7 @@ const guessBtn = document.getElementById("guessBtn");
 const lines = document.querySelectorAll(".line");
 const searchInput = document.getElementById("searchInput");
 const searchPopup = document.getElementById("searchPopup");
+const shouldRefocusSearchInput = !window.matchMedia("(max-width: 700px), (pointer: coarse)").matches;
 
 const loadingPopup = document.getElementById("loadingPopup");
 loadingPopup.showModal();
@@ -777,7 +778,11 @@ guessBtn.onclick = async () => {
             }
 
             searchInput.value = "";
-            searchInput.focus();
+            if (shouldRefocusSearchInput) {
+                searchInput.focus();
+            } else {
+                searchInput.blur();
+            }
             searchPopup.classList.add("hidden");
             unlockWhenDone = false;
             setTimeout(() => {
@@ -845,7 +850,11 @@ guessBtn.onclick = async () => {
         restartOnNext = false;
 
         searchInput.value = "";
-        searchInput.focus();
+        if (shouldRefocusSearchInput) {
+            searchInput.focus();
+        } else {
+            searchInput.blur();
+        }
         searchPopup.classList.add("hidden");
     } finally {
         if (unlockWhenDone) guessInFlight = false;

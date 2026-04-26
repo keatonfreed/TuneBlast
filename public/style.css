@@ -11,6 +11,7 @@
 
 body {
     overflow: hidden;
+    overflow-x: hidden;
 }
 
 .page {
@@ -74,32 +75,38 @@ body {
     }
 }
 
-#joinPopup[open] {
+#joinPopup.is-open {
     display: flex;
 }
 
 #joinPopup {
     position: fixed;
     inset: 0;
-    margin: auto;
+    margin: 0;
+    padding: max(var(--join-popup-top-padding, 0.8rem), env(safe-area-inset-top)) max(0.8rem, env(safe-area-inset-right)) max(0.6rem, env(safe-area-inset-bottom)) max(0.8rem, env(safe-area-inset-left));
+    --join-popup-top-padding: 0.8rem;
+    --join-popup-height: calc(100dvh - 1.6rem);
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    touch-action: none;
 
     border: none;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
     color: white;
-    border-radius: 15px;
     align-items: center;
     justify-content: center;
     z-index: 100;
-
-    &::backdrop {
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(1px);
-    }
 
     .joinContent {
         padding: 30px 40px;
         width: 80vw;
         max-width: 800px;
+        max-height: var(--join-popup-height);
         /* width: min-content;
         height: min-content; */
         background-color: black;
@@ -107,6 +114,14 @@ body {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        overscroll-behavior-y: contain;
+        overscroll-behavior-x: none;
+        box-sizing: border-box;
+        touch-action: pan-y;
+        position: relative;
 
         .title {
             font-size: 2.4rem;
@@ -126,6 +141,19 @@ body {
             display: flex;
             gap: 10px;
             justify-content: center;
+        }
+
+        #closeJoinPopup {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: auto;
+            margin: 0;
+            padding: 0.3rem 0.5rem;
+            min-width: 2.25rem;
+            font-size: 1rem;
+            line-height: 1;
+            border-radius: 999px;
         }
     }
 
@@ -169,20 +197,64 @@ body {
 
     #joinPopup label {
         flex-direction: column;
+        gap: 0.35rem;
+        font-size: 0.9rem;
+    }
+
+    #joinPopup {
+        align-items: center;
+        justify-content: center;
+        inset: 0;
+        width: 100vw;
+        height: 100dvh;
+        padding: max(var(--join-popup-top-padding), env(safe-area-inset-top)) max(0.8rem, env(safe-area-inset-right)) max(0.6rem, env(safe-area-inset-bottom)) max(0.8rem, env(safe-area-inset-left));
+    }
+
+    #joinPopup[data-keyboard-open="true"] {
+        align-items: flex-start;
     }
 
     #joinPopup .joinContent {
-        width: min(92vw, 100%);
-        padding: 18px;
-        gap: 14px;
+        width: min(calc(100vw - 1.6rem), 32rem);
+        max-height: var(--join-popup-height);
+        padding: 12px 10px 14px;
+        gap: 8px;
+        border-radius: 18px;
+        overflow-x: hidden;
     }
 
     #joinPopup .joinContent .title {
-        font-size: 1.55rem;
+        font-size: 1.35rem;
+        line-height: 1.1;
+        padding-right: 2rem;
+        margin-bottom: 0.1rem;
     }
 
     #joinPopup .joinContent input {
         width: 100%;
-        font-size: 0.98rem;
+        font-size: 0.95rem;
+        padding: 0.72rem 0.8rem;
+    }
+
+    #joinPopup #joinError {
+        font-size: 0.95rem;
+        padding: 0.65rem;
+    }
+
+    #joinPopup button {
+        padding: 0.72rem 0.95rem;
+    }
+
+    #joinPopup .divider {
+        margin: 0;
+    }
+
+    #joinPopup .joinContent #closeJoinPopup {
+        top: 7px;
+        right: 7px;
+        padding: 0.35rem 0.65rem;
+        min-width: 2.7rem;
+        min-height: 2.7rem;
+        font-size: 1.35rem;
     }
 }

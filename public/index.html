@@ -31,11 +31,12 @@
             <button id="joinMultiplayer">Find Room</button>
         </div>
     </div>
-    <dialog id="joinPopup">
+    <div id="joinPopup" role="dialog" aria-modal="true" aria-hidden="true" hidden>
         <div class="joinContent">
+            <button id="closeJoinPopup" type="button" aria-label="Close join popup">X</button>
             <h1 class="title">TuneBlast Duels</h1>
             <p id="joinError">Username Invalid</p>
-            <label>Username: <input type="text" id="usernameInput" autocomplete="on"
+            <label>Username: <input type="text" id="usernameInput" autocomplete="on" autofocus
                     placeholder="Enter a username (3-15 chars)"></label>
             <div class="divider"></div>
             <input type="text" list="roomOptions" id="roomInput" autocomplete="off"
@@ -51,7 +52,7 @@
             <div class="divider"></div>
             <button id="createRoom">Create Room</button>
         </div>
-    </dialog>
+    </div>
 
     <script src="script.js"></script>
 </body>

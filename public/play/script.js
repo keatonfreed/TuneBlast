@@ -108,6 +108,8 @@ let previewHowl;
 let previewMonitorFrame;
 let previewSoundId = null;
 let previewRequestId = 0;
+let previewPositionSeconds = 0;
+let previewSegmentEnded = false;
 let playing = false;
 let restartOnNext = false;
 let guessIndex = 0;
@@ -117,6 +119,9 @@ let lastInputUpdate;
 const suggestionLimit = 5;
 let songDurationSeconds = 30;
 let isPreparingPlayback = false;
+let nextSongPlayer = null;
+let nextSongPlayerPromise = null;
+let controlsLoopStarted = false;
 const shouldShowGameOverVideo = !window.matchMedia("(max-width: 700px), (pointer: coarse)").matches;
 
 if ("mediaSession" in navigator) {
@@ -137,13 +142,32 @@ async function backendFetch(url) {
 
 let playedSongs = [];
 
+function getMaxListenSeconds() {
+    return maxTimes[Math.min(guessIndex, maxTimes.length - 1)] / 1000;
+}
+
 function clearPreviewPlaybackTimers() {
     cancelAnimationFrame(previewMonitorFrame);
     previewMonitorFrame = undefined;
 }
 
-function stopPreviewPlayback() {
+function getPreviewPosition() {
+    const maxListenSeconds = getMaxListenSeconds();
+    if (playing && previewHowl && previewSoundId != null) {
+        return Math.min(Math.max(Number(previewHowl.seek(previewSoundId)) || 0, 0), maxListenSeconds);
+    }
+    return Math.min(Math.max(previewPositionSeconds, 0), maxListenSeconds);
+}
+
+function stopPreviewPlayback({ resetPosition = false, endClip = false } = {}) {
     clearPreviewPlaybackTimers();
+    if (endClip) {
+        previewPositionSeconds = getMaxListenSeconds();
+        previewSegmentEnded = true;
+    } else if (!resetPosition) {
+        previewPositionSeconds = getPreviewPosition();
+    }
+
     if (!previewHowl) return;
     if (previewSoundId != null) {
         previewHowl.stop(previewSoundId);
@@ -151,6 +175,12 @@ function stopPreviewPlayback() {
         previewHowl.stop();
     }
     previewSoundId = null;
+
+    if (resetPosition) {
+        previewPositionSeconds = 0;
+        previewSegmentEnded = false;
+        restartOnNext = false;
+    }
 }
 
 function syncPreviewProgress() {
@@ -169,31 +199,49 @@ function getPreviewSpriteName() {
     return `clip-${maxListenTime}`;
 }
 
+function resetPreviewState() {
+    previewPositionSeconds = 0;
+    previewSegmentEnded = false;
+    restartOnNext = false;
+    previewSoundId = null;
+}
+
+function handlePreviewEnded(soundId) {
+    if (soundId !== previewSoundId) return;
+    clearPreviewPlaybackTimers();
+    previewPositionSeconds = getMaxListenSeconds();
+    previewSegmentEnded = true;
+    previewSoundId = null;
+    playing = false;
+    restartOnNext = true;
+    updatePlayBtn();
+    globalAudio?.pause();
+}
+
 function unloadPreviewHowl() {
-    stopPreviewPlayback();
+    stopPreviewPlayback({ resetPosition: true });
     if (previewHowl) {
         previewHowl.unload();
         previewHowl = undefined;
     }
 }
 
-function buildSongPlayer(songUrl, id) {
-    songPreviewUrl = songUrl;
-    songId = id;
-    unloadPreviewHowl();
-
-    songDurationSeconds = 30;
-    globalAudio = new Audio(songUrl);
-    globalAudio.preload = "auto";
-    globalAudio.onloadedmetadata = () => {
-        if (Number.isFinite(globalAudio.duration) && globalAudio.duration > 0) {
-            songDurationSeconds = globalAudio.duration;
+function createSongPlayer(songUrl, id) {
+    const player = { songUrl, id, durationSeconds: 30 };
+    const audio = new Audio(songUrl);
+    audio.preload = "auto";
+    audio.onloadedmetadata = () => {
+        if (Number.isFinite(audio.duration) && audio.duration > 0) {
+            player.durationSeconds = audio.duration;
+        }
+        if (globalAudio === audio) {
+            songDurationSeconds = player.durationSeconds;
             setMarkers();
         }
     };
-    globalAudio.onended = () => stopPlaying(true);
+    audio.onended = () => stopPlaying(true);
 
-    previewHowl = new Howl({
+    const howl = new Howl({
         src: [songUrl],
         format: ["aac", "mp3", "m4a"],
         preload: true,
@@ -201,9 +249,12 @@ function buildSongPlayer(songUrl, id) {
         sprite: previewSprites,
         volume: maxVolume,
         onload: () => {
-            const duration = previewHowl.duration();
+            const duration = howl.duration();
             if (Number.isFinite(duration) && duration > 0) {
-                songDurationSeconds = duration;
+                player.durationSeconds = duration;
+            }
+            if (previewHowl === howl) {
+                songDurationSeconds = player.durationSeconds;
                 setMarkers();
             }
         },
@@ -215,39 +266,85 @@ function buildSongPlayer(songUrl, id) {
             stopPlaying();
         },
         onend: (soundId) => {
-            if (soundId !== previewSoundId) return;
-            stopPlaying(true);
+            handlePreviewEnded(soundId);
         }
     });
+
+    player.audio = audio;
+    player.howl = howl;
+    audio.load();
+    return player;
 }
 
-async function trySongFetch() {
-    let songUrl;
-    for (let i = 0; i < 5 && !songUrl; i++) {
+function activateSongPlayer(player) {
+    unloadPreviewHowl();
+    songPreviewUrl = player.songUrl;
+    songId = player.id;
+    globalAudio = player.audio;
+    previewHowl = player.howl;
+    songDurationSeconds = player.durationSeconds || 30;
+    resetPreviewState();
+    updatePlayBtn();
+    setMarkers();
+    startControlsLoop();
+}
+
+async function fetchSongPlayer() {
+    for (let i = 0; i < 5; i++) {
         const { songData, songId: id } = await backendFetch(`/api/v1/solo/randomsong?categories=${encodeURIComponent(JSON.stringify(selectedGenres || []))}`).catch(() => { });
         if (songData && songData.previewUrl && !playedSongs.includes(id)) {
-            songUrl = songData.previewUrl;
             playedSongs.push(id);
-            buildSongPlayer(songUrl, id);
-            updateControls();
-            setTimeout(() => loadingPopup.close(), 500);
-            requestAnimationFrame(updateControls);
+            return createSongPlayer(songData.previewUrl, id);
         }
     }
-    if (!songUrl) {
-        console.error("Failed to fetch song after 5 attempts.");
+    throw new Error("Failed to fetch song after 5 attempts.");
+}
+
+function preloadNextSong() {
+    if (nextSongPlayer || nextSongPlayerPromise) return nextSongPlayerPromise;
+    nextSongPlayerPromise = fetchSongPlayer()
+        .then((player) => {
+            nextSongPlayer = player;
+            return player;
+        })
+        .catch((error) => {
+            console.error("Failed to preload next song:", error);
+            return null;
+        })
+        .finally(() => {
+            nextSongPlayerPromise = null;
+        });
+    return nextSongPlayerPromise;
+}
+
+async function trySongFetch({ closeDelay = 500 } = {}) {
+    try {
+        const player = nextSongPlayer || await nextSongPlayerPromise || await fetchSongPlayer();
+        nextSongPlayer = null;
+        activateSongPlayer(player);
+        if (closeDelay > 0) {
+            setTimeout(() => loadingPopup.close(), closeDelay);
+        } else {
+            loadingPopup.close();
+        }
+        preloadNextSong();
+    } catch (error) {
+        console.error(error);
         loadingPopup.close();
     }
 }
 trySongFetch();
 
+function startControlsLoop() {
+    if (controlsLoopStarted) return;
+    controlsLoopStarted = true;
+    updateControls();
+}
+
 function updateControls() {
     if (!globalAudio) return;
     const maxListenTime = maxTimes[Math.min(guessIndex, maxTimes.length - 1)];
-    const clipElapsed = playing && previewHowl && previewSoundId != null
-        ? Math.min(Math.max(Number(previewHowl.seek(previewSoundId)) || 0, 0), maxListenTime / 1000)
-        : 0;
-    const progressTime = playing ? clipElapsed : 0;
+    const progressTime = getPreviewPosition();
     const duration = songDurationSeconds || globalAudio.duration || 30;
 
     document.querySelector(".progress .bar").style.width = `${(progressTime / duration) * 100}%`;
@@ -281,12 +378,21 @@ function setMarkers() {
 async function startPlayback() {
     if (!songPreviewUrl || !previewHowl || isPreparingPlayback) return;
 
+    const maxListenSeconds = getMaxListenSeconds();
+    if (previewSegmentEnded || restartOnNext || previewPositionSeconds >= maxListenSeconds) {
+        previewPositionSeconds = 0;
+        previewSegmentEnded = false;
+        restartOnNext = false;
+    }
+
     isPreparingPlayback = true;
     previewRequestId += 1;
     const requestId = previewRequestId;
+    const startAtSeconds = previewPositionSeconds;
 
     try {
-        stopPreviewPlayback();
+        stopPreviewPlayback({ resetPosition: false });
+        previewPositionSeconds = startAtSeconds;
         previewHowl.volume(maxVolume);
 
         if (Howler.ctx?.state === "suspended") {
@@ -299,6 +405,9 @@ async function startPlayback() {
         }
 
         previewSoundId = soundId;
+        if (startAtSeconds > 0) {
+            previewHowl.seek(startAtSeconds, soundId);
+        }
         playing = true;
         updatePlayBtn();
         previewHowl.once("play", () => {
@@ -317,7 +426,7 @@ async function startPlayback() {
 
 function stopPlaying(endClip = false) {
     isPreparingPlayback = false;
-    stopPreviewPlayback();
+    stopPreviewPlayback({ endClip });
     playing = false;
     updatePlayBtn();
     globalAudio?.pause();
@@ -441,15 +550,23 @@ async function gameOver(win = false) {
     };
 
     await new Promise(resolve => {
-        playAgainBtn.onclick = async () => {
+        let resolved = false;
+        const continueToNextSong = () => {
+            if (resolved) return;
+            resolved = true;
+            clearInterval(fadeIn);
+            globalAudio.pause();
+            globalAudio.onended = null;
             resolve();
         };
-        gameOverPopup.onclose = async () => {
-            resolve();
-        };
+        playAgainBtn.onclick = continueToNextSong;
+        gameOverPopup.onclose = continueToNextSong;
     });
 
-    gameOverPopup.close();
+    gameOverPopup.onclose = null;
+    if (gameOverPopup.open) {
+        gameOverPopup.close();
+    }
 
     loadingPopup.showModal();
     overlayVidoes.style.opacity = 0;
@@ -463,22 +580,12 @@ async function gameOver(win = false) {
         line.classList.remove("correct", "close", "incorrect", "skip");
     }
 
-    await new Promise((resolve) => {
-        globalAudio.volume = maxVolume;
-        let fadeOut = setInterval(() => {
-            if (globalAudio.volume > 0.01) {
-                globalAudio.volume = Math.max(globalAudio.volume - 0.03, 0);
-            } else {
-                clearInterval(fadeOut);
-                globalAudio.pause();
-                resolve();
-            }
-        }, 20);
-    });
+    globalAudio.pause();
+    globalAudio.volume = maxVolume;
     winningVolAnim = false;
 
     guessIndex = 0;
-    trySongFetch();
+    await trySongFetch({ closeDelay: 0 });
 
     searchInput.value = "";
     updateSearchPopup();
@@ -504,6 +611,10 @@ window.addEventListener("blur", () => {
 
 guessBtn.onclick = async () => {
     if (searchInput.value.trim().length === 0) {
+        const wasPlaying = playing;
+        const unlockedPositionSeconds = getPreviewPosition();
+        stopPreviewPlayback();
+        playing = false;
         if (lines[guessIndex]) {
             lines[guessIndex].textContent = "Skipped";
             lines[guessIndex].classList.add("skip");
@@ -513,8 +624,13 @@ guessBtn.onclick = async () => {
             gameOver();
             return;
         }
+        previewPositionSeconds = Math.min(unlockedPositionSeconds, getMaxListenSeconds());
+        previewSegmentEnded = false;
         restartOnNext = false;
-        startPlayback();
+        updatePlayBtn();
+        if (wasPlaying) {
+            startPlayback();
+        }
 
         searchInput.value = "";
         updateSearchPopup();
@@ -561,12 +677,15 @@ guessBtn.onclick = async () => {
         console.error("Failed guess song request.");
     }
 
+    const unlockedPositionSeconds = getPreviewPosition();
     guessIndex++;
     if (guessIndex >= maxTimes.length) {
         gameOver();
         return;
     }
 
+    previewPositionSeconds = Math.min(unlockedPositionSeconds, getMaxListenSeconds());
+    previewSegmentEnded = false;
     restartOnNext = false;
     searchInput.value = "";
     searchInput.focus();

@@ -509,11 +509,15 @@ label {
     pointer-events: all;
     position: fixed;
     inset: 0;
+    width: 100%;
+    max-width: 100%;
     background-color: transparent;
     color: white;
     border: none;
     outline: none;
     margin: auto;
+    padding: 1rem;
+    overflow: hidden;
 
     #gameOverContent {
         display: flex;
@@ -522,20 +526,16 @@ label {
         justify-content: center;
         text-align: center;
         gap: 10px;
-        /* width: 500px;
-        height: 550px; */
         background-color: var(--popup-highlight);
-
+        width: min(100%, 44rem);
+        max-width: 100%;
+        box-sizing: border-box;
         border: 22px solid var(--primary);
         box-shadow: 0px 0px 20px 0 var(--primary), inset 0px 0px 20px -2px var(--primary);
-
         font-weight: bold;
         border-radius: 35px;
         padding: 2.5rem;
-        margin: 50px;
-
-
-
+        margin: auto;
     }
 
     #gameOverMessage {
@@ -558,9 +558,11 @@ label {
         border: 1px solid white;
         border-radius: 20px;
         padding: 30px 0.6rem;
-        width: 580px;
+        width: 100%;
+        max-width: 100%;
         font-size: 1.7rem;
         margin-bottom: 4rem;
+        overflow-wrap: anywhere;
     }
 
     #gameOverButtons {
@@ -680,20 +682,53 @@ label {
 
 
 
-@media screen and (max-width: 800px) {
-
-    #gameOverPopup #gameOverContent {
-        zoom: 0.8;
-    }
-}
-
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 700px) {
     .page .title {
         padding-top: 1rem;
     }
 
+    #gameOverPopup {
+        padding: 0.85rem;
+    }
+
     #gameOverPopup #gameOverContent {
-        zoom: 0.5;
+        width: 100%;
+        border-width: 12px;
+        border-radius: 24px;
+        padding: 1.25rem 1rem;
+        gap: 0.75rem;
+    }
+
+    #gameOverPopup #gameOverMessage {
+        font-size: 2rem;
+    }
+
+    #gameOverPopup #gameOverSubtitle {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    #gameOverPopup p {
+        font-size: 1rem;
+    }
+
+    #gameOverPopup #gameOverSong {
+        font-size: 1.05rem;
+        padding: 1rem 0.75rem;
+        margin-bottom: 1.5rem;
+        border-radius: 14px;
+    }
+
+    #gameOverPopup #gameOverButtons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    #gameOverPopup button {
+        width: 100%;
+        padding: 0.95rem 1rem;
+        font-size: 1.05rem;
+        margin: 0;
     }
 }
 
@@ -797,13 +832,14 @@ label {
 .timeline {
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
-    gap: 30px;
+    gap: 0.7rem;
+    flex-direction: column;
     padding-inline: 5px;
 
     .progress {
-        flex: 1;
+        width: 100%;
         height: 6px;
         border-radius: 3px;
         background-color: var(--popup);
@@ -856,5 +892,175 @@ label {
 
 
 
+    }
+}
+
+.timeline #playBtn {
+    align-self: center;
+}
+
+@media (max-width: 700px) {
+    body.playPage {
+        overflow-y: clip !important;
+    }
+
+    body {
+        overflow-y: auto;
+    }
+
+    .page {
+        padding: 1rem 1.1rem 1.25rem;
+    }
+
+    .title {
+        font-size: 1.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .title+.subtitle {
+        font-size: 0.98rem;
+        margin-bottom: 1rem;
+    }
+
+    button {
+        padding: 11px 18px;
+        font-size: 1.15rem;
+    }
+
+    input {
+        padding: 11px 14px;
+        font-size: 1.05rem;
+    }
+
+    #pageControls {
+        top: 0.25rem;
+        padding-inline: 0.75rem;
+        font-size: 0.92rem;
+    }
+
+    #pageControls svg {
+        height: 1.75rem;
+        width: 1.75rem;
+    }
+
+    #pageControls svg:last-of-type {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+
+    #pageControls input[type="range"] {
+        width: 84px;
+        height: 8px;
+    }
+
+    #pageControls input[type="range"]::-webkit-slider-runnable-track {
+        height: 8px;
+    }
+
+    #pageControls input[type="range"]::before {
+        height: 8px;
+    }
+
+    .guessLines {
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .line {
+        height: 52px;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .controls {
+        gap: 0.8rem;
+    }
+
+    .timeline {
+        gap: 16px;
+        padding-inline: 0;
+    }
+
+    .timeline .progress .indicator {
+        font-size: 0.9rem;
+    }
+
+    #playBtn {
+        width: 68px;
+        height: 68px;
+    }
+
+    #playBtn svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .inputs {
+        gap: 0.75rem;
+    }
+
+    .page .main,
+    .guessLines,
+    .controls {
+        width: min(100%, 26rem);
+        margin-inline: auto;
+    }
+
+    .timeline,
+    .inputs {
+        width: 100%;
+    }
+
+    .inputs #searchPopup .result {
+        font-size: 1rem;
+    }
+
+    #guessBtn.guessSkip {
+        padding: 11px 18px;
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding: 0.8rem 1rem 1rem;
+    }
+
+    .title {
+        font-size: 1.7rem;
+    }
+
+    .title+.subtitle {
+        font-size: 0.88rem;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 1.02rem;
+    }
+
+    input {
+        padding: 10px 12px;
+        font-size: 0.98rem;
+    }
+
+    .line {
+        height: 46px;
+        font-size: 0.95rem;
+    }
+
+    .timeline {
+        gap: 12px;
+    }
+
+    #playBtn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .page .main,
+    .guessLines,
+    .controls {
+        width: min(100%, 23.5rem);
     }
 }

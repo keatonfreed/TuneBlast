@@ -51,6 +51,18 @@ html:has(body.playPage)::-webkit-scrollbar {
     touch-action: manipulation;
 }
 
+@media (min-width: 701px) {
+    .playPage .guessLines {
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .playPage .line {
+        height: 56px;
+        padding-block: 0.9rem;
+    }
+}
+
 @media (max-width: 900px) {
     .playPage .page {
         flex-direction: column;
@@ -70,11 +82,16 @@ html:has(body.playPage)::-webkit-scrollbar {
 
     .playPage .main {
         padding: 0.35rem 0.75rem 0.9rem;
+        justify-content: flex-start;
+        gap: 1.95rem;
     }
+
 }
 
 @media (max-width: 480px) {
     .playPage .main {
         padding: 0.25rem 0.85rem 0.9rem;
+        gap: 1.6rem;
     }
+
 }

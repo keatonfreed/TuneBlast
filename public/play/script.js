@@ -14,10 +14,6 @@ const overlayVidoes = document.getElementById("overlayVideos");
 const genreDisplay = document.getElementById("genreDisplay");
 const genreSelector = document.getElementById("genreSelector");
 const genreOptions = document.querySelectorAll("#genreSelector input[type='checkbox']");
-const soloSettingsBtn = document.getElementById("soloSettingsBtn");
-const soloSettingsPopup = document.getElementById("soloSettingsPopup");
-const soloAutoplayUnlockedCheckbox = document.getElementById("soloAutoplayUnlocked");
-const soloKeepCurrentPlaybackKey = "TuneBlast-SoloKeepCurrentPlayback";
 
 function getSavedGenres() {
     const saved = localStorage.getItem("TuneBlast-SelectedGenres");
@@ -81,31 +77,6 @@ genreOptions.forEach(option => {
 });
 
 updateGenreDisplay();
-
-function shouldAutoplayUnlockedClip() {
-    return localStorage.getItem(soloKeepCurrentPlaybackKey) !== "true";
-}
-
-function setKeepCurrentPlayback(enabled) {
-    localStorage.setItem(soloKeepCurrentPlaybackKey, enabled ? "true" : "false");
-    soloAutoplayUnlockedCheckbox.checked = enabled;
-}
-
-soloAutoplayUnlockedCheckbox.checked = !shouldAutoplayUnlockedClip();
-
-soloSettingsBtn.addEventListener("click", () => {
-    soloSettingsPopup.showModal();
-});
-
-soloSettingsPopup.addEventListener("click", (event) => {
-    if (event.target === soloSettingsPopup) {
-        soloSettingsPopup.close();
-    }
-});
-
-soloAutoplayUnlockedCheckbox.addEventListener("change", () => {
-    setKeepCurrentPlayback(soloAutoplayUnlockedCheckbox.checked);
-});
 
 const volumeSliderEl = document.getElementById("volumeSlider").querySelector("input[type='range']");
 
@@ -784,14 +755,10 @@ guessBtn.onclick = async () => {
     if (guessInFlight || !globalAudio) return;
     guessInFlight = true;
     let unlockWhenDone = true;
-    const wasPlayingBeforeGuess = playing;
 
     try {
         const guessText = searchInput.value.trim();
         if (guessText.length === 0) {
-            const wasPlaying = playing;
-            const unlockedPositionSeconds = getPreviewPosition();
-            const autoplayUnlockedClip = shouldAutoplayUnlockedClip();
             stopPreviewPlayback();
             playing = false;
 
@@ -805,17 +772,7 @@ guessBtn.onclick = async () => {
                 return;
             }
 
-            if (autoplayUnlockedClip) {
-                restartUnlockedClip();
-            } else {
-                previewPositionSeconds = Math.min(unlockedPositionSeconds, getMaxListenSeconds());
-                previewSegmentEnded = false;
-                restartOnNext = false;
-                updatePlayBtn();
-                if (wasPlaying) {
-                    startPlayback();
-                }
-            }
+            restartUnlockedClip();
 
             searchInput.value = "";
             if (shouldRefocusSearchInput) {
@@ -833,7 +790,6 @@ guessBtn.onclick = async () => {
 
         const guessedArtist = guessText.split("-").at(-1)?.trim() || guessText;
         const response = await backendFetch(`/api/v1/solo/guess/?songName=${encodeURIComponent(guessText)}&songArtist=${encodeURIComponent(guessedArtist)}&songId=${encodeURIComponent(songId)}`);
-        const autoplayUnlockedClip = shouldAutoplayUnlockedClip();
         let missFeedbackSound;
         if (lines[guessIndex]) {
             lines[guessIndex].textContent = guessText;
@@ -859,36 +815,24 @@ guessBtn.onclick = async () => {
             } else if (nameCorrect || artistCorrect) {
                 const closeSound = new Audio("../incorrect.mp3");
                 missFeedbackSound = closeSound;
-                if (autoplayUnlockedClip) {
-                    stopPreviewPlayback();
-                    playing = false;
-                    updatePlayBtn();
-                }
+                stopPreviewPlayback();
+                playing = false;
+                updatePlayBtn();
                 closeSound.play();
                 closeSound.onended = () => {
-                    if (autoplayUnlockedClip) {
-                        restartUnlockedClip();
-                    } else if (wasPlayingBeforeGuess) {
-                        startPlayback();
-                    }
+                    restartUnlockedClip();
                 };
                 lines[guessIndex]?.classList.add("close");
             } else {
                 const incorrectSound = new Audio("../incorrect.mp3");
                 missFeedbackSound = incorrectSound;
-                if (autoplayUnlockedClip) {
-                    stopPreviewPlayback();
-                    playing = false;
-                    updatePlayBtn();
-                }
+                stopPreviewPlayback();
+                playing = false;
+                updatePlayBtn();
 
                 incorrectSound.play();
                 incorrectSound.onended = () => {
-                    if (autoplayUnlockedClip) {
-                        restartUnlockedClip();
-                    } else if (wasPlayingBeforeGuess) {
-                        startPlayback();
-                    }
+                    restartUnlockedClip();
                 };
                 lines[guessIndex]?.classList.add("incorrect");
             }
@@ -906,7 +850,7 @@ guessBtn.onclick = async () => {
         previewPositionSeconds = Math.min(unlockedPositionSeconds, getMaxListenSeconds());
         previewSegmentEnded = false;
         restartOnNext = false;
-        if (autoplayUnlockedClip && !missFeedbackSound && response) {
+        if (!missFeedbackSound && response) {
             restartUnlockedClip();
         }
 

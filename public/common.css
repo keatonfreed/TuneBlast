@@ -865,14 +865,15 @@ label {
 .timeline {
     display: flex;
     width: 100%;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     gap: 0.7rem;
-    flex-direction: column;
+    flex-direction: row;
     padding-inline: 5px;
 
     .progress {
         width: 100%;
+        flex: 1;
         height: 6px;
         border-radius: 3px;
         background-color: var(--popup);
@@ -1012,6 +1013,8 @@ label {
     .timeline {
         gap: 16px;
         padding-inline: 0;
+        align-items: stretch;
+        flex-direction: column;
     }
 
     .timeline .progress .indicator {

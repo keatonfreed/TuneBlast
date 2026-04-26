@@ -19,6 +19,7 @@ const roundDisplay = document.getElementById("roundDisplay");
 const overlayVidoes = document.getElementById("overlayVideos");
 
 const gameOverPopup = document.getElementById("gameOverPopup");
+const shouldShowGameOverVideo = !window.matchMedia("(max-width: 700px), (pointer: coarse)").matches;
 
 const timeDisplay = document.getElementById("timeDisplay");
 
@@ -103,6 +104,9 @@ function updateVolumeSlider() {
 
 volumeSliderEl.oninput = () => {
     setSavedVolume(Number(volumeSliderEl.value) / 100);
+    if (previewHowl) {
+        previewHowl.volume(maxVolume);
+    }
     updateVolumeSlider();
 }
 
@@ -146,13 +150,20 @@ updateTimeLeft();
 let roomPlayMode = "normal";
 
 // State Variables
-let globalAudio;
+let globalAudio, songPreviewUrl;
+let previewHowl;
+let previewMonitorFrame;
+let previewSoundId = null;
+let previewRequestId = 0;
+let previewPositionSeconds = 0;
+let previewSegmentEnded = false;
 let playing = false;
 let restartOnNext = false;
 let lastGuessLine;
 let guessIndex = 0;
 // const maxTimes = [100, 1000, 2000, 3500, 9000, 30000];
 const maxTimes = [100, 500, 1500, 3500, 9000, 30000];
+const previewSprites = Object.fromEntries(maxTimes.map(time => [`clip-${time}`, [0, time]]));
 
 let lastInputUpdate;
 const suggestionLimit = 10;
@@ -168,6 +179,8 @@ let searchInFlight = false;
 let queuedSearchQuery = "";
 const searchCache = new Map();
 let guessInFlight = false;
+let songDurationSeconds = 30;
+let isPreparingPlayback = false;
 
 let playerList = [];
 
@@ -194,7 +207,6 @@ async function backendFetch(url) {
     }
 }
 
-// WebSocket Utility
 async function backendWebsocket(url, body) {
     try {
         const ws = new WebSocket(url);
@@ -232,24 +244,150 @@ function getSavedUsername() {
 let roomSocket;
 let playerId;
 
-function playGlobalAudio() {
-    if (!globalAudio) return;
-    if (document.visibilityState === 'visible') {
-        globalAudio.play();
-    } else {
-        window.addEventListener("focus", () => {
-            globalAudio.play();
-        }, { once: true });
+function getMaxListenSeconds() {
+    return maxTimes[Math.min(guessIndex, maxTimes.length - 1)] / 1000;
+}
+
+function clearPreviewPlaybackTimers() {
+    cancelAnimationFrame(previewMonitorFrame);
+    previewMonitorFrame = undefined;
+}
+
+function getPreviewPosition() {
+    const maxListenSeconds = getMaxListenSeconds();
+    if (playing && previewHowl && previewSoundId != null) {
+        return Math.min(Math.max(Number(previewHowl.seek(previewSoundId)) || 0, 0), maxListenSeconds);
     }
+    return Math.min(Math.max(previewPositionSeconds, 0), maxListenSeconds);
+}
+
+function stopPreviewPlayback({ resetPosition = false, endClip = false } = {}) {
+    clearPreviewPlaybackTimers();
+    if (endClip) {
+        previewPositionSeconds = getMaxListenSeconds();
+        previewSegmentEnded = true;
+    } else if (!resetPosition) {
+        previewPositionSeconds = getPreviewPosition();
+    }
+
+    if (!previewHowl) return;
+    if (previewSoundId != null) {
+        previewHowl.stop(previewSoundId);
+    } else {
+        previewHowl.stop();
+    }
+    previewSoundId = null;
+
+    if (resetPosition) {
+        previewPositionSeconds = 0;
+        previewSegmentEnded = false;
+        restartOnNext = false;
+    }
+}
+
+function syncPreviewProgress() {
+    if (!playing || !previewHowl) return;
+    previewMonitorFrame = requestAnimationFrame(syncPreviewProgress);
+}
+
+function startPreviewProgressMonitor(soundId, requestId) {
+    clearPreviewPlaybackTimers();
+    if (requestId !== previewRequestId || soundId !== previewSoundId) return;
+    previewMonitorFrame = requestAnimationFrame(syncPreviewProgress);
+}
+
+function getPreviewSpriteName() {
+    const maxListenTime = maxTimes[Math.min(guessIndex, maxTimes.length - 1)];
+    return `clip-${maxListenTime}`;
+}
+
+function resetPreviewState() {
+    previewPositionSeconds = 0;
+    previewSegmentEnded = false;
+    restartOnNext = false;
+    previewSoundId = null;
+}
+
+function handlePreviewEnded(soundId) {
+    if (soundId !== previewSoundId) return;
+    clearPreviewPlaybackTimers();
+    previewPositionSeconds = getMaxListenSeconds();
+    previewSegmentEnded = true;
+    previewSoundId = null;
+    playing = false;
+    restartOnNext = true;
+    updatePlayBtn();
+    globalAudio?.pause();
+}
+
+function unloadPreviewHowl() {
+    stopPreviewPlayback({ resetPosition: true });
+    if (previewHowl) {
+        previewHowl.unload();
+        previewHowl = undefined;
+    }
+}
+
+function clearRoomAudio() {
+    unloadPreviewHowl();
+    if (globalAudio) {
+        globalAudio.pause();
+        globalAudio.onended = null;
+        globalAudio = null;
+    }
+    playing = false;
+    updatePlayBtn();
 }
 
 function buildAudio(previewUrl) {
     const audio = new Audio(previewUrl);
     audio.preload = "auto";
-    audio.onloadeddata = setMarkers;
-    audio.onended = () => stopPlaying(true);
+    audio.onloadedmetadata = () => {
+        if (Number.isFinite(audio.duration) && audio.duration > 0) {
+            songDurationSeconds = audio.duration;
+        }
+        if (globalAudio === audio) {
+            setMarkers();
+        }
+    };
+
+    songPreviewUrl = previewUrl;
+    let howl;
+    howl = new Howl({
+        src: [previewUrl],
+        format: ["aac", "mp3", "m4a"],
+        preload: true,
+        html5: false,
+        sprite: previewSprites,
+        volume: maxVolume,
+        onload: () => {
+            const duration = howl.duration();
+            if (Number.isFinite(duration) && duration > 0) {
+                songDurationSeconds = duration;
+            }
+            setMarkers();
+        },
+        onloaderror: (_, error) => {
+            console.error("Preview audio failed to load:", error);
+        },
+        onplayerror: (_, error) => {
+            console.error("Preview audio failed to play:", error);
+            stopPlaying();
+        },
+        onend: (soundId) => {
+            handlePreviewEnded(soundId);
+        }
+    });
+    previewHowl = howl;
+
     audio.load();
+    resetPreviewState();
     return audio;
+}
+
+function loadRoomAudio(previewUrl) {
+    clearRoomAudio();
+    globalAudio = buildAudio(previewUrl);
 }
 
 let retryInterval;
@@ -436,24 +574,10 @@ async function tryJoinRoom() {
                     });
                 }
 
-                if (globalAudio) {
-                    globalAudio.pause();
-                    globalAudio = null;
-                    playing = false;
-                    updatePlayBtn();
-                }
-
-                if (globalAudio) {
-                    globalAudio.pause();
-                    globalAudio = null;
-                    playing = false;
-                    updatePlayBtn();
-                }
-                globalAudio = buildAudio(message.songData.previewUrl);
+                loadRoomAudio(message.songData.previewUrl);
 
                 if (!updateControlLoop) {
                     updateControls();
-                    requestAnimationFrame(updateControls);
                 }
                 updateControlLoop = true
 
@@ -589,18 +713,22 @@ async function tryJoinRoom() {
                 controlsDisabled = false;
                 guessInFlight = false;
 
-                globalAudio.currentTime = 0;
-                playGlobalAudio();
-                playing = true;
-                updatePlayBtn();
+                resetPreviewState();
+                startPlayback();
                 break;
 
             case "game_end":
 
-                overlayVidoes.querySelectorAll("video").forEach(video => {
-                    video.play();
-                });
-                overlayVidoes.style.opacity = 0.4;
+                stopPreviewPlayback();
+                playing = false;
+                updatePlayBtn();
+
+                if (shouldShowGameOverVideo) {
+                    overlayVidoes.querySelectorAll("video").forEach(video => {
+                        video.play();
+                    });
+                    overlayVidoes.style.opacity = 0.4;
+                }
 
                 globalAudio.currentTime = 0;
                 globalAudio.play();
@@ -692,6 +820,10 @@ async function tryJoinRoom() {
                 console.log("Game Start.");
 
                 overlayVidoes.style.opacity = 0;
+                overlayVidoes.querySelectorAll("video").forEach(video => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
 
                 playerList = playerList.map(p => {
                     return { ...p, playerStatus: null };
@@ -738,13 +870,7 @@ async function tryJoinRoom() {
                 roundDisplay.textContent = `Round ${guessIndex + 1}`;
 
                 console.log("Playing next song.");
-                if (globalAudio) {
-                    globalAudio.pause();
-                    globalAudio = null;
-                    playing = false;
-                    updatePlayBtn();
-                }
-                globalAudio = buildAudio(message.songData.previewUrl);
+                loadRoomAudio(message.songData.previewUrl);
 
                 controlsDisabled = false;
                 guessInFlight = false;
@@ -753,10 +879,8 @@ async function tryJoinRoom() {
                     loadingPopup.close();
 
                     setTimeout(() => {
-                        globalAudio.currentTime = 0;
-                        playGlobalAudio();
-                        playing = true;
-                        updatePlayBtn();
+                        resetPreviewState();
+                        startPlayback();
                     }, 500);
                 }, 500);
                 break;
@@ -861,14 +985,11 @@ function updatePlayerList() {
 function updateControls() {
     if (!globalAudio) return;
     const maxListenTime = maxTimes[Math.min(guessIndex, maxTimes.length - 1)];
-    if (playing && globalAudio.currentTime >= maxListenTime / 1000) {
-        stopPlaying(true);
-        globalAudio.currentTime = maxListenTime / 1000;
-    }
-    const duration = Number.isFinite(globalAudio.duration) ? globalAudio.duration : 0;
-    document.querySelector(".progress .bar").style.width = `${duration ? (globalAudio.currentTime / duration) * 100 : 0}%`;
+    const progressTime = getPreviewPosition();
+    const duration = songDurationSeconds || globalAudio.duration || 30;
+    document.querySelector(".progress .bar").style.width = `${(progressTime / duration) * 100}%`;
     // indicates the marker going to max at
-    document.querySelector(".progress .indicator").style.left = `${duration ? Math.min((maxListenTime / (duration * 1000)) * 100, 100) : 0}%`;
+    document.querySelector(".progress .indicator").style.left = `${Math.min((maxListenTime / (duration * 1000)) * 100, 100)}%`;
     document.querySelector(".progress .indicator").textContent = Math.floor(maxListenTime * 10) / 10000 + "s";
 
 
@@ -890,14 +1011,17 @@ function updateControls() {
 
     if (!winningVolAnim && globalAudio) {
         globalAudio.volume = maxVolume;
+        previewHowl?.volume(maxVolume);
     }
     requestAnimationFrame(updateControls);
 }
 
 function setMarkers() {
-    const duration = Number.isFinite(globalAudio.duration) ? globalAudio.duration : 0;
+    const duration = songDurationSeconds || globalAudio?.duration;
+    if (!duration) return;
+
     document.querySelector(".progress .markers").innerHTML = maxTimes
-        .map(time => `<div class="marker" style="left: ${duration ? Math.min((time / (duration * 1000)) * 100, 100) : 0}%"></div>`)
+        .map(time => `<div class="marker" style="left: ${Math.min((time / (duration * 1000)) * 100, 100)}%"></div>`)
         .join("");
 }
 
@@ -911,7 +1035,58 @@ function updatePlayBtn() {
 
 
 // Play / Pause Controls
+async function startPlayback() {
+    if (!songPreviewUrl || !previewHowl || isPreparingPlayback) return;
+
+    const maxListenSeconds = getMaxListenSeconds();
+    if (previewSegmentEnded || restartOnNext || previewPositionSeconds >= maxListenSeconds) {
+        previewPositionSeconds = 0;
+        previewSegmentEnded = false;
+        restartOnNext = false;
+    }
+
+    isPreparingPlayback = true;
+    previewRequestId += 1;
+    const requestId = previewRequestId;
+    const startAtSeconds = previewPositionSeconds;
+
+    try {
+        stopPreviewPlayback({ resetPosition: false });
+        previewPositionSeconds = startAtSeconds;
+        previewHowl.volume(maxVolume);
+
+        if (Howler.ctx?.state === "suspended") {
+            await Howler.ctx.resume();
+        }
+
+        const soundId = previewHowl.play(getPreviewSpriteName());
+        if (soundId == null) {
+            throw new Error("Preview audio did not start");
+        }
+
+        previewSoundId = soundId;
+        if (startAtSeconds > 0) {
+            previewHowl.seek(startAtSeconds, soundId);
+        }
+        playing = true;
+        updatePlayBtn();
+        previewHowl.once("play", () => {
+            if (requestId !== previewRequestId || soundId !== previewSoundId) return;
+            startPreviewProgressMonitor(soundId, requestId);
+        }, soundId);
+    } catch (error) {
+        stopPreviewPlayback();
+        playing = false;
+        updatePlayBtn();
+        console.error("Audio play failed:", error);
+    } finally {
+        isPreparingPlayback = false;
+    }
+}
+
 function stopPlaying(endClip = false) {
+    isPreparingPlayback = false;
+    stopPreviewPlayback({ endClip });
     playing = false;
     updatePlayBtn();
     globalAudio?.pause();
@@ -925,15 +1100,7 @@ playBtn.onclick = () => {
     if (playing) {
         stopPlaying();
     } else {
-        const maxListenTime = maxTimes[Math.min(guessIndex, maxTimes.length - 1)];
-        // console.log("Restart? ", restartOnNext, globalAudio.currentTime >= (maxListenTime - 30) / 1000, globalAudio.currentTime, (maxListenTime - 30) / 1000);
-        if (restartOnNext || globalAudio.currentTime >= (maxListenTime - 30) / 1000) {
-            globalAudio.currentTime = 0;
-            restartOnNext = false;
-        }
-        playing = true;
-        updatePlayBtn();
-        playGlobalAudio();
+        startPlayback();
     }
 };
 

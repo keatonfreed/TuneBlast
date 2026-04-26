@@ -749,6 +749,7 @@ guessBtn.onclick = async () => {
     if (guessInFlight || !globalAudio) return;
     guessInFlight = true;
     let unlockWhenDone = true;
+    const wasPlayingBeforeGuess = playing;
 
     try {
         const guessText = searchInput.value.trim();
@@ -817,7 +818,9 @@ guessBtn.onclick = async () => {
                 const closeSound = new Audio("../incorrect.mp3");
                 closeSound.play();
                 closeSound.onended = () => {
-                    startPlayback();
+                    if (wasPlayingBeforeGuess) {
+                        startPlayback();
+                    }
                 };
                 lines[guessIndex]?.classList.add("close");
             } else {
@@ -825,7 +828,9 @@ guessBtn.onclick = async () => {
 
                 incorrectSound.play();
                 incorrectSound.onended = () => {
-                    startPlayback();
+                    if (wasPlayingBeforeGuess) {
+                        startPlayback();
+                    }
                 };
                 lines[guessIndex]?.classList.add("incorrect");
             }
@@ -845,7 +850,11 @@ guessBtn.onclick = async () => {
         restartOnNext = false;
 
         searchInput.value = "";
-        searchInput.focus();
+        if (shouldRefocusSearchInput) {
+            searchInput.focus();
+        } else {
+            searchInput.blur();
+        }
         searchPopup.classList.add("hidden");
     } finally {
         if (unlockWhenDone) guessInFlight = false;

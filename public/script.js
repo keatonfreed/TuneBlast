@@ -5,6 +5,7 @@ const joinMultiplayer = document.getElementById("joinMultiplayer")
 
 const joinPopup = document.getElementById("joinPopup")
 const joinError = document.getElementById("joinError")
+const closeJoinPopupBtn = document.getElementById("closeJoinPopup")
 
 const usernameInput = document.getElementById("usernameInput")
 const roomIdInput = document.getElementById("roomInput")
@@ -12,8 +13,48 @@ const joinRoomBtn = document.getElementById("joinRoom")
 const createRoomBtn = document.getElementById("createRoom")
 
 const roomDatalist = document.getElementById("roomOptions");
+const visualViewportApi = window.visualViewport;
 
 recentRooms = []
+
+function openJoinPopup() {
+    joinPopup.hidden = false;
+    joinPopup.setAttribute("aria-hidden", "false");
+    joinPopup.classList.add("is-open");
+    syncJoinPopupViewport();
+}
+
+function closeJoinPopup() {
+    joinPopup.hidden = true;
+    joinPopup.setAttribute("aria-hidden", "true");
+    joinPopup.classList.remove("is-open");
+    joinPopup.style.removeProperty("--join-popup-height");
+    joinPopup.style.removeProperty("--join-popup-top-padding");
+    delete joinPopup.dataset.keyboardOpen;
+}
+
+function syncJoinPopupViewport() {
+    if (!joinPopup || !joinPopup.classList.contains("is-open")) return;
+
+    const fallbackHeight = Math.max(window.innerHeight - 28, 0);
+    let visibleHeight = fallbackHeight;
+    let topPadding = "0.8rem";
+    let keyboardLikelyOpen = false;
+
+    if (visualViewportApi) {
+        visibleHeight = Math.max(visualViewportApi.height - 28, 0);
+        const occludedHeight = Math.max(window.innerHeight - visualViewportApi.height - visualViewportApi.offsetTop, 0);
+        keyboardLikelyOpen = occludedHeight > 120;
+        const viewportOffsetTop = Math.max(visualViewportApi.offsetTop || 0, 0);
+        topPadding = keyboardLikelyOpen
+            ? `${viewportOffsetTop + 10}px`
+            : "0.8rem";
+    }
+
+    joinPopup.style.setProperty("--join-popup-height", `${visibleHeight}px`);
+    joinPopup.style.setProperty("--join-popup-top-padding", topPadding);
+    joinPopup.dataset.keyboardOpen = keyboardLikelyOpen ? "true" : "false";
+}
 
 function setRecentRoom(roomId) {
     try {
@@ -55,14 +96,33 @@ joinSingleplayerBtn.onclick = () => {
 }
 
 joinMultiplayer.onclick = () => {
-    joinPopup.showModal()
+    openJoinPopup();
+    usernameInput.focus();
+    usernameInput.select();
 }
 
 joinPopup.addEventListener("click", (event) => {
     if (event.target === joinPopup) {
-        joinPopup.close();
+        closeJoinPopup();
     }
 });
+
+closeJoinPopupBtn.onclick = () => {
+    closeJoinPopup();
+}
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && joinPopup.classList.contains("is-open")) {
+        closeJoinPopup();
+    }
+});
+
+if (visualViewportApi) {
+    visualViewportApi.addEventListener("resize", syncJoinPopupViewport);
+    visualViewportApi.addEventListener("scroll", syncJoinPopupViewport);
+}
+
+window.addEventListener("resize", syncJoinPopupViewport);
 
 
 function setSavedUsername(username) {

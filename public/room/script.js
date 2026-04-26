@@ -155,7 +155,19 @@ let guessIndex = 0;
 const maxTimes = [100, 500, 1500, 3500, 9000, 30000];
 
 let lastInputUpdate;
-const suggestionLimit = 5;
+const suggestionLimit = 10;
+const searchDebounceMs = 220;
+const searchThrottleMs = 450;
+let searchRequestId = 0;
+let latestRenderedSearchRequestId = 0;
+let activeSearchController;
+let lastSearchStartedAt = 0;
+let lastSearchQuery = "";
+let searchPendingQuery = "";
+let searchInFlight = false;
+let queuedSearchQuery = "";
+const searchCache = new Map();
+let guessInFlight = false;
 
 let playerList = [];
 
@@ -229,6 +241,15 @@ function playGlobalAudio() {
             globalAudio.play();
         }, { once: true });
     }
+}
+
+function buildAudio(previewUrl) {
+    const audio = new Audio(previewUrl);
+    audio.preload = "auto";
+    audio.onloadeddata = setMarkers;
+    audio.onended = () => stopPlaying(true);
+    audio.load();
+    return audio;
 }
 
 let retryInterval;
@@ -392,6 +413,7 @@ async function tryJoinRoom() {
                     controlsDisabled = true;
                 } else {
                     controlsDisabled = false;
+                    guessInFlight = false;
                 }
 
 
@@ -427,9 +449,7 @@ async function tryJoinRoom() {
                     playing = false;
                     updatePlayBtn();
                 }
-                globalAudio = new Audio(message.songData.previewUrl);
-                globalAudio.onloadeddata = setMarkers;
-                globalAudio.onended = () => stopPlaying(true);
+                globalAudio = buildAudio(message.songData.previewUrl);
 
                 if (!updateControlLoop) {
                     updateControls();
@@ -492,6 +512,7 @@ async function tryJoinRoom() {
             case "player_status":
                 console.log("Player status:", message.playerId, message.status);
                 if (playerId && message.playerId === playerId) {
+                    guessInFlight = false;
                     if (message.status === "correct") {
                         if (lastGuessLine) {
                             lastGuessLine.classList.add("correct");
@@ -566,6 +587,7 @@ async function tryJoinRoom() {
                 guessIndex = message.roomRound;
                 roundDisplay.textContent = `Round ${guessIndex + 1}`;
                 controlsDisabled = false;
+                guessInFlight = false;
 
                 globalAudio.currentTime = 0;
                 playGlobalAudio();
@@ -722,11 +744,10 @@ async function tryJoinRoom() {
                     playing = false;
                     updatePlayBtn();
                 }
-                globalAudio = new Audio(message.songData.previewUrl);
-                globalAudio.onloadeddata = setMarkers;
-                globalAudio.onended = () => stopPlaying(true);
+                globalAudio = buildAudio(message.songData.previewUrl);
 
                 controlsDisabled = false;
+                guessInFlight = false;
 
                 setTimeout(() => {
                     loadingPopup.close();
@@ -844,9 +865,10 @@ function updateControls() {
         stopPlaying(true);
         globalAudio.currentTime = maxListenTime / 1000;
     }
-    document.querySelector(".progress .bar").style.width = `${(globalAudio.currentTime / globalAudio.duration) * 100}%`;
+    const duration = Number.isFinite(globalAudio.duration) ? globalAudio.duration : 0;
+    document.querySelector(".progress .bar").style.width = `${duration ? (globalAudio.currentTime / duration) * 100 : 0}%`;
     // indicates the marker going to max at
-    document.querySelector(".progress .indicator").style.left = `${Math.min((maxListenTime / (globalAudio.duration * 1000)) * 100, 100)}%`;
+    document.querySelector(".progress .indicator").style.left = `${duration ? Math.min((maxListenTime / (duration * 1000)) * 100, 100) : 0}%`;
     document.querySelector(".progress .indicator").textContent = Math.floor(maxListenTime * 10) / 10000 + "s";
 
 
@@ -873,8 +895,9 @@ function updateControls() {
 }
 
 function setMarkers() {
+    const duration = Number.isFinite(globalAudio.duration) ? globalAudio.duration : 0;
     document.querySelector(".progress .markers").innerHTML = maxTimes
-        .map(time => `<div class="marker" style="left: ${Math.min((time / (globalAudio.duration * 1000)) * 100)}%"></div>`)
+        .map(time => `<div class="marker" style="left: ${duration ? Math.min((time / (duration * 1000)) * 100, 100) : 0}%"></div>`)
         .join("");
 }
 
@@ -915,51 +938,145 @@ playBtn.onclick = () => {
 };
 
 // Song Search
-async function searchSongs(query) {
+function normalizeSearchResult(value) {
+    return value.toLowerCase().replace(/\s+/g, " ").replace(/[^\w\s-]/g, "").trim();
+}
+
+async function searchSongs(query, signal) {
+    const cacheKey = query.toLowerCase();
+    if (searchCache.has(cacheKey)) {
+        return searchCache.get(cacheKey);
+    }
+
     const apiKey = "78ef4f49d601a8f36462eb98f885b78a"; // Replace with your Last.fm API key
     const url = `https://ws.audioscrobbler.com/2.0/?method=track.search&track=${encodeURIComponent(query)}&limit=${suggestionLimit}&api_key=${apiKey}&format=json`;
 
     try {
-        const raw = await fetch(url);
+        const raw = await fetch(url, { signal });
         const parsed = await raw.json();
-        return parsed.results?.trackmatches?.track?.map((t, i) => `${i + 1}. ${t.name.slice(0, 100)} - ${t.artist}`).join("\n") || "";
+        const tracks = parsed.results?.trackmatches?.track || [];
+        const seen = new Set();
+        const results = tracks
+            .map(t => `${String(t.name || "").slice(0, 100)} - ${String(t.artist || "").slice(0, 100)}`)
+            .filter(result => {
+                const key = normalizeSearchResult(result);
+                if (!key || seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        searchCache.set(cacheKey, results);
+        if (searchCache.size > 30) {
+            searchCache.delete(searchCache.keys().next().value);
+        }
+        return results;
     } catch (error) {
+        if (error.name === "AbortError") return [];
         console.error("Search error:", error);
-        return "";
+        return [];
     }
 }
 
-// Search Popup
-async function updateSearchPopup() {
-    const query = searchInput.value.trim();
+async function updateSearchPopup(forcedQuery = searchInput.value.trim()) {
+    const query = forcedQuery.trim();
+    if (searchInFlight) {
+        queuedSearchQuery = query;
+        return;
+    }
+
+    const requestId = ++searchRequestId;
     if (!query) return searchPopup.classList.add("hidden");
+    const cacheKey = query.toLowerCase();
+    const cachedResults = searchCache.get(cacheKey);
+    if (cachedResults) {
+        latestRenderedSearchRequestId = requestId;
+        renderSearchResults(cachedResults);
+        lastSearchQuery = query;
+        return;
+    }
+    if (query === lastSearchQuery && (searchPopup.childElementCount || searchPendingQuery === query)) return;
 
-    const songList = await searchSongs(query);
-    if (songList) {
-        searchPopup.innerHTML = ""
-        songList.split("\n").forEach(line => {
-            let result = document.createElement("button");
-            result.className = "result";
-            result.textContent = line.replace(/^[0-9]+\. /, "");
-            result.onclick = () => {
-                searchInput.value = result.textContent;
-                searchPopup.classList.add("hidden");
-            };
-            searchPopup.appendChild(result);
-        })
-        searchPopup.classList.remove("hidden");
+    lastSearchStartedAt = Date.now();
+    lastSearchQuery = query;
+    searchPendingQuery = query;
+    searchInFlight = true;
+    activeSearchController = new AbortController();
+    const songList = await searchSongs(query, activeSearchController.signal);
+    searchInFlight = false;
+    if (searchPendingQuery === query) searchPendingQuery = "";
+    if (requestId > latestRenderedSearchRequestId) {
+        latestRenderedSearchRequestId = requestId;
+        renderSearchResults(songList);
+    }
+
+    if (queuedSearchQuery && queuedSearchQuery !== query) {
+        const nextQuery = queuedSearchQuery;
+        queuedSearchQuery = "";
+        updateSearchPopup(nextQuery);
+    } else {
+        queuedSearchQuery = "";
     }
 }
 
+function renderSearchResults(songList) {
+    if (document.activeElement !== searchInput || !searchInput.value.trim()) return;
 
-searchInput.onkeyup = (e) => {
-    clearTimeout(lastInputUpdate);
-    if (e.key === "Escape") {
+    searchPopup.innerHTML = "";
+    searchPopup.scrollTop = 0;
+    if (!songList.length) {
         searchPopup.classList.add("hidden");
-        return
+        return;
     }
-    lastInputUpdate = setTimeout(updateSearchPopup, 100);
-};
+    songList.forEach(line => {
+        let result = document.createElement("button");
+        result.className = "result";
+        result.textContent = line.slice(0, 120);
+        result.onclick = () => {
+            searchInput.value = result.textContent;
+            searchPopup.classList.add("hidden");
+        };
+        searchPopup.appendChild(result);
+    });
+    searchPopup.classList.remove("hidden");
+    searchPopup.scrollTop = 0;
+}
+
+
+searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        activeSearchController?.abort();
+        searchInFlight = false;
+        queuedSearchQuery = "";
+        searchRequestId++;
+        latestRenderedSearchRequestId = searchRequestId;
+        searchPopup.classList.add("hidden");
+    }
+});
+
+function scheduleSearchPopup() {
+    clearTimeout(lastInputUpdate);
+    if (!searchInput.value.trim()) {
+        activeSearchController?.abort();
+        searchInFlight = false;
+        queuedSearchQuery = "";
+        searchRequestId++;
+        latestRenderedSearchRequestId = searchRequestId;
+        lastSearchQuery = "";
+        searchPendingQuery = "";
+        searchPopup.classList.add("hidden");
+        return;
+    }
+
+    const waitForThrottle = Math.max(0, searchThrottleMs - (Date.now() - lastSearchStartedAt));
+    if (waitForThrottle === 0) {
+        updateSearchPopup();
+    }
+
+    lastInputUpdate = setTimeout(updateSearchPopup, Math.max(searchDebounceMs, waitForThrottle));
+}
+
+searchInput.addEventListener("input", () => {
+    scheduleSearchPopup();
+});
 
 
 // // Init Session
@@ -974,9 +1091,13 @@ searchInput.onkeyup = (e) => {
 
 // Guess Button
 guessBtn.onclick = async () => {
-    if (searchInput.value.trim().length === 0) {
+    if (controlsDisabled || guessInFlight) return;
+    if (!roomSocket || roomSocket.readyState !== WebSocket.OPEN) return;
 
-        if (!roomSocket) return;
+    guessInFlight = true;
+    controlsDisabled = true;
+
+    if (searchInput.value.trim().length === 0) {
         roomSocket.send(JSON.stringify({ event: "update_status", status: "skip" }));
 
         if (lines[guessIndex]) {
@@ -995,14 +1116,13 @@ guessBtn.onclick = async () => {
         searchInput.value = "";
         searchInput.focus();
         searchPopup.classList.add("hidden");
-        updateSearchPopup();
         return;
     }
 
-    if (!roomSocket) return;
-    roomSocket.send(JSON.stringify({ event: "update_status", songName: searchInput.value.trim().split("-")[0], songArtist: searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim() }));
+    const guessText = searchInput.value.trim();
+    roomSocket.send(JSON.stringify({ event: "update_status", songName: guessText, songArtist: guessText.split("-").at(-1)?.trim() || guessText }));
     if (lines[guessIndex]) {
-        lines[guessIndex].textContent = searchInput.value;
+        lines[guessIndex].textContent = guessText;
     }
     lastGuessLine = lines[guessIndex];
 
@@ -1019,8 +1139,6 @@ guessBtn.onclick = async () => {
     searchInput.value = "";
     searchInput.focus();
     searchPopup.classList.add("hidden");
-
-    updateSearchPopup();
 
 };
 

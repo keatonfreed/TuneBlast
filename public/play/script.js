@@ -67,6 +67,11 @@ genreOptions.forEach(option => {
             option.checked = true;
         }
         updateGenreDisplay();
+        songFetchGeneration++;
+        discardSongPlayer(nextSongPlayer);
+        nextSongPlayer = null;
+        nextSongPlayerPromise = null;
+        preloadNextSong();
     });
 });
 
@@ -116,11 +121,24 @@ let guessIndex = 0;
 const maxTimes = [100, 500, 1500, 3500, 9000, 30000];
 const previewSprites = Object.fromEntries(maxTimes.map(time => [`clip-${time}`, [0, time]]));
 let lastInputUpdate;
-const suggestionLimit = 5;
+const suggestionLimit = 10;
+const searchDebounceMs = 220;
+const searchThrottleMs = 450;
+let searchRequestId = 0;
+let latestRenderedSearchRequestId = 0;
+let activeSearchController;
+let lastSearchStartedAt = 0;
+let lastSearchQuery = "";
+let searchPendingQuery = "";
+let searchInFlight = false;
+let queuedSearchQuery = "";
+const searchCache = new Map();
+let guessInFlight = false;
 let songDurationSeconds = 30;
 let isPreparingPlayback = false;
 let nextSongPlayer = null;
 let nextSongPlayerPromise = null;
+let songFetchGeneration = 0;
 let controlsLoopStarted = false;
 const shouldShowGameOverVideo = !window.matchMedia("(max-width: 700px), (pointer: coarse)").matches;
 
@@ -226,6 +244,11 @@ function unloadPreviewHowl() {
     }
 }
 
+function discardSongPlayer(player) {
+    player?.audio?.pause();
+    player?.howl?.unload();
+}
+
 function createSongPlayer(songUrl, id) {
     const player = { songUrl, id, durationSeconds: 30 };
     const audio = new Audio(songUrl);
@@ -280,6 +303,7 @@ function activateSongPlayer(player) {
     unloadPreviewHowl();
     songPreviewUrl = player.songUrl;
     songId = player.id;
+    playedSongs.push(player.id);
     globalAudio = player.audio;
     previewHowl = player.howl;
     songDurationSeconds = player.durationSeconds || 30;
@@ -290,20 +314,31 @@ function activateSongPlayer(player) {
 }
 
 async function fetchSongPlayer() {
+    const attemptedSongIds = [];
+
     for (let i = 0; i < 5; i++) {
-        const { songData, songId: id } = await backendFetch(`/api/v1/solo/randomsong?categories=${encodeURIComponent(JSON.stringify(selectedGenres || []))}`).catch(() => { });
+        const params = new URLSearchParams({
+            categories: JSON.stringify(selectedGenres || []),
+            exclude: JSON.stringify([...playedSongs, ...attemptedSongIds])
+        });
+        const { songData, songId: id } = await backendFetch(`/api/v1/solo/randomsong?${params.toString()}`).catch(() => { });
         if (songData && songData.previewUrl && !playedSongs.includes(id)) {
-            playedSongs.push(id);
             return createSongPlayer(songData.previewUrl, id);
         }
+        if (id) attemptedSongIds.push(id);
     }
     throw new Error("Failed to fetch song after 5 attempts.");
 }
 
 function preloadNextSong() {
     if (nextSongPlayer || nextSongPlayerPromise) return nextSongPlayerPromise;
+    const generation = songFetchGeneration;
     nextSongPlayerPromise = fetchSongPlayer()
         .then((player) => {
+            if (generation !== songFetchGeneration) {
+                discardSongPlayer(player);
+                return null;
+            }
             nextSongPlayer = player;
             return player;
         })
@@ -371,7 +406,7 @@ function setMarkers() {
     if (!duration) return;
 
     document.querySelector(".progress .markers").innerHTML = maxTimes
-        .map(time => `<div class="marker" style="left: ${(time / (duration * 1000)) * 100}%"></div>`)
+        .map(time => `<div class="marker" style="left: ${duration ? Math.min((time / (duration * 1000)) * 100, 100) : 0}%"></div>`)
         .join("");
 }
 
@@ -444,49 +479,146 @@ playBtn.onclick = () => {
     }
 };
 
-async function searchSongs(query) {
-    const apiKey = "78ef4f49d601a8f36462eb98f885b78a";
+// Song Search
+function normalizeSearchResult(value) {
+    return value.toLowerCase().replace(/\s+/g, " ").replace(/[^\w\s-]/g, "").trim();
+}
+
+async function searchSongs(query, signal) {
+    const cacheKey = query.toLowerCase();
+    if (searchCache.has(cacheKey)) {
+        return searchCache.get(cacheKey);
+    }
+
+    const apiKey = "78ef4f49d601a8f36462eb98f885b78a"; // Replace with your Last.fm API key
     const url = `https://ws.audioscrobbler.com/2.0/?method=track.search&track=${encodeURIComponent(query)}&limit=${suggestionLimit}&api_key=${apiKey}&format=json`;
 
     try {
-        const raw = await fetch(url);
+        const raw = await fetch(url, { signal });
         const parsed = await raw.json();
-        return parsed.results?.trackmatches?.track?.map((t, i) => `${i + 1}. ${t.name.slice(0, 100)} - ${t.artist}`).join("\n") || "";
+        const tracks = parsed.results?.trackmatches?.track || [];
+        const seen = new Set();
+        const results = tracks
+            .map(t => `${String(t.name || "").slice(0, 100)} - ${String(t.artist || "").slice(0, 100)}`)
+            .filter(result => {
+                const key = normalizeSearchResult(result);
+                if (!key || seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+        searchCache.set(cacheKey, results);
+        if (searchCache.size > 30) {
+            searchCache.delete(searchCache.keys().next().value);
+        }
+        return results;
     } catch (error) {
+        if (error.name === "AbortError") return [];
         console.error("Search error:", error);
-        return "";
+        return [];
     }
 }
 
-async function updateSearchPopup() {
-    const query = searchInput.value.trim();
+async function updateSearchPopup(forcedQuery = searchInput.value.trim()) {
+    const query = forcedQuery.trim();
+    if (searchInFlight) {
+        queuedSearchQuery = query;
+        return;
+    }
+
+    const requestId = ++searchRequestId;
     if (!query) return searchPopup.classList.add("hidden");
+    const cacheKey = query.toLowerCase();
+    const cachedResults = searchCache.get(cacheKey);
+    if (cachedResults) {
+        latestRenderedSearchRequestId = requestId;
+        renderSearchResults(cachedResults);
+        lastSearchQuery = query;
+        return;
+    }
+    if (query === lastSearchQuery && (searchPopup.childElementCount || searchPendingQuery === query)) return;
 
-    const songList = await searchSongs(query);
-    if (songList) {
-        searchPopup.innerHTML = "";
-        songList.split("\n").forEach(line => {
-            let result = document.createElement("button");
-            result.className = "result";
-            result.textContent = line.replace(/^[0-9]+\. /, "").slice(0, 100);
-            result.onclick = () => {
-                searchInput.value = result.textContent;
-                searchPopup.classList.add("hidden");
-            };
-            searchPopup.appendChild(result);
-        });
-        searchPopup.classList.remove("hidden");
+    lastSearchStartedAt = Date.now();
+    lastSearchQuery = query;
+    searchPendingQuery = query;
+    searchInFlight = true;
+    activeSearchController = new AbortController();
+    const songList = await searchSongs(query, activeSearchController.signal);
+    searchInFlight = false;
+    if (searchPendingQuery === query) searchPendingQuery = "";
+    if (requestId > latestRenderedSearchRequestId) {
+        latestRenderedSearchRequestId = requestId;
+        renderSearchResults(songList);
+    }
+
+    if (queuedSearchQuery && queuedSearchQuery !== query) {
+        const nextQuery = queuedSearchQuery;
+        queuedSearchQuery = "";
+        updateSearchPopup(nextQuery);
+    } else {
+        queuedSearchQuery = "";
     }
 }
 
-searchInput.onkeyup = (e) => {
-    clearTimeout(lastInputUpdate);
-    if (e.key === "Escape") {
+function renderSearchResults(songList) {
+    if (document.activeElement !== searchInput || !searchInput.value.trim()) return;
+
+    searchPopup.innerHTML = "";
+    searchPopup.scrollTop = 0;
+    if (!songList.length) {
         searchPopup.classList.add("hidden");
         return;
     }
-    lastInputUpdate = setTimeout(updateSearchPopup, 100);
-};
+    songList.forEach(line => {
+        let result = document.createElement("button");
+        result.className = "result";
+        result.textContent = line.slice(0, 120);
+        result.onclick = () => {
+            searchInput.value = result.textContent;
+            searchPopup.classList.add("hidden");
+        };
+        searchPopup.appendChild(result);
+    });
+    searchPopup.classList.remove("hidden");
+    searchPopup.scrollTop = 0;
+}
+
+
+searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        activeSearchController?.abort();
+        searchInFlight = false;
+        queuedSearchQuery = "";
+        searchRequestId++;
+        latestRenderedSearchRequestId = searchRequestId;
+        searchPopup.classList.add("hidden");
+    }
+});
+
+function scheduleSearchPopup() {
+    clearTimeout(lastInputUpdate);
+    if (!searchInput.value.trim()) {
+        activeSearchController?.abort();
+        searchInFlight = false;
+        queuedSearchQuery = "";
+        searchRequestId++;
+        latestRenderedSearchRequestId = searchRequestId;
+        lastSearchQuery = "";
+        searchPendingQuery = "";
+        searchPopup.classList.add("hidden");
+        return;
+    }
+
+    const waitForThrottle = Math.max(0, searchThrottleMs - (Date.now() - lastSearchStartedAt));
+    if (waitForThrottle === 0) {
+        updateSearchPopup();
+    }
+
+    lastInputUpdate = setTimeout(updateSearchPopup, Math.max(searchDebounceMs, waitForThrottle));
+}
+
+searchInput.addEventListener("input", () => {
+    scheduleSearchPopup();
+});
 
 async function gameOver(win = false) {
     stopPreviewPlayback();
@@ -586,11 +718,14 @@ async function gameOver(win = false) {
 
     guessIndex = 0;
     await trySongFetch({ closeDelay: 0 });
+    playing = false;
+    updatePlayBtn();
 
     searchInput.value = "";
     updateSearchPopup();
 
     restartOnNext = false;
+    guessInFlight = false;
     guessBtn.disabled = false;
     playBtn.disabled = false;
 }
@@ -610,16 +745,92 @@ window.addEventListener("blur", () => {
 });
 
 guessBtn.onclick = async () => {
-    if (searchInput.value.trim().length === 0) {
-        const wasPlaying = playing;
-        const unlockedPositionSeconds = getPreviewPosition();
-        stopPreviewPlayback();
-        playing = false;
-        if (lines[guessIndex]) {
-            lines[guessIndex].textContent = "Skipped";
-            lines[guessIndex].classList.add("skip");
+    if (guessInFlight || !globalAudio) return;
+    guessInFlight = true;
+    let unlockWhenDone = true;
+
+    try {
+        const guessText = searchInput.value.trim();
+        if (guessText.length === 0) {
+            const wasPlaying = playing;
+            const unlockedPositionSeconds = getPreviewPosition();
+            stopPreviewPlayback();
+            playing = false;
+
+            if (lines[guessIndex]) {
+                lines[guessIndex].textContent = "Skipped";
+                lines[guessIndex].classList.add("skip");
+            }
+            guessIndex++;
+            if (guessIndex >= maxTimes.length) {
+                gameOver();
+                return;
+            }
+
+            previewPositionSeconds = Math.min(unlockedPositionSeconds, getMaxListenSeconds());
+            previewSegmentEnded = false;
+            restartOnNext = false;
+            updatePlayBtn();
+            if (wasPlaying) {
+                startPlayback();
+            }
+
+            searchInput.value = "";
+            searchInput.focus();
+            searchPopup.classList.add("hidden");
+            unlockWhenDone = false;
+            setTimeout(() => {
+                guessInFlight = false;
+            }, 120);
+            return;
         }
+
+        const guessedArtist = guessText.split("-").at(-1)?.trim() || guessText;
+        const response = await backendFetch(`/api/v1/solo/guess/?songName=${encodeURIComponent(guessText)}&songArtist=${encodeURIComponent(guessedArtist)}&songId=${encodeURIComponent(songId)}`);
+        if (lines[guessIndex]) {
+            lines[guessIndex].textContent = guessText;
+        }
+        if (response) {
+            let { nameCorrect, artistCorrect } = response;
+            if (nameCorrect && artistCorrect) {
+                stopPreviewPlayback();
+                playing = false;
+                updatePlayBtn();
+                globalAudio.pause();
+                const correctSound = new Audio("../correct.mp3");
+
+                correctSound.play();
+                correctSound.onended = () => {
+                    gameOver(true);
+                };
+                searchInput.value = "";
+                searchPopup.classList.add("hidden");
+                lines[guessIndex]?.classList.add("correct");
+                unlockWhenDone = false;
+                return;
+            } else if (nameCorrect || artistCorrect) {
+                const closeSound = new Audio("../incorrect.mp3");
+                closeSound.play();
+                closeSound.onended = () => {
+                    startPlayback();
+                };
+                lines[guessIndex]?.classList.add("close");
+            } else {
+                const incorrectSound = new Audio("../incorrect.mp3");
+
+                incorrectSound.play();
+                incorrectSound.onended = () => {
+                    startPlayback();
+                };
+                lines[guessIndex]?.classList.add("incorrect");
+            }
+        } else {
+            console.error("Failed guess song request.");
+        }
+
+        const unlockedPositionSeconds = getPreviewPosition();
         guessIndex++;
+
         if (guessIndex >= maxTimes.length) {
             gameOver();
             return;
@@ -627,67 +838,13 @@ guessBtn.onclick = async () => {
         previewPositionSeconds = Math.min(unlockedPositionSeconds, getMaxListenSeconds());
         previewSegmentEnded = false;
         restartOnNext = false;
-        updatePlayBtn();
-        if (wasPlaying) {
-            startPlayback();
-        }
 
         searchInput.value = "";
-        updateSearchPopup();
-        return;
+        searchInput.focus();
+        searchPopup.classList.add("hidden");
+    } finally {
+        if (unlockWhenDone) guessInFlight = false;
     }
 
-    const response = await backendFetch(`/api/v1/solo/guess/?songName=${encodeURIComponent(searchInput.value)}&songArtist=${encodeURIComponent(searchInput.value.split("-")[searchInput.value.split("-").length - 1].trim())}&songId=${encodeURIComponent(songId)}`);
-    if (lines[guessIndex]) {
-        lines[guessIndex].textContent = searchInput.value;
-    }
 
-    if (response) {
-        let { nameCorrect, artistCorrect } = response;
-        if (nameCorrect && artistCorrect) {
-            stopPreviewPlayback();
-            playing = false;
-            updatePlayBtn();
-            globalAudio.pause();
-            const correctSound = new Audio("../correct.mp3");
-            correctSound.play();
-            correctSound.onended = () => {
-                gameOver(true);
-            };
-            searchInput.value = "";
-            updateSearchPopup();
-            lines[guessIndex]?.classList.add("correct");
-            return;
-        } else if (nameCorrect || artistCorrect) {
-            const closeSound = new Audio("../incorrect.mp3");
-            closeSound.play();
-            closeSound.onended = () => {
-                startPlayback();
-            };
-            lines[guessIndex]?.classList.add("close");
-        } else {
-            const incorrectSound = new Audio("../incorrect.mp3");
-            incorrectSound.play();
-            incorrectSound.onended = () => {
-                startPlayback();
-            };
-            lines[guessIndex]?.classList.add("incorrect");
-        }
-    } else {
-        console.error("Failed guess song request.");
-    }
-
-    const unlockedPositionSeconds = getPreviewPosition();
-    guessIndex++;
-    if (guessIndex >= maxTimes.length) {
-        gameOver();
-        return;
-    }
-
-    previewPositionSeconds = Math.min(unlockedPositionSeconds, getMaxListenSeconds());
-    previewSegmentEnded = false;
-    restartOnNext = false;
-    searchInput.value = "";
-    searchInput.focus();
-    updateSearchPopup();
 };

@@ -526,9 +526,11 @@ label {
         justify-content: center;
         text-align: center;
         gap: 10px;
+        max-height: calc(100vh - 32px);
+        box-sizing: border-box;
         background-color: var(--popup-highlight);
         width: min(100%, 44rem);
-        max-width: 100%;
+        max-width: min(44rem, calc(100vw - 32px));
         box-sizing: border-box;
         border: 22px solid var(--primary);
         box-shadow: 0px 0px 20px 0 var(--primary), inset 0px 0px 20px -2px var(--primary);
@@ -536,16 +538,19 @@ label {
         border-radius: 35px;
         padding: 2.5rem;
         margin: auto;
+        overflow-y: auto;
     }
 
     #gameOverMessage {
-        font-size: 4rem;
+        font-size: clamp(2.6rem, 8vw, 4rem);
         margin-bottom: 0;
+        line-height: 1;
     }
 
     #gameOverSubtitle {
         font-size: 1.5rem;
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
     }
 
     p {
@@ -561,7 +566,7 @@ label {
         width: 100%;
         max-width: 100%;
         font-size: 1.7rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         overflow-wrap: anywhere;
     }
 
@@ -571,17 +576,24 @@ label {
         justify-content: space-between;
         align-items: center;
         gap: 2rem;
+        flex-shrink: 0;
     }
 
     button {
-        padding: 23px 50px;
-        font-size: 1.7rem;
+        padding: 18px 28px;
+        min-height: 72px;
+        font-size: clamp(1.2rem, 4vw, 1.7rem);
         background-color: var(--secondary-dark);
         border-radius: 10px;
         color: white;
         font-weight: bold;
         text-decoration: none;
-        flex: 1
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        line-height: 1;
     }
 
     #gameOverNext {
@@ -774,9 +786,30 @@ label {
     flex-direction: column;
     display: none;
     gap: 1px;
+    max-height: min(270px, 45vh);
+    overflow-y: auto;
+    overscroll-behavior: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
     transition: opacity 100ms ease, display 100ms ease allow-discrete, bottom 100ms ease;
     opacity: 0;
 
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--border);
+        border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(--text-muted);
+    }
 
     .result {
         padding: 10px 10px;

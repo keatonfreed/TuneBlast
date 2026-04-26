@@ -58,6 +58,12 @@ joinMultiplayer.onclick = () => {
     joinPopup.showModal()
 }
 
+joinPopup.addEventListener("click", (event) => {
+    if (event.target === joinPopup) {
+        joinPopup.close();
+    }
+});
+
 
 function setSavedUsername(username) {
     localStorage.setItem("TuneBlast-Username", username)

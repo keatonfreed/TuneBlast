@@ -471,10 +471,18 @@ function stopPlaying(endClip = false) {
     }
 }
 
-function restartUnlockedClip() {
-    resetPreviewState();
+function playUnlockedClipFrom(positionSeconds) {
+    previewPositionSeconds = Math.min(Math.max(positionSeconds, 0), getMaxListenSeconds());
+    previewSegmentEnded = false;
+    restartOnNext = false;
     updatePlayBtn();
     startPlayback();
+}
+
+function playUnlockedClipIfRoundContinues(positionSeconds) {
+    if (guessIndex < maxTimes.length && !gameOverPopup.open) {
+        playUnlockedClipFrom(positionSeconds);
+    }
 }
 
 playBtn.onclick = () => {
@@ -759,6 +767,7 @@ guessBtn.onclick = async () => {
     try {
         const guessText = searchInput.value.trim();
         if (guessText.length === 0) {
+            const unlockedPositionSeconds = getPreviewPosition();
             stopPreviewPlayback();
             playing = false;
 
@@ -772,7 +781,7 @@ guessBtn.onclick = async () => {
                 return;
             }
 
-            restartUnlockedClip();
+            playUnlockedClipFrom(unlockedPositionSeconds);
 
             searchInput.value = "";
             if (shouldRefocusSearchInput) {
@@ -815,24 +824,26 @@ guessBtn.onclick = async () => {
             } else if (nameCorrect || artistCorrect) {
                 const closeSound = new Audio("../incorrect.mp3");
                 missFeedbackSound = closeSound;
+                const unlockedPositionSeconds = getPreviewPosition();
                 stopPreviewPlayback();
                 playing = false;
                 updatePlayBtn();
                 closeSound.play();
                 closeSound.onended = () => {
-                    restartUnlockedClip();
+                    playUnlockedClipIfRoundContinues(unlockedPositionSeconds);
                 };
                 lines[guessIndex]?.classList.add("close");
             } else {
                 const incorrectSound = new Audio("../incorrect.mp3");
                 missFeedbackSound = incorrectSound;
+                const unlockedPositionSeconds = getPreviewPosition();
                 stopPreviewPlayback();
                 playing = false;
                 updatePlayBtn();
 
                 incorrectSound.play();
                 incorrectSound.onended = () => {
-                    restartUnlockedClip();
+                    playUnlockedClipIfRoundContinues(unlockedPositionSeconds);
                 };
                 lines[guessIndex]?.classList.add("incorrect");
             }
@@ -851,7 +862,7 @@ guessBtn.onclick = async () => {
         previewSegmentEnded = false;
         restartOnNext = false;
         if (!missFeedbackSound && response) {
-            restartUnlockedClip();
+            playUnlockedClipFrom(unlockedPositionSeconds);
         }
 
         searchInput.value = "";
